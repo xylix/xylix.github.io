@@ -1,8 +1,10 @@
 @import '@fontsource/fira-mono';
 
 :root {
-    --color-theme-1: #ff3131;
-    --color-theme-2: #ff7733;
+    /* --color-theme-1: #ff3131; */
+    --color-theme-1: #08f;
+    /* --color-theme-2: #ff7733; */
+    --color-theme-2: #00fff3;
     --color-text: #ffeeee;
     --color-text-card: #000000;
     --color-bg-base: #25272d;

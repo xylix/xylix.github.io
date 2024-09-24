@@ -6,7 +6,7 @@
 	let pages = [
 		['/', 'Home'],
 		['/blog', 'Blog'],
-		['/projects', 'Projects'],
+		// ['/projects', 'Projects'],
 		['/about', 'About']
 	];
 </script>

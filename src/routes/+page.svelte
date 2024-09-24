@@ -13,8 +13,7 @@
 	<h1>Welcome</h1>
 
 	<p>
-		This is <a href="/about">my</a> home page where I can put things I want to show to people. Some of
-		my favoutites include:
+		<a href="/about">Xylix's</a> home page. Includes a not-so-active blog, miscellaneous thoughts, etc.
 	</p>
 
 	<CardGrid posts={data.favourites} />
