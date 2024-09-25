@@ -41,7 +41,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: [build-godot, build-svelte]
+    needs: [build-svelte]
     steps:
       - uses: actions/download-artifact@v4
       - name: Unpack artefacts
