@@ -2,17 +2,19 @@
 title: 'Topology and loving math'
 tagline: 'How topology helped re-ignite my love for math'
 updatedAt: '2024-04-15T12:52+03:00'
-tags: ["math", "personal"]
+tags: ['math', 'personal']
 ---
 
 # How topology helped re-ignite my love for math (15.04.2024)
 
 ## Background, my attitude toward math before 2024
+
 For a long while, I avoided thinking too much about the mandatory math courses that my computer science degree in my university includes. I had already failed the initial "introduction to university mathematics" course during the early years of my studies, and overall after my high school experience (being an "average student" in a gifted math & compsci focused high school) in math felt quite incompetent and demotivated.
 Then I decided to give completing my university degree my best shot. I had often felt demotivated, for reasons including: I felt my executive function was more suited for work life, I had an easier time motivating myself through applications over pure knowledge, and completing a degree felt like an insurmountable task. But I had had a difficult time looking for work during fall 2023, and ended up concluding that maybe a fresh shot at a degree, after many years of fulltime work, would be beneficial. One big reason was to try to complete something I felt was impossible for me.
 Thus I enrolled on a math course. I managed to "scrape by" (often completing the excercises on the last available day, with a lot of stress and support from my partner, couldn't have done it without him) a linear algebra course. It felt insightful but also fresh. I liked being able to see the tower of knowledge that subsequent excercises built on. I liked being able to "just calculate" for many of the excercises. (Solving linear equations by hand or calculating determinants.)
 
 ## Going faster
+
 I felt empowered. Learning new math felt possible. I understood new things and also had received new tools. (And learned to read math better! To read one symbol variable names and a lot of greek alphabet sprinkled in. Something that had felt like one of the obstacles blocking me from completing my math studies many times.)
 So I decided to try and enroll on a difficult math course for the next period (january - march 2024), Topology IA (1/2 of a whole that introduces metric topology).
 The course had a non-insignificant amount of pre-knowledge I was missing, including 2/4 of the analysis courses that our university's math majors take during their first year. The course was also aimed at those math majors. It looked like a challenge. I managed to fit some easier math courses, and another challenging one into the period, and find some friends to take with me to the topology course, and my journey was ready to go.
@@ -25,11 +27,10 @@ I spent some time stressing about the exam, some staring at the cheatsheet, some
 After spending some attention waiting for the results for ~two weeks, they were announced. But there was a problem. The study webpage where the results could be seen was down for mainteinance until 21 that evening. I got to watching some anime with my boyfriend and refreshed the web page the moment the clock hit 21:00. There was another problem. The scheduled mainteinance had been extended, perhaps due to technical problems. The new mainteinance end time was 21:15. And at 21:15 it was 21:30. Then 22:00. In the end I got the results maybe around 22:30 that night, after one and half hours of quite intense waiting. I had received a grade of 2/5 from the course. I was satisfied. This was not optimal understanding but it was much better than I had feared for, and it was a not-insignificant amount of understanding in university mathematics I had managed to attain. (I cannot really say I was elated, but I was relieved.)
 
 ## Now
+
 I can clearly notice my mathematical intuitions improving. It has been satisfying. I don't know if it's useful but also I don't know if it would even be good to think too precisely on if it is. Maybe sometimes one can just commit to a few steps of learning some new skills and not spend all the time trying to evaluate their usefulness.
 I have noticed the phenomena where sometimes grokking something in math requires multiple hours or even days or weeks of being stuck with the thing in mind. The last experience of this I had when studying algorithms courses, but often when doing real world programming I have managed to avoid being stuck through various means.
 I'm also glad that through proper motivation (e.g. having a use for it, making math notes and writing excercise answers) I have now learned to write math in LaTeX much better.
 I also suffered from 4-6 days / week headaches for a month during this period of studying math. I'm actually surprised how functional I managed to stay and how "low weight" the experience has in my head. It was helpful that normal OTC pain medication handled the issue quite well. (And the situation has now become better.)
 
 I want to learn more math. I want to understand it. I want to glance at this infinity.
-
-

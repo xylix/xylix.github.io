@@ -1,5 +1,5 @@
 ---
-title: "Quotes: Venkatesh Rao on Freedom"
+title: 'Quotes: Venkatesh Rao on Freedom'
 tagline: 'Quotes from varying texts from ribbonfarm.com 2013-2015'
 slug: remarkabilities-ribbonfarm-2013-2014-venkatesh-rao-et
 date_published: 2019-06-09T06:06:38.000Z
@@ -31,7 +31,7 @@ Even in the safest-seeming encounters, there is a stab of fear mingled with reli
 
 The first time this happens is the first time you realize that home is about perspective rather than situation.
 
-And you can find game-breaks online, but only if you make a real home there, so you can be seen. *To seek only to see through the Internet is to experience only half of it, as a tourist.*
+And you can find game-breaks online, but only if you make a real home there, so you can be seen. _To seek only to see through the Internet is to experience only half of it, as a tourist._
 
 Offline, we understand the arrival fallacy as unironic belief in a scripted path of progress towards the a good life. To be a sophisticate today is to laugh at the notion that life begins when one settles down by progressively checking off a set of boxes: graduation, car, marriage, mortgage, kids, making partner at the law firm. To arrive is to complete the checklist.
 
@@ -89,7 +89,7 @@ The easiest way to appreciate the emerging human condition to adopt a couple of 
 
 ### B. [Frills](https://www.ribbonfarm.com/2014/01/01/free-as-in-agent/)
 
-A frill is neither an obviously non-functional aesthetic touch (that would be a *flourish*) nor a clearly unnecessary functional capability (that would be *wasted *functionality). Rather, it is a functional capability you want to signal as being a part of your life*, *but not actually use.
+A frill is neither an obviously non-functional aesthetic touch (that would be a _flourish_) nor a clearly unnecessary functional capability (that would be *wasted *functionality). Rather, it is a functional capability you want to signal as being a part of your life*, *but not actually use.
 
 If your workspace has a proliferation of frills, you are either a hustler (not the good kind), or worse, you’re bullshitting yourself.
 

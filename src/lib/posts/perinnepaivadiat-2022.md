@@ -9,4 +9,4 @@ tags: ['presentation']
 
 EA - perinnepäivät 2022
 
-[![slides](https://lh3.googleusercontent.com/bNF8hCA12aAvSkxcc4Dyo06Lp4n5gTbgHefZ7Dz97sFihkUPv2V_3-2WaVuRazF2QFC7LhsOnPI3zg&#x3D;w1200-h630-p)](https://docs.google.com/presentation/d/1T2tuoY1MQ2r2jAFH7AXa73spL4mJ38FE7nkInfTCL9s/edit?usp&#x3D;sharing)
+[![slides](https://lh3.googleusercontent.com/bNF8hCA12aAvSkxcc4Dyo06Lp4n5gTbgHefZ7Dz97sFihkUPv2V_3-2WaVuRazF2QFC7LhsOnPI3zg=w1200-h630-p)](https://docs.google.com/presentation/d/1T2tuoY1MQ2r2jAFH7AXa73spL4mJ38FE7nkInfTCL9s/edit?usp=sharing)

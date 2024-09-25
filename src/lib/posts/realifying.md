@@ -27,7 +27,7 @@ The daemon consists of mostly _core_ and some structure. (part of your "inner se
 ### What is a hit
 
 To actually see if your output contains _freedom_ you need to look. Open your eyes and see. Unavoidably you will observe if `f(x) > x` gets fulfilled.
-Also unavoidably, looking will make you see how useless social structure is in the context of real quality. This leads to a crossroads; you’ll choose between becoming * _blind_ (to quality, either by abandoning quality as a principle or by inventing a _self-apogoletic_ view of quality)
+Also unavoidably, looking will make you see how useless social structure is in the context of real quality. This leads to a crossroads; you’ll choose between becoming \* _blind_ (to quality, either by abandoning quality as a principle or by inventing a _self-apogoletic_ view of quality)
 
 - A rebel (abandoning the belief that the group knows where we are going, realizing you need to make your own map and find your own territory
 

@@ -6,6 +6,7 @@ tags: ['software']
 ---
 
 # How and why I made this blog
+
 The codebase was forked from [github.com/haihala/haihala.github.io](https://github.com/haihala/haihala.github.io/)
 
 You can see the original authors cool story about making the blog at [https://haihala.github.io/blog/blog-meta](blog-meta).

@@ -64,7 +64,7 @@ Tutkimusalueet:
 - Ubiqui­tous In­te­rac­tion (UIx)
 - Bat­te­ry­Sen­se
 
-[Ohjelmistot](https://www.helsinki.fi/fi/tietojenkasittelytiede/tutkimus/ohjelmistot		):
+[Ohjelmistot](https://www.helsinki.fi/fi/tietojenkasittelytiede/tutkimus/ohjelmistot):
 
 - Em­pi­rical Softwa­re En­gi­nee­ring (ESE), Prof. Tom­mi Mik­ko­nen
 - Em­pi­rical Softwa­re En­gi­nee­ring (ESE), Prof. Tomi Män­nis­tö
@@ -93,7 +93,7 @@ Tutkimusalueet:
 
 ### Tampere
 
-Nettisivut rikki ._.
+Nettisivut rikki .\_.
 
 ### Turku
 
@@ -152,11 +152,11 @@ Tutkimusalueet:
 
 Julkaisut:
 
-[Tietotekniikka](https://research.aalto.fi/en/publications/search.html?search=&amp;uri=&amp;lastName=&amp;organisationName=Department+of+Computer+Science&amp;organisations=37144&amp;type=+&amp;language=+&amp;publicationYearsFrom=&amp;publicationYearsTo=&amp;documents=+)
+[Tietotekniikka](https://research.aalto.fi/en/publications/search.html?search=&uri=&lastName=&organisationName=Department+of+Computer+Science&organisations=37144&type=+&language=+&publicationYearsFrom=&publicationYearsTo=&documents=+)
 
 ### Oulu
 
-[*Tietotekniikka*](https://www.oulu.fi/tietotekniikka)
+[_Tietotekniikka_](https://www.oulu.fi/tietotekniikka)
 
 Tutkimusalueet:
 

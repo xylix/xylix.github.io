@@ -6,7 +6,7 @@ updatedAt: 2022-11-19T10:08:42.000Z
 tags: ['review', 'book']
 ---
 
-*Superintelligence, rationality and the race to save the world*
+_Superintelligence, rationality and the race to save the world_
 
 It is a very slim and general overview of the current state of General Artificial Intelligence development and expert evaluations on when it will happen (seemingly between 2030-2100 with over 95% probability).
 However, the issue of "why would a superintelligent artificial intelligence want to do seemingly stupid things" was answered very well and comprehensively. Chapter 11 is a good example of this (titled "If I stop caring about chess, that won't help me win any chess games, now will it?).
