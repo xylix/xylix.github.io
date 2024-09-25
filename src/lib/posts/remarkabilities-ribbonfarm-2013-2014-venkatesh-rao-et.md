@@ -7,6 +7,8 @@ updatedAt: 2019-12-26T11:04:45.000Z
 tags: ['quotes']
 ---
 
+Interesting quotes from
+
 ## I. [Freedom](https://www.ribbonfarm.com/2013/08/08/on-freedomspotting/)
 
 Freedom is a leaky, subsuming process. An inner process of compounding and increasing dimensionality that manifests externally must eventually “take over your life” externally as well. No part of your life, internal or external, can be walled off from the workings of a freedom transformation. The driver of this subsuming leakage is the fourth feature of the freedom process, the feeding-on-noise.
