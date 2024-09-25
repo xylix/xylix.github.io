@@ -1,9 +1,6 @@
-# haihala.github.io
+# xylix.github.io
 
-A pet project where I write a portfolio for myself and learn Svelte.
-Something to send to recruiters and share links through.
-
-You can see the site at https://haihala.github.io
+My personal blog website. Forked from haihala.github.io, basic techs are Svelte + markdown. Migrated to this from Ghost when I got annoyed by the need to update and the overkill amount of features for my needs.
 
 ## Original svelte readme
 

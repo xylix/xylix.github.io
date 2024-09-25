@@ -17,34 +17,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-godot:
-    runs-on: ubuntu-latest
-    env:
-      GODOT_VERSION: 4.2.2
-    container:
-      image: barichello/godot-ci:4.2.2
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/export_templates/
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
-      - name: Build
-        run: |
-          mkdir build
-          cd godot-web-test
-          godot --headless --export-release Web $(dirname $(pwd))/build/godot-test.html
-      - name: Fix problem with Github Pages headers
-        run: |
-          cd build
-          wget https://raw.githubusercontent.com/gzuidhof/coi-serviceworker/master/coi-serviceworker.min.js 
-          sed  '/\<head\>/a \<script src="coi-serviceworker.min.js"\>\</script\>' godot-test.html > temp.html
-          mv temp.html godot-test.html
-      - uses: actions/upload-artifact@v4
-        with:
-          name: godot
-          path: build
-
   build-svelte:
     runs-on: ubuntu-latest
     steps:
@@ -75,7 +47,7 @@ jobs:
       - name: Unpack artefacts
         run: |
           mkdir build
-          mv godot/* svelte/* build
+          mv svelte/* build
       - name: Debug
         run: ls -R
       - uses: actions/upload-pages-artifact@v3
