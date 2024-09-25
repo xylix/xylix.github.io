@@ -1,6 +1,6 @@
 ---
 title: 'Realifying'
-tagline: 'Realifying'
+tagline: 'Confusing form thoughts about creativity'
 slug: realifying
 date_published: 2019-06-22T11:36:57.000Z
 updatedAt: 2019-07-05T10:10:15.000Z

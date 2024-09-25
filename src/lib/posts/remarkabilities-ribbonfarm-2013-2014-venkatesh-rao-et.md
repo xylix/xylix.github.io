@@ -4,7 +4,7 @@ tagline: 'Quotes from varying texts from ribbonfarm.com 2013-2015'
 slug: remarkabilities-ribbonfarm-2013-2014-venkatesh-rao-et
 date_published: 2019-06-09T06:06:38.000Z
 updatedAt: 2019-12-26T11:04:45.000Z
-tags: ['review', 'quotes']
+tags: ['quotes']
 ---
 
 ## I. [Freedom](https://www.ribbonfarm.com/2013/08/08/on-freedomspotting/)
