@@ -4,15 +4,15 @@ tagline: 'Realifying'
 slug: realifying
 date_published: 2019-06-22T11:36:57.000Z
 updatedAt: 2019-07-05T10:10:15.000Z
-tags: []
+tags: ['confusing', 'work-in-progress']
 ---
 
 [Epistemic status: A useful framework for understanding my own creativity]
 Disclaimer: much of the terminology here has been lent from
 
 - Venkatesh Rao (especially http://www.tempobook.com/2011/08/17/daemons-and-the-mindful-learning-curve/)
--  Ziz (https://sinceriously.fyi/being-real-or-fake/, https://sinceriously.fyi/false-faces/)
-- Elizabeth Gilbert.
+- Ziz (https://sinceriously.fyi/being-real-or-fake/, https://sinceriously.fyi/false-faces/)
+- Elizabeth Gilbert. (https://www.ted.com/talks/elizabeth_gilbert_your_elusive_creative_genius)
 
 The concepts aren't mine, but the presentation is.
 
@@ -24,8 +24,7 @@ The mask consists of mostly _structure_ and some core. (Social and habitual patt
 The daemon consists of mostly _core_ and some structure. (part of your "inner self". pretty static) Often manifests as "internal rebellion".
 `f(x) > x` is the _freedomful creative output_ inequation. Visualized at [ribbonfarm](https://206hwf3fj4w52u3br03fi242-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/Picture1-1024x457.png).
 
-###
-What is a hit
+### What is a hit
 
 To actually see if your output contains _freedom_ you need to look. Open your eyes and see. Unavoidably you will observe if `f(x) > x` gets fulfilled.
 Also unavoidably, looking will make you see how useless social structure is in the context of real quality. This leads to a crossroads; you’ll choose between becoming * _blind_ (to quality, either by abandoning quality as a principle or by inventing a _self-apogoletic_ view of quality)

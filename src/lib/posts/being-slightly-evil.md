@@ -1,10 +1,10 @@
 ---
-title: "[WIP] Remarkabilities: Be slightly Evil (Venkatesh Rao, 2013)"
-tagline: 'Being slightly evil'
+title: 'Quotes: Be Slightly Evil'
+tagline: 'Notes on Being Slightly Evil (Venkatesh Rao, 2013)'
 slug: being-slightly-evil
 date_published: 2019-06-05T16:24:19.000Z
 updatedAt: 2019-06-09T06:12:34.000Z
-tags: ['note']
+tags: ['quotes', 'book', 'rationality', 'work-in-progress']
 ---
 
 Or; Be Slightly More Effective In Whatever You Do, in socially questionable ways.

@@ -1,10 +1,10 @@
 ---
-title: 'Normal People (Sally Rooney, 2016)'
-tagline: 'Normal People'
+title: 'Review: Normal People'
+tagline: 'Normal People (Sally Rooney, 2016)'
 slug: book-review-normal-people-sally-rooney-2016
 date_published: 2019-05-31T07:45:16.000Z
 updatedAt: 2020-03-10T12:48:29.000Z
-tags: []
+tags: ['review', 'book']
 ---
 
 They made me feel it. The people in this book. Lack of priority in the best years of youth. Naivety so intense it hurts to look at it.

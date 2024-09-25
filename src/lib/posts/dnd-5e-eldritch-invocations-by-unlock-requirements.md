@@ -1,6 +1,6 @@
 ---
-title: 'Dnd 5e Eldritch Invocations by unlock requirements'
-tagline: 'dnd 5e eldritch invocations'
+title: 'Dnd 5e Eldritch Invocations'
+tagline: 'List of 5e Eldritch Invocations by unlock requirement'
 slug: dnd-5e-eldritch-invocations-by-unlock-requirements
 date_published: 2020-10-22T12:53:24.000Z
 updatedAt: 2020-10-22T12:53:24.000Z

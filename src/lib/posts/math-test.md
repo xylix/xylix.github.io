@@ -4,7 +4,7 @@ tagline: 'Testing MathJax'
 slug: math-test
 date_published: 2024-04-05T09:48:03.000Z
 updatedAt: 2024-04-05T09:48:03.000Z
-tags: []
+tags: ['work-in-progress']
 ---
 
 ```latex

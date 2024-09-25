@@ -4,7 +4,7 @@ tagline: 'Käpistelytutkimus suomessa'
 slug: kapistelytutkimus-suomessa
 date_published: 2019-06-09T12:05:01.000Z
 updatedAt: 2019-06-09T17:52:01.000Z
-tags: []
+tags: ['research']
 ---
 
 Tutkimuslaitosten ja -osastojen nettisivuilla 09.06.2019 löytyneestä tiedosta koostettu lista tutkimusalueista ja julkaisulistoista Suomessa. Jos lähteessä tieto oli muotoiltu järkeväksi listaksi, lähteen muotoilu säilytetty.
