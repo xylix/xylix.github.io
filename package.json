@@ -10,6 +10,11 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},
+	"pre-commit": [
+		"lint",
+		"check",
+		"build"
+	],
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
 		"@neoconfetti/svelte": "^1.0.0",
@@ -24,6 +29,7 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
 		"mdsvex": "^0.11.0",
+		"pre-commit": "^1.2.2",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"svelte": "^4.2.7",
