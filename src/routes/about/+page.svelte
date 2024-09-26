@@ -6,11 +6,13 @@
 <section>
 	<h1>About me</h1>
 	<p>
-		I'm a person from Finland. I think about software, writing, philosophy, thinking well, living well, reading and various other things. Sometimes I also write. Sometimes the writings end up here.
+		I'm a person from Finland. I think about software, writing, philosophy, thinking well, living
+		well, reading and various other things. Sometimes I also write. Sometimes the writings end up
+		here.
 	</p>
 
 	<ul>
-        <li>resume: <a href="/resume">/resume</a>
+		<li>resume: <a href="/resume">/resume</a></li>
 		<li>github: github.com/xylix</li>
 		<li>email: xylix at iki.fi</li>
 	</ul>
