@@ -1,10 +1,13 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
+	import { page } from '$app/stores';
 </script>
 
 <div class="app">
-	<Header />
+	{#if !$page.url.pathname.includes('/resume')}
+		<Header />
+	{/if}
 
 	<main>
 		<slot />
