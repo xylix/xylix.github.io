@@ -32,6 +32,13 @@ export const load_pages = async () => {
 		.map(([path, untypedPost]) => {
 			const post = untypedPost as Post;
 			const { tagline, title, tags, updatedAt, favourite } = post.metadata;
+			// favourite is optional
+			const requiredMetadata = [tagline, title, tags, updatedAt].every((val) => val !== undefined);
+			if (!requiredMetadata) {
+				throw new Error(
+					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}`
+				);
+			}
 			const fname = path.replace(/^.*[\\/]/, '');
 			const slug = fname.replace(/\.md$/, '');
 
