@@ -2,7 +2,7 @@
 title: 'I forked a blog codebase'
 tagline: 'In magic we trust'
 updatedAt: '2024-09-24T15:38+03:00'
-tags: ['software']
+tags: ['programming']
 ---
 
 # How and why I made this blog
