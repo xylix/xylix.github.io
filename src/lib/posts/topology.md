@@ -1,12 +1,13 @@
 ---
 title: 'Topology and loving math'
 tagline: 'How topology helped re-ignite my love for math'
-updatedAt: '2024-04-15T12:52+03:00'
+updatedAt: '2024-09-26T14:32:24+0300'
+originallyWritten: '2024-04-15T12:52+03:00'
 tags: ['math', 'personal']
 favourite: true
 ---
 
-# How topology helped re-ignite my love for math (15.04.2024)
+# How topology helped re-ignite my love for math
 
 ## Background, my attitude toward math before 2024
 
