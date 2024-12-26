@@ -325,18 +325,8 @@ const mainColumnContent = [
 const headerContent = {
 	name: 'Kerkko Pelttari',
 	summaryLines: ['Always solving problems.']
-	// 'Curious and adaptable web developer with 10+ months of front end production experience. Especially skilled with React and currently learning more frameworks. Career history includes technical writing, education, and chemical engineering. Always thinking about the user experience. Always brainstorming app ideas.',
 
-	// meaningful and impactful
-	// supporting the underdog
-
-	// I enjoy data, design, and clean code.
-
-	// Enjoy the act of creation as well as refactoring.
-
-	// I like to build things I like to use.
-
-	// Try to be thoughtful always.}
+	// I'm a thinker and a doer. I like solving a thing in a way that actually helps people. Finding a good solution is rewarding.
 };
 
 export { sideColumnContent, mainColumnContent, headerContent };

@@ -11,7 +11,7 @@
 </svelte:head>
 
 <section>
-	<h1>Projects</h1>
+	<h1>Tags</h1>
 	<p>List of tags in the blog</p>
 	<CardGrid {...data} />
 </section>
