@@ -1,10 +1,14 @@
 <script>
 	import Header from './components/structural/Header.svelte';
 	import Section from './components/structural/Section.svelte';
-	import './styles.css';
+	import resumeStyling from './styles.css?url';
 
 	import { mainColumnContent, sideColumnContent } from './content';
 </script>
+
+<svelte:head>
+	<link rel="stylesheet" href={resumeStyling} />
+</svelte:head>
 
 <main>
 	<Header />
