@@ -1,6 +1,6 @@
 ---
 title: 'Review: The AI Does Not Hate You'
-tagline: 'The AI Does Not Hate You (Tom Chivers, 2019)'
+tagline: '(Tom Chivers, 2019)'
 date_published: 2019-07-09T08:39:34.000Z
 updatedAt: 2022-11-19T10:08:42.000Z
 tags: ['review', 'book']

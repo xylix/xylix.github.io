@@ -20,7 +20,10 @@
 
 <style>
 	h2 {
-		height: 2em;
+		min-height: 2.5em;
+	}
+	p {
+		min-height: 3em;
 	}
 
 	div {
