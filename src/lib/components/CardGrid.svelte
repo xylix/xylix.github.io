@@ -2,7 +2,11 @@
 	import type { ComponentProps } from 'svelte';
 	import Card from './Card.svelte';
 
-	export let posts: ComponentProps<Card>[];
+	interface Props {
+		posts: ComponentProps<typeof Card>[];
+	}
+
+	let { posts }: Props = $props();
 </script>
 
 <div class="grid">
@@ -15,8 +19,15 @@
 	.grid {
 		display: grid;
 		gap: 1rem;
-		grid-template-columns: repeat(3, 1fr);
 		justify-content: center;
 		width: 100%;
+
+		grid-template-columns: repeat(1, 1fr);
+		@media (min-width: 720px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: 1080px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 </style>

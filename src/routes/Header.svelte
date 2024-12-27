@@ -1,13 +1,13 @@
 <script>
 	import { page } from '$app/stores';
 
-	$: currentPage = $page.url.pathname;
+	let currentPage = $derived($page.url.pathname);
 
 	let pages = [
 		['/', 'Home'],
 		['/blog', 'Blog'],
 		['/tags', 'Tags'],
-		['/about', 'About']
+		['/about', 'About me']
 	];
 </script>
 
@@ -57,5 +57,15 @@
 
 	li[aria-current='page'] a {
 		color: var(--color-theme-2);
+	}
+
+	/* Dividers */
+	li:after {
+		content: '';
+		border-left: 2px solid var(--color-bg-base);
+		margin-left: 1rem;
+	}
+	li:last-child:after {
+		display: None;
 	}
 </style>

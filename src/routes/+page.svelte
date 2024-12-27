@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import CardGrid from '$lib/components/CardGrid.svelte';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -17,5 +17,9 @@
 		thoughts, etc.
 	</p>
 
+	<p>"Fresh" off the presses:</p>
+	<CardGrid posts={data.newest} />
+
+	<p>Some of my favourites:</p>
 	<CardGrid posts={data.favourites} />
 </section>

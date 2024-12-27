@@ -16,7 +16,7 @@
 </script>
 
 <div class="contact-item">
-	<i class={linkIcon} />
+	<i class={linkIcon}></i>
 	{#if isLink}
 		{#if type === 'email'}
 			<a href="mailto:{text}">{text}</a>
@@ -38,9 +38,9 @@
 		text-align: center;
 	}
 
-	.full-detail .contact-item i {
-		padding-right: 2px; /*	less padding for experience map marker */
-	}
+	/* .full-detail .contact-item i {
+		padding-right: 2px; less padding for experience map marker
+	} */
 
 	/* .simple-detail .contact-item {
 		margin-top: 5px;
