@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Icon from '@iconify/svelte';
 	import type { PageData } from './$types';
 
 	interface Props {
@@ -7,26 +6,12 @@
 	}
 
 	let { data }: Props = $props();
+	// Could consider {data.createdAt.toLocaleDateString("fi-FI")} {data.createdAt.toLocaleTimeString("fi-FI")} GMT+0200 for date formatting in the code
 </script>
 
 <h1>{data.title}</h1>
 
 <span class="centered">{data.subtitle}</span>
-
-{#if data.updatedAt && data.updatedAt !== data.createdAt}
-	<div class="edit-note">
-		<div>
-			<Icon icon="material-symbols:info" />
-			(This post was updated after original publication)
-		</div>
-		<p>
-			Originally published: {data.createdAt}
-		</p>
-		<p>
-			Latest edit happened: {data.updatedAt}
-		</p>
-	</div>
-{/if}
 
 <article>
 	<data.content />
@@ -34,7 +19,13 @@
 
 <footer>
 	<hr />
-	<p>This post was originally released on {data.createdAt}</p>
+	<p>Originally released on {data.createdAt}</p>
+	{#if data.updatedAt && data.updatedAt.valueOf() !== data.createdAt.valueOf()}
+		<div>
+			This post was updated: {data.updatedAt}
+		</div>
+	{/if}
+
 	{#if data.similar.length > 0}
 		<p>You may also like:</p>
 		<ul>
@@ -56,22 +47,5 @@
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: -1rem;
-	}
-
-	.edit-note {
-		margin-top: 1rem;
-		padding: 0 1rem;
-
-		--border-color: color-mix(in srgb, var(--color-theme-1) 50%, transparent);
-		border-left: solid var(--border-color) 0.5rem;
-		background-color: rgba(0, 0, 0, 0.2);
-
-		div {
-			margin-top: 1rem;
-			font-size: 1.5rem;
-			display: flex;
-			gap: 1rem;
-			align-items: center;
-		}
 	}
 </style>
