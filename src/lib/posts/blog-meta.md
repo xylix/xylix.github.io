@@ -6,7 +6,7 @@ updatedAt: '2024-09-24T15:38+03:00'
 tags: ['programming']
 ---
 
-# How and why I made this blog
+## How and why I made this blog
 
 The codebase was forked from [github.com/haihala/haihala.github.io](https://github.com/haihala/haihala.github.io/)
 

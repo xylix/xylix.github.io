@@ -7,8 +7,6 @@ tags: ['math', 'personal']
 favourite: true
 ---
 
-# How topology helped re-ignite my love for math
-
 ## Background, my attitude toward math before 2024
 
 For a long while, I avoided thinking too much about the mandatory math courses that my computer science degree in my university includes. I had already failed the initial "introduction to university mathematics" course during the early years of my studies, and overall after my high school experience (being an "average student" in a gifted math & compsci focused high school) in math felt quite incompetent and demotivated.
