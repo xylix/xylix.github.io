@@ -10,8 +10,10 @@ export type MetaArticle = {
 	title: string;
 	tagline?: string;
 	favourite?: boolean;
+	draft?: boolean;
 	tags: string[];
-	updatedAt: string;
+	createdAt: string;
+	updatedAt?: string;
 };
 
 export type Article = {
@@ -20,20 +22,26 @@ export type Article = {
 	title: string;
 	tagline?: string;
 	tags: string[];
-	updatedAt: Date;
+	createdAt: Date;
+	updatedAt?: Date;
 	favourite: boolean;
+	draft: boolean;
 	content: typeof SvelteComponent;
 };
 
-export const load_pages = async (): Promise<Article[]> => {
+export type LoadOptions = {
+	drafts?: 'include' | 'only';
+};
+
+export const load_pages = async (opts?: LoadOptions): Promise<Article[]> => {
 	const raw = import.meta.glob(`./posts/*.md`, { eager: true });
 
 	const posts = Object.entries(raw)
 		.map(([path, untypedPost]) => {
 			const post = untypedPost as Post;
-			const { tagline, title, tags, updatedAt, favourite } = post.metadata;
-			// favourite is optional
-			const requiredMetadata = [tagline, title, tags, updatedAt].every((val) => val !== undefined);
+			const { tagline, title, tags, createdAt, updatedAt, favourite, draft } = post.metadata;
+			// draft, favourite and updatedAt are optional
+			const requiredMetadata = [tagline, title, tags, createdAt].every((val) => val !== undefined);
 			if (!requiredMetadata) {
 				throw new Error(
 					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}`
@@ -48,12 +56,19 @@ export const load_pages = async (): Promise<Article[]> => {
 				title,
 				tagline,
 				tags,
-				updatedAt: new Date(updatedAt),
+				createdAt: new Date(createdAt),
+				updatedAt: updatedAt === undefined ? undefined : new Date(updatedAt),
 				content: post.default,
-				favourite: !!favourite
+				favourite: !!favourite,
+				draft: !!draft
 			};
 		})
-		.sort((a, b) => b.updatedAt.valueOf() - a.updatedAt.valueOf());
+		.filter(
+			(post) =>
+				opts?.drafts === 'include' ||
+				(opts?.drafts == 'only' && post.draft) ||
+				(opts?.drafts === undefined && !post.draft)
+		);
 
-	return posts;
+	return posts.sort((a, b) => b.createdAt.valueOf() - a.createdAt.valueOf());
 };

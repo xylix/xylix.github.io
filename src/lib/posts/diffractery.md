@@ -2,7 +2,7 @@
 title: 'Diffracting'
 tagline: 'Thoughts on some particular sources of diffracted mood'
 slug: diffractery
-date_published: 2019-06-04T03:48:04.000Z
+createdAt: 2019-06-04T03:48:04.000Z
 updatedAt: 2019-06-04T06:43:23.000Z
 tags: ['confusing']
 ---

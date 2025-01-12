@@ -1,7 +1,5 @@
 import { load_pages, type Article } from '$lib/load_posts';
-
-const title = 'Haihala blog';
-const website = 'https://haihala.github.io';
+import { title, website } from '../constants';
 
 export const prerender = true;
 export async function GET() {
@@ -25,16 +23,9 @@ const format = (posts: Article[]) => {
 			return `<item>
   <title>${post.title}</title>
   <link>${link}/</link>
-  <pubDate>${new Date(post.updatedAt)}</pubDate>
-  <content:encoded>${post.tagline}
-    </br>
-    <div style="margin-top: 50px; font-style: italic;">
-      <strong>
-        <a href="${link}">
-          Keep reading
-        </a>
-      </strong>
-    </div>
+  <pubDate>${new Date(post.createdAt)}</pubDate>
+  <content:encoded>
+    <p>${post.tagline}</p><p><strong><a href="${link}">Read the full post here</a></strong></p>
   </content:encoded>
 </item>`;
 		})})}

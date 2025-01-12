@@ -2,7 +2,7 @@
 title: 'Disorderly reading'
 tagline: 'Disorderly reading'
 slug: reading-my-way
-date_published: 2019-06-11T07:15:31.000Z
+createdAt: 2019-06-11T07:15:31.000Z
 updatedAt: 2019-06-18T04:36:45.000Z
 tags: ['confusing']
 ---

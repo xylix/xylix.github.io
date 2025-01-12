@@ -2,7 +2,7 @@
 title: 'Programming tools'
 tagline: 'Thoughts on programming tools'
 slug: programming-tools
-date_published: 2020-03-01T13:13:28.000Z
+createdAt: 2020-03-01T13:13:28.000Z
 updatedAt: 2020-03-01T17:16:54.000Z
 tags: ['programming']
 ---

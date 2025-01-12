@@ -2,7 +2,7 @@
 title: 'Learning from Haskell'
 tagline: 'Learning to program, from Haskell'
 slug: learning-from-haskell
-date_published: 2020-08-19T04:34:54.000Z
+createdAt: 2020-08-19T04:34:54.000Z
 updatedAt: 2020-12-23T19:26:37.000Z
 tags: ['programming']
 ---

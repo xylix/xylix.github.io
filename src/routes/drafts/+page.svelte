@@ -17,10 +17,11 @@
 </svelte:head>
 
 <section>
-	<h1>Blog</h1>
-	<p>My blog posts in chronological order (latest first)</p>
+	<h1>Drafts</h1>
 	<p>
-		RSS feed available at <a href={feed}>{feed}</a>
+		These posts are still cooking. They won't show up on the <a href="/blog">post list</a>, nor in
+		<a href={feed}>RSS feed</a>. Svelte won't include posts in the build that are never linked to,
+		which is why this page exists.
 	</p>
 	<CardGrid {...data} />
 </section>
