@@ -7,6 +7,7 @@
 </script>
 
 <svelte:head>
+	<title>Resume</title>
 	<link rel="stylesheet" href={resumeStyling} />
 </svelte:head>
 
