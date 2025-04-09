@@ -2,7 +2,7 @@ const sideColumnContent = [
 	{
 		type: 'picture',
 		label: 'photo of Kerkko Pelttari',
-		details: '2022_picture.jpg'
+		details: '2024_picture.jpg'
 	},
 	{
 		type: 'contact',
@@ -43,14 +43,14 @@ const sideColumnContent = [
 					{
 						isLink: true,
 						type: 'web',
-						url: 'https://github.com/xylix',
+						url: 'github.com/xylix',
 						text: 'github.com/xylix',
 						icon: 'github'
 					},
 					{
 						isLink: true,
 						type: 'web',
-						url: 'https://www.linkedin.com/in/kerkko-pelttari/',
+						url: 'www.linkedin.com/in/kerkko-pelttari/',
 						text: 'linkedin.com/in/kerkko-pelttari/',
 						icon: 'linkedin'
 					}
@@ -62,7 +62,7 @@ const sideColumnContent = [
 		type: 'skills',
 		label: 'Skills',
 		details: [
-			'JS',
+			'JavaScript',
 			'TypeScript',
 			'React',
 			// "NodeJS,
@@ -77,7 +77,9 @@ const sideColumnContent = [
 			'Bash',
 			'Maintaining Open-Source',
 			'Shipping MVPs',
-			'Working in self-directing teams'
+			'Working in self-directing teams',
+			'Large language models',
+			'llama.cpp'
 		]
 	},
 	{
@@ -144,13 +146,13 @@ const mainColumnContent = [
 				title: 'Software Engineer',
 				subtitle: 'Robocorp Oy',
 				location: 'Helsinki',
-				technologies: 'Robot Framework, Python, Typescript',
+				technologies: 'Robot Framework, Python, Typescript, AWS',
 				description:
-					'Developing Robot Framework libraries for RPA developing end users. Closed-source full-stack development along with some open-source Python and browser-extension development.'
+					'Developing Robot Framework libraries for RPA developing end users. Cloud platform full-stack development along with open-source Python and browser extension development.'
 			},
 			{
 				dates: '06/2020 - 02/2022',
-				title: 'Chairman of the Board, entrepreneur',
+				title: 'Chairman of the Board, founder',
 				subtitle: 'Muisoft Oy',
 				description: 'Selling and delivering consulting services for various small-scale projects'
 			},
@@ -161,16 +163,17 @@ const mainColumnContent = [
 				subtitle: 'Reaktor Oy',
 				location: 'Helsinki',
 				description:
-					'Summer job, developing Browser automation library Robot Framework Browser at Reaktor for Robocorp Inc. Mostly worked with a 2-person team, with a larger open-source team governing the project. See https://github.com/MarketSquare/robotframework-browser#robotframework-browser'
+					'Developing automation library Robot Framework Browser. Worked with an open-source team governing the project. See github.com/marketsquare/RobotFramework-Browser'
 			},
+			/* old description: 'Summer job, developing automation library Robot Framework Browser at Reaktor for Robocorp Inc. Mostly worked with a 2-person team, with a larger open-source team governing the project. See github.com/RobotFramework-Browser'*/
 			{
 				dates: '10/2017 - 10/2018',
 				title: 'Linux Developer',
-				technologies: 'Java, bash, Confluence, Jira',
+				technologies: 'Java, Bash, Confluence, Jira, VersionOne',
 				subtitle: 'Contribyte Oy',
 				location: 'Helsinki',
 				description:
-					'Working with Confluence / Jira and VersionOne. Writing some plugins, scripts and doing customer support.'
+					'Administrating project management platforms for customers. L1 & L2 technical support and writing plugins and scripts.'
 			},
 			/*
             {
@@ -188,7 +191,7 @@ const mainColumnContent = [
 				subtitle: 'Päivölä Student Innovation Lab (PSIL) Oy',
 				location: 'Valkeakoski',
 				description:
-					'High school studies included work internship, 12 hours every week. I did a little bit of everything, from deployment to full stack development to helping with programming classes for middle schoolers.'
+					'12h / week internship during high school. I did a bit of everything, from security to deployment to full stack development to helping with programming classes.'
 			}
 
 			/* {
@@ -270,7 +273,7 @@ const mainColumnContent = [
 				location: 'Helsinki',
 				// technologies: "Robot Framework, Python, Typescript",
 				description:
-					'Applying for funding, bureucratical tasks, decisionmaking and leading the board, managing and supporting our employees.'
+					'Applying for funding, decisionmaking, leading the board, managing and supporting our employees.'
 			}
 		]
 	},
@@ -280,10 +283,11 @@ const mainColumnContent = [
 		details: [
 			{
 				title: 'Bachelor’s degree in Computer Science',
-				subtitle: 'Helsinki University',
-				dates: '09/2017-',
+				subtitle: 'University of Helsinki',
+				dates: '09/2017-05/2025',
 				location: 'Helsinki',
-				description: ''
+				description:
+					'Studies include algorithms, computer architectures, functional programming, type theory, math and machine learning & AI.'
 				/* TODO: implement courses / opintosuoritusote data here */
 			},
 			{
