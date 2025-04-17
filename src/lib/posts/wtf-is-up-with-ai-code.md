@@ -1,8 +1,16 @@
 ---
 title: What is going on with AI programming?
+tagline: Pondering and trying out LLM-assisted programming.
 createdAt: 2025-04-17T20:52:52+0300
 draft: True
+tags: []
 ---
+
+# TODO: (This has to be a header because otherwise prettier collapses the bullets .... .. . . .. . . . : / )
+
+- Coherent up the story part aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+- Add some structure and meat into the non-story parts, or leave this just as a story
+- Remove disclaimer
 
 # DISCLAIMER: if this post somehow shows up in the public posts it wasn't yet supposed to, it's a draft!
 
@@ -88,6 +96,7 @@ Oh. [vim.ui.open](<https://neovim.io/doc/user/lua.html#vim.ui.open()>) is exactl
 
 I mentioned this to Gemini 2.5 which had done some googling (I didn't make chatGPT do any searches on this), and well:
 
+TODO:
 [gemini screenshot](from discussion https://gemini.google.com/app/cec3c3d2353c1102)
 
 Once I linked the correct docs page it did understand that the function exists.
