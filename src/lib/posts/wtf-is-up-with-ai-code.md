@@ -6,9 +6,9 @@ draft: True
 tags: []
 ---
 
-# TODO: (This has to be a header because otherwise prettier collapses the bullets .... .. . . .. . . . : / )
+TODO:
 
-- Coherent up the story part aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+- Coherent up the story part
 - Add some structure and meat into the non-story parts, or leave this just as a story
 - Remove disclaimer
 
