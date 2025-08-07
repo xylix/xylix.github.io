@@ -327,7 +327,7 @@ const mainColumnContent = [
 ];
 
 const headerContent = {
-	name: 'Kerkko Pelttari',
+	name: 'Kerkko "Xylix" Pelttari',
 	summaryLines: ['Always solving problems.']
 
 	// I'm a thinker and a doer. I like solving a thing in a way that actually helps people. Finding a good solution is rewarding.

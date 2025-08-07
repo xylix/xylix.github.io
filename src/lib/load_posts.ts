@@ -44,7 +44,7 @@ export const load_pages = async (opts?: LoadOptions): Promise<Article[]> => {
 			const requiredMetadata = [tagline, title, tags, createdAt].every((val) => val !== undefined);
 			if (!requiredMetadata) {
 				throw new Error(
-					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}`
+					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}. Required: [tagline, title, tags, createdAt]`
 				);
 			}
 			const fname = path.replace(/^.*[\\/]/, '');
