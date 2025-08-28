@@ -12,8 +12,8 @@ Since there's no point hiding my EA-ness anymore, what with starting as Effectiv
 
 ## Why now? Why not before?
 
-I am scared. I have been scared. I used to be too scared and imposter syndromed to properly apply for EA jobs. 
-I fear there is a pull that value-aligned work has that heightens my changes of a bad burnout. 
+I am scared. I have been scared. I used to be too scared and imposter syndromed to properly apply for EA jobs.
+I fear there is a pull that value-aligned work has that heightens my changes of a bad burnout.
 Also combining a free time community with a job is scary.
 
 My emotional motivations for EA have waxed and waned over the years. Due to life events, mental health, money, and social connections.
@@ -33,7 +33,6 @@ I used to think that the guiding light for what is ethical to do with your life 
 Feelings like this can be motivators to introspect why you feel like you're not doing enough, or why you are feeling guilty. But I don't think they work as long term motivators as well as something more positive.
 
 [Replacing Guilt](https://replacingguilt.com/toc/), a blog sequence about grounding motivation and action not in guilt and shoulds but in wanting to do things that aligns with your values, was an important read to me around 2020/2021, but I didn't quite internalize the core lessons back then.
-
 
 I have come to think it is especially important for me to cultivate a sense of hope, and positive future. The positive lightcone is where my motivation shines from, even when the world looks dark.
 
@@ -82,17 +81,18 @@ You already know some outputs you want to achieve, or where you want to focus yo
   - So if your options are "donate \$30 to a Unicef program to aid a single family in the global south for an immeasurable amount" or "donate \$30 to Against Malaria Foundation to get 15 long-lasting insecticidal nets to save 0.55% of a life in expectation", I think the second clearly wins.
     - (Not just based on vibes but - there are measurement programs like Givewell that say that Against Malaria Foundations numbers are good.)
 
-Counterarguments: 
-- "But what if the \$30 dollar donation does something really important for the family and manages to say save an entire life there?" 
-    - Of course outcomes in the real world are not always predictable. However I think there is a strong case for probabilistic reasoning 
-    - When outcomes are uncertain we should measure the change that something good happens, and the amount of that good, and work on the expected good done. I don't have a large philosophical reason for this, there just seems to be no better model for reasoning about uncertain outputs in the real world. 
-- Absence of evidence is evidence of absence 
-    -  Unicef is a huge non-profit organization, and if they could show quantifiable numbers of their output, they most likely would. 
-    - It is suboptimal to _reward_ actors in the real world for keeping their outputs and estimations fuzzy 
-    - Therefore we should demand rigorous estimates. 
-- Humans have a bias to disprefer known downsides 
-    - It is easier to hope and believe that the Unicef donation will do something great. 
-        - But this is not a substantive argument that it will.
+Counterarguments:
+
+- "But what if the \$30 dollar donation does something really important for the family and manages to say save an entire life there?"
+  - Of course outcomes in the real world are not always predictable. However I think there is a strong case for probabilistic reasoning
+  - When outcomes are uncertain we should measure the change that something good happens, and the amount of that good, and work on the expected good done. I don't have a large philosophical reason for this, there just seems to be no better model for reasoning about uncertain outputs in the real world.
+- Absence of evidence is evidence of absence
+  - Unicef is a huge non-profit organization, and if they could show quantifiable numbers of their output, they most likely would.
+  - It is suboptimal to _reward_ actors in the real world for keeping their outputs and estimations fuzzy
+  - Therefore we should demand rigorous estimates.
+- Humans have a bias to disprefer known downsides
+  - It is easier to hope and believe that the Unicef donation will do something great.
+    - But this is not a substantive argument that it will.
 
 If you want to help with climate change it seems obvious that an effective intervention is better than a non-effective one.
 
@@ -146,63 +146,3 @@ The beings of the future are calling for us, and I, hearing their call, will do 
 # Footnotes
 
 1. I don't know what an economical model of high foreign aid would actually yield as long term consequences. But that is also why I framed this as a feeling instead of a stabler policy position.
-
-
-# cuts (remove before publication)
-
-motivation / tone notes: 
-- This is for me to clarify why I am an EA 
-- This is for readers to understand my motivation and _frame_.
-
-
-# Appendix
-
-## Addressing some concerns
-
-I feel like this is not a part of the core of the post but there are some common questions I'd like to address:
-
-"Is EA in the pocket of billionaires" / "Is EA just some weird Neoliberal plaything"
-
-"Why is EA so scared of addressing systemic issues"
-
-- Importance, tractability, neglectedness
--
-
-"So,"
-
-## Cuts from middle
-
-### waryness
-
-- cut: I do not have a way of actually _proving_ that Effective Altruism is not a cult. I think it is a powerfully positive ideology that has the potential to do more good than most other ideologies ever conceived. I think if EA is cultish it is cultish in the way that many other activist ideologies are cultish. Compared to cults Effective Altruism has way more diversity of ideas, and exits are allowed and not shunned.
-
-
-### Guiding light keskeltä
-Recently I have been reflecting on Carlsmiths "On Green" and "On Attunement" which are essays that tangentially discuss the fact that if you chase rationality, in the end what gives you your values won't be something rational. You can't ground your terminal values rationally - they are by definition arbitrary, to some degree. (At least if you are not a strong moral realist.) Some people trust their emotions, some trust spirituality or religion, and I'm kind of unclear in what I trust.
-
-
-## Addressed feedbacks
-- NOTE: huh. Consider? - I do not have a way of actually proving that Effective Altruism is not a cult. I think it is a powerfully positive ideology that has the potential to do more good than most other ideologies ever conceived. I think if EA is cultish it is cultish in the way that many other activist ideologies are cultish. Compared to cults Effective Altruism has way more diversity of ideas, and exits are allowed and not shunned. - This feels counterfactual enough to need examples. - (Not the "EA is not a cult thing" but more narrowly the "exits are not shunned" thing) - NOTE: Cryo thinks this needs editing, Thomas thinks this needs removal, I think I will remove. - No issue with the ending
-
-
-# Addressable feedbacks
-Raw feedback (mostly from Cryo / Stillwater) 
-- Recently I have been reflecting on Carlsmiths “On Green” and “On Attunement” which are essays addressing the fact that if you chase rationality, in the end what gives you your values won’t be something rational. Some people trust their emotions, some trust spirituality or religion, and I’m kind of unclear in what I trust. 
-- > This is gonna sound like a nitpick and I know you said you don't want nitpicks but it feels important to me. This paragraph feels like you're saying that's the main message of those articles? I don't think it is. They communicate that but not as the main thingie 
-    - NOTE: addressed 
-- I have not really believed in strong forms of egalitarianism since my teenage years. I do not think the core problem in the world is that resources need to be spent equally, relative to some measure. 
-    - But I do think it’s wretched how much surplus the richest 10, 20 or even 50% of countries have economically compared to the least well off 50%. Spending something like 5-20% in foreign aid feels to me like it should obviously be the long term goal for rich countries. 
-    - Vote for insufficiently supported here. 
-- NOTE: I think some addition here would be good. Already added a note about being less confident in this now than originally but.. 
-
-- For what it’s worth, I think humanitys talent for creating new art is something to embrace, and not smother. But allocating resources to new art is different from producing the tenth thousandth-and-first Hollywood movie. 
-    - Same. Don't think this is a natural joint. Needs more explanation 
-
-- NOTE: consider addressing 
-- > patienthood. I think there are huge open questions in ethics, governance, and how to make the world good, and it is important to strive to answer these eventually. - I'm not clear on how it's an EA thing per se to have this stance - > Absence of evidence is evidence of absence - Unicef is a huge non-profit organization, and if they could show quantifiable numbers of their output, they most likely would. - > It is suboptimal to reward actors in the real world for keeping their outputs and estimations fuzzy - we should demand rigorous estimates. - Unsure of whether you want just constructive criticism or also praise but well put here. This is very important 
-    - NOTE: no change needed, this is good 
-- > How to decide between these? - > You need to reflect on your values. How do you value humans, compared to mammals, compared to insects. 
-- > You need to reflect on how to estimate outcomes in the real world. Do you accept simple expected value reasoning, such that a plan with a 1% change to save a 100 people is worth the same as a plan with 100% change to save 1 person? Do you take this to it’s natural conclusion? 
-    - I might be failing at reading but this seems totally orthogonal to why you are EA 
-
-
