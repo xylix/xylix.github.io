@@ -14,7 +14,7 @@ const sideColumnContent = [
 					{
 						isLink: true,
 						type: 'email',
-						text: 'kerk.pelt@gmail.com',
+						text: 'kerkko.pelttari@gmail.com',
 						icon: 'email'
 					},
 					{
@@ -85,7 +85,7 @@ const sideColumnContent = [
 	{
 		type: 'skills',
 		label: 'Hobbies',
-		details: ['LARPing', 'Tabletop RPGs', 'Video games', 'Meditation', 'Reading']
+		details: ['LARPing', 'Tabletop RPGs', 'Video games', 'Reading'] // 'Meditation',
 	}
 	/* TODO: implement big skills element
         Skills
@@ -110,6 +110,8 @@ const sideColumnContent = [
 
         */
 ];
+
+// TODO: kielimalli / datajutut?
 
 const mainColumnContent = [
 	/*{
@@ -142,20 +144,28 @@ const mainColumnContent = [
 		label: 'Work Experience',
 		details: [
 			{
+				dates: '2021 -',
+				title: 'Entrepreneur - Software consultant',
+				subtitle: 'Tmi Xylix',
+				location: 'Helsinki',
+				technologies: 'Python, Typescript, React, Postgres',
+				description: 'Small-scale web development projects for clients.'
+			},
+			{
 				dates: '9/2020 - 06/2023',
 				title: 'Software Engineer',
 				subtitle: 'Robocorp Oy',
 				location: 'Helsinki',
 				technologies: 'Robot Framework, Python, Typescript, AWS',
-				description:
-					'Developing Robot Framework libraries for RPA developing end users. Cloud platform full-stack development along with open-source Python and browser extension development.'
+				description: `Creating and maintaining Robot Framework libraries for RPA development. Cloud platform full-stack development along with open-source Python and browser extension development.`
 			},
+			/*
 			{
 				dates: '06/2020 - 02/2022',
 				title: 'Chairman of the Board, founder',
 				subtitle: 'Muisoft Oy',
-				description: 'Selling and delivering consulting services for various small-scale projects'
-			},
+				description: 'Selling and delivering consulting services for small-scale consulting projects'
+			}, */
 			{
 				dates: '5/2020 - 8/2020',
 				title: 'Junior Developer',
@@ -163,7 +173,7 @@ const mainColumnContent = [
 				subtitle: 'Reaktor Oy',
 				location: 'Helsinki',
 				description:
-					'Developing automation library Robot Framework Browser. Worked with an open-source team governing the project. See github.com/marketsquare/RobotFramework-Browser'
+					'Developing cutting-edge browser automation library Robot Framework Browser. Worked with an open-source team governing the project. See github.com/marketsquare/RobotFramework-Browser'
 			},
 			/* old description: 'Summer job, developing automation library Robot Framework Browser at Reaktor for Robocorp Inc. Mostly worked with a 2-person team, with a larger open-source team governing the project. See github.com/RobotFramework-Browser'*/
 			{
@@ -191,7 +201,7 @@ const mainColumnContent = [
 				subtitle: 'Päivölä Student Innovation Lab (PSIL) Oy',
 				location: 'Valkeakoski',
 				description:
-					'12h / week internship during high school. I did a bit of everything, from security to deployment to full stack development to helping with programming classes.'
+					'12h / week internship during high school. Did a bit of everything, from security to deployment to full stack development to helping with programming classes.'
 			}
 
 			/* {
@@ -284,7 +294,7 @@ const mainColumnContent = [
 			{
 				title: 'Bachelor’s degree in Computer Science',
 				subtitle: 'University of Helsinki',
-				dates: '09/2017-05/2025',
+				dates: '09/2017-01/2026',
 				location: 'Helsinki',
 				description:
 					'Studies include algorithms, computer architectures, functional programming, type theory, math and machine learning & AI.'
@@ -328,6 +338,7 @@ const mainColumnContent = [
 
 const headerContent = {
 	name: 'Kerkko "Xylix" Pelttari',
+	// name: 'Kerkko Pelttari',
 	summaryLines: ['Always solving problems.']
 
 	// I'm a thinker and a doer. I like solving a thing in a way that actually helps people. Finding a good solution is rewarding.
