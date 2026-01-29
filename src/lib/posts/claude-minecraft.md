@@ -1,6 +1,6 @@
 ---
-title: Claude can Code but Claude still can't minecraft?
-tagline: On AI limitations in niche domains
+title: Can Claude understand (modded) Minecraft?
+tagline: Claude can Code but Claude can't Minecraft
 createdAt: 2026-01-29T12:00:00+0200
 updatedAt: 2026-01-29T12:00:00+0200
 tags: ['programming', 'personal']
