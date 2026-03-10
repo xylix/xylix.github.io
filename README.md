@@ -2,6 +2,8 @@
 
 My personal blog website. Forked from haihala.github.io, basic techs are Svelte + markdown. Migrated to this from Ghost when I got annoyed by the need to update and the overkill amount of features for my needs.
 
+Hosted on https://xylix.fi
+
 ## Developing
 
 install dependencies with `npm install` and start a development server with `npm
