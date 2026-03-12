@@ -11,6 +11,8 @@ export type MetaArticle = {
 	tagline?: string;
 	favourite?: boolean;
 	draft?: boolean;
+	/** Post display format. Defaults to 'article' when unset. */
+	format?: 'thread' | 'article';
 	tags: string[];
 	createdAt: string;
 	updatedAt?: string;
@@ -21,6 +23,8 @@ export type Article = {
 	slug: string;
 	title: string;
 	tagline?: string;
+	/** Post display format. Defaults to 'article' when unset. */
+	format?: 'thread' | 'article';
 	tags: string[];
 	createdAt: Date;
 	updatedAt?: Date;
@@ -39,7 +43,8 @@ export const load_pages = async (opts?: LoadOptions): Promise<Article[]> => {
 	const posts = Object.entries(raw)
 		.map(([path, untypedPost]) => {
 			const post = untypedPost as Post;
-			const { tagline, title, tags, createdAt, updatedAt, favourite, draft } = post.metadata;
+			const { tagline, title, tags, createdAt, updatedAt, favourite, draft, format } =
+				post.metadata;
 			// draft, favourite and updatedAt are optional
 			const requiredMetadata = [tagline, title, tags, createdAt].every((val) => val !== undefined);
 			if (!requiredMetadata) {
@@ -55,6 +60,7 @@ export const load_pages = async (opts?: LoadOptions): Promise<Article[]> => {
 				slug,
 				title,
 				tagline,
+				format,
 				tags,
 				createdAt: new Date(createdAt),
 				updatedAt: updatedAt === undefined ? undefined : new Date(updatedAt),

@@ -25,6 +25,7 @@ export const load: PageLoad = async ({ params }) => {
 	return {
 		title: main_post!.title,
 		subtitle: main_post?.tagline,
+		format: main_post?.format,
 		content: main_post!.content,
 		updatedAt: main_post!.updatedAt,
 		createdAt: main_post!.createdAt,
