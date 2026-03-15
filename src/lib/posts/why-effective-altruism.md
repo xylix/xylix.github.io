@@ -1,14 +1,12 @@
 ---
 title: Effective Altruism?
 createdAt: 2025-06-14T10:57:33+0300
-updatedAt: 2025-06-14T10:57:33+0300
+updatedAt: 2025-08-28T19:52:00+0300
 tags: ['effective-altruism', 'personal']
 tagline: Why I'm an Effective Altruist
 ---
 
-# Why I wrote this
-
-Since there's no point hiding my EA-ness anymore, what with starting as Effective Altruism Finland's Executive Director in September, it is time to take the cat out of the bag.
+Since there's no point hiding my EA-ness anymore, what with starting as Effective Altruism Finland's Executive Director in September, it is time to take the cat out of the bag and explain one of my most significant ethical stances - considering myself an effective altruist and considering effective altruism one of the important priorities of our time.
 
 ## Why now? Why not before?
 
@@ -46,7 +44,7 @@ Trillions of dollars of resources are spent on zero-sum games keeping the wheels
 
 I have not really believed in strong forms of egalitarianism since my teenage years. I do not think the core problem in the world is that resources need to be spent equally, relative to some measure.
 
-But I do think it feels wretched how much surplus the richest 10 or 20 of countries have economically compared to the least well off 50%. Spending something like 5-10% in foreign aid feels to me like it should obviously be the long term goal for rich countries.[TODO: footnotes support: 1]
+But I do think it feels wretched how much surplus the richest 10 or 20 of countries have economically compared to the least well off 50%. Spending something like 5-10% in foreign aid feels to me like it should obviously be the long term goal for rich countries.[1]
 
 But then, my answer here is not that we should aim for _less_ surplus. We should grow it, grow it much more, grow it ethically, and allocate it well. We should strive to build a world economy that serves each human and each animal to a good degree.
 
@@ -83,7 +81,7 @@ You already know some outputs you want to achieve, or where you want to focus yo
 
 Counterarguments:
 
-- "But what if the \$30 dollar donation does something really important for the family and manages to say save an entire life there?"
+- "But what if the $30 dollar donation does something really important for the family and manages to say save an entire life there?"
   - Of course outcomes in the real world are not always predictable. However I think there is a strong case for probabilistic reasoning
   - When outcomes are uncertain we should measure the change that something good happens, and the amount of that good, and work on the expected good done. I don't have a large philosophical reason for this, there just seems to be no better model for reasoning about uncertain outputs in the real world.
 - Absence of evidence is evidence of absence
