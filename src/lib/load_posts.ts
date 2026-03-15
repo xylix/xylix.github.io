@@ -45,6 +45,9 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 	const posts = Object.entries(raw)
 		.map(([path, untypedPost]) => {
 			const post = untypedPost as Post;
+			if (!post.metadata) {
+				throw new Error(`Failed to parse frontmatter in ${path}`);
+			}
 			const { tagline, title, tags, createdAt, updatedAt, favourite, draft, format, wordCount } =
 				post.metadata;
 			// draft, favourite and updatedAt are optional
