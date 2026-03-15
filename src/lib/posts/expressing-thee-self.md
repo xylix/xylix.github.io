@@ -5,6 +5,7 @@ slug: expressing-thee-self
 createdAt: 2019-06-07T08:02:13.000Z
 updatedAt: 2019-06-18T04:33:53.000Z
 tags: ['confusing']
+wordCount: 497
 ---
 
 How are thoughts output?

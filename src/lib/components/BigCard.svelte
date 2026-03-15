@@ -16,8 +16,8 @@
 		<h3>{subtitle}</h3>
 		<div>
 			{#if wordCount}
-			<span>About {parseFloat(wordCount.toPrecision(1))} words</span>
-		{/if}
+				<span>About {parseFloat(wordCount.toPrecision(1))} words</span>
+			{/if}
 			<span>Published {pubDate.toLocaleDateString()}</span>
 		</div>
 	</a>

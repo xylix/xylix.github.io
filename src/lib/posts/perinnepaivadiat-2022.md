@@ -5,6 +5,7 @@ slug: perinnepaivadiat-2022
 createdAt: 2022-11-19T10:08:13.000Z
 updatedAt: 2022-11-19T10:08:13.000Z
 tags: ['presentation']
+wordCount: 5
 ---
 
 EA - perinnepäivät 2022

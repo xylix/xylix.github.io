@@ -6,6 +6,7 @@ createdAt: 2019-05-31T07:45:16.000Z
 updatedAt: 2020-03-10T12:48:29.000Z
 tags: ['review', 'book']
 favourite: true
+wordCount: 131
 ---
 
 They made me feel it. The people in this book. Lack of priority in the best years of youth. Naivety so intense it hurts to look at it.

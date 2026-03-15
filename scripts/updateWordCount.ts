@@ -35,13 +35,9 @@ function updatePost(fname: string) {
 		}
 	}
 
-	const output = [
-		'---',
-		...frontMatterLines,
-		`wordCount: ${wordCount}`,
-		'---',
-		...bodyLines
-	].join('\n');
+	const output = ['---', ...frontMatterLines, `wordCount: ${wordCount}`, '---', ...bodyLines].join(
+		'\n'
+	);
 
 	fs.writeFileSync(fpath, output);
 }

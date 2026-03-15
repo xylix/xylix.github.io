@@ -5,6 +5,7 @@ slug: diffractery
 createdAt: 2019-06-04T03:48:04.000Z
 updatedAt: 2019-06-04T06:43:23.000Z
 tags: ['confusing']
+wordCount: 62
 ---
 
 I just read this [https://www.ribbonfarm.com/2019/05/30/the-age-of-diffraction/](https://www.ribbonfarm.com/2019/05/30/the-age-of-diffraction/).
