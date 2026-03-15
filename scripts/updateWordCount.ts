@@ -4,27 +4,23 @@ import path from 'path';
 const postsFolder = 'src/lib/posts';
 
 function getPostList(): string[] {
-	if (!fs.existsSync(postsFolder)) {
-		return [];
-	}
-
-	return fs.readdirSync(postsFolder);
+	if (!fs.existsSync(postsFolder)) return [];
+	return fs.readdirSync(postsFolder).filter((f) => f.endsWith('.md'));
 }
 
 function updatePost(fname: string) {
 	const fpath = path.join(postsFolder, fname);
-	const lines = fs.readFileSync(fpath).toString().split('\n');
+	const lines = fs.readFileSync(fpath, 'utf8').split('\n');
 
-	// First line is always start of frontmatter, aka '---'
-	console.assert(lines[0] === '---');
+	console.assert(lines[0] === '---', `${fname}: expected frontmatter to start with ---`);
 
 	let inFrontMatter = true;
 	let wordCount = 0;
-
 	const frontMatterLines: string[] = [];
 	const bodyLines: string[] = [];
+
 	for (const line of lines.slice(1)) {
-		if (line === '---') {
+		if (line === '---' && inFrontMatter) {
 			inFrontMatter = false;
 			continue;
 		}
@@ -34,19 +30,16 @@ function updatePost(fname: string) {
 				frontMatterLines.push(line);
 			}
 		} else {
-			wordCount += line.split(' ').length;
+			wordCount += line.split(/\s+/).filter(Boolean).length;
 			bodyLines.push(line);
 		}
 	}
 
 	const output = [
-		// Frontmatter
 		'---',
 		...frontMatterLines,
-		// Word count is the last element
 		`wordCount: ${wordCount}`,
 		'---',
-		// Body
 		...bodyLines
 	].join('\n');
 

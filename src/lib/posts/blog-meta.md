@@ -4,7 +4,6 @@ tagline: 'In magic we trust'
 createdAt: '2024-09-24T15:38+03:00'
 updatedAt: '2024-09-24T15:38+03:00'
 tags: ['programming']
-wordCount: 596
 ---
 
 ## How and why I made this blog
