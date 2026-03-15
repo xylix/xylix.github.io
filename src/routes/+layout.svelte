@@ -19,6 +19,9 @@
 		<main>
 			{@render children?.()}
 		</main>
+		<footer>
+			<a href="/llms.txt">llms.txt</a>
+		</footer>
 	</div>
 {/if}
 
@@ -38,5 +41,24 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+	}
+
+	footer {
+		padding: 0.5rem 1rem 1rem;
+		font-size: 0.85rem;
+		opacity: 0.4;
+		width: 100%;
+		max-width: 64rem;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+
+	footer a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	footer a:hover {
+		text-decoration: underline;
 	}
 </style>
