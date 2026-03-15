@@ -4,6 +4,22 @@ import { title, website } from '../constants';
 
 export const prerender = true;
 
+const rawFiles = import.meta.glob('../../lib/posts/*.md', { eager: true, as: 'raw' });
+
+function stripFrontmatter(raw: string): string {
+	if (!raw.startsWith('---')) return raw;
+	const end = raw.indexOf('---', 3);
+	if (end === -1) return raw;
+	return raw.slice(end + 3).trimStart();
+}
+
+const contentBySlug = Object.fromEntries(
+	Object.entries(rawFiles).map(([path, raw]) => {
+		const slug = path.replace(/^.*[\\/]/, '').replace(/\.md$/, '');
+		return [slug, stripFrontmatter(raw as string)];
+	})
+);
+
 export async function GET() {
 	const tags = await load_tags();
 	return new Response(format(public_posts, tags), {
@@ -15,16 +31,16 @@ export async function GET() {
 }
 
 const format = (posts: Article[], tags: TagArticle[]) => {
-	const postLines = posts
+	const postSections = posts
 		.map((post) => {
 			const url = `${website}${post.link}`;
 			const date = post.createdAt.toISOString().slice(0, 10);
 			const tagList = post.tags.join(', ');
-			const lines = [`- [${post.title}](${url}) (${date}) [${tagList}]`];
-			if (post.tagline) lines.push(`  ${post.tagline}`);
-			return lines.join('\n');
+			const content = contentBySlug[post.slug] ?? '';
+			const tagline = post.tagline ? `> ${post.tagline}\n\n` : '';
+			return `## ${post.title}\n\n${url} | ${date} | tags: ${tagList}\n\n${tagline}${content}`;
 		})
-		.join('\n');
+		.join('\n\n---\n\n');
 
 	const tagLines = tags.map((tag) => `- [${tag.name}](${website}/tags/${tag.slug})`).join('\n');
 
@@ -34,12 +50,12 @@ const format = (posts: Article[], tags: TagArticle[]) => {
 
 Xylix thinks aloud here. Topics include but not limited to: Rationality, programming, books, writing and role-playing games.
 
-## Posts
-
-${postLines}
-
 ## Tags
 
 ${tagLines}
+
+---
+
+${postSections}
 `;
 };
