@@ -1,12 +1,5 @@
 <script lang="ts">
-	import type { ComponentProps } from 'svelte';
-	import CardGrid from '$lib/components/CardGrid.svelte';
-
-	interface Props {
-		data: ComponentProps<typeof CardGrid>;
-	}
-
-	let { data }: Props = $props();
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -17,5 +10,9 @@
 <section>
 	<h1>Tags</h1>
 	<p>List of tags in the blog</p>
-	<CardGrid {...data} />
+	<ul>
+		{#each data.posts as tag}
+			<li><a href={tag.link}>{tag.heading}</a></li>
+		{/each}
+	</ul>
 </section>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	interface Props {
 		title: string;
-		subtitle: string;
+		subtitle?: string;
 		wordCount: number;
 		link: string;
 		pubDate: Date;
