@@ -6,9 +6,8 @@
 <section>
 	<h1>About me</h1>
 	<p>
-		I'm a person from Finland. I think about software, writing, philosophy, thinking well, living
-		well, reading and various other things. Sometimes I also write. Sometimes the writings end up
-		here.
+		Human from Finland. I think about software, writing, philosophy, thinking well, living well,
+		reading and various other things. Sometimes I also write. Sometimes the writings end up here.
 	</p>
 
 	<ul>
