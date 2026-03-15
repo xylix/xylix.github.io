@@ -10,54 +10,38 @@
 	const { title, subtitle, wordCount, link, pubDate }: Props = $props();
 </script>
 
-<div class="wrapper">
-	<a href={link}>
-		<h2>{title}</h2>
-		<h3>{subtitle}</h3>
-		<div>
-			{#if wordCount}
-				<span>{wordCount} words</span>
-			{/if}
-			<span>Published {pubDate.toLocaleDateString()}</span>
-		</div>
-	</a>
-</div>
+<a href={link}>
+	<h2>{title}</h2>
+	<h3>{subtitle}</h3>
+	<div>
+		{#if wordCount}
+			<span>{wordCount} words</span>
+		{/if}
+		<span>Published {pubDate.toLocaleDateString()}</span>
+	</div>
+</a>
 
 <style>
-	.wrapper {
-		width: 100%;
-		margin: 0.5rem;
-	}
-
 	a {
+		display: flex;
+		flex-direction: column;
 		padding: 1rem;
+		height: 100%;
+		box-sizing: border-box;
 
 		border: solid black;
 		border-radius: 0.5rem;
 
 		background-color: var(--color-bg-light);
 		color: var(--color-text-card);
-
-		display: grid;
-		grid-template-columns: auto;
-		@media only screen and (min-width: 600px) {
-			grid-template-columns: auto auto;
-		}
-		justify-content: space-between;
-		align-items: center;
 	}
 
-	a:not(:hover) {
-		color: inherit;
-	}
 
 	div {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
-
-		@media only screen and (min-width: 600px) {
-			grid-area: 1 / 2;
-		}
+		gap: 0.25rem;
+		margin-top: auto;
+		padding-top: 0.5rem;
 	}
 </style>
