@@ -8,7 +8,7 @@ type Post = {
 export type MetaArticle = {
 	link: string;
 	title: string;
-	tagline?: string;
+	tagline: string;
 	favourite?: boolean;
 	draft?: boolean;
 	/** Post display format. Defaults to 'article' when unset. */
@@ -16,6 +16,7 @@ export type MetaArticle = {
 	tags: string[];
 	createdAt: string;
 	updatedAt?: string;
+	wordCount: number;
 };
 
 export type Article = {
@@ -31,25 +32,29 @@ export type Article = {
 	favourite: boolean;
 	draft: boolean;
 	content: typeof SvelteComponent;
+	wordCount: number;
 };
 
-export type LoadOptions = {
+type LoadOptions = {
 	drafts?: 'include' | 'only';
 };
 
-export const load_pages = async (opts?: LoadOptions): Promise<Article[]> => {
+const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 	const raw = import.meta.glob(`./posts/*.md`, { eager: true });
 
 	const posts = Object.entries(raw)
 		.map(([path, untypedPost]) => {
 			const post = untypedPost as Post;
-			const { tagline, title, tags, createdAt, updatedAt, favourite, draft, format } =
+			if (!post.metadata) {
+				throw new Error(`Failed to parse frontmatter in ${path}`);
+			}
+			const { tagline, title, tags, createdAt, updatedAt, favourite, draft, format, wordCount } =
 				post.metadata;
 			// draft, favourite and updatedAt are optional
-			const requiredMetadata = [tagline, title, tags, createdAt].every((val) => val !== undefined);
+			const requiredMetadata = [title, tags, createdAt].every((val) => val !== undefined);
 			if (!requiredMetadata) {
 				throw new Error(
-					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}. Required: [tagline, title, tags, createdAt]`
+					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}. Required: [title, tags, createdAt]`
 				);
 			}
 			const fname = path.replace(/^.*[\\/]/, '');
@@ -62,12 +67,13 @@ export const load_pages = async (opts?: LoadOptions): Promise<Article[]> => {
 				tagline,
 				format,
 				tags,
+				wordCount,
 				createdAt: new Date(createdAt),
 				updatedAt: updatedAt === undefined ? undefined : new Date(updatedAt),
 				content: post.default,
 				favourite: !!favourite,
 				draft: !!draft
-			};
+			} satisfies Article;
 		})
 		.filter(
 			(post) =>
@@ -76,5 +82,9 @@ export const load_pages = async (opts?: LoadOptions): Promise<Article[]> => {
 				(opts?.drafts === undefined && !post.draft)
 		);
 
-	return posts.sort((a, b) => b.createdAt.valueOf() - a.createdAt.valueOf());
+	return posts.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 };
+
+export const public_posts = await load_posts();
+export const draft_posts = await load_posts({ drafts: 'only' });
+export const all_posts = await load_posts({ drafts: 'include' });

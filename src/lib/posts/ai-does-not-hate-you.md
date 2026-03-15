@@ -4,6 +4,7 @@ tagline: '(Tom Chivers, 2019)'
 createdAt: 2019-07-09T08:39:34.000Z
 updatedAt: 2022-11-19T10:08:42.000Z
 tags: ['review', 'book']
+wordCount: 388
 ---
 
 _Superintelligence, rationality and the race to save the world_

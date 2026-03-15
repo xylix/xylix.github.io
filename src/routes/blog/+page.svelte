@@ -1,14 +1,8 @@
 <script lang="ts">
-	import type { ComponentProps } from 'svelte';
-	import CardGrid from '$lib/components/CardGrid.svelte';
 	import { website } from '../constants';
-	let feed = `${website}/rss.xml`;
-
-	interface Props {
-		data: ComponentProps<typeof CardGrid>;
-	}
-
-	let { data }: Props = $props();
+	import { public_posts } from '$lib/load_posts';
+	import CardGrid from '$lib/components/CardGrid.svelte';
+	const feed = `${website}/rss.xml`;
 </script>
 
 <svelte:head>
@@ -22,5 +16,6 @@
 	<p>
 		RSS feed available at <a href={feed}>{feed}</a>
 	</p>
-	<CardGrid {...data} />
+
+	<CardGrid posts={public_posts} />
 </section>

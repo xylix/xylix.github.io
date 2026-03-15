@@ -1,16 +1,16 @@
 import { load_tags } from '$lib/load_tags';
-import { load_pages } from '$lib/load_posts';
+import { all_posts } from '$lib/load_posts';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async () => {
 	const tags = await load_tags();
-	const posts = await load_pages();
+	const posts = all_posts;
 	const tagsInPosts = posts.map((post) => post.tags).flat();
 
 	const tagNames = tags.map((tag) => tag.name);
 	tagsInPosts.forEach((postTag) => {
 		if (!tagNames.includes(postTag)) {
-			console.warn(`Tag ${postTag} does not have a corresponding tag page`);
+			console.warn(`=== Tag "${postTag}" does not have a corresponding tag page ===`);
 			// throw new Error(`Tag ${postTag} does not have a corresponding tag page`);
 		}
 	});
@@ -24,8 +24,7 @@ export const load: PageLoad = async () => {
 		posts: tags.map((tag) => {
 			return {
 				link: `tags/${tag.slug}`,
-				heading: tag.name,
-				description: ''
+				title: tag.name
 			};
 		})
 	};

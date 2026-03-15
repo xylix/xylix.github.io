@@ -5,6 +5,7 @@ slug: things-of-interest
 createdAt: 2019-05-28T17:52:00.000Z
 updatedAt: 2019-06-04T14:34:48.000Z
 tags: []
+wordCount: 98
 ---
 
 Sort of a blogroll

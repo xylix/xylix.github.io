@@ -5,6 +5,7 @@ format: thread
 tags: [meta]
 createdAt: '2026-03-11'
 draft: true
+wordCount: 255
 ---
 
 okay so the thing about this format is that it's meant to feel like thoughts tumbling out in real time. not polished. thrown at the wall.

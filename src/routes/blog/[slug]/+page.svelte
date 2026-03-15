@@ -36,6 +36,8 @@
 			{/each}
 		</ul>
 	{/if}
+
+	<a class="return-link" href="/blog">To the post list</a>
 </footer>
 
 <style>

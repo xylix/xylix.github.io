@@ -1,19 +1,31 @@
 <script lang="ts">
 	interface Props {
 		link: string;
-		heading: string;
-		description: string | undefined;
+		title: string;
+		tagline?: string;
+		wordCount?: number;
+		createdAt?: Date;
 	}
 
-	let { link, heading, description }: Props = $props();
+	let { link, title, tagline, wordCount, createdAt }: Props = $props();
 </script>
 
 <a href={link}>
 	<div>
-		<h2>{heading}</h2>
+		<h2>{title}</h2>
 
-		{#if !!description}
-			<p>{description}</p>
+		{#if tagline}
+			<p>{tagline}</p>
+		{/if}
+
+		{#if wordCount || createdAt}
+			<p class="meta">
+				{#if wordCount}{wordCount} words{/if}
+				{#if wordCount && createdAt}
+					·
+				{/if}
+				{#if createdAt}{createdAt.toLocaleDateString()}{/if}
+			</p>
 		{/if}
 	</div>
 </a>
@@ -25,9 +37,14 @@
 	p {
 		min-height: 3em;
 	}
+	p.meta {
+		min-height: unset;
+		font-size: 0.85em;
+		opacity: 0.7;
+	}
 
 	div {
-		background-color: var(--color-bg-card);
+		background-color: var(--color-bg-light);
 		color: var(--color-text-card);
 		border-radius: 0.5rem;
 		padding: 0.01rem 1rem;

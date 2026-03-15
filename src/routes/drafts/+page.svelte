@@ -1,14 +1,8 @@
 <script lang="ts">
-	import type { ComponentProps } from 'svelte';
-	import CardGrid from '$lib/components/CardGrid.svelte';
 	import { website } from '../constants';
-	let feed = `${website}/rss.xml`;
-
-	interface Props {
-		data: ComponentProps<typeof CardGrid>;
-	}
-
-	let { data }: Props = $props();
+	import { draft_posts } from '$lib/load_posts';
+	import CardGrid from '$lib/components/CardGrid.svelte';
+	const feed = `${website}/rss.xml`;
 </script>
 
 <svelte:head>
@@ -23,5 +17,5 @@
 		<a href={feed}>RSS feed</a>. Svelte won't include posts in the build that are never linked to,
 		which is why this page exists.
 	</p>
-	<CardGrid {...data} />
+	<CardGrid posts={draft_posts} />
 </section>

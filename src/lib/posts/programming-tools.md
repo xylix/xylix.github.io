@@ -5,6 +5,7 @@ slug: programming-tools
 createdAt: 2020-03-01T13:13:28.000Z
 updatedAt: 2020-03-01T17:16:54.000Z
 tags: ['programming']
+wordCount: 216
 ---
 
 Observations about which areas I think about in my programming projects:
