@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Header from './Header.svelte';
 	import './styles.css';
 	interface Props {
 		children?: import('svelte').Snippet;
@@ -8,6 +9,7 @@
 </script>
 
 <div class="app">
+	<Header />
 	<main>
 		{@render children?.()}
 	</main>
