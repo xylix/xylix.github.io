@@ -4,7 +4,11 @@ import { title, website } from '../constants';
 
 export const prerender = true;
 
-const rawFiles = import.meta.glob('../../lib/posts/*.md', { eager: true, as: 'raw' });
+const rawFiles = import.meta.glob('../../lib/posts/*.md', {
+	eager: true,
+	query: '?raw',
+	import: 'default'
+});
 
 function stripFrontmatter(raw: string): string {
 	if (!raw.startsWith('---')) return raw;
