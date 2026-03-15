@@ -1,7 +1,9 @@
 <script lang="ts">
-	import CardGrid from '$lib/components/CardGrid.svelte';
+	import CardList from '$lib/components/CardList.svelte';
+	import { public_posts } from '$lib/load_posts';
 
-	let { data } = $props();
+	const newest = public_posts.slice(0, 3);
+	const favourites = public_posts.filter((post) => post.favourite);
 </script>
 
 <svelte:head>
@@ -18,8 +20,8 @@
 	</p>
 
 	<p>"Fresh" off the presses:</p>
-	<CardGrid posts={data.newest} />
+	<CardList posts={newest} />
 
 	<p>Some of my favorites:</p>
-	<CardGrid posts={data.favourites} />
+	<CardList posts={favourites} />
 </section>
