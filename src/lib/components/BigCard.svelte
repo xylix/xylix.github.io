@@ -16,7 +16,7 @@
 		<h3>{subtitle}</h3>
 		<div>
 			{#if wordCount}
-				<span>About {parseFloat(wordCount.toPrecision(1))} words</span>
+				<span>{wordCount} words</span>
 			{/if}
 			<span>Published {pubDate.toLocaleDateString()}</span>
 		</div>
@@ -35,7 +35,8 @@
 		border: solid black;
 		border-radius: 0.5rem;
 
-		background-color: rgba(255, 255, 255, 0.1);
+		background-color: var(--color-bg-light);
+		color: var(--color-text-card);
 
 		display: grid;
 		grid-template-columns: auto;
