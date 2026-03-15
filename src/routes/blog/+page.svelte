@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { website } from '../constants';
 	import { public_posts } from '$lib/load_posts';
-	import CardList from '$lib/components/CardList.svelte';
+	import CardGrid from '$lib/components/CardGrid.svelte';
 	const feed = `${website}/rss.xml`;
 </script>
 
@@ -17,5 +17,5 @@
 		RSS feed available at <a href={feed}>{feed}</a>
 	</p>
 
-	<CardList posts={public_posts} />
+	<CardGrid posts={public_posts} />
 </section>

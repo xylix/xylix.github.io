@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { website } from '../constants';
 	import { draft_posts } from '$lib/load_posts';
-	import CardList from '$lib/components/CardList.svelte';
+	import CardGrid from '$lib/components/CardGrid.svelte';
 	const feed = `${website}/rss.xml`;
 </script>
 
@@ -17,5 +17,5 @@
 		<a href={feed}>RSS feed</a>. Svelte won't include posts in the build that are never linked to,
 		which is why this page exists.
 	</p>
-	<CardList posts={draft_posts} />
+	<CardGrid posts={draft_posts} />
 </section>

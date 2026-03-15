@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CardList from '$lib/components/CardList.svelte';
+	import CardGrid from '$lib/components/CardGrid.svelte';
 	import { public_posts } from '$lib/load_posts';
 
 	const newest = public_posts.slice(0, 3);
@@ -20,8 +20,8 @@
 	</p>
 
 	<p>"Fresh" off the presses:</p>
-	<CardList posts={newest} />
+	<CardGrid posts={newest} />
 
 	<p>Some of my favorites:</p>
-	<CardList posts={favourites} />
+	<CardGrid posts={favourites} />
 </section>

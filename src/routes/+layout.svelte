@@ -1,19 +1,26 @@
 <script lang="ts">
 	import Header from './Header.svelte';
 	import './styles.css';
+	import { page } from '$app/stores';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
 
 	const { children }: Props = $props();
+
+	const noFrame = $derived(['/resume'].includes($page.url.pathname));
 </script>
 
-<div class="app">
-	<Header />
-	<main>
-		{@render children?.()}
-	</main>
-</div>
+{#if noFrame}
+	{@render children?.()}
+{:else}
+	<div class="app">
+		<Header />
+		<main>
+			{@render children?.()}
+		</main>
+	</div>
+{/if}
 
 <style>
 	.app {

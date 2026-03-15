@@ -24,8 +24,7 @@ export const load: PageLoad = async () => {
 		posts: tags.map((tag) => {
 			return {
 				link: `tags/${tag.slug}`,
-				heading: tag.name,
-				description: ''
+				title: tag.name
 			};
 		})
 	};
