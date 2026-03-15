@@ -1,4 +1,6 @@
 <script lang="ts">
+	import CardGrid from '$lib/components/CardGrid.svelte';
+
 	let { data } = $props();
 </script>
 
@@ -10,9 +12,5 @@
 <section>
 	<h1>Tags</h1>
 	<p>List of tags in the blog</p>
-	<ul>
-		{#each data.posts as tag}
-			<li><a href={tag.link}>{tag.heading}</a></li>
-		{/each}
-	</ul>
+	<CardGrid posts={data.posts} />
 </section>
