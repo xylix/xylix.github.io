@@ -2,7 +2,7 @@
 	interface Props {
 		title: string;
 		subtitle?: string;
-		wordCount: number;
+		wordCount?: number;
 		link: string;
 		pubDate: Date;
 	}
@@ -15,10 +15,9 @@
 		<h2>{title}</h2>
 		<h3>{subtitle}</h3>
 		<div>
-			<span
-				>About {parseFloat(wordCount.toPrecision(1))}
-				words</span
-			>
+			{#if wordCount}
+			<span>About {parseFloat(wordCount.toPrecision(1))} words</span>
+		{/if}
 			<span>Published {pubDate.toLocaleDateString()}</span>
 		</div>
 	</a>
