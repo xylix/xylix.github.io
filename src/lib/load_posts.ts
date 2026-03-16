@@ -15,7 +15,7 @@ export type MetaArticle = {
 	format?: 'thread' | 'article';
 	tags: string[];
 	createdAt: string;
-	updatedAt?: string;
+	updatedAt?: string | string[];
 	wordCount: number;
 };
 
@@ -28,7 +28,7 @@ export type Article = {
 	format?: 'thread' | 'article';
 	tags: string[];
 	createdAt: Date;
-	updatedAt?: Date;
+	updatedAt?: Date[];
 	favourite: boolean;
 	draft: boolean;
 	content: typeof SvelteComponent;
@@ -69,7 +69,10 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 				tags,
 				wordCount,
 				createdAt: new Date(createdAt),
-				updatedAt: updatedAt === undefined ? undefined : new Date(updatedAt),
+				updatedAt:
+					updatedAt === undefined
+						? undefined
+						: (typeof updatedAt === 'string' ? [updatedAt] : updatedAt).map((d) => new Date(d)),
 				content: post.default,
 				favourite: !!favourite,
 				draft: !!draft

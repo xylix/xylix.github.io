@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { github_repo } from '../../constants';
 
 	interface Props {
 		data: PageData;
@@ -7,6 +8,8 @@
 
 	let { data }: Props = $props();
 	// Could consider {data.createdAt.toLocaleDateString("fi-FI")} {data.createdAt.toLocaleTimeString("fi-FI")} GMT+0200 for date formatting in the code
+
+	const githubFileUrl = $derived(`${github_repo}/blob/main/src/lib/posts/${data.slug}.md`);
 </script>
 
 <h1>{data.title}</h1>
@@ -20,10 +23,15 @@
 <footer>
 	<hr />
 	<p>Originally released on {data.createdAt}</p>
-	{#if data.updatedAt && data.updatedAt.valueOf() !== data.createdAt.valueOf()}
-		<div>
-			This post was updated: {data.updatedAt}
-		</div>
+	{#if data.updatedAt && data.updatedAt.length > 0}
+		<details>
+			<summary>Revision history ({data.updatedAt.length})</summary>
+			<ul>
+				{#each data.updatedAt as rev}
+					<li><a href={githubFileUrl}>{rev.toLocaleDateString()}</a></li>
+				{/each}
+			</ul>
+		</details>
 	{/if}
 
 	{#if data.similar.length > 0}
