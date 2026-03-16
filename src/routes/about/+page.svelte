@@ -14,5 +14,6 @@
 		<li>resume: <a href="/resume">/resume</a></li>
 		<li>github: github.com/xylix</li>
 		<li>email: xylix at iki.fi</li>
+		<li>tekoälylinkkejä: <a href="/tekoalylinkkeja">/tekoalylinkkeja</a></li>
 	</ul>
 </section>
