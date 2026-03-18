@@ -1,3 +1,5 @@
+import type { Article } from './load_posts';
+
 export type Era = {
 	name: string;
 	start: Date;
@@ -6,12 +8,12 @@ export type Era = {
 };
 
 export const eras: Era[] = [
-	{ name: 'Early', start: new Date('2019-01-01'), end: new Date('2022-01-01'), color: '#d4c5e8' },
-	{ name: 'Middle', start: new Date('2022-01-01'), end: new Date('2024-01-01'), color: '#c5d4e8' },
-	{ name: 'Recent', start: new Date('2024-01-01'), end: null, color: '#fce8d6' }
+	{ name: 'Early', start: new Date('2019-01-01'), end: new Date('2020-01-01'), color: '#fce8d6' },
+	{ name: 'Tired', start: new Date('2020-01-01'), end: new Date('2025-06-14'), color: '#c5d4e8' },
+	{ name: 'Wired', start: new Date('2025-06-14'), end: null, color: '#d4c5e8' }
 ];
 
-const FALLBACK_COLOR = '#fce8d6'; // matches existing --color-bg-light
+const FALLBACK_COLOR = 'var(--color-bg-light)';
 
 export function getEraColor(date: Date): string {
 	return (
@@ -26,4 +28,8 @@ export function getCardBackground(createdAt: Date, updatedAt?: Date[]): string {
 	const currentColor = latestUpdate ? getEraColor(latestUpdate) : originColor;
 	if (originColor === currentColor) return originColor;
 	return `linear-gradient(135deg, ${originColor}, ${currentColor})`;
+}
+
+export function withEraBackground(posts: Article[]): (Article & { eraBackground: string })[] {
+	return posts.map((p) => ({ ...p, eraBackground: getCardBackground(p.createdAt, p.updatedAt) }));
 }

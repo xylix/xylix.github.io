@@ -17,3 +17,21 @@ the `build` directory. Sometimes it is smart to see it builds before pushing.
 
 CI builds the svelte app with the static adapter and uploads it to Github
 pages.
+
+## Feature ideas
+
+### Precise revision history links
+
+Post frontmatter stores `updatedAt` as an array of timestamps representing meaningful revisions. Each revision date currently links to the file's full commit history on GitHub, which is honest but imprecise — a reader can't navigate directly to the exact state of the post at a given revision date.
+
+A more exact approach would store timestamp–commit hash pairs in the frontmatter:
+
+```yaml
+updatedAt:
+  - date: '2022-11-19'
+    commit: null # pre-migration, no git history
+  - date: '2026-03-18'
+    commit: 'abc1234'
+```
+
+This would allow linking directly to `github.com/.../commit/abc1234` for each revision, giving readers a precise diff and surviving repo moves or branch renames. The downside is workflow friction: after every meaningful edit you'd need to find the commit hash and manually update the frontmatter, which is tedious enough to be unreliable without automation — for example a post-commit hook that appends the new commit hash to the frontmatter of any modified post file.

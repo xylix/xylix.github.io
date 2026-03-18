@@ -9,7 +9,7 @@
 	let { data }: Props = $props();
 	// Could consider {data.createdAt.toLocaleDateString("fi-FI")} {data.createdAt.toLocaleTimeString("fi-FI")} GMT+0200 for date formatting in the code
 
-	const githubFileUrl = $derived(`${github_repo}/blob/main/src/lib/posts/${data.slug}.md`);
+	const githubFileUrl = $derived(`${github_repo}/commits/main/src/lib/posts/${data.slug}.md`);
 </script>
 
 <h1>{data.title}</h1>

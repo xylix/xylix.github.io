@@ -2,13 +2,10 @@
 	import { website } from '../constants';
 	import { public_posts } from '$lib/load_posts';
 	import CardGrid from '$lib/components/CardGrid.svelte';
-	import { getCardBackground } from '$lib/eras';
+	import { withEraBackground } from '$lib/eras';
 
 	const feed = `${website}/rss.xml`;
-	const postsWithEra = public_posts.map((p) => ({
-		...p,
-		eraBackground: getCardBackground(p.createdAt, p.updatedAt)
-	}));
+	const postsWithEra = withEraBackground(public_posts);
 </script>
 
 <svelte:head>
