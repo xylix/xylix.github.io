@@ -68,22 +68,41 @@
 	}
 
 	:global(article.thread p) {
-		display: grid;
-		grid-template-columns: 48px 1fr;
-		gap: 0.75rem;
-		align-items: start;
+		position: relative;
+		padding-left: calc(44px + 0.75rem);
+		min-height: 44px;
 		margin-top: 0.5rem;
 		margin-bottom: 0.5rem;
 	}
 
 	:global(article.thread p::before) {
 		content: '';
-		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
 		width: 44px;
 		height: 44px;
 		border-radius: 50%;
 		background: url('/2024_picture.jpg') center / cover;
 		border: 2px solid var(--color-theme-1);
+	}
+
+	:global(article.thread blockquote p::before) {
+		display: none;
+	}
+
+	:global(article.thread blockquote p) {
+		padding-left: 0;
+		min-height: unset;
+	}
+
+	:global(article.thread blockquote) {
+		margin: 0.5rem 0 0 calc(44px + 0.75rem);
+		padding: 0.4rem 0.75rem;
+		border-left: 3px solid color-mix(in srgb, var(--color-theme-1) 50%, transparent);
+		color: var(--color-text, inherit);
+		opacity: 0.85;
+		font-style: italic;
 	}
 
 	/* hr becomes the connector line between thoughts */

@@ -7,18 +7,36 @@ import { mdsvex } from 'mdsvex';
  * (at any nesting depth) into paragraphs separated by thematic breaks (---),
  * so the existing thread CSS applies without changes.
  */
-function collectParagraphsFromList(list) {
-	const paragraphs = [];
+// Returns an array of groups. Each group is an array of nodes (paragraph + optional
+// blockquotes) that belong to the same thread node, separated by thematicBreaks.
+function collectGroupsFromList(list) {
+	const groups = [];
 	for (const item of list.children ?? []) {
-		for (const child of item.children ?? []) {
-			if (child.type === 'paragraph') {
-				paragraphs.push(child);
-			} else if (child.type === 'list') {
-				paragraphs.push(...collectParagraphsFromList(child));
+		const children = item.children ?? [];
+		const hasBlockChild = children.some((c) => c.type === 'paragraph' || c.type === 'list');
+
+		if (!hasBlockChild && children.length > 0) {
+			// Tight list item: inline nodes are direct children, not wrapped in a paragraph
+			groups.push([{ type: 'paragraph', children }]);
+		} else {
+			const group = [];
+			for (const child of children) {
+				if (child.type === 'paragraph') {
+					group.push(child);
+				} else if (child.type === 'blockquote') {
+					group.push(child); // keep blockquote with its parent paragraph
+				} else if (child.type === 'list') {
+					if (group.length > 0) {
+						groups.push([...group]);
+						group.length = 0;
+					}
+					groups.push(...collectGroupsFromList(child));
+				}
 			}
+			if (group.length > 0) groups.push(group);
 		}
 	}
-	return paragraphs;
+	return groups;
 }
 
 function flattenListsInNode(node) {
@@ -26,10 +44,10 @@ function flattenListsInNode(node) {
 	const newChildren = [];
 	for (const child of node.children) {
 		if (child.type === 'list') {
-			const items = collectParagraphsFromList(child);
-			for (let i = 0; i < items.length; i++) {
-				newChildren.push(items[i]);
-				if (i < items.length - 1) {
+			const groups = collectGroupsFromList(child);
+			for (let i = 0; i < groups.length; i++) {
+				newChildren.push(...groups[i]);
+				if (i < groups.length - 1) {
 					newChildren.push({ type: 'thematicBreak' });
 				}
 			}

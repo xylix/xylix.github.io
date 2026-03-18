@@ -1,14 +1,14 @@
 ---
-title: AI makes coding faster, but it doesn't ship faster. (yet)
-tagline: In response to Apenwarr Every Layer of Review makes you 10x slower.
+title: AI makes coding faster, but it doesn't ship faster (yet)
+tagline: How programming faster gets bottlenecked
 format: thread
 tags: [programming]
 createdAt: '2026-03-18'
 draft: false
-wordCount: 1423
+wordCount: 1428
 ---
 
-- In response to Apenwarr's excellent piece [Every layer of review makes you 10x slower](https://apenwarr.ca/log/20260316)
+- In response to and riffing about Apenwarr's excellent piece [Every layer of review makes you 10x slower](https://apenwarr.ca/log/20260316)
 
 - Problem: Why is making non-broken things slow?
 
@@ -67,8 +67,11 @@ wordCount: 1423
   - But if everyone is using AI to make their parts faster, there is also going to be more stuff to review.
   - So the _delay_ before the feature you built is reviewed and merged and deployed might not actually get any faster.
 
-  - I think one implication here that Apenwarr doesn't touch on, and that maybe is unsustainable over the longer term, is that the way this dilemma leads is that you will be working on _more stuff_ and the reviewer(s) will start their workdays with longer backlogs of stuff to review. - I think the Pragmatic Engineer writes well on the implications here: https://newsletter.pragmaticengineer.com/p/when-ai-writes-almost-all-code-what > The good: software engineers more valuable than before. Tech lead traits in more demand, being more “product-minded” to be a baseline at startups, and being a solid software engineer and not just a “coder” will be more sought-after than before. > The ugly: uncomfortable outcomes. More code generated will lead to more problems, weak software engineering practices start to hurt sooner, and perhaps a tougher work-life balance for devs.
-    - But the pipeline will eventually be saturated.
+  - I think one implication here that Apenwarr doesn't touch on, and that maybe is unsustainable over the longer term, is that the way this dilemma leads is that you will be working on _more stuff_ and the reviewer(s) will start their workdays with longer backlogs of stuff to review.
+    - I think the Pragmatic Engineer writes well on the implications here: https://newsletter.pragmaticengineer.com/p/when-ai-writes-almost-all-code-what
+      > The good: software engineers more valuable than before. Tech lead traits in more demand, being more “product-minded” to be a baseline at startups, and being a solid software engineer and not just a “coder” will be more sought-after than before.
+      > The ugly: uncomfortable outcomes. More code generated will lead to more problems, weak software engineering practices start to hurt sooner, and perhaps a tougher work-life balance for devs.
+    - In any case, the pipeline will eventually be saturated.
 
 - So when you need some feature X shipped, it will still take significant time. Even if you're writing the code faster.
 - Okay, so what do we actually do about this?
