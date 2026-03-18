@@ -2,7 +2,10 @@
 	import { website } from '../constants';
 	import { draft_posts } from '$lib/load_posts';
 	import CardGrid from '$lib/components/CardGrid.svelte';
+	import { withEraBackground } from '$lib/eras';
+
 	const feed = `${website}/rss.xml`;
+	const draftsWithEra = withEraBackground(draft_posts);
 </script>
 
 <svelte:head>
@@ -17,5 +20,5 @@
 		<a href={feed}>RSS feed</a>. Svelte won't include posts in the build that are never linked to,
 		which is why this page exists.
 	</p>
-	<CardGrid posts={draft_posts} />
+	<CardGrid posts={draftsWithEra} />
 </section>

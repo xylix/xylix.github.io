@@ -1,9 +1,10 @@
 <script lang="ts">
 	import CardGrid from '$lib/components/CardGrid.svelte';
 	import { public_posts } from '$lib/load_posts';
+	import { withEraBackground } from '$lib/eras';
 
-	const newest = public_posts.slice(0, 3);
-	const favourites = public_posts.filter((post) => post.favourite);
+	const newest = withEraBackground(public_posts.slice(0, 3));
+	const favourites = withEraBackground(public_posts.filter((post) => post.favourite));
 </script>
 
 <svelte:head>

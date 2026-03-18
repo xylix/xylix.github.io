@@ -5,13 +5,14 @@
 		tagline?: string;
 		wordCount?: number;
 		createdAt?: Date;
+		eraBackground?: string;
 	}
 
-	let { link, title, tagline, wordCount, createdAt }: Props = $props();
+	let { link, title, tagline, wordCount, createdAt, eraBackground }: Props = $props();
 </script>
 
 <a href={link}>
-	<div>
+	<div style:background={eraBackground}>
 		<h2>{title}</h2>
 
 		{#if tagline}
@@ -44,7 +45,7 @@
 	}
 
 	div {
-		background-color: var(--color-bg-light);
+		background: var(--color-bg-light);
 		color: var(--color-text-card);
 		border-radius: 0.5rem;
 		padding: 0.01rem 1rem;

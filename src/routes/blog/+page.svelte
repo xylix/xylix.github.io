@@ -2,7 +2,10 @@
 	import { website } from '../constants';
 	import { public_posts } from '$lib/load_posts';
 	import CardGrid from '$lib/components/CardGrid.svelte';
+	import { withEraBackground } from '$lib/eras';
+
 	const feed = `${website}/rss.xml`;
+	const postsWithEra = withEraBackground(public_posts);
 </script>
 
 <svelte:head>
@@ -17,5 +20,5 @@
 		RSS feed available at <a href={feed}>{feed}</a>
 	</p>
 
-	<CardGrid posts={public_posts} />
+	<CardGrid posts={postsWithEra} />
 </section>
