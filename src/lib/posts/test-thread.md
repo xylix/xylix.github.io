@@ -5,45 +5,16 @@ format: thread
 tags: [meta]
 createdAt: '2026-03-11'
 draft: true
-wordCount: 255
+wordCount: 201
 ---
 
-okay so the thing about this format is that it's meant to feel like thoughts tumbling out in real time. not polished. thrown at the wall.
-
----
-
-and each of these nodes is kind of its own little island? but connected. like a thread of reasoning that doesn't fully trust itself yet.
-
----
-
-the avatar on the left is intentional — it grounds it. makes it feel like a person is thinking out loud rather than a document being read.
-
----
-
-anyway this is the fourth node. if you're reading this it means the rehype plugin worked and the CSS rendered correctly. nice.
-
----
-
-why think about ai?
-
----
-
-i think we live in a transformative decade. possibly the most transformative since the industrial revolution (at least for the 2025-2035 decade). and it’s because of AI.
-
----
-
-fast AI timelines are far fetched - task difficulty should grow superlinearly as we move to benchmarking harder and real worlder tasks.
-
----
-
-but, this does not mean that AI impact will lessen. i think it will accelerate; the current bottleneck of llm utilization is not as much model performance as subpar engineering and design choices when building solutions on top of llms.
-
----
-
-and of course good enough models will continue to get cheaper and the iteration will accelerate, leading to more actually usable and eventually exceptional ai based products.
-
----
-
-and even when model growth slows down, the frontier of science will start gaining speed from low hanging fruit implemented current llms, leading to consequences.
-
----
+- Issue: Why is making non-broken things slow?
+- How do you make something non-broken?
+- I think there are 2 answers:
+  - In my high school we used to talk about "jumalainen visio" (god-tier vision). You just look at the problem and then see the answer. Just one-shot it.
+    - This is how you can solve problems where you sort of — are _above the problem_ in skill level. Imagine a professional mathematician taking a 101 course or a programmer learning a relatively easy new language. You just sort of read the problem statement, and then do the things that make sense to your intuition, and it just works.
+    - But real world problems are _messy_.
+    - So then we have to result to the normal problem solving loop:
+- The loop: try something, observe what breaks, update your model, repeat. It's slower because you're not above the problem — you're inside it.
+- The avatar on the left is intentional — it grounds it. Makes it feel like a person is thinking out loud rather than a document being read.
+- Anyway this is working if you see each bullet as its own thread node with an avatar. Nice.
