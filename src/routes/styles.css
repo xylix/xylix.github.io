@@ -93,3 +93,22 @@ blockquote > p {
 article img {
     max-width: 100%;
 }
+
+.footnotes {
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--color-theme-1) 30%, transparent);
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.fn-ref a,
+.fn-back {
+    color: var(--color-theme-1);
+    text-decoration: none;
+}
+
+.fn-ref a:hover,
+.fn-back:hover {
+    text-decoration: underline;
+}
