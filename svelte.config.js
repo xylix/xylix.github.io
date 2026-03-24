@@ -66,6 +66,116 @@ function remarkFlattenThreadBullets() {
 	};
 }
 
+/**
+ * Remark plugin: handles `[^id]` footnote references and `[^id]: text` definitions.
+ * Definitions are removed from their position and appended as a numbered list in a
+ * <section class="footnotes"> at the end. Works for both article and thread formats
+ * (run after remarkFlattenThreadBullets so thread bullets are already paragraphs).
+ */
+function remarkFootnotes() {
+	function serializeChildren(nodes) {
+		return (nodes ?? [])
+			.map((n) => {
+				if (n.type === 'text') return n.value;
+				if (n.type === 'inlineCode') return `<code>${n.value}</code>`;
+				if (n.type === 'emphasis') return `<em>${serializeChildren(n.children)}</em>`;
+				if (n.type === 'strong') return `<strong>${serializeChildren(n.children)}</strong>`;
+				if (n.type === 'link') return `<a href="${n.url}">${serializeChildren(n.children)}</a>`;
+				return serializeChildren(n.children ?? []);
+			})
+			.join('');
+	}
+
+	function processNode(node, parent, idx) {
+		// [^id] is parsed by remark as a linkReference with identifier "^id"
+		if (node.type === 'linkReference') {
+			const m = node.identifier?.match(/^\^([\w-]+)$/);
+			if (m && parent) {
+				const id = m[1];
+				parent.children.splice(idx, 1, {
+					type: 'html',
+					value: `<sup class="fn-ref" id="fnref-${id}"><a href="#fn-${id}">${id}</a></sup>`
+				});
+				return 1;
+			}
+		}
+		if (node.children) {
+			for (let i = 0; i < node.children.length; i++) {
+				const delta = processNode(node.children[i], node, i);
+				if (delta !== undefined) i += delta - 1;
+			}
+		}
+	}
+
+	return (tree) => {
+		const defs = new Map();
+
+		// Collect and remove footnote definitions.
+		// [^id]: text — remark parses [^id] as a linkReference, so each definition looks like:
+		//   linkReference(^id)  +  text(": content\n")  +  [other inline nodes]
+		// Multiple definitions with no blank line between them land in ONE paragraph,
+		// so we scan within the paragraph for each definition boundary.
+		for (let i = tree.children.length - 1; i >= 0; i--) {
+			const node = tree.children[i];
+			if (node.type !== 'paragraph') continue;
+			const ch = node.children;
+			if (ch[0]?.type !== 'linkReference' || !ch[0].identifier?.match(/^\^[\w-]+$/)) continue;
+
+			const localDefs = [];
+			let j = 0;
+			while (j < ch.length) {
+				const ref = ch[j];
+				if (ref?.type !== 'linkReference') break;
+				const idMatch = ref.identifier?.match(/^\^([\w-]+)$/);
+				if (!idMatch) break;
+				const textNode = ch[j + 1];
+				if (textNode?.type !== 'text') break;
+				const tm = textNode.value.match(/^:\s*([\s\S]*)/);
+				if (!tm) break;
+
+				// Find where this definition ends: next linkReference(^id) + text(": ")
+				let k = j + 2;
+				while (k < ch.length) {
+					if (
+						ch[k]?.type === 'linkReference' &&
+						ch[k].identifier?.match(/^\^[\w-]+$/) &&
+						ch[k + 1]?.type === 'text' &&
+						ch[k + 1].value.match(/^:\s*/)
+					)
+						break;
+					k++;
+				}
+
+				const firstText = tm[1].replace(/\n$/, ''); // strip soft-break trailing newline
+				const defChildren = firstText
+					? [{ type: 'text', value: firstText }, ...ch.slice(j + 2, k)]
+					: ch.slice(j + 2, k);
+				localDefs.push([idMatch[1], serializeChildren(defChildren)]);
+				j = k;
+			}
+
+			if (localDefs.length > 0 && j === ch.length) {
+				for (const [id, html] of localDefs) defs.set(id, html);
+				tree.children.splice(i, 1);
+			}
+		}
+
+		if (defs.size === 0) return;
+
+		// Replace [^id] references with superscript links
+		processNode(tree, null, 0);
+
+		// Append footnotes section
+		const items = [...defs.entries()]
+			.map(([id, html]) => `<li id="fn-${id}">${html} <a href="#fnref-${id}" class="fn-back">↩</a></li>`)
+			.join('\n');
+		tree.children.push({
+			type: 'html',
+			value: `<section class="footnotes">\n<ol>\n${items}\n</ol>\n</section>`
+		});
+	};
+}
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [
@@ -73,7 +183,7 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			highlight: { alias: { rs: 'rust' } },
-			remarkPlugins: [remarkFlattenThreadBullets]
+			remarkPlugins: [remarkFlattenThreadBullets, remarkFootnotes]
 		})
 	],
 	extensions: ['.svelte', '.md'],
