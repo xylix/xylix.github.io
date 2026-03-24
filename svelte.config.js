@@ -110,19 +110,26 @@ function remarkFootnotes() {
 	return (tree) => {
 		const defs = new Map();
 
-		// Collect and remove footnote definitions: paragraphs starting with [^id]:
+		// Collect and remove footnote definitions.
+		// [^id]: text — remark parses [^id] as a linkReference, so the paragraph looks like:
+		//   children[0]: linkReference  (identifier "^id")
+		//   children[1]: text           (starting with ": the footnote text")
 		for (let i = tree.children.length - 1; i >= 0; i--) {
 			const node = tree.children[i];
 			if (node.type !== 'paragraph') continue;
 			const first = node.children[0];
-			if (first?.type !== 'text') continue;
-			const m = first.value.match(/^\[\^([\w-]+)\]:\s*([\s\S]*)/);
-			if (!m) continue;
-			const rest = m[2];
+			if (first?.type !== 'linkReference') continue;
+			const idMatch = first.identifier?.match(/^\^([\w-]+)$/);
+			if (!idMatch) continue;
+			const second = node.children[1];
+			if (second?.type !== 'text') continue;
+			const textMatch = second.value.match(/^:\s*([\s\S]*)/);
+			if (!textMatch) continue;
+			const rest = textMatch[1];
 			const children = rest
-				? [{ ...first, value: rest }, ...node.children.slice(1)]
-				: node.children.slice(1);
-			defs.set(m[1], serializeChildren(children));
+				? [{ type: 'text', value: rest }, ...node.children.slice(2)]
+				: node.children.slice(2);
+			defs.set(idMatch[1], serializeChildren(children));
 			tree.children.splice(i, 1);
 		}
 

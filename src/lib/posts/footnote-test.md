@@ -7,4 +7,7 @@ draft: true
 wordCount: 1
 ---
 
-Content
+Content with a footnote.[^1] And another one.[^2]
+
+[^1]: The good: software engineers more valuable than before. Tech lead traits in more demand.
+[^2]: A second footnote with a [link](https://example.com) and `inline code`.
