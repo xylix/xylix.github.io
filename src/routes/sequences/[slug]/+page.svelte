@@ -14,6 +14,9 @@
 			{/if}
 		{:else}
 			{node.label}
+			{#if node.children.length === 0}
+				<span class="missing-badge">404</span>
+			{/if}
 		{/if}
 		{#if node.children.length > 0}
 			<ul>
@@ -43,7 +46,8 @@
 		display: none;
 	}
 
-	.draft-badge {
+	.draft-badge,
+	.missing-badge {
 		font-size: 0.75em;
 		opacity: 0.6;
 		margin-left: 0.4em;
