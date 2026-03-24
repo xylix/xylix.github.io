@@ -13,6 +13,7 @@ export type SequenceArticle = {
 	updatedAt: Date;
 	tree: SequenceNode[];
 	content: typeof SvelteComponent;
+	hasProse: boolean;
 };
 
 type MetaSequence = {
@@ -54,6 +55,11 @@ function parseSequenceTree(rawMarkdown: string): SequenceNode[] {
 	return tree;
 }
 
+function hasSequenceProse(rawMarkdown: string): boolean {
+	const body = rawMarkdown.replace(/^---[\s\S]*?---/, '').trim();
+	return body.split('\n').some((line) => line.trim() && !/^\s*[*-]\s/.test(line));
+}
+
 const load_sequences = async (): Promise<SequenceArticle[]> => {
 	const rawFiles = import.meta.glob(`./sequences/*.md`, { eager: true, query: '?raw', import: 'default' });
 	const metaFiles = import.meta.glob(`./sequences/*.md`, { eager: true });
@@ -69,6 +75,7 @@ const load_sequences = async (): Promise<SequenceArticle[]> => {
 
 			const raw = rawFiles[path] as string;
 			const tree = parseSequenceTree(raw);
+			const hasProse = hasSequenceProse(raw);
 
 			const fname = path.replace(/^.*[\\/]/, '');
 			const slug = fname.replace(/\.md$/, '');
@@ -80,7 +87,8 @@ const load_sequences = async (): Promise<SequenceArticle[]> => {
 				tagline: metadata.tagline,
 				updatedAt: new Date(metadata.updatedAt),
 				tree,
-				content
+				content,
+				hasProse
 			};
 		})
 		.sort((a, b) => a.name.localeCompare(b.name));

@@ -29,6 +29,7 @@ export const load: PageLoad = async ({ params }) => {
 		name: sequence.name,
 		tagline: sequence.tagline,
 		content: sequence.content,
+		hasProse: sequence.hasProse,
 		tree: resolveTree(sequence.tree, all_posts)
 	};
 };
