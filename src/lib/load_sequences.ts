@@ -36,7 +36,7 @@ function normalizeContent(content: string[] | SequenceSection[]): SequenceSectio
 	return content as SequenceSection[];
 }
 
-export const load_sequences = async (): Promise<SequenceArticle[]> => {
+const load_sequences = async (): Promise<SequenceArticle[]> => {
 	const raw = import.meta.glob(`./sequences/*.md`, { eager: true });
 
 	const sequences = Object.entries(raw)
@@ -72,3 +72,5 @@ export const load_sequences = async (): Promise<SequenceArticle[]> => {
 
 	return sequences;
 };
+
+export const public_sequences = await load_sequences();

@@ -1,10 +1,9 @@
 import { all_posts, type Article } from '$lib/load_posts';
-import { load_sequences } from '$lib/load_sequences';
+import { public_sequences } from '$lib/load_sequences';
 import type { EntryGenerator, PageLoad } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
-	const sequences = await load_sequences();
-	const sequence = sequences.find((s) => s.slug === params.slug);
+	const sequence = public_sequences.find((s) => s.slug === params.slug);
 
 	if (!sequence) {
 		throw new Error(`Sequence "${params.slug}" not found`);
@@ -25,5 +24,5 @@ export const load: PageLoad = async ({ params }) => {
 };
 
 export const entries: EntryGenerator = async () => {
-	return await load_sequences();
+	return public_sequences;
 };

@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { website } from '../constants';
 	import { public_posts } from '$lib/load_posts';
-	import { load_sequences } from '$lib/load_sequences';
+	import { public_sequences } from '$lib/load_sequences';
 	import CardGrid from '$lib/components/CardGrid.svelte';
 	import { withEraBackground } from '$lib/eras';
 
 	const feed = `${website}/rss.xml`;
 	const postsWithEra = withEraBackground(public_posts);
-	const sequences = await load_sequences();
-	const sequenceCards = sequences.map((s) => ({ link: s.link, title: s.name, tagline: s.tagline }));
+	const sequenceCards = public_sequences.map((s) => ({ link: s.link, title: s.name, tagline: s.tagline }));
 </script>
 
 <svelte:head>
