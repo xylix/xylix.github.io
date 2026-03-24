@@ -1,21 +1,6 @@
-import type { SvelteComponent } from 'svelte';
-
-export type SequenceSection = {
-	section: string;
-	posts: string[];
-};
-
-type RawSequence = {
-	default: typeof SvelteComponent;
-	metadata: MetaSequence;
-};
-
-export type MetaSequence = {
-	name: string;
-	tagline?: string;
-	updatedAt: string;
-	/** Either a flat list of post slugs, or an array of named sections each with post slugs */
-	content: string[] | SequenceSection[];
+export type SequenceNode = {
+	label: string;
+	children: SequenceNode[];
 };
 
 export type SequenceArticle = {
@@ -24,36 +9,63 @@ export type SequenceArticle = {
 	name: string;
 	tagline?: string;
 	updatedAt: Date;
-	sections: SequenceSection[];
-	content: typeof SvelteComponent;
+	tree: SequenceNode[];
 };
 
-function normalizeContent(content: string[] | SequenceSection[]): SequenceSection[] {
-	if (!content || content.length === 0) return [];
-	if (typeof content[0] === 'string') {
-		return [{ section: '', posts: content as string[] }];
+type MetaSequence = {
+	name: string;
+	tagline?: string;
+	updatedAt: string;
+};
+
+function parseSequenceTree(rawMarkdown: string): SequenceNode[] {
+	const body = rawMarkdown.replace(/^---[\s\S]*?---/, '').trim();
+	const lines = body
+		.split('\n')
+		.filter((line) => /^\s*[*-]\s/.test(line))
+		.map((line) => {
+			const match = line.match(/^(\s*)[*-]\s+(.*)/);
+			return { indent: match![1].length, label: match![2].trim() };
+		});
+
+	if (lines.length === 0) return [];
+
+	function build(start: number, parentIndent: number): [SequenceNode[], number] {
+		const nodes: SequenceNode[] = [];
+		let i = start;
+		while (i < lines.length && lines[i].indent > parentIndent) {
+			const node: SequenceNode = { label: lines[i].label, children: [] };
+			const currentIndent = lines[i].indent;
+			i++;
+			if (i < lines.length && lines[i].indent > currentIndent) {
+				const [children, next] = build(i, currentIndent);
+				node.children = children;
+				i = next;
+			}
+			nodes.push(node);
+		}
+		return [nodes, i];
 	}
-	return content as SequenceSection[];
+
+	const [tree] = build(0, -1);
+	return tree;
 }
 
 const load_sequences = async (): Promise<SequenceArticle[]> => {
-	const raw = import.meta.glob(`./sequences/*.md`, { eager: true });
+	const rawFiles = import.meta.glob(`./sequences/*.md`, { eager: true, query: '?raw', import: 'default' });
+	const metaFiles = import.meta.glob(`./sequences/*.md`, { eager: true });
 
-	const sequences = Object.entries(raw)
-		.map(([path, untypedSeq]) => {
-			const seq = untypedSeq as RawSequence;
-
-			if (!seq.metadata) {
-				throw new Error(`Missing metadata in ${path}. Needs to have name, updatedAt, content`);
-			}
-			const { name, tagline, updatedAt, content } = seq.metadata;
-
-			const requiredMetadata = [name, updatedAt, content].every((val) => val !== undefined);
-			if (!requiredMetadata) {
+	const sequences = Object.entries(metaFiles)
+		.map(([path, mod]) => {
+			const { metadata } = mod as { metadata: MetaSequence };
+			if (!metadata?.name || !metadata?.updatedAt) {
 				throw new Error(
-					`Missing metadata in ${path}. Metadata present: ${Object.keys(seq.metadata)}`
+					`Missing metadata in ${path}. Metadata present: ${Object.keys(metadata ?? {})}`
 				);
 			}
+
+			const raw = rawFiles[path] as string;
+			const tree = parseSequenceTree(raw);
 
 			const fname = path.replace(/^.*[\\/]/, '');
 			const slug = fname.replace(/\.md$/, '');
@@ -61,11 +73,10 @@ const load_sequences = async (): Promise<SequenceArticle[]> => {
 			return {
 				link: `/sequences/${slug}`,
 				slug,
-				name,
-				tagline,
-				updatedAt: new Date(updatedAt),
-				sections: normalizeContent(content),
-				content: seq.default
+				name: metadata.name,
+				tagline: metadata.tagline,
+				updatedAt: new Date(metadata.updatedAt),
+				tree
 			};
 		})
 		.sort((a, b) => a.name.localeCompare(b.name));

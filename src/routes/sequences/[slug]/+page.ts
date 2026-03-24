@@ -1,6 +1,22 @@
 import { all_posts, type Article } from '$lib/load_posts';
-import { public_sequences } from '$lib/load_sequences';
+import { public_sequences, type SequenceNode } from '$lib/load_sequences';
 import type { EntryGenerator, PageLoad } from './$types';
+
+export type ResolvedNode = {
+	label: string;
+	post?: Article;
+	children: ResolvedNode[];
+};
+
+function resolveTree(nodes: SequenceNode[], posts: Article[]): ResolvedNode[] {
+	return nodes.map((node) => {
+		if (node.children.length === 0) {
+			const post = posts.find((p) => p.slug === node.label);
+			return { label: post?.title ?? node.label, post, children: [] };
+		}
+		return { label: node.label, children: resolveTree(node.children, posts) };
+	});
+}
 
 export const load: PageLoad = async ({ params }) => {
 	const sequence = public_sequences.find((s) => s.slug === params.slug);
@@ -9,17 +25,10 @@ export const load: PageLoad = async ({ params }) => {
 		throw new Error(`Sequence "${params.slug}" not found`);
 	}
 
-	const sections = sequence.sections.map((section) => ({
-		name: section.section,
-		posts: section.posts
-			.map((slug) => all_posts.find((p) => p.slug === slug) ?? null)
-			.filter((p): p is Article => p !== null)
-	}));
-
 	return {
 		name: sequence.name,
-		content: sequence.content,
-		sections
+		tagline: sequence.tagline,
+		tree: resolveTree(sequence.tree, all_posts)
 	};
 };
 
