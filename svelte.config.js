@@ -87,23 +87,17 @@ function remarkFootnotes() {
 	}
 
 	function processNode(node, parent, idx) {
-		if (node.type === 'text') {
-			const parts = node.value.split(/(\[\^[\w-]+\])/);
-			if (parts.length === 1) return;
-			const newNodes = [];
-			for (const part of parts) {
-				const m = part.match(/^\[\^([\w-]+)\]$/);
-				if (m) {
-					newNodes.push({
-						type: 'html',
-						value: `<sup class="fn-ref" id="fnref-${m[1]}"><a href="#fn-${m[1]}">${m[1]}</a></sup>`
-					});
-				} else if (part) {
-					newNodes.push({ type: 'text', value: part });
-				}
+		// [^id] is parsed by remark as a linkReference with identifier "^id"
+		if (node.type === 'linkReference') {
+			const m = node.identifier?.match(/^\^([\w-]+)$/);
+			if (m && parent) {
+				const id = m[1];
+				parent.children.splice(idx, 1, {
+					type: 'html',
+					value: `<sup class="fn-ref" id="fnref-${id}"><a href="#fn-${id}">${id}</a></sup>`
+				});
+				return 1;
 			}
-			parent.children.splice(idx, 1, ...newNodes);
-			return newNodes.length;
 		}
 		if (node.children) {
 			for (let i = 0; i < node.children.length; i++) {
