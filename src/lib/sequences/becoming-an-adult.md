@@ -1,5 +1,6 @@
 ---
 name: 'Becoming an Adult'
+tagline: 'Finding motivation, understanding why top-down systems fail, and learning to act with agency'
 updatedAt: '2026-03-24T00:00:00+0200'
 content:
   - section: 'Orienting to life / Motivation'

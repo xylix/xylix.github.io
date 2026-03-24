@@ -12,6 +12,7 @@ type RawSequence = {
 
 export type MetaSequence = {
 	name: string;
+	tagline?: string;
 	updatedAt: string;
 	/** Either a flat list of post slugs, or an array of named sections each with post slugs */
 	content: string[] | SequenceSection[];
@@ -21,6 +22,7 @@ export type SequenceArticle = {
 	link: string;
 	slug: string;
 	name: string;
+	tagline?: string;
 	updatedAt: Date;
 	sections: SequenceSection[];
 	content: typeof SvelteComponent;
@@ -44,7 +46,7 @@ export const load_sequences = async (): Promise<SequenceArticle[]> => {
 			if (!seq.metadata) {
 				throw new Error(`Missing metadata in ${path}. Needs to have name, updatedAt, content`);
 			}
-			const { name, updatedAt, content } = seq.metadata;
+			const { name, tagline, updatedAt, content } = seq.metadata;
 
 			const requiredMetadata = [name, updatedAt, content].every((val) => val !== undefined);
 			if (!requiredMetadata) {
@@ -60,6 +62,7 @@ export const load_sequences = async (): Promise<SequenceArticle[]> => {
 				link: `/sequences/${slug}`,
 				slug,
 				name,
+				tagline,
 				updatedAt: new Date(updatedAt),
 				sections: normalizeContent(content),
 				content: seq.default
