@@ -27,9 +27,9 @@
 
 <article>
 	<h1>{data.name}</h1>
-	{#if data.tagline}
-		<p>{data.tagline}</p>
-	{/if}
+	<div class="prose">
+		<data.content />
+	</div>
 	<ul>
 		{#each data.tree as node}
 			{@render renderNode(node)}
@@ -38,6 +38,11 @@
 </article>
 
 <style>
+	.prose :global(ul),
+	.prose :global(ol) {
+		display: none;
+	}
+
 	.draft-badge {
 		font-size: 0.75em;
 		opacity: 0.6;

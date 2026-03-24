@@ -1,3 +1,5 @@
+import type { SvelteComponent } from 'svelte';
+
 export type SequenceNode = {
 	label: string;
 	children: SequenceNode[];
@@ -10,6 +12,7 @@ export type SequenceArticle = {
 	tagline?: string;
 	updatedAt: Date;
 	tree: SequenceNode[];
+	content: typeof SvelteComponent;
 };
 
 type MetaSequence = {
@@ -57,7 +60,7 @@ const load_sequences = async (): Promise<SequenceArticle[]> => {
 
 	const sequences = Object.entries(metaFiles)
 		.map(([path, mod]) => {
-			const { metadata } = mod as { metadata: MetaSequence };
+			const { metadata, default: content } = mod as { metadata: MetaSequence; default: typeof SvelteComponent };
 			if (!metadata?.name || !metadata?.updatedAt) {
 				throw new Error(
 					`Missing metadata in ${path}. Metadata present: ${Object.keys(metadata ?? {})}`
@@ -76,7 +79,8 @@ const load_sequences = async (): Promise<SequenceArticle[]> => {
 				name: metadata.name,
 				tagline: metadata.tagline,
 				updatedAt: new Date(metadata.updatedAt),
-				tree
+				tree,
+				content
 			};
 		})
 		.sort((a, b) => a.name.localeCompare(b.name));
