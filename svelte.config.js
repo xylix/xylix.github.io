@@ -111,26 +111,53 @@ function remarkFootnotes() {
 		const defs = new Map();
 
 		// Collect and remove footnote definitions.
-		// [^id]: text — remark parses [^id] as a linkReference, so the paragraph looks like:
-		//   children[0]: linkReference  (identifier "^id")
-		//   children[1]: text           (starting with ": the footnote text")
+		// [^id]: text — remark parses [^id] as a linkReference, so each definition looks like:
+		//   linkReference(^id)  +  text(": content\n")  +  [other inline nodes]
+		// Multiple definitions with no blank line between them land in ONE paragraph,
+		// so we scan within the paragraph for each definition boundary.
 		for (let i = tree.children.length - 1; i >= 0; i--) {
 			const node = tree.children[i];
 			if (node.type !== 'paragraph') continue;
-			const first = node.children[0];
-			if (first?.type !== 'linkReference') continue;
-			const idMatch = first.identifier?.match(/^\^([\w-]+)$/);
-			if (!idMatch) continue;
-			const second = node.children[1];
-			if (second?.type !== 'text') continue;
-			const textMatch = second.value.match(/^:\s*([\s\S]*)/);
-			if (!textMatch) continue;
-			const rest = textMatch[1];
-			const children = rest
-				? [{ type: 'text', value: rest }, ...node.children.slice(2)]
-				: node.children.slice(2);
-			defs.set(idMatch[1], serializeChildren(children));
-			tree.children.splice(i, 1);
+			const ch = node.children;
+			if (ch[0]?.type !== 'linkReference' || !ch[0].identifier?.match(/^\^[\w-]+$/)) continue;
+
+			const localDefs = [];
+			let j = 0;
+			while (j < ch.length) {
+				const ref = ch[j];
+				if (ref?.type !== 'linkReference') break;
+				const idMatch = ref.identifier?.match(/^\^([\w-]+)$/);
+				if (!idMatch) break;
+				const textNode = ch[j + 1];
+				if (textNode?.type !== 'text') break;
+				const tm = textNode.value.match(/^:\s*([\s\S]*)/);
+				if (!tm) break;
+
+				// Find where this definition ends: next linkReference(^id) + text(": ")
+				let k = j + 2;
+				while (k < ch.length) {
+					if (
+						ch[k]?.type === 'linkReference' &&
+						ch[k].identifier?.match(/^\^[\w-]+$/) &&
+						ch[k + 1]?.type === 'text' &&
+						ch[k + 1].value.match(/^:\s*/)
+					)
+						break;
+					k++;
+				}
+
+				const firstText = tm[1].replace(/\n$/, ''); // strip soft-break trailing newline
+				const defChildren = firstText
+					? [{ type: 'text', value: firstText }, ...ch.slice(j + 2, k)]
+					: ch.slice(j + 2, k);
+				localDefs.push([idMatch[1], serializeChildren(defChildren)]);
+				j = k;
+			}
+
+			if (localDefs.length > 0 && j === ch.length) {
+				for (const [id, html] of localDefs) defs.set(id, html);
+				tree.children.splice(i, 1);
+			}
 		}
 
 		if (defs.size === 0) return;

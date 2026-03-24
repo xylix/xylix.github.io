@@ -4,7 +4,7 @@ tagline: Footnote test
 tags: [programming]
 createdAt: 2026-03-24T22:06:44+0200 
 draft: true 
-wordCount: 1
+wordCount: 32
 ---
 
 Content with a footnote.[^1] And another one.[^2]
