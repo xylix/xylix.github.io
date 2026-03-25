@@ -66,10 +66,26 @@ function remarkFlattenThreadBullets() {
 	};
 }
 
+/**
+ * Preprocessor: strips <!-- comments --> and lines starting with TODO:/FIXME:/NOTE:
+ * from .md files before they reach mdsvex/remark.
+ */
+const stripMarkdownComments = {
+	name: 'strip-markdown-comments',
+	markup({ content, filename }) {
+		if (!filename?.endsWith('.md')) return;
+		const code = content
+			.replace(/<!--[\s\S]*?-->/g, '')
+			.replace(/^(TODO|FIXME|NOTE):.*$/gm, '');
+		return { code };
+	}
+};
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [
 		vitePreprocess(),
+		stripMarkdownComments,
 		mdsvex({
 			extensions: ['.md'],
 			highlight: { alias: { rs: 'rust' } },
