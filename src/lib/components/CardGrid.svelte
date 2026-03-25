@@ -4,12 +4,13 @@
 
 	interface Props {
 		posts: ComponentProps<typeof Card>[];
+		columns?: 1 | 2;
 	}
 
-	let { posts }: Props = $props();
+	let { posts, columns = 2 }: Props = $props();
 </script>
 
-<div class="grid">
+<div class="grid" class:two-col={columns === 2}>
 	{#each posts as post}
 		<Card {...post} />
 	{/each}
@@ -19,8 +20,10 @@
 	.grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		align-self: stretch; /* override section's align-items: flex-start */
+		align-self: stretch;
+	}
 
+	.grid.two-col {
 		@media (min-width: 720px) {
 			grid-template-columns: 1fr 1fr;
 			column-gap: 2rem;

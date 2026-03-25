@@ -27,11 +27,11 @@
 
 	{#if sequenceCards.length > 0}
 		<h2 class="section-label">Sequences</h2>
-		<CardGrid posts={sequenceCards} />
+		<CardGrid posts={sequenceCards} columns={1} />
 		<hr class="section-divider" />
 	{/if}
 
-	<CardGrid posts={postsWithEra} />
+	<CardGrid posts={postsWithEra} columns={1} />
 </section>
 
 <style>
