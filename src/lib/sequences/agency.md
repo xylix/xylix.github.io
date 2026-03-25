@@ -16,5 +16,5 @@ Content goals: Confronting life's important skill issues headfirst. Acquiring th
        * why-top-down-keeps-failing / predictability-as-rigidity
        * forgiveness-not-permission
 * Action
-  * Do fun stuff, lol (No, seriously. Go out, smile, meet your friends. Arrange a party. <!--TODO: Sprinkle some https://putanumonit.com/2020/01/13/go-f-someone/ energy on top.)-->
+  * Do fun stuff, lol (No, seriously. Go out, smile, meet your friends. Arrange a party. <!--TODO: Sprinkle some https://putanumonit.com/2020/01/13/go-f-someone/ energy on top. Or some Pinkie Smile Smile Smile energy.)-->
   * Do important stuff.
