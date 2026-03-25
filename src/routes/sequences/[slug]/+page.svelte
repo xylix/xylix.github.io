@@ -36,7 +36,7 @@
 		</div>
 		<hr>
 	{/if}
-	<ul>
+	<ul class="tree">
 		{#each data.tree as node}
 			{@render renderNode(node)}
 		{/each}
@@ -44,9 +44,32 @@
 </article>
 
 <style>
+	article {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Collapse the prose box so its children participate in article's flex layout,
+	   allowing footnotes (order: 3) to be reordered below the tree (order: 2). */
+	.prose {
+		display: contents;
+	}
+
 	.prose :global(ul),
-	.prose :global(ol) {
+	.prose :global(ol:not(.footnotes ol)) {
 		display: none;
+	}
+
+	article > hr {
+		order: 1;
+	}
+
+	.tree {
+		order: 2;
+	}
+
+	:global(.footnotes) {
+		order: 3;
 	}
 
 	.draft-badge,
