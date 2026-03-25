@@ -4,12 +4,13 @@
 
 	interface Props {
 		posts: ComponentProps<typeof Card>[];
+		columns?: 1 | 2;
 	}
 
-	let { posts }: Props = $props();
+	let { posts, columns = 2 }: Props = $props();
 </script>
 
-<div class="grid">
+<div class="grid" style="--cols: {columns}">
 	{#each posts as post}
 		<Card {...post} />
 	{/each}
@@ -18,16 +19,14 @@
 <style>
 	.grid {
 		display: grid;
-		gap: 1rem;
-		justify-content: center;
-		width: 100%;
+		grid-template-columns: 1fr;
+		align-self: stretch;
+	}
 
-		grid-template-columns: repeat(1, 1fr);
-		@media (min-width: 720px) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-		@media (min-width: 1080px) {
-			grid-template-columns: repeat(3, 1fr);
+	@media (min-width: 720px) {
+		.grid {
+			grid-template-columns: repeat(var(--cols, 1), 1fr);
+			column-gap: 2rem;
 		}
 	}
 </style>

@@ -10,12 +10,14 @@
 		"lint": "biome lint . && eslint \"src/**/*.svelte\"",
 		"format": "npm run wc && biome format --write .",
 		"wc": "tsx scripts/updateWordCount.ts",
-		"wc:check": "tsx scripts/updateWordCount.ts && git diff --exit-code src/lib/posts/"
+		"wc:check": "tsx scripts/updateWordCount.ts && git diff --exit-code src/lib/posts/",
+		"test": "vitest run"
 	},
 	"pre-commit": [
 		"wc:check",
 		"lint",
 		"check",
+		"test",
 		"build"
 	],
 	"devDependencies": {
@@ -28,6 +30,8 @@
 		"@sveltejs/kit": "^2.49.1",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@types/eslint": "8.56.0",
+		"@types/mdast": "^4.0.4",
+		"@types/unist": "^3.0.3",
 		"@typescript-eslint/eslint-plugin": "^8.57.1",
 		"@typescript-eslint/parser": "^8.57.1",
 		"eslint": "^8.56.0",
@@ -38,12 +42,15 @@
 		"pre-commit": "^1.2.2",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.2.6",
+		"remark-parse": "^11.0.0",
 		"svelte": "^5.45.5",
 		"svelte-check": "^4.3.4",
 		"tslib": "^2.8.1",
 		"tsx": "^4.21.0",
 		"typescript": "^5.9.3",
-		"vite": "^7.2.6"
+		"unified": "^11.0.5",
+		"vite": "^7.2.6",
+		"vitest": "^4.1.1"
 	},
 	"type": "module",
 	"dependencies": {

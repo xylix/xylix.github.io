@@ -3,7 +3,7 @@
 	import { public_posts } from '$lib/load_posts';
 	import { withEraBackground } from '$lib/eras';
 
-	const newest = withEraBackground(public_posts.slice(0, 3));
+	const newest = withEraBackground(public_posts.slice(0, 10));
 	const favourites = withEraBackground(public_posts.filter((post) => post.favourite));
 </script>
 

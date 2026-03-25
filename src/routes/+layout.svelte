@@ -36,7 +36,7 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
+		padding: 2.5rem 1.5rem 1rem;
 		width: 100%;
 		max-width: 64rem;
 		margin: 0 auto;
@@ -44,21 +44,24 @@
 	}
 
 	footer {
-		padding: 0.5rem 1rem 1rem;
-		font-size: 0.85rem;
-		opacity: 0.4;
+		padding: 1rem 1.5rem 1.5rem;
+		font-size: 0.75rem;
+		opacity: 0.25;
 		width: 100%;
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+		border-top: 1px solid var(--color-rule);
 	}
 
 	footer a {
 		color: inherit;
 		text-decoration: none;
+		letter-spacing: 0.04em;
 	}
 
 	footer a:hover {
+		opacity: 1;
 		text-decoration: underline;
 	}
 </style>

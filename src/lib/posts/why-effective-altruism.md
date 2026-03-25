@@ -4,6 +4,7 @@ createdAt: 2025-06-14T10:57:33+0300
 updatedAt: 2025-08-28T19:52:00+0300
 tags: ['effective-altruism', 'personal']
 tagline: Why I'm an Effective Altruist
+favourite: true
 wordCount: 2146
 ---
 

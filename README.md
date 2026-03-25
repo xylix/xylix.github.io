@@ -35,3 +35,12 @@ updatedAt:
 ```
 
 This would allow linking directly to `github.com/.../commit/abc1234` for each revision, giving readers a precise diff and surviving repo moves or branch renames. The downside is workflow friction: after every meaningful edit you'd need to find the commit hash and manually update the frontmatter, which is tedious enough to be unreliable without automation — for example a post-commit hook that appends the new commit hash to the frontmatter of any modified post file.
+
+
+## Possible technical refactors
+
+### Unify sequence/tag page rendering with blog post rendering
+
+Sequence and tag pages render markdown prose via `<data.content />` but have their own page layouts and CSS, leading to divergence from blog post features (footnotes, typography, etc.). Because they share the same mdsvex compilation pipeline, the prose section could be extracted into a shared Svelte component used by all three page types. Sequences would keep their tree rendering below the prose; the shared component would handle footnotes styling, `<section class="footnotes">` visibility, and any future prose features added to blog posts.
+
+Worth noting: the `remarkFootnotes` plugin requires definitions to be **multi-word** (a limitation of unified v9 bundled with mdsvex) — single-token URL-only definitions like `[^1]: https://example.com` are consumed by remark as link definitions and never reach the plugin. Definitions must have at least two words, e.g. `[^1]: Source: https://example.com`.

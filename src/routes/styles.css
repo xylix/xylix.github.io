@@ -2,15 +2,15 @@
 @import url('../syntax_highlighting.css');
 
 :root {
-    /* --color-theme-1: #ff3131; */
     --color-theme-1: #08f;
-    /* --color-theme-2: #ff7733; */
     --color-theme-2: #00fff3;
     --color-text: #ffeeee;
+    --color-text-muted: color-mix(in srgb, var(--color-text) 45%, transparent);
     --color-text-card: #101010;
     --color-bg-base: #25272d;
     --color-bg-highlight: color-mix(in srgb, var(--color-bg-base) 80%, var(--color-theme-1));
     --color-bg-light: #fce8d6;
+    --color-rule: color-mix(in srgb, var(--color-text) 8%, transparent);
 
     --font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
         Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -23,7 +23,6 @@ body {
     min-height: 100vh;
     height: 100%;
     margin: 0;
-
     background-color: var(--color-bg-base);
 }
 
@@ -34,7 +33,9 @@ p {
 }
 
 p {
-    line-height: 1.5;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+    padding: 0;
 }
 
 a {
@@ -47,12 +48,15 @@ a:hover {
 }
 
 h1 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.6rem;
+    text-align: left;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
 }
 
 input,
@@ -67,29 +71,55 @@ button:focus:not(:focus-visible) {
 
 @media (min-width: 720px) {
     h1 {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 }
 
 section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 blockquote {
-    border-left: 0.5rem solid #00000055;
+    border-left: 2px solid color-mix(in srgb, var(--color-theme-1) 35%, transparent);
+    margin-left: 0;
 }
 
 blockquote > p {
-    padding: 0.5rem;
+    padding: 0 0.2rem;
+    margin: 0.5rem 0.5rem;
+    opacity: 0.8;
+}
+
+li {
+    margin-block: 0.45rem;
 }
 
 article img {
     max-width: 100%;
+}
+
+.footnotes {
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--color-theme-1) 20%, transparent);
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+.fn-ref a,
+.fn-back {
+    color: var(--color-theme-1);
+    text-decoration: none;
+}
+
+.fn-ref a:hover,
+.fn-back:hover {
+    text-decoration: underline;
 }
