@@ -66,7 +66,7 @@ function remarkFlattenThreadBullets() {
 	};
 }
 
-/**
+/*
  * Remark plugin: handles `[^id]` footnote references and `[^id]: text` definitions.
  * Definitions are removed from their position and appended as a numbered list in a
  * <section class="footnotes"> at the end. Works for both article and thread formats
@@ -167,7 +167,10 @@ function remarkFootnotes() {
 
 		// Append footnotes section
 		const items = [...defs.entries()]
-			.map(([id, html]) => `<li id="fn-${id}">${html} <a href="#fnref-${id}" class="fn-back">↩</a></li>`)
+			.map(
+				([id, html]) =>
+					`<li id="fn-${id}">${html} <a href="#fnref-${id}" class="fn-back">↩</a></li>`
+			)
 			.join('\n');
 		tree.children.push({
 			type: 'html',
@@ -176,10 +179,24 @@ function remarkFootnotes() {
 	};
 }
 
+/**
+ * Preprocessor: strips <!-- comments --> and lines starting with TODO:/FIXME:/NOTE:
+ * from .md files before they reach mdsvex/remark.
+ */
+const stripMarkdownComments = {
+	name: 'strip-markdown-comments',
+	markup({ content, filename }) {
+		if (!filename?.endsWith('.md')) return;
+		const code = content.replace(/<!--[\s\S]*?-->/g, '').replace(/^(TODO|FIXME|NOTE):.*$/gm, '');
+		return { code };
+	}
+};
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [
 		vitePreprocess(),
+		stripMarkdownComments,
 		mdsvex({
 			extensions: ['.md'],
 			highlight: { alias: { rs: 'rust' } },
