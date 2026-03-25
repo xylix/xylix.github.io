@@ -9,16 +9,20 @@
 	let { posts }: Props = $props();
 </script>
 
-<div class="list">
+<div class="grid">
 	{#each posts as post}
 		<Card {...post} />
 	{/each}
 </div>
 
 <style>
-	.list {
-		display: flex;
-		flex-direction: column;
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr;
 		width: 100%;
+
+		@media (min-width: 720px) {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 </style>

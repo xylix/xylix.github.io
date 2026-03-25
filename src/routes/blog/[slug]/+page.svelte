@@ -59,7 +59,6 @@
 <style>
 	.post-layout {
 		width: 100%;
-		max-width: 65ch;
 	}
 
 	.post-header {
