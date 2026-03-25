@@ -7,56 +7,142 @@
 	}
 
 	let { data }: Props = $props();
-	// Could consider {data.createdAt.toLocaleDateString("fi-FI")} {data.createdAt.toLocaleTimeString("fi-FI")} GMT+0200 for date formatting in the code
 
 	const githubFileUrl = $derived(`${github_repo}/commits/main/src/lib/posts/${data.slug}.md`);
 </script>
 
-<h1>{data.title}</h1>
+<div class="post-layout">
+	<header class="post-header">
+		<h1>{data.title}</h1>
+		{#if data.subtitle}
+			<p class="subtitle">{data.subtitle}</p>
+		{/if}
+	</header>
 
-<span class="centered">{data.subtitle}</span>
+	<article class:thread={data.format === 'thread'}>
+		<data.content />
+	</article>
 
-<article class:thread={data.format === 'thread'}>
-	<data.content />
-</article>
+	<footer class="post-footer">
+		<hr class="footer-rule" />
 
-<footer>
-	<hr />
-	<p>Originally released on {data.createdAt}</p>
-	{#if data.updatedAt && data.updatedAt.length > 0}
-		<details>
-			<summary>Revision history ({data.updatedAt.length})</summary>
-			<ul>
-				{#each data.updatedAt as rev}
-					<li><a href={githubFileUrl}>{rev.toLocaleDateString()}</a></li>
-				{/each}
-			</ul>
-		</details>
-	{/if}
+		<div class="footer-meta">
+			<span>Published {data.createdAt.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
 
-	{#if data.similar.length > 0}
-		<p>You may also like:</p>
-		<ul>
-			{#each data.similar as similar}
-				<li>
-					<a href={similar.link}>{similar.title}</a>
-				</li>
-			{/each}
-		</ul>
-	{/if}
+			{#if data.updatedAt && data.updatedAt.length > 0}
+				<details>
+					<summary>Revisions ({data.updatedAt.length})</summary>
+					<ul>
+						{#each data.updatedAt as rev}
+							<li><a href={githubFileUrl}>{rev.toLocaleDateString()}</a></li>
+						{/each}
+					</ul>
+				</details>
+			{/if}
+		</div>
 
-	<a class="return-link" href="/blog">To the post list</a>
-</footer>
+		{#if data.similar.length > 0}
+			<div class="similar">
+				<span class="similar-label">Related</span>
+				<ul>
+					{#each data.similar as similar}
+						<li><a href={similar.link}>{similar.title}</a></li>
+					{/each}
+				</ul>
+			</div>
+		{/if}
+
+		<a class="return-link" href="/blog">All posts</a>
+	</footer>
+</div>
 
 <style>
-	footer {
-		margin-top: auto;
+	.post-layout {
+		width: 100%;
+		max-width: 65ch;
 	}
 
-	.centered {
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: -1rem;
+	.post-header {
+		margin-bottom: 2.5rem;
+	}
+
+	.post-header h1 {
+		text-align: left;
+		margin-bottom: 0.35rem;
+	}
+
+	.subtitle {
+		margin: 0;
+		font-size: 0.95rem;
+		opacity: 0.55;
+		line-height: 1.4;
+	}
+
+	.post-footer {
+		margin-top: 3rem;
+	}
+
+	.footer-rule {
+		border: none;
+		border-top: 1px solid var(--color-rule, color-mix(in srgb, currentColor 8%, transparent));
+		margin-bottom: 1.25rem;
+	}
+
+	.footer-meta {
+		font-size: 0.8rem;
+		opacity: 0.45;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.footer-meta details summary {
+		cursor: pointer;
+	}
+
+	.footer-meta ul {
+		margin: 0.25rem 0 0;
+		padding-left: 1rem;
+	}
+
+	.similar {
+		margin-bottom: 1.5rem;
+		font-size: 0.85rem;
+	}
+
+	.similar-label {
+		display: block;
+		font-size: 0.7rem;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+		opacity: 0.4;
+		margin-bottom: 0.5rem;
+	}
+
+	.similar ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+	}
+
+	.return-link {
+		display: inline-block;
+		font-size: 0.78rem;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		opacity: 0.4;
+		color: var(--color-text);
+		text-decoration: none;
+		transition: opacity 0.12s;
+	}
+
+	.return-link:hover {
+		opacity: 0.9;
+		text-decoration: none;
 	}
 
 	/* ── Thread format ─────────────────────────────────────────────── */
