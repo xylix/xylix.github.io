@@ -30,9 +30,12 @@
 
 <article>
 	<h1>{data.name}</h1>
-	<div class="prose">
-		<data.content />
-	</div>
+	{#if data.hasProse}
+		<div class="prose">
+			<data.content />
+		</div>
+		<hr>
+	{/if}
 	<ul>
 		{#each data.tree as node}
 			{@render renderNode(node)}
