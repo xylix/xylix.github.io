@@ -14,12 +14,16 @@ Technology[^2]:
 
 Goals: Understanding the world, laying the groundwork for eventually [becoming more whole.](https://joecarlsmith.com/2023/02/17/seeing-more-whole/#5-4-seeing-the-general-of-the-army-you-ve-been-fighting-in)
 
-* Vision
+Terminology: Lenses, to see with. Frames, to build with. Stances, to find. See [the post](/blog/lens-frame-stance) for more details.
+
+* Lenses 
   * Problems with central coordination
     * re-every-layer-of-review
     * why-top-down-keeps-failing / predictability-as-rigidity
     * forgiveness-not-permission
+* Frames
+* Stances
 
 
-[^1]: https://en.wiktionary.org/wiki/cognitive
-[^2]: https://en.wiktionary.org/wiki/technology
+[^1]: Source: https://en.wiktionary.org/wiki/cognitive
+[^2]: Source: https://en.wiktionary.org/wiki/technology
