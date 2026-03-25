@@ -19,10 +19,11 @@
 	.grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		width: 100%;
+		align-self: stretch; /* override section's align-items: flex-start */
 
 		@media (min-width: 720px) {
 			grid-template-columns: 1fr 1fr;
+			column-gap: 2rem;
 		}
 	}
 </style>
