@@ -1,4 +1,13 @@
-import type { BlockContent, DefinitionContent, Html, List, Node, Parent, PhrasingContent, Root } from 'mdast';
+import type {
+	BlockContent,
+	DefinitionContent,
+	Html,
+	List,
+	Node,
+	Parent,
+	PhrasingContent,
+	Root
+} from 'mdast';
 import type { VFile } from 'vfile';
 
 type Group = (BlockContent | DefinitionContent)[];
@@ -90,8 +99,7 @@ export function remarkFootnotes() {
 				if (n.type === 'strong') return `<strong>${serializeChildren(n.children)}</strong>`;
 				if (n.type === 'link')
 					return `<a href="${n.url}">${serializeChildren(n.children as PhrasingContent[])}</a>`;
-				if ('children' in n)
-					return serializeChildren((n as Parent).children as PhrasingContent[]);
+				if ('children' in n) return serializeChildren((n as Parent).children as PhrasingContent[]);
 				return '';
 			})
 			.join('');

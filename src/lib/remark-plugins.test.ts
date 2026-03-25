@@ -78,9 +78,7 @@ describe('remarkFootnotes', () => {
 	});
 
 	it('does nothing when there are no footnotes', async () => {
-		const html = await renderHtml(
-			'Just a paragraph with a [regular link](https://example.com).\n'
-		);
+		const html = await renderHtml('Just a paragraph with a [regular link](https://example.com).\n');
 		expect(html).not.toContain('fn-ref');
 		expect(html).not.toContain('footnotes');
 	});
