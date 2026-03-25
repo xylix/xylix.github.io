@@ -1,7 +1,7 @@
 ---
 name: 'Agency'
 tagline: 'Learning to act in the real world'
-updatedAt: '2026-03-24T00:00:00+0200'
+updatedAt: '2026-03-25T11:02:31+0200'
 ---
 
 Goals: Confronting life's important skill issues headfirst. [Becoming more whole.](https://joecarlsmith.com/2023/02/17/seeing-more-whole/#5-4-seeing-the-general-of-the-army-you-ve-been-fighting-in)
@@ -10,11 +10,7 @@ Goals: Confronting life's important skill issues headfirst. [Becoming more whole
    * why-effective-altruism
    * becoming-an-adult
    * (why not earlier)
-* Vision
-    * Problems with central coordination
-       * re-every-layer-of-review
-       * why-top-down-keeps-failing / predictability-as-rigidity
-       * forgiveness-not-permission
+
 * Inefficiency / do not
   * Stop larping conscientousness / lawfulness <!-- TODO: Draw from the relevant vision sequence here. -->
   * Stop calculating utilons. (And thinking that in the optimal world you would calculate all the utilons.) <!-- TODO: include my "fund manager judgment" galaxy brain meme and explain it. -->
