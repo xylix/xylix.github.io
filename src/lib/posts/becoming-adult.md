@@ -2,8 +2,8 @@
 title: Opening my mouth
 tagline: TODO tagline
 slug: becoming-an-adult
-format: 'thread'
 createdAt: 2026-03-23T12:24:53+0200
+updatedAt: 2026-03-25T16:11:35+0200 
 tags: ['confusing', 'work-in-progress', 'persona']
 wordCount: 886
 ---
