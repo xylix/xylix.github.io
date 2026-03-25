@@ -47,7 +47,7 @@
 		grid-template-columns: 3px 1fr auto;
 		gap: 0 1.25rem;
 		align-items: center;
-		padding: 1rem 0;
+		padding: 1.15rem 0;
 		border-bottom: 1px solid var(--color-rule, color-mix(in srgb, currentColor 8%, transparent));
 		color: inherit;
 		text-decoration: none;
