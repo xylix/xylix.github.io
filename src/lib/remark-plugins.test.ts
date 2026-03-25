@@ -1,18 +1,20 @@
 /**
- * Integration tests for the custom remark plugins (remarkFootnotes,
- * remarkFlattenThreadBullets).  We run them through the same mdsvex pipeline
- * that the site uses so the tests exercise real behaviour rather than
- * a re-constructed approximation.
+ * Integration tests for the custom remark plugins. Run through the same
+ * mdsvex pipeline the site uses so tests exercise real behaviour.
  *
- * Key quirk: mdsvex bundles an older remark (unified v9) whose parser only
- * produces `linkReference` nodes for `[^id]` when the surrounding definitions
- * live in the same paragraph (consecutive lines, no blank lines between them).
- * Single-definition blocks must therefore have multi-word text (spaces) so
- * they aren't swallowed as link definitions by that remark version.
+ * Quirk: mdsvex bundles unified v9 whose parser only produces `linkReference`
+ * nodes for `[^id]` when definitions are on consecutive lines (no blank line
+ * between them) AND the definition text is multi-word (so older remark doesn't
+ * consume it as a link definition with a single-token URL).
  */
 import { mdsvex } from 'mdsvex';
 import { describe, it, expect } from 'vitest';
 import { remarkFootnotes, remarkFlattenThreadBullets } from './remark-plugins.js';
+
+const preprocessor = mdsvex({
+	extensions: ['.md'],
+	remarkPlugins: [remarkFlattenThreadBullets, remarkFootnotes]
+});
 
 const FRONTMATTER = `---
 title: Test
@@ -22,13 +24,8 @@ wordCount: 5
 `;
 
 async function renderHtml(body: string, extraFrontmatter = ''): Promise<string> {
-	const preprocessor = mdsvex({
-		extensions: ['.md'],
-		remarkPlugins: [remarkFlattenThreadBullets, remarkFootnotes]
-	});
 	const content = `${FRONTMATTER}${extraFrontmatter}---\n\n${body}`;
 	const result = await preprocessor.markup({ content, filename: 'test.md' });
-	// Strip <script context="module">…</script> boilerplate
 	return (result?.code ?? '').replace(/<script[\s\S]*?<\/script>/g, '').trim();
 }
 
@@ -53,16 +50,12 @@ describe('remarkFootnotes', () => {
 
 	it('removes the footnote definition from the body', async () => {
 		const html = await renderHtml('A sentence.[^1]\n\n[^1]: Simple footnote text here.\n');
-		// Definition should only appear inside the footnotes section, not as a
-		// bare paragraph
 		const withoutSection = html.replace(/<section[\s\S]*?<\/section>/g, '');
 		expect(withoutSection).not.toContain('[^1]');
 		expect(withoutSection).not.toContain('Simple footnote text here.');
 	});
 
 	it('handles multiple consecutive footnote definitions', async () => {
-		// Definitions must be on consecutive lines (no blank lines) so that
-		// older remark lands them in one paragraph instead of link-definitions.
 		const body =
 			'First.[^1] Second.[^2]\n\n[^1]: Simple plain text definition.\n[^2]: Another footnote definition.\n';
 		const html = await renderHtml(body);
@@ -73,15 +66,14 @@ describe('remarkFootnotes', () => {
 	});
 
 	it('serializes links inside footnote definitions', async () => {
-		const body =
-			'See note.[^note]\n\n[^note]: Text with a [link](https://example.com) inside here.\n';
-		const html = await renderHtml(body);
+		const html = await renderHtml(
+			'See note.[^note]\n\n[^note]: Text with a [link](https://example.com) inside here.\n'
+		);
 		expect(html).toContain('<a href="https://example.com">link</a>');
 	});
 
 	it('serializes inline code inside footnote definitions', async () => {
-		const body = 'See note.[^code]\n\n[^code]: Use `inline code` snippet here.\n';
-		const html = await renderHtml(body);
+		const html = await renderHtml('See note.[^code]\n\n[^code]: Use `inline code` snippet here.\n');
 		expect(html).toContain('<code>inline code</code>');
 	});
 
@@ -101,7 +93,6 @@ describe('remarkFootnotes', () => {
 describe('remarkFlattenThreadBullets', () => {
 	it('leaves lists untouched when format is not thread', async () => {
 		const html = await renderHtml('- Item one\n- Item two\n- Item three\n');
-		// Standard list rendering – no <hr> separators
 		expect(html).toContain('<li>');
 		expect(html).not.toContain('<hr>');
 	});
@@ -114,19 +105,14 @@ describe('remarkFlattenThreadBullets', () => {
 
 	it('inserts <hr> separators between thread items', async () => {
 		const html = await renderHtml('- Alpha\n- Beta\n- Gamma\n', 'format: thread\n');
-		// 3 items → 2 <hr> separators
-		const hrCount = (html.match(/<hr>/g) ?? []).length;
-		expect(hrCount).toBe(2);
+		expect((html.match(/<hr>/g) ?? []).length).toBe(2);
 		expect(html).toContain('<p>Alpha</p>');
 		expect(html).toContain('<p>Beta</p>');
 		expect(html).toContain('<p>Gamma</p>');
 	});
 
 	it('flattens nested lists recursively', async () => {
-		const html = await renderHtml(
-			'- Outer\n  - Inner A\n  - Inner B\n',
-			'format: thread\n'
-		);
+		const html = await renderHtml('- Outer\n  - Inner A\n  - Inner B\n', 'format: thread\n');
 		expect(html).not.toContain('<li>');
 		expect(html).toContain('<p>');
 	});

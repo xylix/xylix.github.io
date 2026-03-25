@@ -2,15 +2,19 @@
 /** @import { VFile } from 'vfile' */
 
 /** @typedef {(BlockContent | DefinitionContent)[]} Group */
+/**
+ * AST node extended with the optional string fields used by linkReference and
+ * text nodes, so the footnote scanner doesn't need a cast on every access.
+ * @typedef {Node & { identifier?: string; value?: string }} AstNode
+ */
 
 /**
  * Remark plugin: for posts with `format: thread`, flatten all bullet list items
  * (at any nesting depth) into paragraphs separated by thematic breaks (---),
  * so the existing thread CSS applies without changes.
- */
-// Returns an array of groups. Each group is an array of nodes (paragraph + optional
-// blockquotes) that belong to the same thread node, separated by thematicBreaks.
-/**
+ *
+ * Returns an array of groups. Each group is an array of nodes (paragraph +
+ * optional blockquotes) that belong to the same thread item.
  * @param {List} list
  * @returns {Group[]}
  */
@@ -114,8 +118,7 @@ export function remarkFootnotes() {
 	function processNode(node, parent, idx) {
 		// [^id] is parsed by remark as a linkReference with identifier "^id"
 		if (node.type === 'linkReference') {
-			const ref = /** @type {Node & { identifier?: string }} */ (node);
-			const m = ref.identifier?.match(/^\^([\w-]+)$/);
+			const m = /** @type {AstNode} */ (node).identifier?.match(/^\^([\w-]+)$/);
 			if (m && parent) {
 				const id = m[1];
 				parent.children.splice(
@@ -152,11 +155,8 @@ export function remarkFootnotes() {
 		for (let i = root.children.length - 1; i >= 0; i--) {
 			const node = root.children[i];
 			if (node.type !== 'paragraph') continue;
-			const ch = /** @type {Array<Node & Record<string, unknown>>} */ (
-				/** @type {Parent} */ (node).children
-			);
-			if (ch[0]?.type !== 'linkReference' || !/** @type {string} */ (ch[0].identifier)?.match(/^\^[\w-]+$/))
-				continue;
+			const ch = /** @type {AstNode[]} */ (/** @type {Parent} */ (node).children);
+			if (ch[0]?.type !== 'linkReference' || !ch[0].identifier?.match(/^\^[\w-]+$/)) continue;
 
 			/** @type {[string, string][]} */
 			const localDefs = [];
@@ -164,11 +164,11 @@ export function remarkFootnotes() {
 			while (j < ch.length) {
 				const ref = ch[j];
 				if (ref?.type !== 'linkReference') break;
-				const idMatch = /** @type {string} */ (ref.identifier)?.match(/^\^([\w-]+)$/);
+				const idMatch = ref.identifier?.match(/^\^([\w-]+)$/);
 				if (!idMatch) break;
 				const textNode = ch[j + 1];
 				if (textNode?.type !== 'text') break;
-				const tm = /** @type {string} */ (textNode.value).match(/^:\s*([\s\S]*)/);
+				const tm = textNode.value?.match(/^:\s*([\s\S]*)/);
 				if (!tm) break;
 
 				// Find where this definition ends: next linkReference(^id) + text(": ")
@@ -176,9 +176,9 @@ export function remarkFootnotes() {
 				while (k < ch.length) {
 					if (
 						ch[k]?.type === 'linkReference' &&
-						/** @type {string} */ (ch[k].identifier)?.match(/^\^[\w-]+$/) &&
+						ch[k].identifier?.match(/^\^[\w-]+$/) &&
 						ch[k + 1]?.type === 'text' &&
-						/** @type {string} */ (ch[k + 1].value).match(/^:\s*/)
+						ch[k + 1].value?.match(/^:\s*/)
 					)
 						break;
 					k++;
