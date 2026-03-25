@@ -90,12 +90,12 @@ blockquote {
 }
 
 blockquote > p {
-    padding: 0.4rem 0.75rem;
+    padding: 0.32rem 0.75rem;
     opacity: 0.8;
 }
 
 li {
-    margin-block: 0.3rem;
+    margin-block: 0.45rem;
 }
 
 article img {
