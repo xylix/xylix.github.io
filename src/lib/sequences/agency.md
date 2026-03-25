@@ -4,7 +4,7 @@ tagline: 'Learning to act in the real world'
 updatedAt: '2026-03-24T00:00:00+0200'
 ---
 
-Content goals: Confronting life's important skill issues headfirst. Acquiring the required skillset to Become Great.
+Goals: Confronting life's important skill issues headfirst. [Becoming more whole.](https://joecarlsmith.com/2023/02/17/seeing-more-whole/#5-4-seeing-the-general-of-the-army-you-ve-been-fighting-in)
 
 * Motivation
    * why-effective-altruism
