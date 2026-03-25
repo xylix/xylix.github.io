@@ -16,6 +16,7 @@ Goals: Understanding the world, laying the groundwork for eventually [becoming m
 
 Terminology: Lenses, to see with. Frames, to build with. Stances, to find. See [the post](/blog/lens-frame-stance) for more details.
 
+* lens-frame-stance
 * Lenses 
   * Problems with central coordination
     * re-every-layer-of-review

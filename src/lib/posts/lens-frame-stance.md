@@ -4,12 +4,10 @@ tagline: Lenses, to see with. Frames, to build with. Stances, to find.
 createdAt: 2026-03-25T11:21:47+0200
 updatedAt: 2026-03-25T11:21:47+0200
 tags: ['cognitech', 'in-progress']
-wordCount: 475
+wordCount: 492
 ---
 
-Disclaimer: This is a placeholder written by Claude based on my notes from over 2 years. I will, or won't, get around to cleaniing this up.
-
-# Lenses, Frames, Stances
+_Disclaimer_: This is a placeholder written by Claude based on my notes from over 2 years. I will, or won't, get around to cleaning this up.
 
 *Cognitive technology: Lenses, to see with. Frames, to build with. Stances, to find.*
 
@@ -29,7 +27,7 @@ A compsci-brained person receiving a spec often defaults to a **problem-finding 
 
 For **frames**: an EA reading AI papers could frame their analysis around argument credibility, first-principles empirics, ML technicalities, theory of mind, or evolutionary biology intuitions. Each produces a different model. None is complete alone.
 
-For **stances**: when your code doesn't compile, you might find yourself in a frustrated stance or a curious stance. Same trigger, different reaction surface. When receiving relationship feedback, you might default to an unconfident stance ("obviously the other person knows better") that causes you to internalize criticism you'd rationally disagree with.
+For **stances**: when your code doesn't compile, you might find yourself in a frustrated stance or a curious stance. Same trigger, different reaction surface. When receiving relationship feedback, you might default to an unconfident stance ("obviously the other person knows better") that causes you to internalize criticism you'd rationally disagree with. Or you could shift into an angry stance, sometimes healthy, sometimes lashing out in ways you do not endorse upon reflection.
 
 ## Why this matters
 
