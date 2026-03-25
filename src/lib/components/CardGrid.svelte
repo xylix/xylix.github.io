@@ -10,7 +10,7 @@
 	let { posts, columns = 2 }: Props = $props();
 </script>
 
-<div class="grid" class:two-col={columns === 2}>
+<div class="grid" style="--cols: {columns}">
 	{#each posts as post}
 		<Card {...post} />
 	{/each}
@@ -23,9 +23,9 @@
 		align-self: stretch;
 	}
 
-	.grid.two-col {
-		@media (min-width: 720px) {
-			grid-template-columns: 1fr 1fr;
+	@media (min-width: 720px) {
+		.grid {
+			grid-template-columns: repeat(var(--cols, 1), 1fr);
 			column-gap: 2rem;
 		}
 	}
