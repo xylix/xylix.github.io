@@ -33,7 +33,9 @@ p {
 }
 
 p {
-    line-height: 1.65;
+    line-height: 1.4;
+    margin: 0.5rem 0rem;
+    padding: 0;
 }
 
 a {
@@ -90,7 +92,8 @@ blockquote {
 }
 
 blockquote > p {
-    padding: 0.32rem 0.75rem;
+    padding: 0rem 0.2rem;
+    margin: 0.5rem 0.5rem;
     opacity: 0.8;
 }
 
