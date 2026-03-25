@@ -94,6 +94,10 @@ blockquote > p {
     opacity: 0.8;
 }
 
+li {
+    margin-block: 0.3rem;
+}
+
 article img {
     max-width: 100%;
 }
