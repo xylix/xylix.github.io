@@ -1,12 +1,13 @@
-/** @import { BlockContent, DefinitionContent, Html, List, Node, Parent, PhrasingContent, Root, ThematicBreak } from 'mdast' */
-/** @import { VFile } from 'vfile' */
+import type { BlockContent, DefinitionContent, Html, List, Node, Parent, PhrasingContent, Root } from 'mdast';
+import type { VFile } from 'vfile';
 
-/** @typedef {(BlockContent | DefinitionContent)[]} Group */
-/**
- * AST node extended with the optional string fields used by linkReference and
- * text nodes, so the footnote scanner doesn't need a cast on every access.
- * @typedef {Node & { identifier?: string; value?: string }} AstNode
- */
+type Group = (BlockContent | DefinitionContent)[];
+type AstNode = Node & { identifier?: string; value?: string };
+
+/** Strip HTML comments and TODO/FIXME/NOTE lines from raw markdown. */
+export function stripComments(raw: string): string {
+	return raw.replace(/<!--[\s\S]*?-->/g, '').replace(/^(TODO|FIXME|NOTE):.*$/gm, '');
+}
 
 /**
  * Remark plugin: for posts with `format: thread`, flatten all bullet list items
@@ -15,27 +16,23 @@
  *
  * Returns an array of groups. Each group is an array of nodes (paragraph +
  * optional blockquotes) that belong to the same thread item.
- * @param {List} list
- * @returns {Group[]}
  */
-function collectGroupsFromList(list) {
-	/** @type {Group[]} */
-	const groups = [];
+function collectGroupsFromList(list: List): Group[] {
+	const groups: Group[] = [];
 	for (const item of list.children ?? []) {
 		const children = item.children ?? [];
 		const hasBlockChild = children.some((c) => c.type === 'paragraph' || c.type === 'list');
 
 		if (!hasBlockChild && children.length > 0) {
 			// Tight list item: inline nodes are direct children, not wrapped in a paragraph
-			groups.push([{ type: 'paragraph', children: /** @type {PhrasingContent[]} */ (children) }]);
+			groups.push([{ type: 'paragraph', children: children as PhrasingContent[] }]);
 		} else {
-			/** @type {Group} */
-			const group = [];
+			const group: Group = [];
 			for (const child of children) {
 				if (child.type === 'paragraph') {
 					group.push(child);
 				} else if (child.type === 'blockquote') {
-					group.push(child); // keep blockquote with its parent paragraph
+					group.push(child);
 				} else if (child.type === 'list') {
 					if (group.length > 0) {
 						groups.push([...group]);
@@ -50,35 +47,30 @@ function collectGroupsFromList(list) {
 	return groups;
 }
 
-/** @param {Parent} node */
-function flattenListsInNode(node) {
-	/** @type {Node[]} */
-	const newChildren = [];
+function flattenListsInNode(node: Parent) {
+	const newChildren: Node[] = [];
 	for (const child of node.children) {
 		if (child.type === 'list') {
-			const groups = collectGroupsFromList(/** @type {List} */ (child));
+			const groups = collectGroupsFromList(child as List);
 			for (let i = 0; i < groups.length; i++) {
 				newChildren.push(...groups[i]);
 				if (i < groups.length - 1) {
-					newChildren.push(/** @type {ThematicBreak} */ ({ type: 'thematicBreak' }));
+					newChildren.push({ type: 'thematicBreak' } as Node);
 				}
 			}
 		} else {
-			if ('children' in child) flattenListsInNode(/** @type {Parent} */ (child));
+			if ('children' in child) flattenListsInNode(child as Parent);
 			newChildren.push(child);
 		}
 	}
-	node.children = /** @type {Parent['children']} */ (newChildren);
+	node.children = newChildren as Parent['children'];
 }
 
 export function remarkFlattenThreadBullets() {
-	/**
-	 * @param {import('unist').Node} tree
-	 * @param {VFile} file
-	 */
-	return (tree, file) => {
-		if (/** @type {any} */ (file.data)?.fm?.format !== 'thread') return;
-		flattenListsInNode(/** @type {Root} */ (tree));
+	return (tree: Node, file: VFile) => {
+		const data = file.data as { fm?: { format?: string } };
+		if (data?.fm?.format !== 'thread') return;
+		flattenListsInNode(tree as Root);
 	};
 }
 
@@ -89,11 +81,7 @@ export function remarkFlattenThreadBullets() {
  * (run after remarkFlattenThreadBullets so thread bullets are already paragraphs).
  */
 export function remarkFootnotes() {
-	/**
-	 * @param {PhrasingContent[] | undefined} nodes
-	 * @returns {string}
-	 */
-	function serializeChildren(nodes) {
+	function serializeChildren(nodes: PhrasingContent[] | undefined): string {
 		return (nodes ?? [])
 			.map((n) => {
 				if (n.type === 'text') return n.value;
@@ -101,39 +89,29 @@ export function remarkFootnotes() {
 				if (n.type === 'emphasis') return `<em>${serializeChildren(n.children)}</em>`;
 				if (n.type === 'strong') return `<strong>${serializeChildren(n.children)}</strong>`;
 				if (n.type === 'link')
-					return `<a href="${n.url}">${serializeChildren(/** @type {PhrasingContent[]} */ (n.children))}</a>`;
+					return `<a href="${n.url}">${serializeChildren(n.children as PhrasingContent[])}</a>`;
 				if ('children' in n)
-					return serializeChildren(/** @type {PhrasingContent[]} */ (n.children));
+					return serializeChildren((n as Parent).children as PhrasingContent[]);
 				return '';
 			})
 			.join('');
 	}
 
-	/**
-	 * @param {Node} node
-	 * @param {Parent | null} parent
-	 * @param {number} idx
-	 * @returns {number | undefined}
-	 */
-	function processNode(node, parent, idx) {
+	function processNode(node: Node, parent: Parent | null, idx: number): number | undefined {
 		// [^id] is parsed by remark as a linkReference with identifier "^id"
 		if (node.type === 'linkReference') {
-			const m = /** @type {AstNode} */ (node).identifier?.match(/^\^([\w-]+)$/);
+			const m = (node as AstNode).identifier?.match(/^\^([\w-]+)$/);
 			if (m && parent) {
 				const id = m[1];
-				parent.children.splice(
-					idx,
-					1,
-					/** @type {Html} */ ({
-						type: 'html',
-						value: `<sup class="fn-ref" id="fnref-${id}"><a href="#fn-${id}">${id}</a></sup>`
-					})
-				);
+				parent.children.splice(idx, 1, {
+					type: 'html',
+					value: `<sup class="fn-ref" id="fnref-${id}"><a href="#fn-${id}">${id}</a></sup>`
+				} as Html);
 				return 1;
 			}
 		}
 		if ('children' in node) {
-			const p = /** @type {Parent} */ (node);
+			const p = node as Parent;
 			for (let i = 0; i < p.children.length; i++) {
 				const delta = processNode(p.children[i], p, i);
 				if (delta !== undefined) i += delta - 1;
@@ -141,11 +119,9 @@ export function remarkFootnotes() {
 		}
 	}
 
-	/** @param {import('unist').Node} tree */
-	return (tree) => {
-		const root = /** @type {Root} */ (tree);
-		/** @type {Map<string, string>} */
-		const defs = new Map();
+	return (tree: Node) => {
+		const root = tree as Root;
+		const defs = new Map<string, string>();
 
 		// Collect and remove footnote definitions.
 		// [^id]: text — remark parses [^id] as a linkReference, so each definition looks like:
@@ -155,11 +131,10 @@ export function remarkFootnotes() {
 		for (let i = root.children.length - 1; i >= 0; i--) {
 			const node = root.children[i];
 			if (node.type !== 'paragraph') continue;
-			const ch = /** @type {AstNode[]} */ (/** @type {Parent} */ (node).children);
+			const ch = (node as Parent).children as AstNode[];
 			if (ch[0]?.type !== 'linkReference' || !ch[0].identifier?.match(/^\^[\w-]+$/)) continue;
 
-			/** @type {[string, string][]} */
-			const localDefs = [];
+			const localDefs: [string, string][] = [];
 			let j = 0;
 			while (j < ch.length) {
 				const ref = ch[j];
@@ -186,9 +161,9 @@ export function remarkFootnotes() {
 
 				const firstText = tm[1].replace(/\n$/, ''); // strip soft-break trailing newline
 				const defChildren = firstText
-					? [/** @type {Node} */ ({ type: 'text', value: firstText }), ...ch.slice(j + 2, k)]
+					? [{ type: 'text', value: firstText } as Node, ...ch.slice(j + 2, k)]
 					: ch.slice(j + 2, k);
-				localDefs.push([idMatch[1], serializeChildren(/** @type {PhrasingContent[]} */ (defChildren))]);
+				localDefs.push([idMatch[1], serializeChildren(defChildren as PhrasingContent[])]);
 				j = k;
 			}
 
@@ -210,11 +185,9 @@ export function remarkFootnotes() {
 					`<li id="fn-${id}">${html} <a href="#fnref-${id}" class="fn-back">↩</a></li>`
 			)
 			.join('\n');
-		root.children.push(
-			/** @type {Html} */ ({
-				type: 'html',
-				value: `<section class="footnotes">\n<ol>\n${items}\n</ol>\n</section>`
-			})
-		);
+		root.children.push({
+			type: 'html',
+			value: `<section class="footnotes">\n<ol>\n${items}\n</ol>\n</section>`
+		} as Html);
 	};
 }

@@ -1,12 +1,8 @@
 import adapterStatic from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
-import { remarkFlattenThreadBullets, remarkFootnotes } from './src/lib/remark-plugins.js';
+import { remarkFlattenThreadBullets, remarkFootnotes } from './src/lib/remark-plugins.ts';
 
-/**
- * Preprocessor: strips <!-- comments --> and lines starting with TODO:/FIXME:/NOTE:
- * from .md files before they reach mdsvex/remark.
- */
 const stripMarkdownComments = {
 	name: 'strip-markdown-comments',
 	markup({ content, filename }) {

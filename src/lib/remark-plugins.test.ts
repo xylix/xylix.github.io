@@ -9,7 +9,7 @@
  */
 import { mdsvex } from 'mdsvex';
 import { describe, it, expect } from 'vitest';
-import { remarkFootnotes, remarkFlattenThreadBullets } from './remark-plugins.js';
+import { remarkFootnotes, remarkFlattenThreadBullets } from './remark-plugins';
 
 const preprocessor = mdsvex({
 	extensions: ['.md'],

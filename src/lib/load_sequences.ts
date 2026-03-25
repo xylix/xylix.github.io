@@ -1,4 +1,5 @@
 import type { SvelteComponent } from 'svelte';
+import { stripComments } from './remark-plugins';
 
 export type SequenceNode = {
 	label: string;
@@ -22,8 +23,11 @@ type MetaSequence = {
 	updatedAt: string;
 };
 
-function parseSequenceTree(rawMarkdown: string): SequenceNode[] {
-	const body = rawMarkdown.replace(/^---[\s\S]*?---/, '').trim();
+function stripFrontmatter(raw: string): string {
+	return raw.replace(/^---[\s\S]*?---/, '').trim();
+}
+
+function parseSequenceTree(body: string): SequenceNode[] {
 	const lines = body
 		.split('\n')
 		.filter((line) => /^\s*[*-]\s/.test(line))
@@ -55,12 +59,7 @@ function parseSequenceTree(rawMarkdown: string): SequenceNode[] {
 	return tree;
 }
 
-function stripComments(raw: string): string {
-	return raw.replace(/<!--[\s\S]*?-->/g, '').replace(/^(TODO|FIXME|NOTE):.*$/gm, '');
-}
-
-function hasSequenceProse(rawMarkdown: string): boolean {
-	const body = rawMarkdown.replace(/^---[\s\S]*?---/, '').trim();
+function hasSequenceProse(body: string): boolean {
 	return body.split('\n').some((line) => line.trim() && !/^\s*[*-]\s/.test(line));
 }
 
@@ -84,9 +83,9 @@ const load_sequences = async (): Promise<SequenceArticle[]> => {
 				);
 			}
 
-			const raw = stripComments(rawFiles[path] as string);
-			const tree = parseSequenceTree(raw);
-			const hasProse = hasSequenceProse(raw);
+			const body = stripFrontmatter(stripComments(rawFiles[path] as string));
+			const tree = parseSequenceTree(body);
+			const hasProse = hasSequenceProse(body);
 
 			const fname = path.replace(/^.*[\\/]/, '');
 			const slug = fname.replace(/\.md$/, '');
