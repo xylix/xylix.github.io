@@ -15,6 +15,13 @@
 		<li>github: github.com/xylix</li>
 		<li>email: xylix at iki.fi</li>
 	</ul>
+	<p>
+		You can give feedback on anything — my writing, my ideas, my website, or anything else — using
+		<a
+			href="https://docs.google.com/forms/d/e/1FAIpQLSc8SOuHzjflkEg-raTlaYP5SJ25Aw0614jQOfu9yHKNi2m0eA/viewform?usp=sharing&ouid=109863632324495875836"
+			>this feedback form</a
+		>.
+	</p>
 	<p>My content:</p>
 	<ul>
 		<li>
