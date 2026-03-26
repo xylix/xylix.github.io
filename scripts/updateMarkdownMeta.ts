@@ -10,10 +10,11 @@ function getStagedMdFiles(): string[] {
 		.filter((f) => f.endsWith('.md') && fs.existsSync(f));
 }
 
-function getAllPostFiles(): string[] {
-	const postsFolder = 'src/lib/posts';
-	if (!fs.existsSync(postsFolder)) return [];
-	return fs.readdirSync(postsFolder).filter((f) => f.endsWith('.md')).map((f) => `${postsFolder}/${f}`);
+function getChangedMdFiles(): string[] {
+	const output = execSync("git diff --name-only HEAD -- '*.md'", { encoding: 'utf8' });
+	return output
+		.split('\n')
+		.filter((f) => f.endsWith('.md') && fs.existsSync(f));
 }
 
 function formatTimestamp(): string {
@@ -31,7 +32,7 @@ function formatTimestamp(): string {
 	);
 }
 
-function updateFile(fpath: string, updateTimestamp: boolean): boolean {
+function updateFile(fpath: string): boolean {
 	const content = fs.readFileSync(fpath, 'utf8');
 	const lines = content.split('\n');
 
@@ -74,7 +75,7 @@ function updateFile(fpath: string, updateTimestamp: boolean): boolean {
 		}
 	}
 
-	if (hasUpdatedAt && updateTimestamp) {
+	if (hasUpdatedAt) {
 		const ts = formatTimestamp();
 		for (let i = 1; i < frontMatterEnd; i++) {
 			if (lines[i].startsWith('updatedAt')) {
@@ -95,11 +96,11 @@ function updateFile(fpath: string, updateTimestamp: boolean): boolean {
 }
 
 function main() {
-	const files = checkMode ? getStagedMdFiles() : getAllPostFiles();
+	const files = checkMode ? getStagedMdFiles() : getChangedMdFiles();
 	const changedFiles: string[] = [];
 
 	for (const fpath of files) {
-		const changed = updateFile(fpath, checkMode);
+		const changed = updateFile(fpath);
 		if (changed) changedFiles.push(fpath);
 	}
 
