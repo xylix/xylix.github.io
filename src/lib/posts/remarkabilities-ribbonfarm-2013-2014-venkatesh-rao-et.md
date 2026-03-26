@@ -3,7 +3,6 @@ title: 'Quotes: Venkatesh Rao on Freedom'
 tagline: 'Quotes from varying texts from ribbonfarm.com 2013-2015'
 slug: remarkabilities-ribbonfarm-2013-2014-venkatesh-rao-et
 createdAt: 2019-06-09T06:06:38.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['quotes']
 ---
 

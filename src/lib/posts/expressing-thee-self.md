@@ -3,7 +3,6 @@ title: 'Expressing Myself'
 tagline: 'Expressing my self'
 slug: expressing-thee-self
 createdAt: 2019-06-07T08:02:13.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['confusing']
 ---
 

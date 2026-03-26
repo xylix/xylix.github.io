@@ -3,7 +3,6 @@ title: 'Dnd 5e Eldritch Invocations'
 tagline: 'Eldritch Invocations listed by unlock requirement'
 slug: dnd-5e-eldritch-invocations-by-unlock-requirements
 createdAt: 2020-10-22T12:53:24.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['ttrpg']
 ---
 

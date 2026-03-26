@@ -1,12 +1,10 @@
 import type { SvelteComponent } from 'svelte';
-import wordcounts from '../../wordcounts.json';
+import { gitMeta } from './git-meta';
 
 type Post = {
 	default: typeof SvelteComponent;
 	metadata: MetaArticle;
 };
-
-const wordcountManifest: Record<string, number> = wordcounts;
 
 export type MetaArticle = {
 	link: string;
@@ -17,8 +15,7 @@ export type MetaArticle = {
 	/** Post display format. Defaults to 'article' when unset. */
 	format?: 'thread' | 'article';
 	tags: string[];
-	createdAt: string;
-	updatedAt?: string | string[];
+	createdAt?: string;
 };
 
 export type Article = {
@@ -30,7 +27,7 @@ export type Article = {
 	format?: 'thread' | 'article';
 	tags: string[];
 	createdAt: Date;
-	updatedAt?: Date[];
+	updatedAt: Date[];
 	favourite: boolean;
 	draft: boolean;
 	content: typeof SvelteComponent;
@@ -50,17 +47,18 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 			if (!post.metadata) {
 				throw new Error(`Failed to parse frontmatter in ${path}`);
 			}
-			const { tagline, title, tags, createdAt, updatedAt, favourite, draft, format } =
+			const { tagline, title, tags, createdAt, favourite, draft, format } =
 				post.metadata;
-			// draft, favourite and updatedAt are optional
-			const requiredMetadata = [title, tags, createdAt].every((val) => val !== undefined);
+			const requiredMetadata = [title, tags].every((val) => val !== undefined);
 			if (!requiredMetadata) {
 				throw new Error(
-					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}. Required: [title, tags, createdAt]`
+					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}. Required: [title, tags]`
 				);
 			}
 			const fname = path.replace(/^.*[\\/]/, '');
 			const slug = fname.replace(/\.md$/, '');
+			const meta = gitMeta[`src/lib/posts/${fname}`];
+			const dates = meta?.dates ?? [];
 
 			return {
 				link: `/blog/${slug}`,
@@ -69,12 +67,9 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 				tagline,
 				format,
 				tags,
-				wordCount: wordcountManifest[slug] ?? 0,
-				createdAt: new Date(createdAt),
-				updatedAt:
-					updatedAt === undefined
-						? undefined
-						: (typeof updatedAt === 'string' ? [updatedAt] : updatedAt).map((d) => new Date(d)),
+				wordCount: meta?.wordCount ?? 0,
+				createdAt: createdAt ? new Date(createdAt) : (dates.length > 0 ? new Date(dates.at(-1)!) : new Date()),
+				updatedAt: dates.map((d) => new Date(d)),
 				content: post.default,
 				favourite: !!favourite,
 				draft: !!draft

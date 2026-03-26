@@ -1,7 +1,6 @@
 ---
 name: Cognitive techology
 tagline: 'Learning to brain better'
-updatedAt: 2026-03-25T11:06:10+0200
 ---
 
 Cognitive[^1]: 

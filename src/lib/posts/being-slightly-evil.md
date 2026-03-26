@@ -3,7 +3,6 @@ title: 'Quotes: Be Slightly Evil'
 tagline: 'Notes on Being Slightly Evil (Venkatesh Rao, 2013)'
 slug: being-slightly-evil
 createdAt: 2019-06-05T16:24:19.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['quotes', 'book', 'rationality', 'work-in-progress']
 ---
 

@@ -3,7 +3,6 @@ title: 'Things Of Interest'
 tagline: 'Things of Interest'
 slug: things-of-interest
 createdAt: 2019-05-28T17:52:00.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: []
 ---
 

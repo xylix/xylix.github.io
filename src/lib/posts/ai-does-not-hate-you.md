@@ -2,7 +2,6 @@
 title: 'Review: The AI Does Not Hate You'
 tagline: '(Tom Chivers, 2019)'
 createdAt: 2019-07-09T08:39:34.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['review', 'book']
 ---
 

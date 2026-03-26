@@ -3,7 +3,6 @@ title: 'Realifying'
 tagline: 'Confusing form thoughts about creativity'
 slug: realifying
 createdAt: 2019-06-22T11:36:57.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['confusing', 'work-in-progress']
 ---
 

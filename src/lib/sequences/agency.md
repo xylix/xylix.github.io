@@ -1,7 +1,6 @@
 ---
 name: 'Agency'
 tagline: 'Learning to act in the real world'
-updatedAt: '2026-03-25T11:02:31+0200'
 ---
 
 Goals: Confronting life's important skill issues headfirst. [Becoming more whole.](https://joecarlsmith.com/2023/02/17/seeing-more-whole/#5-4-seeing-the-general-of-the-army-you-ve-been-fighting-in)

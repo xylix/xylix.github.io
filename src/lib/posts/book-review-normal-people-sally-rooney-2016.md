@@ -3,7 +3,6 @@ title: 'Review: Normal People'
 tagline: '(Sally Rooney, 2016)'
 slug: book-review-normal-people-sally-rooney-2016
 createdAt: 2019-05-31T07:45:16.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['review', 'book']
 favourite: true
 ---
