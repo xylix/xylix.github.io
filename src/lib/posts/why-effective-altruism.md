@@ -1,7 +1,6 @@
 ---
 title: Effective Altruism?
 createdAt: 2025-06-14T10:57:33+0300
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['effective-altruism', 'personal']
 tagline: Why I'm an Effective Altruist
 ---

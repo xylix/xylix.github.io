@@ -2,7 +2,6 @@
 title: Can Claude understand (modded) Minecraft?
 tagline: No. Claude can Code but Claude can't Minecraft
 createdAt: 2026-01-29T12:00:00+0200
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['programming', 'personal']
 ---
 

@@ -3,7 +3,6 @@ title: 'Programming tools'
 tagline: 'Thoughts on programming tools'
 slug: programming-tools
 createdAt: 2020-03-01T13:13:28.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['programming']
 ---
 

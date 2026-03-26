@@ -3,7 +3,6 @@ title: 'Learning from Haskell'
 tagline: 'Learning to program, from Haskell'
 slug: learning-from-haskell
 createdAt: 2020-08-19T04:34:54.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['programming']
 ---
 

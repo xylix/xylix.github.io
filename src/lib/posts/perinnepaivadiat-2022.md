@@ -3,7 +3,6 @@ title: 'EA Slides 2022'
 tagline: 'Presentation about Effective Altruism at Matematiikkalinjan Perinnepäivät'
 slug: perinnepaivadiat-2022
 createdAt: 2022-11-19T10:08:13.000Z
-updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['presentation']
 ---
 
