@@ -5,9 +5,7 @@ createdAt: 2026-03-25T11:21:47+0200
 tags: ['cognitech', 'in-progress']
 ---
 
-Disclaimer: This is a placeholder written by Claude based on my notes from over 2 years. I will, or won't, get around to cleaniing this up.
-
-# Lenses, Frames, Stances
+_Disclaimer_: This is a placeholder written by Claude based on my notes from over 2 years. I will, or won't, get around to cleaning this up.
 
 *Cognitive technology: Lenses, to see with. Frames, to build with. Stances, to find.*
 
@@ -27,7 +25,7 @@ A compsci-brained person receiving a spec often defaults to a **problem-finding 
 
 For **frames**: an EA reading AI papers could frame their analysis around argument credibility, first-principles empirics, ML technicalities, theory of mind, or evolutionary biology intuitions. Each produces a different model. None is complete alone.
 
-For **stances**: when your code doesn't compile, you might find yourself in a frustrated stance or a curious stance. Same trigger, different reaction surface. When receiving relationship feedback, you might default to an unconfident stance ("obviously the other person knows better") that causes you to internalize criticism you'd rationally disagree with.
+For **stances**: when your code doesn't compile, you might find yourself in a frustrated stance or a curious stance. Same trigger, different reaction surface. When receiving relationship feedback, you might default to an unconfident stance ("obviously the other person knows better") that causes you to internalize criticism you'd rationally disagree with. Or you could shift into an angry stance, sometimes healthy, sometimes lashing out in ways you do not endorse upon reflection.
 
 ## Why this matters
 
@@ -36,3 +34,11 @@ People switch between lenses, frames, and stances automatically most of the time
 Intentional shifting between lenses, frames, and stances requires a baseline of introspective capacity: noticing *which tool you're currently applying* and whether it fits the job. The payoff is that you stop being trapped in whatever cognitive posture you happened to arrive in.
 
 Some lenses, frames, and stances are just bad. I don't have a clean method for evaluating this beyond noticing which ones you naturally stop reaching for over time.
+
+<!-- TODO: Expand "why not just maps" section. Lenses give you a verb where maps give a noun — you can swap lenses but can't edit maps directly. Lean into Rao-style jargon justification: a new term earns its rent by enabling thoughts you couldn't think before. See claude chat "Adding frame and stance examples". -->
+
+<!-- TODO: Introduce "pillars" as distinct from frames. Current frame examples are really lists of pillars. A frame is the construction approach built on selected pillars. Extend the metaphor: one pillar = fragile, three = solid, twelve = overengineered. See claude chat "Adding frame and stance examples". -->
+
+<!-- TODO: Replace frame examples with proper scenarios (not pillar lists). Best candidates: incident response framing (diff-based vs symptom-driven vs risk-first) or career decision framing (optimization vs narrative vs constraint-satisfaction). Fix verb: "formulating a model by looking at" not "reading". See claude chat "Adding frame and stance examples". -->
+
+<!-- TODO: Optionally beef up stance examples. The relationship feedback one is doing real work; lean into it or find a second at similar depth. The code-not-compiling one is clear but low-stakes. See claude chat "Adding frame and stance examples". -->

@@ -24,48 +24,45 @@
 </header>
 
 <style>
+	header {
+		width: 100%;
+		border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+	}
+
 	nav {
-		display: flex;
-		justify-content: center;
+		max-width: 64rem;
+		margin: 0 auto;
+		padding: 0 1.5rem;
 	}
 
 	ul {
-		/* Background */
-		padding: 1rem 3rem;
-		border-bottom-right-radius: 1rem;
-		border-bottom-left-radius: 1rem;
-		margin-top: 0;
-		background: var(--color-bg-highlight);
-
-		/* Alignment */
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		gap: 1rem;
+		gap: 0;
 		list-style: none;
+		margin: 0;
+		padding: 0.6rem 0;
 	}
 
-	/* The default link color gets set globally */
-	li {
-		& a {
-			color: var(--color-link);
-			&:hover {
-				color: var(--color-theme-1);
-			}
-		}
+	li a {
+		display: block;
+		padding: 0.25rem 0.75rem;
+		font-size: 0.78rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--color-text);
+		text-decoration: none;
+		opacity: 0.35;
+		transition: opacity 0.12s;
+	}
+
+	li a:hover {
+		opacity: 0.9;
+		text-decoration: none;
 	}
 
 	li[aria-current='page'] a {
-		color: var(--color-theme-2);
-	}
-
-	/* Dividers */
-	li:after {
-		content: '';
-		border-left: 2px solid var(--color-bg-base);
-		margin-left: 1rem;
-	}
-	li:last-child:after {
-		display: None;
+		opacity: 1;
+		color: var(--color-theme-1);
 	}
 </style>
