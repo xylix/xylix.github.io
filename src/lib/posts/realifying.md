@@ -3,9 +3,8 @@ title: 'Realifying'
 tagline: 'Confusing form thoughts about creativity'
 slug: realifying
 createdAt: 2019-06-22T11:36:57.000Z
-updatedAt: 2019-07-05T10:10:15.000Z
+updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['confusing', 'work-in-progress']
-wordCount: 504
 ---
 
 [Epistemic status: A useful framework for understanding my own creativity]

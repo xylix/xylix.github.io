@@ -20,7 +20,6 @@ const FRONTMATTER = `---
 title: Test
 tags: [test]
 createdAt: 2024-01-01
-wordCount: 5
 `;
 
 async function renderHtml(body: string, extraFrontmatter = ''): Promise<string> {

@@ -3,9 +3,8 @@ title: 'Disorderly reading'
 tagline: 'Disorderly reading'
 slug: reading-my-way
 createdAt: 2019-06-11T07:15:31.000Z
-updatedAt: 2019-06-18T04:36:45.000Z
+updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['confusing']
-wordCount: 301
 ---
 
 This weekend I've read futuristic society philosophy, the Unabomber manifesto, game engine architecture and a variety of posts shallowly related to "fulfilment". I proudly proclaim I have no idea how to group these into a coherent whole. But that's all right. I'll probably group some of these into their own wholes at some point; after I synthesise something in the future that leads to pointing into these bits of information.
