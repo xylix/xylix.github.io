@@ -1,11 +1,10 @@
 ---
 title: Effective Altruism?
 createdAt: 2025-06-14T10:57:33+0300
-updatedAt: 2025-08-28T19:52:00+0300
+updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['effective-altruism', 'personal']
 tagline: Why I'm an Effective Altruist
 favourite: true
-wordCount: 2146
 ---
 
 Since there's no point hiding my EA-ness anymore, what with starting as Effective Altruism Finland's Executive Director in September, it is time to take the cat out of the bag and explain one of my most significant ethical stances - considering myself an effective altruist and considering effective altruism one of the important priorities of our time.

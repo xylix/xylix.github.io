@@ -1,9 +1,12 @@
 import type { SvelteComponent } from 'svelte';
+import wordcounts from '../../wordcounts.json';
 
 type Post = {
 	default: typeof SvelteComponent;
 	metadata: MetaArticle;
 };
+
+const wordcountManifest: Record<string, number> = wordcounts;
 
 export type MetaArticle = {
 	link: string;
@@ -16,7 +19,6 @@ export type MetaArticle = {
 	tags: string[];
 	createdAt: string;
 	updatedAt?: string | string[];
-	wordCount: number;
 };
 
 export type Article = {
@@ -48,7 +50,7 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 			if (!post.metadata) {
 				throw new Error(`Failed to parse frontmatter in ${path}`);
 			}
-			const { tagline, title, tags, createdAt, updatedAt, favourite, draft, format, wordCount } =
+			const { tagline, title, tags, createdAt, updatedAt, favourite, draft, format } =
 				post.metadata;
 			// draft, favourite and updatedAt are optional
 			const requiredMetadata = [title, tags, createdAt].every((val) => val !== undefined);
@@ -67,7 +69,7 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 				tagline,
 				format,
 				tags,
-				wordCount,
+				wordCount: wordcountManifest[slug] ?? 0,
 				createdAt: new Date(createdAt),
 				updatedAt:
 					updatedAt === undefined

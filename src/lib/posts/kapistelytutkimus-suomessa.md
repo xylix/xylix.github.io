@@ -3,9 +3,8 @@ title: 'Tietojenkäsittelytieteen tutkimus Suomessa'
 tagline: 'Yliopistojen tietojenkäsittelytieteen tutkimusryhmät ja -alueet 2019'
 slug: kapistelytutkimus-suomessa
 createdAt: 2019-06-09T12:05:01.000Z
-updatedAt: 2019-06-09T17:52:01.000Z
+updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['research']
-wordCount: 648
 ---
 
 Tutkimuslaitosten ja -osastojen nettisivuilla 09.06.2019 löytyneestä tiedosta koostettu lista tutkimusalueista, tutkimusryhmistä ja julkaisulistoista Suomessa. Jos lähteessä tieto oli muotoiltu toimivaksi listaksi, lähteen muotoilu säilytetty.

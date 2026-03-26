@@ -2,9 +2,8 @@
 title: Lenses, Frames, and Stances
 tagline: Lenses, to see with. Frames, to build with. Stances, to find.
 createdAt: 2026-03-25T11:21:47+0200
-updatedAt: 2026-03-25T11:21:47+0200
+updatedAt: '2026-03-26T23:24:00+0000'
 tags: ['cognitech', 'in-progress']
-wordCount: 685
 ---
 
 _Disclaimer_: This is a placeholder written by Claude based on my notes from over 2 years. I will, or won't, get around to cleaning this up.
