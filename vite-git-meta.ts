@@ -46,7 +46,7 @@ function getGitRevisions(paths: string[]): Map<string, GitRevision[]> {
 	let out: string;
 	try {
 		out = execSync(`git log --format="COMMIT %aI" --numstat --find-renames -- ${pathArgs}`, {
-			encoding: 'utf8',
+			encoding: 'utf8'
 		});
 	} catch {
 		return new Map();
@@ -100,7 +100,7 @@ function buildMeta(): Record<string, GitFileMeta> {
 			const fpath = `${dir}/${fname}`;
 			result[fpath] = {
 				revisions: revmap.get(fpath) ?? [],
-				wordCount: countWords(fpath),
+				wordCount: countWords(fpath)
 			};
 		}
 	}
@@ -125,6 +125,6 @@ export function gitMetaPlugin(): Plugin {
 				// Invalidate the virtual module when any .md file changes
 				return [];
 			}
-		},
+		}
 	};
 }

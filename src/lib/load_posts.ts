@@ -53,8 +53,7 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 			if (!post.metadata) {
 				throw new Error(`Failed to parse frontmatter in ${path}`);
 			}
-			const { tagline, title, tags, createdAt, favourite, draft, format } =
-				post.metadata;
+			const { tagline, title, tags, createdAt, favourite, draft, format } = post.metadata;
 			const requiredMetadata = [title, tags].every((val) => val !== undefined);
 			if (!requiredMetadata) {
 				throw new Error(
@@ -74,8 +73,16 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 				format,
 				tags,
 				wordCount: meta?.wordCount ?? 0,
-				createdAt: createdAt ? new Date(createdAt) : (revisions.length > 0 ? new Date(revisions.at(-1)!.date) : new Date()),
-				updatedAt: revisions.map((r) => ({ date: new Date(r.date), added: r.added, deleted: r.deleted })),
+				createdAt: createdAt
+					? new Date(createdAt)
+					: revisions.length > 0
+						? new Date(revisions.at(-1)!.date)
+						: new Date(),
+				updatedAt: revisions.map((r) => ({
+					date: new Date(r.date),
+					added: r.added,
+					deleted: r.deleted
+				})),
 				content: post.default,
 				favourite: !!favourite,
 				draft: !!draft
