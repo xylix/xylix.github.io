@@ -6,9 +6,11 @@
 		wordCount?: number;
 		createdAt?: Date;
 		eraBackground?: string;
+		deprioritized?: boolean;
 	}
 
-	let { link, title, tagline, wordCount, createdAt, eraBackground }: Props = $props();
+	let { link, title, tagline, wordCount, createdAt, eraBackground, deprioritized }: Props =
+		$props();
 
 	// Use the era background as an accent color.
 	// eraBackground may be a solid hex or a CSS gradient; for a border we
@@ -19,7 +21,7 @@
 	);
 </script>
 
-<a href={link} class="post-row" style={accentStyle}>
+<a href={link} class="post-row" class:deprioritized style={accentStyle}>
 	<span class="accent-bar" aria-hidden="true"></span>
 
 	<span class="body">
@@ -58,6 +60,16 @@
 	.post-row:hover {
 		opacity: 1;
 		text-decoration: none;
+	}
+
+	.post-row.deprioritized {
+		opacity: 0.35;
+		filter: saturate(0.4);
+	}
+
+	.post-row.deprioritized:hover {
+		opacity: 0.65;
+		filter: saturate(0.7);
 	}
 
 	/* The accent bar uses the era color via a CSS custom property.

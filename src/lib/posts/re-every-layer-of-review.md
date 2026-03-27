@@ -2,7 +2,7 @@
 title: AI makes coding faster, but it doesn't ship faster (yet)
 tagline: How programming faster gets bottlenecked
 format: thread
-tags: [programming]
+tags: ['programming', 'cognitech']
 createdAt: '2026-03-18'
 draft: false
 wordCount: 1428

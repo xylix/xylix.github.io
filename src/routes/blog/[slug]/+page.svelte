@@ -39,6 +39,12 @@
 					</ul>
 				</details>
 			{/if}
+
+			<div class="tags">
+				{#each data.tags as tag}
+					<a class="tag" href="/tags/{tag}">{tag}</a>
+				{/each}
+			</div>
 		</div>
 
 		{#if data.similar.length > 0}
@@ -94,6 +100,29 @@
 		flex-direction: column;
 		gap: 0.5rem;
 		margin-bottom: 1.5rem;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3rem;
+	}
+
+	.tag {
+		font-size: 0.7rem;
+		letter-spacing: 0.05em;
+		padding: 0.15rem 0.45rem;
+		border-radius: 2px;
+		border: 1px solid currentColor;
+		opacity: 0.6;
+		color: var(--color-text);
+		text-decoration: none;
+		transition: opacity 0.12s;
+	}
+
+	.tag:hover {
+		opacity: 1;
+		text-decoration: none;
 	}
 
 	.footer-meta details summary {

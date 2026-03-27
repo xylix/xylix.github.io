@@ -3,7 +3,7 @@ title: Forgiveness, not permission
 tagline: Why it is rational to ask for forgiveness and not permission
 createdAt: 2026-03-24T17:10:06+0200
 updatedAt: 2026-03-24T17:10:06+0200
-tags: ['personal', 'getting-things-done']
+tags: ['personal', 'getting-things-done', 'cognitech']
 wordCount: 1050
 ---
 
