@@ -1,8 +1,31 @@
 import { all_posts } from '$lib/load_posts';
+import { public_sequences, type SequenceNode } from '$lib/load_sequences';
 import type { EntryGenerator, PageLoad } from './$types';
+
+function findBreadcrumb(tree: SequenceNode[], slug: string): string[] | null {
+	for (const node of tree) {
+		if (node.children.length === 0 && node.label.split(/\s*\/\s*/).includes(slug)) {
+			return [];
+		}
+		const sub = findBreadcrumb(node.children, slug);
+		if (sub !== null) {
+			return [node.label, ...sub];
+		}
+	}
+	return null;
+}
 
 export const load: PageLoad = async ({ params }) => {
 	const main_post = all_posts.find((p) => p.slug === params.slug);
+
+	const sequenceBreadcrumbs: { sequenceSlug: string; path: string[] }[] = [];
+	for (const seq of public_sequences) {
+		const path = findBreadcrumb(seq.tree, params.slug);
+		if (path !== null && path.length > 0) {
+			sequenceBreadcrumbs.push({ sequenceSlug: seq.slug, path });
+		}
+	}
+
 	const similar = all_posts
 		.filter((post) => post.slug !== main_post?.slug && !post.draft)
 		.map((post) => {
@@ -30,7 +53,8 @@ export const load: PageLoad = async ({ params }) => {
 		tags: main_post!.tags,
 		updatedAt: main_post!.updatedAt,
 		createdAt: main_post!.createdAt,
-		similar
+		similar,
+		sequenceBreadcrumbs
 	};
 };
 
