@@ -1,4 +1,4 @@
-import type { Article } from './load_posts';
+import type { Article, Revision } from './load_posts';
 
 export type Era = {
 	name: string;
@@ -22,9 +22,9 @@ export function getEraColor(date: Date): string {
 }
 
 // Returns a CSS `background` value: solid color, or gradient if eras differ
-export function getCardBackground(createdAt: Date, updatedAt?: Date[]): string {
+export function getCardBackground(createdAt: Date, updatedAt?: Revision[]): string {
 	const originColor = getEraColor(createdAt);
-	const latestUpdate = updatedAt?.at(-1);
+	const latestUpdate = updatedAt?.at(0)?.date;
 	const currentColor = latestUpdate ? getEraColor(latestUpdate) : originColor;
 	if (originColor === currentColor) return originColor;
 	return `linear-gradient(135deg, ${originColor}, ${currentColor})`;

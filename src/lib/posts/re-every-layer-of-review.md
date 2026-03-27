@@ -5,7 +5,6 @@ format: thread
 tags: ['programming', 'cognitech']
 createdAt: '2026-03-18'
 draft: false
-wordCount: 1428
 ---
 
 - In response to and riffing about Apenwarr's excellent piece [Every layer of review makes you 10x slower](https://apenwarr.ca/log/20260316)

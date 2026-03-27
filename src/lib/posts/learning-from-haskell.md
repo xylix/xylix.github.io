@@ -3,9 +3,7 @@ title: 'Learning from Haskell'
 tagline: 'Learning to program, from Haskell'
 slug: learning-from-haskell
 createdAt: 2020-08-19T04:34:54.000Z
-updatedAt: 2020-12-23T19:26:37.000Z
 tags: ['programming']
-wordCount: 419
 ---
 
 What Haskell (specifically the basics in form of [https://haskell.mooc.fi/](https://haskell.mooc.fi/) ) taught me. (Spoiler: it taught me a lot of blind spots in my knowledge.)

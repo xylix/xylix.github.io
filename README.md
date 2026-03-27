@@ -22,19 +22,16 @@ pages.
 
 ### Precise revision history links
 
-Post frontmatter stores `updatedAt` as an array of timestamps representing meaningful revisions. Each revision date currently links to the file's full commit history on GitHub, which is honest but imprecise — a reader can't navigate directly to the exact state of the post at a given revision date.
+Revision history is now derived from git log at build time. Each revision entry currently links to the file's full commit history on GitHub, which is honest but imprecise — a reader can't navigate directly to the exact commit.
 
-A more exact approach would store timestamp–commit hash pairs in the frontmatter:
+Since we already have commit dates from `git log`, the Vite plugin could also capture commit hashes and pass them through, allowing direct links to `github.com/.../commit/<hash>` for each revision.
 
-```yaml
-updatedAt:
-  - date: '2022-11-19'
-    commit: null # pre-migration, no git history
-  - date: '2026-03-18'
-    commit: 'abc1234'
-```
+### Filter non-substantial commits from revision history (low priority)
 
-This would allow linking directly to `github.com/.../commit/abc1234` for each revision, giving readers a precise diff and surviving repo moves or branch renames. The downside is workflow friction: after every meaningful edit you'd need to find the commit hash and manually update the frontmatter, which is tedious enough to be unreliable without automation — for example a post-commit hook that appends the new commit hash to the frontmatter of any modified post file.
+The revision history currently shows all commits that touched a post file, including formatting runs, metadata changes, and bulk renames. Two possible improvements:
+
+- Maintain a list of non-substantial commit hashes to exclude from the revision UI
+- Show the diff size (lines added/removed) next to each revision entry so readers can judge significance themselves
 
 
 ## Possible technical refactors

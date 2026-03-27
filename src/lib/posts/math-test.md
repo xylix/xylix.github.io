@@ -3,9 +3,7 @@ title: 'MathJax test'
 tagline: 'Testing MathJax'
 slug: math-test
 createdAt: 2024-04-05T09:48:03.000Z
-updatedAt: 2024-04-05T09:48:03.000Z
 tags: ['work-in-progress']
-wordCount: 24
 ---
 
 ```latex

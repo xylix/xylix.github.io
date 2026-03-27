@@ -1,5 +1,6 @@
 import type { SvelteComponent } from 'svelte';
 import { stripComments } from './remark-plugins';
+import { gitMeta } from './git-meta';
 
 export type SequenceNode = {
 	label: string;
@@ -20,7 +21,6 @@ export type SequenceArticle = {
 type MetaSequence = {
 	name: string;
 	tagline?: string;
-	updatedAt: string;
 };
 
 function stripFrontmatter(raw: string): string {
@@ -77,7 +77,7 @@ const load_sequences = async (): Promise<SequenceArticle[]> => {
 				metadata: MetaSequence;
 				default: typeof SvelteComponent;
 			};
-			if (!metadata?.name || !metadata?.updatedAt) {
+			if (!metadata?.name) {
 				throw new Error(
 					`Missing metadata in ${path}. Metadata present: ${Object.keys(metadata ?? {})}`
 				);
@@ -89,13 +89,14 @@ const load_sequences = async (): Promise<SequenceArticle[]> => {
 
 			const fname = path.replace(/^.*[\\/]/, '');
 			const slug = fname.replace(/\.md$/, '');
+			const meta = gitMeta[`src/lib/sequences/${fname}`];
 
 			return {
 				link: `/sequences/${slug}`,
 				slug,
 				name: metadata.name,
 				tagline: metadata.tagline,
-				updatedAt: new Date(metadata.updatedAt),
+				updatedAt: meta?.revisions[0] ? new Date(meta.revisions[0].date) : new Date(),
 				tree,
 				content,
 				hasProse
