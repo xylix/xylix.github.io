@@ -96,7 +96,7 @@ const load_sequences = async (): Promise<SequenceArticle[]> => {
 				slug,
 				name: metadata.name,
 				tagline: metadata.tagline,
-				updatedAt: meta?.dates[0] ? new Date(meta.dates[0]) : new Date(),
+				updatedAt: meta?.revisions[0] ? new Date(meta.revisions[0].date) : new Date(),
 				tree,
 				content,
 				hasProse

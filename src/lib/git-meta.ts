@@ -3,9 +3,18 @@
  * At runtime this just re-exports the virtual module's pre-computed data.
  */
 
+export type GitRevision = {
+	/** Commit date (ISO string) */
+	date: string;
+	/** Lines added in this commit */
+	added: number;
+	/** Lines deleted in this commit */
+	deleted: number;
+};
+
 export type GitFileMeta = {
-	/** All commit dates for this file, newest-first (ISO strings) */
-	dates: string[];
+	/** All revisions for this file, newest-first */
+	revisions: GitRevision[];
 	/** Word count of the file body (after frontmatter) */
 	wordCount: number;
 };

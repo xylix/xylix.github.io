@@ -44,7 +44,7 @@ export const load_tags = async (): Promise<TagArticle[]> => {
 				link: `/tag/${slug}`,
 				slug,
 				name,
-				updatedAt: meta?.dates[0] ? new Date(meta.dates[0]) : new Date(),
+				updatedAt: meta?.revisions[0] ? new Date(meta.revisions[0].date) : new Date(),
 				content: post.default
 			};
 		})

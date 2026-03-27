@@ -1,6 +1,12 @@
 import type { SvelteComponent } from 'svelte';
 import { gitMeta } from './git-meta';
 
+export type Revision = {
+	date: Date;
+	added: number;
+	deleted: number;
+};
+
 type Post = {
 	default: typeof SvelteComponent;
 	metadata: MetaArticle;
@@ -27,7 +33,7 @@ export type Article = {
 	format?: 'thread' | 'article';
 	tags: string[];
 	createdAt: Date;
-	updatedAt: Date[];
+	updatedAt: Revision[];
 	favourite: boolean;
 	draft: boolean;
 	content: typeof SvelteComponent;
@@ -58,7 +64,7 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 			const fname = path.replace(/^.*[\\/]/, '');
 			const slug = fname.replace(/\.md$/, '');
 			const meta = gitMeta[`src/lib/posts/${fname}`];
-			const dates = meta?.dates ?? [];
+			const revisions = meta?.revisions ?? [];
 
 			return {
 				link: `/blog/${slug}`,
@@ -68,8 +74,8 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 				format,
 				tags,
 				wordCount: meta?.wordCount ?? 0,
-				createdAt: createdAt ? new Date(createdAt) : (dates.length > 0 ? new Date(dates.at(-1)!) : new Date()),
-				updatedAt: dates.map((d) => new Date(d)),
+				createdAt: createdAt ? new Date(createdAt) : (revisions.length > 0 ? new Date(revisions.at(-1)!.date) : new Date()),
+				updatedAt: revisions.map((r) => ({ date: new Date(r.date), added: r.added, deleted: r.deleted })),
 				content: post.default,
 				favourite: !!favourite,
 				draft: !!draft
