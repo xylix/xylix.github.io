@@ -3,6 +3,9 @@ import type { EntryGenerator, PageLoad } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
 	const main_post = all_posts.find((p) => p.slug === params.slug);
+	if (!main_post) {
+		throw new Error(`No post found with slug "${params.slug}"`);
+	}
 	const similar = all_posts
 		.filter((post) => post.slug !== main_post?.slug && !post.draft)
 		.map((post) => {
@@ -22,13 +25,13 @@ export const load: PageLoad = async ({ params }) => {
 		.map(({ post }) => post);
 
 	return {
-		title: main_post!.title,
-		subtitle: main_post?.tagline,
-		format: main_post?.format,
-		content: main_post!.content,
-		slug: main_post!.slug,
-		updatedAt: main_post!.updatedAt,
-		createdAt: main_post!.createdAt,
+		title: main_post.title,
+		subtitle: main_post.tagline,
+		format: main_post.format,
+		content: main_post.content,
+		slug: main_post.slug,
+		updatedAt: main_post.updatedAt,
+		createdAt: main_post.createdAt,
 		similar
 	};
 };
