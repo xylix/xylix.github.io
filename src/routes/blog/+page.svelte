@@ -6,7 +6,19 @@
 	import { withEraBackground } from '$lib/eras';
 
 	const feed = `${website}/rss.xml`;
-	const postsWithEra = withEraBackground(public_posts);
+
+	const DEPRIORITIZED_TAGS = ['work-in-progress', 'in-progress', 'ai-written'];
+	const isDeprioritized = (tags: string[]) => tags.some((t) => DEPRIORITIZED_TAGS.includes(t));
+
+	const sorted = [
+		...public_posts.filter((p) => !isDeprioritized(p.tags)),
+		...public_posts.filter((p) => isDeprioritized(p.tags))
+	];
+	const postsWithEra = withEraBackground(sorted).map((p) => ({
+		...p,
+		deprioritized: isDeprioritized(p.tags)
+	}));
+
 	const sequenceCards = public_sequences.map((s) => ({
 		link: s.link,
 		title: s.name,

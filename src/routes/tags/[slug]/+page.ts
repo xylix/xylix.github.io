@@ -6,7 +6,7 @@ export const load: PageLoad = async ({ params }) => {
 	const tags = await load_tags();
 	const main_page = tags.find((p) => p.slug === params.slug);
 
-	const tagged = all_posts.filter((post) => post.tags.includes(main_page!.name));
+	const tagged = all_posts.filter((post) => post.tags.includes(params.slug));
 
 	return {
 		name: params.slug,

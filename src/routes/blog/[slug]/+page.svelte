@@ -27,18 +27,27 @@
 		<hr class="footer-rule" />
 
 		<div class="footer-meta">
-			<span>Published {data.createdAt.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+			<span class="faded">Published {data.createdAt.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
 
 			{#if data.updatedAt && data.updatedAt.length > 0}
 				<details>
-					<summary>Revisions ({data.updatedAt.length})</summary>
+					<summary class="faded">Revisions ({data.updatedAt.length})</summary>
 					<ul>
 						{#each data.updatedAt as rev}
-							<li><a href={githubFileUrl}>{rev.toLocaleDateString()}</a></li>
+							<li>
+								<a href={githubFileUrl}>{rev.date.toLocaleString('en-GB', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</a>
+								<span class="diff-stat"><span class="added">+{rev.added}</span> <span class="deleted">-{rev.deleted}</span></span>
+							</li>
 						{/each}
 					</ul>
 				</details>
 			{/if}
+
+			<div class="tags">
+				{#each data.tags as tag}
+					<a class="tag" href="/tags/{tag}">{tag}</a>
+				{/each}
+			</div>
 		</div>
 
 		{#if data.similar.length > 0}
@@ -89,11 +98,37 @@
 
 	.footer-meta {
 		font-size: 0.8rem;
-		opacity: 0.45;
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
 		margin-bottom: 1.5rem;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3rem;
+	}
+
+	.tag {
+		font-size: 0.7rem;
+		letter-spacing: 0.05em;
+		padding: 0.15rem 0.45rem;
+		border-radius: 2px;
+		border: 1px solid currentColor;
+		opacity: 0.6;
+		color: var(--color-text);
+		text-decoration: none;
+		transition: opacity 0.12s;
+	}
+
+	.tag:hover {
+		opacity: 1;
+		text-decoration: none;
+	}
+
+	.faded {
+		opacity: 0.45;
 	}
 
 	.footer-meta details summary {
@@ -103,6 +138,19 @@
 	.footer-meta ul {
 		margin: 0.25rem 0 0;
 		padding-left: 1rem;
+	}
+
+	.diff-stat {
+		margin-left: 0.5rem;
+		font-size: 0.85em;
+	}
+
+	.added {
+		color: #4caf4c;
+	}
+
+	.deleted {
+		color: #d44040;
 	}
 
 	.similar {

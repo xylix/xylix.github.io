@@ -2,9 +2,7 @@
 title: Lenses, Frames, and Stances
 tagline: Lenses, to see with. Frames, to build with. Stances, to find.
 createdAt: 2026-03-25T11:21:47+0200
-updatedAt: 2026-03-25T11:21:47+0200
-tags: ['cognitech', 'in-progress']
-wordCount: 685
+tags: ['cognitech', 'in-progress', 'ai-written']
 ---
 
 _Disclaimer_: This is a placeholder written by Claude based on my notes from over 2 years. I will, or won't, get around to cleaning this up.
@@ -16,6 +14,9 @@ _Disclaimer_: This is a placeholder written by Claude based on my notes from ove
 - **Lens** describes how and what you see. A lens filters what you notice vs dismiss. You don't choose what's in the territory, but you're always choosing (often unconsciously) which transformation function you apply to it.
 - **Frame** describes how you build. Given what you've noticed, a frame is the approach you use to construct understanding, solutions, or decisions. Frames can be bottom-up, top-down, methodology-driven, or vibes-based.
 - **Stance** describes how you react. A stance is the set of reactions and reaction-seeds that are "on the surface" in a given context. Partly environmental (you're tired, you're hungry), partly internal (your habitual emotional wiring toward certain situations).
+TODO: stance describes how you _relate_ and what you exist in.
+TODO: Stances are ways of being. Some moods can give some stances precedence over others. Some ways of living can embody certain stances more than others. Some stances you can learn, and some you have to find.
+
 
 ## Why not just "maps"?
 

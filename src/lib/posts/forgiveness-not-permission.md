@@ -2,9 +2,7 @@
 title: Forgiveness, not permission
 tagline: Why it is rational to ask for forgiveness and not permission
 createdAt: 2026-03-24T17:10:06+0200
-updatedAt: 2026-03-24T17:10:06+0200
-tags: ['personal', 'getting-things-done']
-wordCount: 1050
+tags: ['personal', 'getting-things-done', 'cognitech']
 ---
 
 Mildly tangential sequel to [my response to Apenwarr's Every layer of Review last week](https://xylix.fi/blog/re-every-layer-of-review).

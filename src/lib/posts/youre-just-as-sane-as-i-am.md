@@ -2,9 +2,7 @@
 title: Endorse weirdness. No, really.
 tagline: What Luna knows
 slug: endorse-weirdness
-createdAt: 2026-03-25T20:00:00+0200
-updatedAt: 2026-03-29T00:04:38+0200
-tags: ['work-in-progress', 'stance', 'rationality', 'values']
+tags: ['work-in-progress', 'stance', 'rationality']
 draft: true
 wordCount: 1034
 ---

@@ -2,11 +2,8 @@
 title: Opening my mouth
 tagline: TODO tagline
 slug: becoming-an-adult
-createdAt: 2026-03-23T12:24:53+0200
-updatedAt: 2026-03-25T16:11:35+0200 
 tags: ['work-in-progress', 'confusing', 'personal']
 draft: true
-wordCount: 813
 ---
 
 TODO: Add to the correct sequence and tag to it

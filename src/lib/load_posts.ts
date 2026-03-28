@@ -1,4 +1,11 @@
 import type { SvelteComponent } from 'svelte';
+import { gitMeta } from './git-meta';
+
+export type Revision = {
+	date: Date;
+	added: number;
+	deleted: number;
+};
 
 type Post = {
 	default: typeof SvelteComponent;
@@ -14,9 +21,7 @@ export type MetaArticle = {
 	/** Post display format. Defaults to 'article' when unset. */
 	format?: 'thread' | 'article';
 	tags: string[];
-	createdAt: string;
-	updatedAt?: string | string[];
-	wordCount: number;
+	createdAt?: string;
 };
 
 export type Article = {
@@ -28,7 +33,7 @@ export type Article = {
 	format?: 'thread' | 'article';
 	tags: string[];
 	createdAt: Date;
-	updatedAt?: Date[];
+	updatedAt: Revision[];
 	favourite: boolean;
 	draft: boolean;
 	content: typeof SvelteComponent;
@@ -48,17 +53,17 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 			if (!post.metadata) {
 				throw new Error(`Failed to parse frontmatter in ${path}`);
 			}
-			const { tagline, title, tags, createdAt, updatedAt, favourite, draft, format, wordCount } =
-				post.metadata;
-			// draft, favourite and updatedAt are optional
-			const requiredMetadata = [title, tags, createdAt].every((val) => val !== undefined);
+			const { tagline, title, tags, createdAt, favourite, draft, format } = post.metadata;
+			const requiredMetadata = [title, tags].every((val) => val !== undefined);
 			if (!requiredMetadata) {
 				throw new Error(
-					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}. Required: [title, tags, createdAt]`
+					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}. Required: [title, tags]`
 				);
 			}
 			const fname = path.replace(/^.*[\\/]/, '');
 			const slug = fname.replace(/\.md$/, '');
+			const meta = gitMeta[`src/lib/posts/${fname}`];
+			const revisions = meta?.revisions ?? [];
 
 			return {
 				link: `/blog/${slug}`,
@@ -67,12 +72,17 @@ const load_posts = async (opts?: LoadOptions): Promise<Article[]> => {
 				tagline,
 				format,
 				tags,
-				wordCount,
-				createdAt: new Date(createdAt),
-				updatedAt:
-					updatedAt === undefined
-						? undefined
-						: (typeof updatedAt === 'string' ? [updatedAt] : updatedAt).map((d) => new Date(d)),
+				wordCount: meta?.wordCount ?? 0,
+				createdAt: createdAt
+					? new Date(createdAt)
+					: revisions.length > 0
+						? new Date(revisions.at(-1)!.date)
+						: new Date(),
+				updatedAt: revisions.map((r) => ({
+					date: new Date(r.date),
+					added: r.added,
+					deleted: r.deleted
+				})),
 				content: post.default,
 				favourite: !!favourite,
 				draft: !!draft

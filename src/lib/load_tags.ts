@@ -1,4 +1,5 @@
 import type { SvelteComponent } from 'svelte';
+import { gitMeta } from './git-meta';
 
 type Tag = {
 	default: typeof SvelteComponent;
@@ -8,7 +9,6 @@ type Tag = {
 export type MetaTag = {
 	link: string;
 	name: string;
-	updatedAt: string;
 };
 
 export type TagArticle = {
@@ -27,24 +27,24 @@ export const load_tags = async (): Promise<TagArticle[]> => {
 			const post = untypedTag as Tag;
 
 			if (!post.metadata) {
-				throw new Error(`Missing metadata in ${path}. Needs to have name, updatedAt`);
+				throw new Error(`Missing metadata in ${path}. Needs to have name`);
 			}
-			const { name, updatedAt } = post.metadata;
+			const { name } = post.metadata;
 
-			const requiredMetadata = [name, updatedAt].every((val) => val !== undefined);
-			if (!requiredMetadata) {
+			if (!name) {
 				throw new Error(
 					`Missing metadata in ${path}. Metadata present: ${Object.keys(post.metadata)}`
 				);
 			}
 			const fname = path.replace(/^.*[\\/]/, '');
 			const slug = fname.replace(/\.md$/, '');
+			const meta = gitMeta[`src/lib/tags/${fname}`];
 
 			return {
 				link: `/tag/${slug}`,
 				slug,
 				name,
-				updatedAt: new Date(updatedAt),
+				updatedAt: meta?.revisions[0] ? new Date(meta.revisions[0].date) : new Date(),
 				content: post.default
 			};
 		})

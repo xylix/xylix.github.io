@@ -2,9 +2,7 @@
 title: Can Claude understand (modded) Minecraft?
 tagline: No. Claude can Code but Claude can't Minecraft
 createdAt: 2026-01-29T12:00:00+0200
-updatedAt: 2026-01-29T12:00:00+0200
 tags: ['programming', 'personal']
-wordCount: 777
 ---
 
 Recently, in December '25 and January '26, Claude Code has kept surprising me with its level of quality in output.
