@@ -13,6 +13,18 @@
 
 <div class="post-layout">
 	<header class="post-header">
+		{#each data.sequenceBreadcrumbs as { sequenceSlug, path }}
+			<nav class="sequence-breadcrumb">
+				{#each path as segment, i}
+					{#if i > 0}<span class="breadcrumb-sep">&rsaquo;</span>{/if}
+					{#if i === 0}
+						<a href="/sequences/{sequenceSlug}">{segment}</a>
+					{:else}
+						<span>{segment}</span>
+					{/if}
+				{/each}
+			</nav>
+		{/each}
 		<h1>{data.title}</h1>
 		{#if data.subtitle}
 			<p class="subtitle">{data.subtitle}</p>
@@ -77,6 +89,38 @@
 	.post-header h1 {
 		text-align: left;
 		margin-bottom: 0.35rem;
+	}
+
+	.sequence-breadcrumb {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.3rem;
+		margin-bottom: 0.5rem;
+		font-size: 0.7rem;
+		letter-spacing: 0.05em;
+		opacity: 0.6;
+	}
+
+	.sequence-breadcrumb a,
+	.sequence-breadcrumb span {
+		padding: 0.15rem 0.45rem;
+		border-radius: 2px;
+		border: 1px solid currentColor;
+		color: var(--color-text);
+		text-decoration: none;
+		transition: opacity 0.12s;
+	}
+
+	.sequence-breadcrumb a:hover {
+		opacity: 1;
+		text-decoration: none;
+	}
+
+	.breadcrumb-sep {
+		border: none !important;
+		padding: 0 !important;
+		opacity: 0.6;
 	}
 
 	.subtitle {
