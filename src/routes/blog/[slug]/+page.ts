@@ -21,11 +21,11 @@ export const load: PageLoad = async ({ params }) => {
 		throw new Error(`No post found with slug "${params.slug}"`);
 	}
 
-	const sequenceBreadcrumbs: { sequenceSlug: string; path: string[] }[] = [];
+	const sequenceBreadcrumbs: { sequenceSlug: string; sequenceName: string; path: string[] }[] = [];
 	for (const seq of public_sequences) {
 		const path = findBreadcrumb(seq.tree, params.slug);
-		if (path !== null && path.length > 0) {
-			sequenceBreadcrumbs.push({ sequenceSlug: seq.slug, path });
+		if (path !== null) {
+			sequenceBreadcrumbs.push({ sequenceSlug: seq.slug, sequenceName: seq.name, path });
 		}
 	}
 

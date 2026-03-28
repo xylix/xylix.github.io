@@ -13,15 +13,12 @@
 
 <div class="post-layout">
 	<header class="post-header">
-		{#each data.sequenceBreadcrumbs as { sequenceSlug, path }}
+		{#each data.sequenceBreadcrumbs as { sequenceSlug, sequenceName, path }}
 			<nav class="sequence-breadcrumb">
-				{#each path as segment, i}
-					{#if i > 0}<span class="breadcrumb-sep">&rsaquo;</span>{/if}
-					{#if i === 0}
-						<a href="/sequences/{sequenceSlug}">{segment}</a>
-					{:else}
-						<span>{segment}</span>
-					{/if}
+				<a href="/sequences/{sequenceSlug}">{sequenceName}</a>
+				{#each path as segment}
+					<span class="breadcrumb-sep">&rsaquo;</span>
+					<span>{segment}</span>
 				{/each}
 			</nav>
 		{/each}
