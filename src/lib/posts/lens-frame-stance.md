@@ -35,6 +35,8 @@ Intentional shifting between lenses, frames, and stances requires a baseline of 
 
 Some lenses, frames, and stances are just bad. I don't have a clean method for evaluating this beyond noticing which ones you naturally stop reaching for over time.
 
+<!-- TODO: Expand how lenses can be and are allowed to be wrong - optimal set of lenses is not one where individual lenses are the least correct, but one where the sum of the application of lenses provides the most useful information -->
+
 <!-- TODO: Expand "why not just maps" section. Lenses give you a verb where maps give a noun — you can swap lenses but can't edit maps directly. Lean into Rao-style jargon justification: a new term earns its rent by enabling thoughts you couldn't think before. See claude chat "Adding frame and stance examples". -->
 
 <!-- TODO: Introduce "pillars" as distinct from frames. Current frame examples are really lists of pillars. A frame is the construction approach built on selected pillars. Extend the metaphor: one pillar = fragile, three = solid, twelve = overengineered. See claude chat "Adding frame and stance examples". -->
