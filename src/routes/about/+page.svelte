@@ -25,8 +25,8 @@
 	<p>My content:</p>
 	<ul>
 		<li>
-			Links for orienting around artificial intelligence: <a href="/tekoalylinkkeja"
-				>/tekoalylinkkeja</a
+			Links for orienting around artificial intelligence: <a href="/tekoälylinkkejä"
+				>/tekoälylinkkejä</a
 			>
 		</li>
 	</ul>
