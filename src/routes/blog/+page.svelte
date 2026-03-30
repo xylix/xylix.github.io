@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { website } from '../constants';
-	import { public_posts } from '$lib/load_posts';
+	import { public_posts, draft_posts } from '$lib/load_posts';
 	import { public_sequences } from '$lib/load_sequences';
 	import CardGrid from '$lib/components/CardGrid.svelte';
 	import { withEraBackground } from '$lib/eras';
@@ -17,6 +17,11 @@
 	const postsWithEra = withEraBackground(sorted).map((p) => ({
 		...p,
 		deprioritized: isDeprioritized(p.tags)
+	}));
+
+	const draftPostsWithEra = withEraBackground(draft_posts).map((p) => ({
+		...p,
+		deprioritized: true
 	}));
 
 	const sequenceCards = public_sequences.map((s) => ({
@@ -44,6 +49,12 @@
 	{/if}
 
 	<CardGrid posts={postsWithEra} columns={1} />
+
+	{#if draftPostsWithEra.length > 0}
+		<hr class="section-divider" />
+		<h2 class="section-label">Drafts:</h2>
+		<CardGrid posts={draftPostsWithEra} columns={1} />
+	{/if}
 </section>
 
 <style>
