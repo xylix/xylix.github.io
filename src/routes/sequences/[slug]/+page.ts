@@ -18,6 +18,20 @@ function resolveTree(nodes: SequenceNode[], posts: Article[]): ResolvedNode[] {
 	});
 }
 
+function collectLeafSlugs(nodes: SequenceNode[]): Set<string> {
+	const slugs = new Set<string>();
+	for (const node of nodes) {
+		if (node.children.length === 0) {
+			slugs.add(node.label);
+		} else {
+			for (const s of collectLeafSlugs(node.children)) {
+				slugs.add(s);
+			}
+		}
+	}
+	return slugs;
+}
+
 export const load: PageLoad = async ({ params }) => {
 	const sequence = public_sequences.find((s) => s.slug === params.slug);
 
@@ -25,12 +39,18 @@ export const load: PageLoad = async ({ params }) => {
 		throw new Error(`Sequence "${params.slug}" not found`);
 	}
 
+	const treeSlugs = collectLeafSlugs(sequence.tree);
+	const unsorted = all_posts.filter(
+		(post) => post.tags.includes(params.slug) && !treeSlugs.has(post.slug)
+	);
+
 	return {
 		name: sequence.name,
 		tagline: sequence.tagline,
 		content: sequence.content,
 		hasProse: sequence.hasProse,
-		tree: resolveTree(sequence.tree, all_posts)
+		tree: resolveTree(sequence.tree, all_posts),
+		unsorted
 	};
 };
 

@@ -41,6 +41,21 @@
 			{@render renderNode(node)}
 		{/each}
 	</ul>
+	{#if data.unsorted.length > 0}
+		<div class="unsorted">
+			<h2>Unsorted</h2>
+			<ul>
+				{#each data.unsorted as post}
+					<li>
+						<a href={post.link}>{post.title}</a>
+						{#if post.draft}
+							<span class="draft-badge">draft</span>
+						{/if}
+					</li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
 </article>
 
 <style>
@@ -68,8 +83,12 @@
 		order: 2;
 	}
 
-	:global(.footnotes) {
+	.unsorted {
 		order: 3;
+	}
+
+	:global(.footnotes) {
+		order: 4;
 	}
 
 	.draft-badge,
