@@ -4,7 +4,7 @@ tagline: The enemy is compliance, and the solution is courage.
 tags: ['personal', 'agency']
 ---
 
-(This post uses the Hogwarts houses as an evocative lens. See the footnote[^0] if you are unfamiliar.)
+(This post uses the Hogwarts houses as an evocative lens. See the footnote[^1] if you are unfamiliar.)
 
 Behaviour: 
     You're making a career choice. Your local EA community needs a director. You're unsure but commit, since it's important work. You don't get funded, keep doing the work for free, and build resentment.
@@ -46,9 +46,9 @@ Which is what leads us to the next part of my adventure:
 
 ## Villainy as an outlet
 
-After spending a bunch of months background pondering the shadows of my mind, something concrete started to form. I started to form this concrete hypothesis that EA (and rationalism) are making people too _compliant_, and this needs some shaking.[^1]
+After spending a bunch of months background pondering the shadows of my mind, something concrete started to form. I started to form this concrete hypothesis that EA (and rationalism) are making people too _compliant_, and this needs some shaking.[^2]
 
-So I started building the concepts for a blog sequence: Effective Villainy. You just need to endorse your ego, your desires, your repressed, unpalatable side, and you can reach power beyond measure.[^2]
+So I started building the concepts for a blog sequence: Effective Villainy. You just need to endorse your ego, your desires, your repressed, unpalatable side, and you can reach power beyond measure.[^3]
 
 TLDR on Effective villainy, condensed from my notes on the subject:
 - Effective Villainy is an aesthetic and philosophical counterfoil to Effective Altruism. It doesn't oppose doing good. It opposes doing good from a place of self-erasure, guilt, and obligation.
@@ -56,7 +56,7 @@ TLDR on Effective villainy, condensed from my notes on the subject:
 - Effective Villainy says: know yourself before you give yourself away. Own your desires openly. Acquire power without apology. Act with passion and conviction rather than careful defensibility. 
     - Importantly: Close the moral accounting department. There's no scoreboard.
 - Trust that a person who is fully alive and honestly selfish will do more good than a person who is dutiful and slowly burning out.
-- It's not a 180 from EA - my intention was to do a 360.[^3]
+- It's not a 180 from EA - my intention was to do a 360.[^4]
 - The aesthetic is deliberate: villain rather than hero, dramatic rather than measured, ornamental rather than minimal. Not because aesthetics are trivial, but because the right aesthetic can unlock things that argument alone cannot.
 - TLDR of the TLDR: _you're allowed to want things_. It might even be _morally desirable_ to act on your wants.
 
@@ -66,7 +66,7 @@ The fact that I wanted to perform a 360-degree turn, instead of a 180, was quite
 
 And most importantly: If you are building an inversion, you are being affected by the thing you are inverting. An inversion can never be _free_. And freedom was the core of what I was missing.
 
-When looking for inspiration, I didn't end up admiring actual villains. I started to admire the _Absurdist hero_.[^4] A fledgling scientist who stares into the darkness, consciously or subconsciously realizes that no one sane can solve this problem, and awakens into the _mad scientist protagonist_. To quote Okabe Rintarou: "Hear me privileged companions, time is ours. Hououin Kyouma’s mind recognizes no limits, neither does his reach. Heave anchor. The ship of fools is about to embark."
+When looking for inspiration, I didn't end up admiring actual villains. I started to admire the _Absurdist hero_.[^5] A fledgling scientist who stares into the darkness, consciously or subconsciously realizes that no one sane can solve this problem, and awakens into the _mad scientist protagonist_. To quote Okabe Rintarou: "Hear me privileged companions, time is ours. Hououin Kyouma’s mind recognizes no limits, neither does his reach. Heave anchor. The ship of fools is about to embark."
 
 Aside: optimizing for power won't make you happy: HPMOR Quirrell's legibility, inability to look like a fool, and having already decided what everything means, and what matters (nothing), were a very significant factor why, even though he might have had the seeds, he never awoke as a _true protagonist_, be that an evil or good protagonist. He got stuck optimizing for power, even when, in the end, it did not actually cure his deeper boredom and dissatisfaction with life. (Even if it did bring momentary satisfaction, when he did not need to suffer direct foolishness, no more.) He had lost the pieces to be a sane protagonist, but he could not consider the choice to be an insane protagonist, so he had to go villain.
 
@@ -80,7 +80,7 @@ Let's go object level for a bit: Why was I repressing my desires? What was the p
 
 My current best guess, mediumly held, is that I was being _compliant_. 
 
-> Compliance psychology is the study of the process where individuals comply to social influence, typically in response to requests and pressures brought on by others. [^5]
+> Compliance psychology is the study of the process where individuals comply to social influence, typically in response to requests and pressures brought on by others. [^6]
 
 The behaviour that I had most trouble with, and that kept popping up, is a specific form of people pleasing. But importantly, I wasn't trying to make people _pleased_. I was trying to avoid upsetting their expectations.
 
@@ -94,7 +94,7 @@ So the real diagnosis for why I did not have boundaries, why I felt I was giving
 
 After chewing on these themes a bit, I found the next shadows: behind the dystopian fiction, behind the need/want/goal of optimization, was something scared. And what it was scared of was _softness_. Wholesomeness, loyalty without qualifiers, _just being allowed to belong_, the _Hufflepuff virtues_. And it was harder to reach, because I am more scared to admit to desiring soft things than to admit desiring ~edgy things.
 
-I cannot write wholesomeness.[^6] And it's not because I don't like it. I enjoy wholesomeness, it's just very scary.[^7]
+I cannot write wholesomeness.[^7] And it's not because I don't like it. I enjoy wholesomeness, it's just very scary.[^8]
 
 So what are the Hufflepuff virtues besides the wholesomeness neighborhood? How am I supposed to chew on these? The _monster_ frame really has a hard time evoking the right imagery here, so time for the next frame.
 
@@ -122,7 +122,7 @@ What about Hufflepuff fiction themes? The obvious candidates here seem like Ursu
 
 Takeaways / Hufflepuff actions I have been missing:
 
-As someone prone to over-intellectualization and abstract moral frameworks, I think there is a bunch of value I've been missing in _just caring_. Making fun happen for people I care about just because. Sharing because I can, and because I want to, not for an end goal. Caring for my own well-being, not because it is necessary for my work, but because it matters. And, importantly, just allowing myself to care, without being scared that caring might force a worldview update.[^8]
+As someone prone to over-intellectualization and abstract moral frameworks, I think there is a bunch of value I've been missing in _just caring_. Making fun happen for people I care about just because. Sharing because I can, and because I want to, not for an end goal. Caring for my own well-being, not because it is necessary for my work, but because it matters. And, importantly, just allowing myself to care, without being scared that caring might force a worldview update.[^9]
 
 ## Stopping performing, starting being
 
@@ -132,12 +132,12 @@ What to do with this information?
 
 Notice when you're performing. Notice when your [defiance](https://mindingourway.com/defiance/) is still shaped by what you're rebelling against. And when you find the thing that's actually scary, the deeper layer of your shadow: have the courage to keep looking, to keep staring into your personal darkness. Keep looking, keep paying attention, and then, eventually, [by becoming more whole](https://joecarlsmith.com/2023/02/17/seeing-more-whole), by listening to Gryffindor: [_set your heart ablaze._](https://www.youtube.com/watch?v=SftPh1QsKRc)
 
-[^0]: The Hogwarts Houses from Harry Potter are a vibes based personality classification system that I use as an evocative lens. The core part is: Gryffindors are the brave and convicted, Slytherin ambitious and cunning, Ravenclaw intellectual and curious, and Hufflepuff loyal, kind, hardworking. (The original Harry Potter suffers from not understanding its own framing, and ends up with Hufflepuff as the default house for people who don't fit any of the others, and Slytherin as the house for mean and evil people. But the lens is quite clear, when you correct for this.) Additionally I use the combined-house phrasing (Ravenclaw-Hufflepuff) to describe someone who is primarily of the first house but exhibits significant characteristics of the secondary house.
-[^1]: On reflection, I was projecting pretty hard here.
-[^2]: I don't think this is _completely wrong_. I think will to power is a real tool, it can provide real-world returns, and I think Nietzsche and Chapman are the writers who put it the best. See [You should be a God-Emperor](https://meaningness.substack.com/p/you-should-be-a-god-emperor). Pattern here being: Humans do self-limit a lot, and you can bend or remove some of those limiters, with the right work. But in the end, my own path, even though inspired by this, considers the next steps subtly different.
-[^3]: And this is part of where I went wrong. I decided the conclusion I wanted to reach before the work was finished.
-[^4]: I have always liked Camus' vibes, but I have not managed to connect his ideas to _what truly matters_ before I arrived here.
-[^5]: [Wikipedia: Compliance](https://en.wikipedia.org/wiki/Compliance_(psychology))
-[^6]: Part of what brought me here was that I was generating a cast of characters templated on me for my medianworld. Different aspects or life stories that can be generated out of Xylixes that get pulled in different directions. And I realized the way I model those characters doesn't leave space for any Hufflepuff. And on reflection, it didn't make sense. I greatly enjoy and find worthwhile friendship, trust, loyalty, and kindness. But this was the real repressed part.
-[^7]: What is the concept your heart of hearts desires, and you are scared to play with? What evokes unsettling positive vibes in you?
-[^8]: I'll note here that I think the way I (and many rationalists) undervalue [Green](https://joecarlsmith.com/2024/03/21/on-green) thinking is related. Sometimes the [snail crossing the street] or [Blåhaj going to waffle house](https://youtu.be/X1beEuBV7M0?si=7cjBTm9M8HSG5Rwh) is just cool and good. Enough said.
+[^1]: The Hogwarts Houses from Harry Potter are a vibes based personality classification system that I use as an evocative lens. The core part is: Gryffindors are the brave and convicted, Slytherin ambitious and cunning, Ravenclaw intellectual and curious, and Hufflepuff loyal, kind, hardworking. (The original Harry Potter suffers from not understanding its own framing, and ends up with Hufflepuff as the default house for people who don't fit any of the others, and Slytherin as the house for mean and evil people. But the lens is quite clear, when you correct for this.) Additionally I use the combined-house phrasing (Ravenclaw-Hufflepuff) to describe someone who is primarily of the first house but exhibits significant characteristics of the secondary house.
+[^2]: On reflection, I was projecting pretty hard here.
+[^3]: I don't think this is _completely wrong_. I think will to power is a real tool, it can provide real-world returns, and I think Nietzsche and Chapman are the writers who put it the best. See [You should be a God-Emperor](https://meaningness.substack.com/p/you-should-be-a-god-emperor). Pattern here being: Humans do self-limit a lot, and you can bend or remove some of those limiters, with the right work. But in the end, my own path, even though inspired by this, considers the next steps subtly different.
+[^4]: And this is part of where I went wrong. I decided the conclusion I wanted to reach before the work was finished.
+[^5]: I have always liked Camus' vibes, but I have not managed to connect his ideas to _what truly matters_ before I arrived here.
+[^6]: [Wikipedia: Compliance](https://en.wikipedia.org/wiki/Compliance_(psychology))
+[^7]: Part of what brought me here was that I was generating a cast of characters templated on me for my medianworld. Different aspects or life stories that can be generated out of Xylixes that get pulled in different directions. And I realized the way I model those characters doesn't leave space for any Hufflepuff. And on reflection, it didn't make sense. I greatly enjoy and find worthwhile friendship, trust, loyalty, and kindness. But this was the real repressed part.
+[^8]: What is the concept your heart of hearts desires, and you are scared to play with? What evokes unsettling positive vibes in you?
+[^9]: I'll note here that I think the way I (and many rationalists) undervalue [Green](https://joecarlsmith.com/2024/03/21/on-green) thinking is related. Sometimes the [snail crossing the street] or [Blåhaj going to waffle house](https://youtu.be/X1beEuBV7M0?si=7cjBTm9M8HSG5Rwh) is just cool and good. Enough said.
