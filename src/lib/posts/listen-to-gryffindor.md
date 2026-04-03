@@ -25,9 +25,13 @@ I also greatly enjoyed David Chapman's [_Buddhism for Vampires_](https://buddhis
 
 To observe the headings of the blog sequences:
 > Eating the shadow
+>
 > Romancing the shadow
+>
 > Hunting the shadow
+>
 > Absorb your shadow
+>
 > Drinking the sun
 
 And then interpreting them into the verbs that the blog text uses: hunting (finding what you've hidden from yourself) -> chewing (getting intimate with it, no distance) -> swallowing (it's no longer "not me". may need to regurgitate and rechew) -> digesting (becomes normal, malleable) -> burning (fuel for creative work and practical magic).
