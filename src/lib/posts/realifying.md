@@ -3,14 +3,15 @@ title: 'Realifying'
 tagline: 'Confusing form thoughts about creativity'
 slug: realifying
 createdAt: 2019-06-22T11:36:57.000Z
-tags: ['confusing', 'work-in-progress']
+tags: ['confusing']
 ---
+
+2026 edit: Unpolished, raw. I may or may not return to the subject. Removed a link and sourcem material.
 
 [Epistemic status: A useful framework for understanding my own creativity]
 Disclaimer: much of the terminology here has been lent from
 
 - Venkatesh Rao (especially http://www.tempobook.com/2011/08/17/daemons-and-the-mindful-learning-curve/)
-- Ziz (https://sinceriously.fyi/being-real-or-fake/, https://sinceriously.fyi/false-faces/)
 - Elizabeth Gilbert. (https://www.ted.com/talks/elizabeth_gilbert_your_elusive_creative_genius)
 
 The concepts aren't mine, but the presentation is.
