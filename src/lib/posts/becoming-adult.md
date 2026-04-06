@@ -35,7 +35,7 @@ I now know what opening my mouth looks like in practice. I came out. After three
 
 [I won't ask for permission.](https://xylix.fi/blog/forgiveness-not-permission)
 
-[^1]: In HPMOR, phoenixes are a symbol for the pull your heart has toward intense positive action -- courage, defiance, recklessness, doing the right thing without waiting. The true heir of Gryffindor isn't the noble paladin. It's the twins. Courage looks like whimsy.
+[^1]: In HPMOR, phoenixes are a symbol for the pull your heart has toward intense positive action -- courage, defiance, recklessness, doing the right thing without waiting. The true heir of Gryffindor isn't a lawful paladin. It's the twins. Courage often comes with whimsy.
 
 <!--
 NOTE: other title ideas:
