@@ -63,6 +63,6 @@
 
 	li[aria-current='page'] a {
 		opacity: 1;
-		color: var(--color-theme-1);
+		color: var(--color-accent);
 	}
 </style>

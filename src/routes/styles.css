@@ -4,12 +4,13 @@
 
 :root {
     --color-theme-1: #08f;
+    --color-accent: #2F0C87;
     --color-theme-2: #00fff3;
     --color-text: #ffeeee;
     --color-text-muted: color-mix(in srgb, var(--color-text) 45%, transparent);
     --color-text-card: #101010;
     --color-bg-base: #25272d;
-    --color-bg-highlight: color-mix(in srgb, var(--color-bg-base) 80%, var(--color-theme-1));
+    --color-bg-highlight: color-mix(in srgb, var(--color-bg-base) 80%, var(--color-accent));
     --color-bg-light: #fce8d6;
     --color-rule: color-mix(in srgb, var(--color-text) 8%, transparent);
 
@@ -94,7 +95,7 @@ section {
 }
 
 blockquote {
-    border-left: 2px solid color-mix(in srgb, var(--color-theme-1) 35%, transparent);
+    border-left: 2px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
     margin-left: 0;
 }
 
@@ -115,7 +116,7 @@ article img {
 .footnotes {
     margin-top: 2rem;
     padding-top: 0.75rem;
-    border-top: 1px solid color-mix(in srgb, var(--color-theme-1) 20%, transparent);
+    border-top: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
     font-size: 0.85rem;
     opacity: 0.75;
 }

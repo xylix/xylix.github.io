@@ -258,7 +258,7 @@
 		height: 44px;
 		border-radius: 50%;
 		background: url('/2024_picture.jpg') center / cover;
-		border: 2px solid var(--color-theme-1);
+		border: 2px solid var(--color-accent);
 	}
 
 	:global(article.thread blockquote p::before) {
@@ -273,7 +273,7 @@
 	:global(article.thread blockquote) {
 		margin: 0.5rem 0 0 calc(44px + 0.75rem);
 		padding: 0.4rem 0.75rem;
-		border-left: 3px solid color-mix(in srgb, var(--color-theme-1) 50%, transparent);
+		border-left: 3px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
 		color: var(--color-text, inherit);
 		opacity: 0.85;
 		font-style: italic;
@@ -288,8 +288,8 @@
 		margin-left: 21px; /* center of 44px avatar */
 		background: linear-gradient(
 			to bottom,
-			color-mix(in srgb, var(--color-theme-1) 60%, transparent),
-			color-mix(in srgb, var(--color-theme-1) 10%, transparent)
+			color-mix(in srgb, var(--color-accent) 60%, transparent),
+			color-mix(in srgb, var(--color-accent) 10%, transparent)
 		);
 	}
 </style>

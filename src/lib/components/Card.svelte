@@ -17,7 +17,7 @@
 	// pass it straight through — solid colors work as border-color, gradients
 	// need a workaround (we put it on a pseudo-element via a CSS custom prop).
 	const accentStyle = $derived(
-		eraBackground ? `--accent: ${eraBackground}` : '--accent: var(--color-theme-1)'
+		eraBackground ? `--accent: ${eraBackground}` : '--accent: var(--color-accent)'
 	);
 </script>
 
@@ -80,7 +80,7 @@
 		align-self: stretch;
 		min-height: 1.5rem;
 		border-radius: 2px;
-		background: var(--accent, var(--color-theme-1));
+		background: var(--accent, var(--color-accent));
 	}
 
 	.body {

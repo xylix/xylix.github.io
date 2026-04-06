@@ -118,7 +118,7 @@
 
 		&:hover {
 			color: var(--color-theme-2);
-			border-color: var(--color-theme-1);
+			border-color: var(--color-accent);
 		}
 
 		&:first-of-type {
