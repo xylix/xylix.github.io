@@ -3,8 +3,11 @@ title: 'Quotes: Be Slightly Evil'
 tagline: 'Notes on Being Slightly Evil (Venkatesh Rao, 2013)'
 slug: being-slightly-evil
 createdAt: 2019-06-05T16:24:19.000Z
-tags: ['quotes', 'book', 'rationality', 'work-in-progress']
+tags: ['quotes', 'book', 'rationality']
 ---
+
+Edit: Old and underexplained quotepost. See [Cognitive tech](/sequences/cognitech) -> Lenses -> "Problems with central coordination" and [Re: Gervais Principle](/blog/re-gervais-principle) for more recent takes on the subject.
+
 
 Or; Be Slightly More Effective In Whatever You Do, in socially questionable ways.
 
