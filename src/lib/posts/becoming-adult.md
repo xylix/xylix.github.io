@@ -2,7 +2,7 @@
 title: Opening my mouth
 tagline: TODO tagline
 slug: becoming-an-adult
-tags: ['work-in-progress', 'confusing', 'personal']
+tags: ['confusing', 'personal']
 draft: true
 ---
 

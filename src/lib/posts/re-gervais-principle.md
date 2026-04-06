@@ -1,6 +1,6 @@
 ---
 title: "Re: Gervais principle"
-tags: ['book', 'review', 'work-in-progress']
+tags: ['book', 'review']
 draft: true
 ---
 

@@ -2,7 +2,7 @@
 title: Endorse weirdness. No, really.
 tagline: What Luna knows
 slug: endorse-weirdness-no-really
-tags: ['work-in-progress', 'stance', 'rationality']
+tags: ['stance', 'rationality']
 draft: true
 ---
 TODO: change filename
