@@ -1,6 +1,6 @@
 ---
 title: The Phoenix' call
-tagline: there are options
+tagline: there are options / are there options?
 tags: ['mythology']
 ---
 
@@ -20,9 +20,9 @@ you cannot do it knowing it is your last chance.
 
 there is a kind of courage, honor, integrity
 
-only ever visible when you cannot fully know the consequence of your action
+only ever known when you know not the cost of your action
 
-and then must decide.
+and then must choose.
 
 ---
 a person calculative, prudent, sane, for good
@@ -31,7 +31,7 @@ can't answer the Phoenix's call
 
 for good.
 
-was it the good choice?
+is it the good choice?
 
 ---
 a person desperate, reckless, defiant, for good
@@ -40,7 +40,7 @@ can answer the Phoenix's call
 
 for good.
 
-was it the good choice?
+is it the good choice?
 
 ---
 none will ever know.
