@@ -6,6 +6,8 @@ createdAt: 2019-06-07T08:02:13.000Z
 tags: ['confusing']
 ---
 
+2026 edit: Removed a thank you. See [my editing policy](/blog/editing) for additional info.
+
 How are thoughts output?
 
 People think a lot. However, we only output a fraction of this. There's a significant problem here; the most fundamental assumptions in our thinking are the ones we intuitively consider to be "trivial". For anyone outside us, be it somebody else or our future selves, these "trivial" bits are the most nontrivial ones. They are so fundamental they rarely get expressed.
@@ -14,7 +16,7 @@ I dislike outputting information based solely on my feeling or intuition. Howeve
 
 Often I take into account how I'm "supposed to think" when I'm forming coherent wholes. However, this is counterproductive. Other people's supposedly good thinking strategies rarely are applicable to my mindspace.
 
-I like to think in weird words. I dislike them, however, because it's hard for other people to understand. But when I move from my intuitive, hard to understand thoughtforms to less intuitive, easier to understand for other people thoughtforms, it simplifies the output. Lowest common denominator. If someone hasn't formed their vocabulary and thought systems to work in the same way as mine then, of course, my natural way of communicating is somewhat alien. And that's okay. We as humans are creatures who are able to do interpersonal communication. I can publish weird shit and get asked how it's supposed to get interpreted. (thanks to Ziz for showing me a case example of applying this.)
+I like to think in weird words. I dislike them, however, because it's hard for other people to understand. But when I move from my intuitive, hard to understand thoughtforms to less intuitive, easier to understand for other people thoughtforms, it simplifies the output. Lowest common denominator. If someone hasn't formed their vocabulary and thought systems to work in the same way as mine then, of course, my natural way of communicating is somewhat alien. And that's okay. We as humans are creatures who are able to do interpersonal communication. I can publish weird shit and get asked how it's supposed to get interpreted. 
 
 I should trust my future interpretations. And everyone who I communicate with. People can ask precision-increasing questions.
 

@@ -6,7 +6,8 @@ createdAt: 2019-06-22T11:36:57.000Z
 tags: ['confusing']
 ---
 
-2026 edit: Unpolished, raw. I may or may not return to the subject. Removed a source of material.
+2026 edit: Unpolished, raw. I may or may not return to the subject. Removed a primary source. See [my editing policy](/blog/editing) for additional info.
+
 
 [Epistemic status: A useful framework for understanding my own creativity]
 Disclaimer: much of the terminology here has been lent from
