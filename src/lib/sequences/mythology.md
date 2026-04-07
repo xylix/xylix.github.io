@@ -3,6 +3,11 @@ name: Mythology
 tagline: 'Untruths'
 ---
 
+Mythology[^1]:
+> from Ancient Greek μυθολογία (muthología, “legend”) μυθολογέω (muthologéō, “to tell tales”), from μυθολόγος (muthológos, “legend”), from μῦθος (mûthos, “story”) +‎ λέγω (légō, “to say”)
+
+\* \* \*
+
 > People avert their eyes. Fiction lets one borrow a different pair
 
 > Sometimes the best method of study is not staring at the sun directly
@@ -12,13 +17,18 @@ tagline: 'Untruths'
 > I solemnly affirm that the evidence to be given by me shall be the truth, the whole truth, and nothing but the truth. 
 > I solemnly swear I am up to no good
 
-> You don't build a lighthouse by sailing out
+TODO: > You don't build a lighthouse by sailing out
 
 > When untruths are the only way to truth, there's no detour
 
 
 * Introduction
-* External mythology
+* Gathered
     * phoenix-call
-* Internal mythology
+* Given
+    * a-psalm-from-the-book-of-lies
+    * without-moon
+    * sunrise-construct
 
+
+[^1]: [mythology](https://en.wiktionary.org/wiki/mythology)

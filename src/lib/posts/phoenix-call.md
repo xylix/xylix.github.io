@@ -1,7 +1,7 @@
 ---
 title: The Phoenix' call
 tagline: there are options / are there options?
-tags: ['mythology']
+tags: ['mythology', 'poem']
 ---
 
 Context: https://hpmor.com/chapter/85
