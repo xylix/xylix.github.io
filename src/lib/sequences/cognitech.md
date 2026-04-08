@@ -21,7 +21,10 @@ Terminology: Lenses, to see with. Frames, to build with. Stances, to find. See [
     * re-every-layer-of-review
     * why-top-down-keeps-failing / predictability-as-rigidity
     * forgiveness-not-permission
+  * Why coordinate?
+    * reverse-flow-of-history
 * Frames
+  * lazy-market-hypothesis
 * Stances
 
 
