@@ -3,6 +3,7 @@ title: the Lazy Market Hypothesis
 tagline: Some markets are (allegedly) efficient. Some markets are efficiently lazy.
 tags: ['artificial-intelligence']
 version: v0.0.1
+draft: true
 ---
 
 (continuing from the tagline: (, at their local optimums.))
