@@ -1,8 +1,10 @@
 ---
 title: the Lazy Market Hypothesis
 tagline: Some markets are (allegedly) efficient. Some markets are efficiently lazy.
-tags: ['artificial-intelligence', 'ai']
-version: v0.0.1
+tags: ['artificial-intelligence']
+draft: true
+favourite: true
+version: v0.0.2
 ---
 
 A small town in Finland. Bikes leaned against the library wall, unlocked. Not because the locks are expensive, but because nobody's ever taken one. The "security" here is that theft requires a thief, and the local supply of bike thieves is zero. If you installed a camera and a steel rack, you'd be solving a problem that doesn't exist. If a busload of opportunists rolled through, you'd lose every bike in an hour.
@@ -21,19 +23,34 @@ The Efficient Market Hypothesis says that in liquid, well-monitored markets, pri
 
 Most of the world isn't like that.
 
-Most of the world is held together not by active defense but by the absence of active attack. The bike isn't stolen because nobody tried. The journal isn't flooded with fakes because faking was too much work. The parking system isn't compromised because the payoff doesn't justify the effort of looking.
+Most of the world is held together not by active defense but by the absence of active attack. The bike isn't stolen because nobody tried. The journal isn't flooded with fakes because faking was too much work. The parking system isn't compromised, because the payoff doesn't justify the effort of looking.
 
 I'm calling these *lazy markets*: equilibria where the current level of safety, quality, or integrity is sustained not by the strength of defenders but by the scarcity or disinterest of attackers. The system sits at a local optimum that nobody has bothered to disturb.
 
-The parallel to EMH is intentional. Efficient markets price in available *information*. Lazy markets price in available *effort*. Both are stable equilibria. Both can be disrupted when their underlying assumption changes.
+TODO: remove or move parenthesized part to footnotes
+(The parallel to EMH is intentional.) Efficient markets price in available *information*. Lazy markets price in available *effort*. Both are stable equilibria. Both can be disrupted when their underlying assumption changes.
 
-## Why lazy markets were stable for so long
 
-Human attention is genuinely scarce. Every attack, every exploit, every fraud requires someone to decide it's worth their time. For most of history, most systems were protected not by how hard they were to break, but by how many other things a potential attacker could be doing instead.
+## Why lazy markets exist: local vs. global optimums
 
-This wasn't visible as a defense mechanism because it was never designed as one. It was the background condition. Infrastructure, institutions, and norms all got built on top of it without anyone naming it as load-bearing.
+Lazy markets aren't accidents or oversights. They're the locally rational outcome.
 
-Attention-as-defense has a specific shape: it protects broad, shallow targets well (there are so many unlocked bikes and so few thieves) and narrow, high-value targets poorly (if your bike is made of gold, someone will notice). It degrades gracefully as long as the ratio of targets to attackers stays high. And it fails catastrophically when that ratio inverts.
+Consider the incentives facing a defender. Investing in defense against attacks that aren't happening is a pure cost with no visible return. The town council that spends its budget on bike racks when no bikes have been stolen gets voted out. The journal editor who overhauls the review process when submissions look fine gets told they're wasting everyone's time. The city IT department that proposes a security audit for a system nobody has ever attacked gets its budget cut.
+
+Defenders are locally rational to be lazy because, from where they sit, the threat isn't real. And they're *right*, until they're not. This is the local-vs-global optimum structure: locally, doing nothing is optimal because attack pressure is near zero. Globally, the system is fragile because its safety depends on a condition (attacker scarcity) that the defender doesn't control and may not even be tracking.
+
+The global optimum *for defense* would be to make systems that are provably secure. This is not a hypothetical: it's what cryptography tries to do. Cryptographic algorithms are designed with mathematical proofs of security against specific attack classes, and some implementations go further, using formal verification to prove the code matches the spec. The result is systems where safety is a property of the design, not a bet on attacker scarcity.
+
+Almost nothing else in software works this way. Formally verifying even a small program is expensive, slow, and requires specialized expertise. For a parking meter system, a journal submission portal, a city's SCADA interface, the cost of provable security dwarfs the value of the thing being protected. So the locally rational choice is to ship something that works, skip the proof, and rely on the fact that nobody is going to try to break your parking meters. The global optimum for defense is real, known, and almost never worth pursuing. That's what LMH explains: it's not that defenders don't know how to defend. It's that defending well is not the global optimum for the *defender's actual goals*, which include staying in budget, shipping on time, and not spending years on a formal proof for a system three people use.
+
+No individual agent has the incentive to close this gap, because the cost of defense scales badly against the tails. If you model exploit success as a distribution, getting from a 5% exploit rate to a 1% rate is reasonable. Getting from 1% to 0.1% is expensive. Getting to 0% means formal verification, and the cost curve goes vertical. At every point along that curve, a rational defender asks: is the next increment of security worth more than what I'd lose to the exploits it prevents? And for most systems, the answer becomes "no" well before the system is actually secure. This is Patrick McKenzie's point that [the optimal amount of credit card fraud is non-zero](TODO: link to patio11 piece): Visa could reduce fraud further, but the cost of doing so would exceed the fraud losses. They're locally rational to tolerate the remaining fraud. The same logic applies everywhere lazy markets exist, only most defenders aren't even running the calculation consciously.
+
+This is the same structure as other collective action problems, but with a twist: in most collective action problems, the participants *know* there's a problem they're failing to coordinate on. In a lazy market, the participants often don't even see the problem. The bike hasn't been stolen. The system hasn't been breached. Everything looks fine.
+
+This is also why lazy markets are so stable. It's not just that defending is expensive. It's that the signal that you *should* defend doesn't arrive until the attack does, at which point the lazy market has already collapsed. The information that would trigger the transition from lazy to active defense is generated by the very event the defense is meant to prevent.
+
+NOTE: The "preferences" angle from the notes could land here: lazy markets are also sustained by the fact that most people who *could* attack don't, for reasons of culture, identity, and friction, not just cost-benefit calculation. The local optimum is held in place by both defender laziness and attacker preferences. Both can shift.
+
 
 ## The diagnostic
 
@@ -45,132 +62,227 @@ Given a domain, three questions:
 
 A domain that scores "inherited," "no," and "growing" is a lazy market approaching collapse.
 
-## The unifying frame
-
-EMH and LMH aren't competing theories. They're descriptions of what local rationality looks like under different cost structures.
-
-Markets are efficient where exploiting alpha is locally rational for well-resourced agents: the cost of probing is low relative to the expected payoff, so probing happens continuously, and the equilibrium reflects that continuous probing.
-
-Markets are lazy where exploiting vulnerabilities is locally *irrational*: the cost of attacking exceeds the expected payoff (accounting for effort, risk, opportunity cost, and the non-trivial psychological cost of becoming-an-attacker). So nobody attacks, and the equilibrium reflects *that*.
-
-The interesting event is the phase transition between regimes. When the cost of attention drops, domains slide from LMH-shaped toward EMH-shaped. During the transition, the old equilibrium dissolves before the new one forms. That gap is where damage happens.
-
-This connects directly to Yudkowsky's *Inadequate Equilibria*: his cases are about local rationality holding systems at stable *bad* points (coordination failures, signaling traps). LMH cases are about local rationality holding systems at apparently *good* but contingent points. They're cousins. Both are about the gap between local and global rationality, failing in opposite directions. NOTE: the Inadequate Equilibria connection could be its own subsection. For now, keeping it tight.
-
-One more thing that matters for the frame: lazy markets can collapse from two directions. The obvious one: the cost of attention drops (AI makes probing cheap). The less obvious one: the *population of potential attackers shifts*. Preferences about whether to attack are sustained by culture, identity, friction, by who counts as a "normal person" doing "normal things." When those structures shift, the local rationality calculation shifts too, even without the underlying values changing. AI lowers the friction of becoming-an-attacker, which changes who's willing to be one. Both collapse paths are in play simultaneously.
 
 ## Prior work
 
 The lazy market pattern has been stated, in narrower forms, multiple times. Dan Davies in *Lying for Money* (2018): "fraud is an equilibrium quantity." Patrick McKenzie's popular treatment of the same idea across payments, KYC, and benefits fraud. The LessWrong post "Terrorism, Tylenol, and dangerous information" (2018), which states half of LMH for terrorism: "the main constraint on an attack vector can really just be that the types of people who make attacks haven't thought of it yet." Yudkowsky's *Inadequate Equilibria* catalogues the family of stable-bad equilibria that LMH's stable-fragile equilibria are cousins to. [TODO: add links for all of these.]
 
-What's new here is the cross-domain generalization: these are all instances of the same cost-structure phenomenon, and the transition dynamics (what happens when the cost of attention collapses across all of them simultaneously) are the part that matters most right now.
+What's new here is the cross-domain generalization, and specifically the transition dynamics: what happens when the cost structure shifts across many lazy markets simultaneously.
 
 Background: Grossman-Stiglitz (1980) on why perfectly efficient markets are impossible; routine activity theory (Cohen & Felson, 1979) in criminology; Ross Anderson's economics-of-information-security work. [TODO: footnote or parenthetical, not body text.]
 
+TODO: the placement of this section is an open question. It might work better earlier (right after definition, to borrow credibility before explaining the mechanism) or later (after the clean cases, when the reader already believes the frame and wants to know if it's original). Currently here as a compromise.
+
+
 ## Clean cases
 
-**Cybersecurity** was the entry point for this frame, and it's the cleanest example. Most vulnerable software is vulnerable not because the vulnerability is hard to fix, but because nobody is maintaining it *and* nobody is attacking it because the payoff isn't there. The equilibrium is laziness on both sides. When automated scanning tools made probing cheap, the domains where attack payoff was high (financial services, large enterprises) transitioned to active markets with continuous defense. The long tail (small businesses, personal infrastructure, IoT devices) stayed lazy.
+**Cybersecurity** is the cleanest example. Most vulnerable software is vulnerable not because the vulnerability is hard to fix, but because nobody is maintaining it *and* nobody is attacking it because the payoff isn't there. The equilibrium is laziness on both sides. When automated scanning tools made probing cheap, the domains where attack payoff was high (financial services, large enterprises) transitioned to active markets with continuous defense. The long tail (small businesses, personal infrastructure, IoT devices) stayed lazy.
 
-**Long-tail digital infrastructure.** Small-town water treatment SCADA systems, hospital HVAC controllers, building management, irrigation controllers, traffic systems. Software from 2008, one maintainer who retired, accessible from the public internet. The defense is that nobody is looking. Both axes of the diagnostic fail: no defenders, and if attack pressure rises, there's nobody to call. [TODO: find and cite a specific real example. There are dozens.]
+**Effort-floor institutions.** Peer review, grant applications, college admissions essays, court filings, insurance claims, product reviews, reputation systems. All of these extract signal from "this person was willing to spend N hours on this." The signal is the effort, not the content. When the cost of producing effort-shaped output drops, the signal collapses.
 
-**Effort-floor institutions.** Peer review, grant applications, college admissions essays, court filings, insurance claims, product reviews, reputation systems. All of these extract signal from "this person was willing to spend N hours on this." The signal is the effort, not the content. When the cost of producing effort-shaped output drops, the signal collapses. This is already happening with LLM-aided submissions to journals, and the defenses being deployed (LLM-aided review, increased credentialism) are themselves effort-floor structures. The lazy market is being defended by another lazy market. [TODO: is there a clean term for this recursive pattern?]
+**Long-tail digital infrastructure.** Small-town water treatment SCADA systems, hospital HVAC controllers, building management, traffic systems. Software from 2008, one maintainer who retired, accessible from the public internet. Both axes of the diagnostic fail: no defenders, and no re-hardening capacity. [TODO: find a specific real example.]
 
-**Hardware and firmware.** If a Spectre-class vulnerability is found in deployed silicon, the patch cycle is *product generations*. There is no software fix for "the CPU is wrong." This is the unpatchable extreme of the lazy market: even if defenders wanted to respond, the medium doesn't permit it on any relevant timescale.
+**Active markets as contrast.** Stock markets are the clearest counter-example. The incentive structure is maximally pro-attacker: finding inefficiencies *is the business model*. Well-funded adversaries probe the equilibrium continuously. The market isn't safe because attacking it is hard; it's safe because someone is actively defending the alpha. The unifying property of active markets is continuous, well-funded probing that forces the equilibrium to update.
 
-**Active markets as contrast.** Stock markets are the clearest counter-example. The incentive structure is maximally pro-attacker: finding inefficiencies *is the business model*. Well-funded adversaries probe the equilibrium continuously. The market isn't safe because attacking it is hard; it's safe because someone is actively defending the alpha. Other active markets: modern web security at well-resourced companies, ad fraud detection at Google scale, high-frequency trading. The unifying property is continuous, well-funded probing that forces the equilibrium to update.
 
-## Hard cases
+## What happens when the lazy-efficient frontier moves
 
-These are features of the frame, not bugs. A frame that cleanly sorts everything is too coarse to be useful. The productive ambiguity in specific cases is where the frame earns its keep.
+Every technology shift moves the boundary between what's lazily defended and what needs active defense. This isn't new. What's new is the speed and breadth of the current shift.
 
-### Persuasion
+The historical pattern is instructive. Medieval fortifications were a lazy-market defense: building a castle was expensive, and the pool of actors with the resources to besiege one was small. Safety came from the effort floor. Then explosives arrived, and then mobile artillery, and the entire defensive paradigm shifted from "walls" to "maneuver." The lazy market of "nobody can breach these walls" collapsed, and what replaced it (field armies, strategic depth, mobile defense) was fundamentally different in kind, not just degree. The transition period was bloody. Actors who tried to solve the new problem with better walls lost.
 
-Partially lazy, partially active. The *closed set* of historical attack patterns (sales scripts, classic cons, cult recruiting techniques) is defended by millennia of cultural and psychological adaptation. People have heuristics against the Nigerian prince email because that pattern has been pentested for generations. That's an active market.
+The pattern: when the frontier moves, the domains that get hit aren't the ones that were already actively defended. The domains that get hit are the ones that were lazily defended and didn't know it. And the defenders' first instinct is almost always to reinforce the old defense rather than switch paradigms.
 
-The *open set* of novel persuasion patterns has no such defense. When a new persuasion technique appears (targeted microcontent, AI-personalized emotional manipulation, synthetic social proof at scale), there's no accumulated cultural immunity. The frame predicts that persuasion gets cooked at the margins, not in the center. The known attacks stay defended. The novel ones walk through.
+Adaptation matters, but adaptation has a speed. When the perturbation is faster than the adaptation, you get a transient, and some transients contain damage that doesn't unwind. Hardware in the field can't be un-deployed. Trust, once broken, takes generations to rebuild. People who get defrauded stay poorer. The new equilibrium might be fine; the trip there is the part that matters.
 
-TODO: this is the section where the "preferences are sustained by structures" point from the notes should land. The friction of becoming-a-manipulator is part of what's kept the lazy-market side of persuasion stable. If AI lowers that friction...
 
-### Scientific publishing
+## Case: the current cybersecurity situation
 
-A lazy market actively collapsing in real time, which the reader can verify by checking their own field's recent conferences. The recursive structure is the interesting part: the defenses being deployed are themselves lazy-market structures.
+The lazy-efficient frontier in cybersecurity is moving right now. Automated scanning, AI-assisted vulnerability discovery, and commoditized exploit kits are lowering the cost of attack across the board. The high-value targets already transitioned to active defense years ago. The question is what happens to the long tail.
 
-LLM-aided review as a response to LLM-aided submissions is the same cost structure one level up. Increased credentialism (requiring institutional affiliations, senior co-authors, track records) is a different lazy-market defense: it extracts signal from "this person invested years in a career," which is a higher effort floor but the same mechanism. Both defenses work until the cost of clearing the new floor drops, and both have collateral damage (excluding legitimate outsiders, calcifying hierarchies).
+The fortification-to-mobility analogy: perimeter-based security (firewalls, network boundaries, "keep the bad guys out") is the castle wall. It worked when the attacker pool was small and the effort floor was high. The mobility equivalent is probably zero-trust architecture and continuous monitoring: assume breach, verify everything, defend in depth rather than at the boundary.
 
-The post-hoc interesting question: what would a genuinely *active* defense of scientific publishing look like? Replication requirements, prediction markets on findings, adversarial review by people incentivized to find errors rather than check boxes. These are expensive, which is exactly why the field has been using effort-floor defenses instead. TODO: this paragraph is gesturing at something important but is still vague. Sharpen.
+But here's the lazy-market problem with that transition: zero-trust is expensive, complex, and requires continuous investment. The organizations that most need it (the long tail: small businesses, municipal systems, hospitals, schools) are exactly the ones least equipped to deploy it. The defenders who most need to adapt are the ones with the least capacity to adapt. This is predictable from the frame: lazy markets collapse hardest where the defense was laziest.
 
-### Biosecurity
+TODO: What specific predictions does this generate? Which cybersecurity domains are about to collapse that people aren't talking about? What does the new equilibrium look like for the long tail?
 
-Two-axis answer. The natural attack surface is heavily defended: an active market with hundreds of millions of years of immune-system pentesting, hardened by selection. Pathogens that can get through are genuinely capable adversaries. This isn't a lazy market; it's a very active one with a very effective defense.
 
-The *intentional* attack surface is partially lazy. Historically: small set of actors with both capability and intent, legal and ethical barriers acting as effort floor, wet-lab tacit knowledge as an additional barrier. The frame predicts that intentional bioattacks may look more like "lazy market gets disrupted" than the natural-pathogen baseline would suggest, because the bottleneck has been effort and access rather than fundamental difficulty.
+## Case: AI treaties and the EMH/LMH distinction
 
-[TODO: I am hedging this heavily because biosecurity is out of my core competence. The structural analysis seems sound to me but I want to flag explicitly that the object-level claims about what's easy or hard in biology are places where I could be wrong. The frame applies regardless of where the actual difficulty bar is; it's a question about what the defense depends on, not about absolute difficulty.]
+Nuclear arms control is the dominant mental model for AI governance, and the analogy might be structurally wrong.
 
-### AI alignment
+Nuclear weapons capability is closer to an active market than a lazy one. The effort floor is enormous: enrichment infrastructure, weapons physics expertise, delivery systems, testing capacity. The set of actors who could cross that floor was small and identifiable. Treaties worked (to the extent they did) partly because the problem had this structure: you could bind a small number of known players and cover most of the risk.
 
-This is the meta-case.
+AI capability has a fundamentally different cost structure. The effort floor is lower and dropping. The set of actors with meaningful capability is large and growing. Training runs are expensive but inference is cheap; fine-tuning is cheaper still; and the knowledge required is widely distributed. This is LMH-shaped: the current level of "safety" in many AI-adjacent domains is sustained not by how hard it is to do dangerous things with AI, but by the fact that most people with the capability haven't been motivated to try.
 
-*Local alignment* (the AI does what you ask it to do) is roughly an active market. Continuous, well-funded probing: red teams, bug bounties, deployment feedback loops, the entire RLHF pipeline, user reports. When a jailbreak appears, it gets patched. The defense is active because local alignment is load-bearing for the business model. This is the part of AI safety where the incentives are already aligned with the defense.
+If this framing is right, it has implications for what governance structures can work. Treaties modeled on nuclear precedent (binding a small number of identifiable actors) address the EMH-shaped part of the problem (frontier labs, major state programs) and miss the LMH-shaped part (the long tail of capable actors with cheap access). The LMH-shaped part might need different tools: norms rather than treaties, infrastructure-level controls rather than actor-level controls, defense investment in the domains that are lazily defended rather than the domains that are already actively defended.
 
-*Global alignment* (the AI doesn't scheme, doesn't have misaligned long-term goals, doesn't produce catastrophic tail-risk behavior) has almost none of this. The value being protected isn't yet realized. The relevant "attackers" (misaligned mesa-optimizers, deceptive alignment, goal drift under distribution shift) don't yet exist at scale. And it's defended primarily by "nobody is currently smart enough to break it" and "current models aren't capable enough for this to matter."
+TODO: This section needs the nuclear treaty history to be more specific. Which treaties, what worked, what didn't, and why. The structural argument is clear but it needs concrete anchoring. Also: the "nuclear reactors" example from the notes (a treaty that banned reactors alongside weapons would have been safer by narrow x-risk metrics but worse overall) is relevant here. The point is that good governance of lazy markets has to account for local optimums, not just global ones.
 
-That's textbook lazy market structure, and it's the lazy market with the highest stakes.
+TODO: there's also a connection to the Fragile World Hypothesis (Bostrom) here. LMH is a softer, more mechanistic version of FWH. FWH says "some technologies destroy the world." LMH says "some equilibria are sustained by effort floors, and when those floors drop, the equilibrium collapses." FWH is the extreme case where the collapse is existential. Worth a sentence or two, not a section.
 
-The specific diagnostic: Was the current safety level earned or inherited? Inherited. (Current frontier models appear globally aligned mostly because they're not capable enough for misalignment to be a meaningful strategy.) Can defenders re-harden if pressure increases? Unclear, and the "defenders" are largely the same organizations generating the pressure. Is the value growing? Yes, by orders of magnitude per year.
 
-NOTE: This section should be hedged less than my instinct suggests. The analysis is structural, not empirical. You don't need to believe any specific alignment threat model to accept that the structure of the defense looks lazy-market-shaped. The claim is about what the defense depends on, not about what will happen.
-
-## On adaptation rates
-
-A fair response to all of the above: systems adapt. Equilibria reassert. Doom predictions tend to underweight homeostasis. The immune system adapted; so will institutions. This is Onni's "Always Account for Adaptation" point, and it's real. [TODO: replace "Onni's point" with the actual reference/context; the reader won't know who Onni is.]
-
-The lazy market frame is a refinement of this, not a counter. The refinement: adaptation has *units*. It runs at a speed. When the perturbation timescale is faster than the adaptation timescale, you get a transient regime, and some transients contain damage that doesn't unwind.
-
-Hardware in the field can't be un-deployed. Trust, once broken, takes generations to rebuild. People who get defrauded stay poorer. Scientific credibility lost to a flood of fake papers isn't recovered by later improving the review process. The new equilibrium might be fine; the trip there is the part that matters.
-
-The lazy market frame tells you which adaptations are too slow to matter on the relevant timescale. If the perturbation is "automated scanning of every public-facing server on earth" and the adaptation cycle is "IT department reviews security policy annually," the adaptation exists but is irrelevant. [TODO: cite "A Theory of Equilibrium in the Offense-Defense Balance" (LessWrong, 2024) in this section.]
-
-## What happens when a lazy market gets disrupted
-
-Three outcomes, and most domains will land on one of these:
-
-**(a) Active defense.** The domain transitions from lazy to active. Continuous monitoring, real-time response, well-funded defense teams. This is expensive. It's viable for high-value targets: financial systems, critical infrastructure, frontier AI labs. It's not viable for the long tail. You can't hire a security team for every small-town water system.
-
-**(b) Structural change that removes the vulnerability.** Redesign the system so the attack surface doesn't exist. Move the parking meter system offline. Replace effort-floor credentialing with something that doesn't depend on effort being expensive. This is slow and often impossible, because the vulnerability is usually a feature of the system's design, not a bug.
-
-**(c) Accept the lower equilibrium.** The new normal is worse. More fraud, more spam, more exploitation, more noise. Systems that used to work stop working. The remaining signal gets extracted by whoever can filter through the noise. Everyone else gets a worse deal.
-
-Most disrupted lazy markets end up at (c). The interesting question is which ones we should try to drag toward (a) or (b), and whether we can.
-
-## The AI connection
-
-To be clear: this post isn't an AI risk post. The lazy market frame applies whether or not AI exists. Lazy markets have been collapsing for as long as technology has been changing cost structures: the printing press collapsed the effort-floor defense of manuscript culture; industrialized agriculture collapsed the lazy market of subsistence farming's natural pest resistance.
-
-What makes AI the current instantiation worth naming: the cost of *attacker-attention* is collapsing across many domains simultaneously. Every lazy market priced in attention being expensive. AI makes attention cheap. Not in the future, not contingent on further capability gains. Current models, deployed at current scale, with current infrastructure, are already enough to shift the cost structure for many lazy markets.
-
-This is a subplot of the AI story, not the main plot. But it's the subplot most likely to play out fastest, because it doesn't require anything we don't already have.
-
-TODO: reference the Mythos thread here. Cybersecurity is one application of the frame, not the motivation for it. Don't let this section become the climax; the hard cases section is the climax.
+TODO: cut entire predictions section, work the model to a better shape, and only then actually predict things.
 
 ## Predictions
 
-If this frame is right, it makes specific predictions: [TODO: formalize these more carefully. The Twitter thread had some numbers; I want to be more precise here about what would count as confirmation vs. disconfirmation.]
+If this frame is right, it makes specific predictions: [TODO: formalize these more carefully.]
 
-- Lazy-market-shaped collapses (domains where security/quality/integrity degrades not because of new capabilities but because of new accessibility of existing capabilities) become visibly more frequent over the next 12 months.
+- Lazy-market-shaped collapses (domains where security/quality/integrity degrades because of new *accessibility* of existing capabilities, not new capabilities) become visibly more frequent over the next 12 months.
 - The domains hit first are the ones with the worst diagnostic scores: inherited defense, no re-hardening capacity, growing value. Effort-floor institutions (review systems, credentialing, reputation systems) should be early casualties.
-- Defenses that are themselves lazy-market structures (LLM-review of LLM-submissions, AI-generated spam filters for AI-generated spam) provide temporary relief and then fail for the same reasons.
-- Active-defense transitions happen in high-value domains and don't happen in the long tail, leading to an increasing gap between well-defended and poorly-defended systems.
-- 70% odds a frontier AI model breaks some prediction market or stock market anomaly within 365 days; 5% the attribution is ambiguous human-vs-model. [TODO: this one is from the Twitter thread and needs re-evaluation. Is it actually a lazy-market prediction or an EMH prediction?]
+- Defenses that are themselves lazy-market structures (LLM-review of LLM-submissions, AI-generated spam filters for AI-generated spam) provide temporary relief and then fail for the same structural reasons.
+- Governance approaches modeled on active-market structures (binding small numbers of identifiable actors) underperform relative to governance approaches that address lazy-market dynamics (lowering defense costs, infrastructure-level controls).
+- The gap between well-defended and poorly-defended systems increases, because active-defense transitions are expensive and only viable for high-value targets.
 
 Calendar reminders: July 8 and October 8, 2026 to check these against reality.
 
-## The personal version
 
-Here's the exercise. Look at your own life and ask: which things that are currently "fine" are fine because nobody has bothered to test them?
+---
 
-Your email account's security. The lock on your storage unit. The assumption that your neighbors won't read your mail. The informal agreements you haven't put in writing. The reputation you haven't had to defend.
+## Writing notes (not for publication):
 
-Most of these will stay fine. The point isn't paranoia. The point is noticing which things you're treating as *robust* that are actually *untested*. Robust and untested feel the same from the inside until the test arrives.
+- Credibility sections (prior work, clean cases) placement is TBD. Might move earlier or later.
+- The hard cases from the old spine (persuasion, biosecurity, alignment) are cut. Alignment got partially absorbed into the AI treaties section. The others can come back if the post needs more substance, but the current arc is tighter without them.
+- The "Onni-response" is folded into section 7 (adaptation has a speed).
+- Old clippings and conversation notes are archived below for reference.
 
-[TODO: this closing section is the weakest part of the draft. It's doing the "and now, a personal reflection" move that every blog post does. Either find a way to make it land harder or cut it and end on predictions.]
+- TODO: Important: We should add an "alignment is capability" example and how AI alignment is a domain where local / immediate alignment is an efficient market and deep / global / asymptotic alignment (e.g. no hidden misalignment) is a lazy market.
+
+### Archived clippings:
+
+- what are the nth order implications of lazy market theory / shifts in the laziness-frontier
+
+what is a lazy market:
+> "the incentives do not incentivize 'defenders' to invest in defence because the attack / breach cost doesn't realize (yet)" is how i'd frame the cybersec part.
+    > Uh I think one other abstract way to think about this is that this is an instance of local vs global optimization phenomena.
+    - And if you invest in the global optimum before optimizing enough for the local optimum, you get outcompeted.
+
+what does it imply:
+> general form of the implication: as humanity / tech develops new capabilities this frontier of which things have gotten away with ~security by no attackers being interested / security by laziness will sometimes shift significantly
+
+- -> As the laziness frontier shifts, what happens:
+    - New areas of 'defence' become valuable to invest in
+    - Some old areas of defence become useless (aka we get new optimally-lazy areas)
+        > ( think of the downfall of castles and walls as explosives got developed.)
+
+
+---
+(not my thought)
+> A thought that I'm not quite sure about yet: this is connected to Nick Bostrom's fragile world hypothesis (that some technologies destroy the world, and we might eventually invent something like this), only LMH is a softer version (because the result is not always "destroy the world") and it's also more mechanistic, it shows how some kinds of breaking tech work.
+
+
+Yeah I agree with the connection, when I thought of this at first (I guess 2 hours ago, lol) one of the first places I went was to go look at the Precipice x-risk list in general and try to distance myself from the cybersecurity frame (where i thought of this) to think in general terms.
+
+I think if I think about this well it might have some interesting implications for what solutions for "fragile world" things are _stable_ in the real world. Since I think the solutions that will work / become stable depend a lot on giving in enough to the local optimums while preserving what matters about the global ones.
+
+
+Example: A nuclear weapons treaty that would have also banned nuclear reactors could have resulted in a safer by nuclear x-risk numbers world, but also a worse world, by many metrics.
+
+
+(Well, it would have also been politically impossible to push through, probably, and partially because people's intuitions about that world being worse because it seems worse might have been correct, IMO.)
+
+
+
+
+# Attempt 2
+(Xylix using the previous material as inspiration but writing from scratch, with her own words.)
+
+## Defining
+
+### The Efficient-Market Hypothesis (EMH)
+
+> The efficient-market hypothesis (EMH) is a hypothesis in financial economics that states that asset prices reflect all available information. [^1]
+
+Often people talk about the EMH either being true or not. Economists probably talk with more caveats but I'm not an economist. 
+
+To me the EMH as stated contains a core flaw: It doesn't account for the cost of acting on a given piece of information, monetarily or in investor effort.
+
+And this is a core piece of understanding illiquid markets. And it's also a core piece of understanding the real world. Why?
+
+### Defining the Lazy-Market Hypothesis (LMH)
+
+> The lazy-market hypothesis states that price equilibria reflect not all available information, but only the information whose exploitation clears the prevailing effort threshold.
+
+It is a weaker, more concrete instance of EMH. Where EMH describes optimal markets, LMH describes realistic markets. 
+
+(Source: I made it. (Relevant, but not trying to work on the abstraction level we're working with: The Omniscient yet Lazy Investor[^2]))
+
+### Theory: why do lazy markets exist?
+
+- The EMH defines economic markets / agents as arriving at the global optima.
+    - But if you do this in the real world the real world punches you in the face.
+    - So most agents who perform well chase local optima.
+- 
+
+
+### Claims and applications
+
+- Most real-world economic agents are lazily rational if we take their laziness treshold as given.
+    - And real world competition and market pressure outcompetes agents who are too eager.
+    - The 
+- Like many other markets, LMH generalizes to describing non-financial markets.
+    - The "EMH" shaped corporation chases the global optimum - a lazy corporation chases the local optimum, often winning.
+    - 
+
+### Examples:
+
+- The politician who is honestly acting for the good of a nation, and who isn't implementing Policy X that is theoretically optimal is not being irrational - they are constrained by attention, and being lazily rational. Not by the attention of reading the "theoretically optimal" policy proposals - by the attention of evaluating which theoretical policy proposals actually make sense, and how they relate to the other politics they are executing, etc.
+- The corporation that is investing the minimal amount that fits their implicit (not explicit, because that might be illegal) risk model of cyber attack harm in cyber defence is _being lazily rational_. The real world often rewards this behaviour.
+
+- You are the credit card fraud minimization executive in a corporation that does a lot of credit card based business. You try to get fraud to zero. Your company goes bankrupt.
+    - > the optimal amount of fraud is greater than zero. [^3]
+    - In my own words I'd describe the problem as: If you have a problem that is ~normally distributed, if you want to move the distributions midpoint far enough from the 0% that the tail doesn't actually touch it, you have to spend more money than you will gain moving the distribution far enough left.
+        - You can actually change the shape of the problem, but then you need to do math. And not statistics math (or the insurance companies would have cracked this), but mathematical proofs. And you can't prove a bit about human behaviour.
+
+The primary claim here is that most agents who _win_ are being _lazily rational_. And their laziness function is mostly good for their environment.
+
+TODO: Steal patio11's "optimal credit card fraud is non-zero" reference.
+
+
+### Counter-examples: Domains that chase the global optima
+- Cryptography: Humanity, academia, corporations do actually invest in having systems that are theoretically provably secure.
+    - Importantly still very rarely do economic agents bother to invest enough to make their implementations provably secure.
+    - And you run into other problems: Bad actors, backdoors, ...
+- ~math
+- 
+
+## When lazy actors meet
+
+Let's look at the credit card fraud example again. Intuitively we have the "defender", who is the corporation selling goods, and the "attacker", which is an actor committing credit card fraud.
+
+We can even approximate the equilibrium with a formula:
+attack_success = defence_investment * defence_efficiency - attack_investment * attack_efficiency < 0
+
+## Why is it relevant now?
+
+It used to be efficient to build castles. Then someone went and invented explosives, and later mortars. Warfare changed from a defenders game into a mobility game. 
+
+Historically, cybersecurity has been held together by the attacker's laziness. Anyone who has seriously thought about security, applying [security mindset](https://intelligence.org/2017/11/25/security-mindset-ordinary-paranoia/), is probably aware that most systems in the public internet are hackable, with the right resources.
+
+Security is almost always a competition between the efficiency of attack and defence and between resource investment. Like the formula before.
+
+Security people like to say that security by obscurity is not real security, but there is a part where it contributes. It reduces attack efficiency. If every adversary has to first figure out what you are running, it will reduce efficiency, to some degree.
+
+But also, security has always been a game of making attacks non-profitable, not impossible.
+
+I don't know how close we are to chorus, but I think what [Claude's Mythos is doing](https://cyberpress.org/anthropic-introduces-claude-mythos-preview-with-advanced-zero-day-discovery-capabilities/), is definitely at least the intro for an era change in cybersecurity.
+
+If exploit-building becomes a commodity that can be purchased through API's or self-hosted in open-source models, given enough time, if we don't put in significant effort to hardening the internet it won't know what hit it.
+
+And building better walls won't be enough. We'll need a paradigm change.
+
+<!--When real-world states change and the information propagates, efficient market models update. When the effort treshold moves, lazy markets move, and they move the efficient markets with them.
+
+Technological change is the best example I can think of.
+
+There used to be -->
+
+
+## What can't the lazy markets predict right?
+
+- Out-of-distribution effects, unknown unknowns, black swans. Some of these are definitionally unpredictable, but there is a general shape where 
+
+
+[^1]: [Wikipedia: Efficient-market hypothesis](https://en.wikipedia.org/wiki/Efficient-market_hypothesis)
+[^2]: A formalized sub-scenario of lazy markets, is how I'd describe it: [The Omniscient yet Lazy Investor](https://arxiv.org/pdf/2510.24467)
+[^3]: [Bits About Money: The optimal amount of fraud is non-zero](https://www.bitsaboutmoney.com/archive/optimal-amount-of-fraud/)
