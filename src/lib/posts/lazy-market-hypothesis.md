@@ -286,3 +286,115 @@ There used to be -->
 [^1]: [Wikipedia: Efficient-market hypothesis](https://en.wikipedia.org/wiki/Efficient-market_hypothesis)
 [^2]: A formalized sub-scenario of lazy markets, is how I'd describe it: [The Omniscient yet Lazy Investor](https://arxiv.org/pdf/2510.24467)
 [^3]: [Bits About Money: The optimal amount of fraud is non-zero](https://www.bitsaboutmoney.com/archive/optimal-amount-of-fraud/)
+
+
+
+# Human draft 3 - Lazy Markets and the Effort frontier
+
+## The Efficient-Market hypothesis
+
+> EMH: asset prices reflect all available information.
+
+EMH assumes costless information, costless cognition, costless execution. Drop those assumptions and the EMH-optimal agent becomes irrational: they burn resources chasing gains that don't net positive returns. EMH isn't wrong, it's theoretical, describing a frictionless limit, not a world.
+
+## The Lazy-Market Hypothesis (LMH)
+* Lazy Market Hypothesis is a weakening of EMH for the real world. LMH states that _effort_  is what distances real-life economic agents from the theoretical optimum of the EMH, and when agents price in their effort (labor, risk, capital, cognitive effort), they become _lazily rational_.
+
+(TODO: polish): Importantly: there is both an effort cost to acquire better information, and effort cost to execute trades on that information.
+    - And (TODO verify this is the right paradox) Grossman-Stiglitz applies to both: Due to diminishing returns and market equilibria, it is never rational to aim for perfect information, and it is never rational to aim for the optimal portfolio with your information, if trades have a cost associated with them.
+
+### Contrasting
+
+- the EMH-optimum 
+    - Ignore effort, maximize returns
+- the LMH-optimum
+    - Price effort, price looking for information, maximize net returns
+
+(Claude text:)
+- Every descriptive observation of "real markets don't reach EMH efficiency" is simultaneously a normative observation of "real agents are at their actual optimum, which isn't the EMH one." One sentence making this crisp is worth more than the current three paragraphs.
+
+- Use Grossman-Stiglitz as the existence proof that the bridge is already standard economics. G-S shows the EMH-optimum is incoherent — if everyone reached it, the incentive structure that produced it collapses. So even inside pure economic theory, the "real" optimum can't be the EMH one; it has to be something that leaves room for the information-gathering that sustains prices. LMH generalizes this from information to effort broadly. You're not inventing a bridge, you're pointing out that economics already has one for the information case and extending it.
+
+- Kill the "weakening" language. "LMH is a weakening of EMH" concedes that EMH is the real thing and LMH is a practical compromise. That's the opposite of the bridge you want. LMH should be framed as a completion or correction of EMH — EMH is the limit case of LMH as effort costs approach zero, not the other way around. Small rhetorical change, large framing consequence.
+
+- The claim to state outright, once, clearly: The rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. EMH describes a frictionless limit that no real agent should want to reach, because reaching it would require spending more than it returns.
+
+
+### Why LMH makes sense
+* Why is it rational?
+    * Effort is a real cost. An agent who treats their market moves as free is running a broken optimization.
+    * Once effort is priced in, the rational move is to satisfice toward local optima rather than chase the global optimum, due to diminishing local returns.
+    * Selection confirms this: Agents who ignore effort costs and chase global optima get outcompeted by agents who satisfice (well-chosen) local optima. Real-world markets are populated by approximately rational laziness thresholds, because the alternatives get outcompeted and lose.
+    * The theoretical satisficing rule is just: stop spending effort when the marginal benefit of effort = marginal cost of effort
+
+### Lazy markets
+
+*  In Lazy markets the equilibrium relies on the laziness of the agents, forming an effort frontier, where both sides are committed to investing more resources only if the adversary's investment or efficiency rises. 
+    * Markets such as credit card fraud vs. fraud defence, low volume markets, cybersecurity attack vs defence, feature a lot of laziness. The general trend: Rational agents in adversarial playing fields satisfice their defence against expected capability of their adversary, instead of maximizing defence.
+    * The attacker also tries to satisfice against just barely beating the defender's defences, instead of maximizing their offensive capability.
+    * Agents who try to maximize defence end up overspending in an area of diminishing returns, and so they eventually lose.
+
+
+## When the sloth turns over / Implications of the Effort Frontier shifting
+* Lazy markets are interesting because market shocks that move the "effort frontier" can have predictable effects.
+    * See technological inventions:
+        * It used to be efficient to invest a lot of effort in a castle, since besieging was effortful and castles were otherwise basically impenetrable. Investing in walls and watchtowers was the gold standard of military fortifications. After explosives and artillery came in, some agents tried to solve the problem with better walls, and it didn't work very well. Castles became a liability, and mobility became the gold standard.
+    * And of course cybersecurity in recent years / plausibly with Mythos.
+
+* What happens after shocks?
+    * Agents [adapt](https://wordsofwhatcouldbe.substack.com/p/always-account-for-adaptation).
+
+    * When adaptation is needed, agents who are quick to move, who have the slack to adapt, will fare significantly better.
+        * => Counterintuitively: The lazier you are[^4], the better you will be able to respond to effort frontier shocks.
+            * This is an instance of second-mover advantage: The lazy agents get to avoid the cost of investing in the deprecated paradigm, and reap some of the information benefits of observing what happened to the agents who invested in the old paradigm.
+                > lazy-about-defense agents enter the laziness frontier shock holding assets with higher cross-paradigm salvage value.
+            * => And on the other hand: The lazier you are, the worse you will get hit by the shocks that the existing paradigm protects you against.
+                * Being eager about defence can be reduced to an insurance problem: If the problem being protected against realizes, you profit from investing in insurance, if the problem doesn't realize, you lose the cost of the insurance.
+    
+    * Pattern: When the frontier moves, "build and forget" defences get hit the hardest, since they are slower to adjust than active defences. And, due to sunk cost behaviour, often the defender's first instinct is to reinforce the old defences.
+
+
+## Applying LMH to policy
+- Existential risk:
+    - Most real-world responses to existential risk are _lazy_.
+    - And this is often rational! It has historically been rational!
+        - It's just a huge problem if some problem actually realizes and we don't have time to adapt...
+        - So counterintuitively, the truly dangerous x-risks are markets that _punish_ laziness.
+            - But, if the information is unsure, if the field will adapt a lot, then it will again reward lazy agents, because they'll gain the second-mover advantage and avoid sunk costs.
+
+            - Claim: Agents will defend at the point where the threat becomes locally salient enough to overcome the heuristic of laziness, which has no particular relationship to the point at which defense is still possible.
+                - And again, the agents who are eager about this will get outcompeted, and not be the ones allocated to doing civilizational level choices.
+    
+- A nuclear weapons treaty that would have also banned nuclear reactors could have resulted in a safer by nuclear x-risk numbers world, but also a worse world, by many metrics.
+    - If and only if we do not end up running into a nuclear-x-risk that would have been prevented by something that is causationally downstream of the nuclear reactor ban.
+    - (Disclaimer: I know that it would have been politically impossible to push this through. But I'm arguing here why, even if possible, it would seem to me it would have been an irrational policy choice.)
+    - The general phenomena here: Lowering risks has diminishing returns - to act rationally you have to have some risk tolerance. Proposals that aim to get risk close to zero in the limit are just irrational.
+        - But what is the rational risk tolerance per year for plausibly the only sentient civilization in our cosmic neighborhood?
+            - I only know that it's 0 < x < 1.
+
+- AI Pause treaties
+
+
+
+
+## Open questions:
+- LMH applications to organizations, protection mechanisms (guarding [slack](https://www.lesswrong.com/posts/yLLkWMDbC9ZNKbjDG/slack) is an important one).
+- Applications to value drift (of individuals, of organizations)
+
+## Existing lit:
+
+
+Economics:
+    - 1980 Grossman-Stiglitz: https://en.wikipedia.org/wiki/Grossman%E2%80%93Stiglitz_paradox,
+    > perfectly informationally efficient markets are an impossibility since, if prices perfectly reflected available information, there is no profit to gathering information, in which case there would be little reason to trade and markets would eventually collapse
+
+    - 2003, Sims: Implications of Rational Inattention https://www.sciencedirect.com/science/article/abs/pii/S0304393203000291
+
+    - 2025: Stanisław M. S. Halkiewicz: The Omniscient yet Lazy Investor https://arxiv.org/pdf/2510.24467
+
+Internet:
+    - Yudkowsky, Eeliezer: Inadequate Equilibria: https://equilibriabook.com/
+    - MacKenzie, Patrick: The optimal amount of fraud is non-zero https://www.bitsaboutmoney.com/archive/optimal-amount-of-fraud/
+
+
+[^4]: About investing in the old paradigm
