@@ -291,33 +291,24 @@ There used to be -->
 
 # Human draft 3 - Lazy Markets and the Effort frontier
 
+Disclaimer: the idea here isn't new, the intention is to sharpen lenses and frames. Combine known information to form a useful model to reason about the real world with.
+
 ## The Efficient-Market hypothesis
 
 > EMH: asset prices reflect all available information.
 
-EMH assumes costless information, costless cognition, costless execution. Drop those assumptions and the EMH-optimal agent becomes irrational: they burn resources chasing gains that don't net positive returns. EMH isn't wrong, it's theoretical, describing a frictionless limit, not a world.
+EMH assumes costless information, costless cognition, costless execution. As such, EMH describes the limit when we adjust the market-friction parameter to zero.
+
+Real agents don't live in frictionless markets, and this is well understood. But what exactly is the difference between EMH-perfect markets and real markets? LMH is an attempt to describe these differences in a single model.
 
 ## The Lazy-Market Hypothesis (LMH)
-* Lazy Market Hypothesis is a weakening of EMH for the real world. LMH states that _effort_  is what distances real-life economic agents from the theoretical optimum of the EMH, and when agents price in their effort (labor, risk, capital, cognitive effort), they become _lazily rational_.
+Lazy Market Hypothesis is an extension from EMH over the real world. 
 
-(TODO: polish): Importantly: there is both an effort cost to acquire better information, and effort cost to execute trades on that information.
-    - And (TODO verify this is the right paradox) Grossman-Stiglitz applies to both: Due to diminishing returns and market equilibria, it is never rational to aim for perfect information, and it is never rational to aim for the optimal portfolio with your information, if trades have a cost associated with them.
+Price labor, capital, risk, and cognition as real costs, and the rational agent stops chasing the EMH optimum — because reaching it would cost more than it returns. EMH is the limit case of LMH as effort costs approach zero.
 
-### Contrasting
+The claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. Every descriptive observation that "real markets don't reach EMH efficiency" is simultaneously the normative observation that real agents are at their actual optimum — just not the EMH one. The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
 
-- the EMH-optimum 
-    - Ignore effort, maximize returns
-- the LMH-optimum
-    - Price effort, price looking for information, maximize net returns
-
-(Claude text:)
-- Every descriptive observation of "real markets don't reach EMH efficiency" is simultaneously a normative observation of "real agents are at their actual optimum, which isn't the EMH one." One sentence making this crisp is worth more than the current three paragraphs.
-
-- Use Grossman-Stiglitz as the existence proof that the bridge is already standard economics. G-S shows the EMH-optimum is incoherent — if everyone reached it, the incentive structure that produced it collapses. So even inside pure economic theory, the "real" optimum can't be the EMH one; it has to be something that leaves room for the information-gathering that sustains prices. LMH generalizes this from information to effort broadly. You're not inventing a bridge, you're pointing out that economics already has one for the information case and extending it.
-
-- Kill the "weakening" language. "LMH is a weakening of EMH" concedes that EMH is the real thing and LMH is a practical compromise. That's the opposite of the bridge you want. LMH should be framed as a completion or correction of EMH — EMH is the limit case of LMH as effort costs approach zero, not the other way around. Small rhetorical change, large framing consequence.
-
-- The claim to state outright, once, clearly: The rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. EMH describes a frictionless limit that no real agent should want to reach, because reaching it would require spending more than it returns.
+G-S[^1] already showed this for information: a perfectly efficient market can't fund its own price-discovery substrate, so the real equilibrium has to sit somewhere short of the limit. LMH generalizes the move from information to effort broadly.
 
 
 ### Why LMH makes sense
@@ -397,4 +388,5 @@ Internet:
     - MacKenzie, Patrick: The optimal amount of fraud is non-zero https://www.bitsaboutmoney.com/archive/optimal-amount-of-fraud/
 
 
+[^1]: 1980 Grossman-Stiglitz: https://en.wikipedia.org/wiki/Grossman%E2%80%93Stiglitz_paradox
 [^4]: About investing in the old paradigm
