@@ -1,7 +1,7 @@
 ---
 title: the Lazy Market Hypothesis
 tagline: Some markets are (allegedly) efficient. Some markets are efficiently lazy.
-tags: ['artificial-intelligence']
+tags: []
 draft: true
 favourite: true
 version: v0.0.2
@@ -295,48 +295,52 @@ Disclaimer: the idea here isn't new, the intention is to sharpen lenses and fram
 
 ## The Efficient-Market hypothesis
 
-> EMH: asset prices reflect all available information.
+> Efficient-Market hypothesis (EMH): asset prices reflect all available information.
 
-EMH assumes costless information, costless cognition, costless execution. As such, EMH describes the limit when we adjust the market-friction parameter to zero.
+EMH assumes costless information, costless cognition, and costless execution. It models a theoretically optimal market.
 
-Real agents don't live in frictionless markets, and this is well understood. But what exactly is the difference between EMH-perfect markets and real markets? LMH is an attempt to describe these differences in a single model.
+Real agents don't live in frictionless markets, and this is well understood. But what exactly is this gap? Lazy-Market hypothesis models it.
 
 ## The Lazy-Market Hypothesis (LMH)
-Lazy Market Hypothesis is an extension from EMH over the real world. 
 
-Price labor, capital, risk, and cognition as real costs, and the rational agent stops chasing the EMH optimum — because reaching it would cost more than it returns. EMH is the limit case of LMH as effort costs approach zero.
+Price labor, capital, risk, and cognition as real costs, and the Efficient-Market disappears. The rational agent stops chasing the EMH optimum - reaching it would cost more than it returns. LMH models markets that contain realistic friction.
 
-The claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. Every descriptive observation that "real markets don't reach EMH efficiency" is simultaneously the normative observation that real agents are at their actual optimum — just not the EMH one. The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
+Claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. The descriptive observation "real markets don't reach EMH efficiency" is the normative observation that real agents are at their actual optimum — just not the EMH optimum. The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
+TODO: Now we have built the strong version of the thesis, which I don't think is strictly true. The true version is something like - when you account for the past learning of the agent and the meta-cost of updating then the agents are actually being _rationally lazy_? But this requires an implementation of an agent, being more agent theory or ML theory than economics, at that point.
 
-G-S[^1] already showed this for information: a perfectly efficient market can't fund its own price-discovery substrate, so the real equilibrium has to sit somewhere short of the limit. LMH generalizes the move from information to effort broadly.
-
+G-S[^1] already demonstrates this for information friction: a perfectly efficient market can't fund its own price-discovery substrate, so the real equilibrium has to sit somewhere short of the limit. LMH generalizes the move from information to general effort.
 
 ### Why LMH makes sense
 * Why is it rational?
-    * Effort is a real cost. An agent who treats their market moves as free is running a broken optimization.
     * Once effort is priced in, the rational move is to satisfice toward local optima rather than chase the global optimum, due to diminishing local returns.
     * Selection confirms this: Agents who ignore effort costs and chase global optima get outcompeted by agents who satisfice (well-chosen) local optima. Real-world markets are populated by approximately rational laziness thresholds, because the alternatives get outcompeted and lose.
-    * The theoretical satisficing rule is just: stop spending effort when the marginal benefit of effort = marginal cost of effort
+    * The theoretical satisficing rule is: stop spending effort when the marginal benefit of effort = marginal cost of effort
+
+* Effort-as-cost
+* Selection
 
 ### Lazy markets
 
-*  In Lazy markets the equilibrium relies on the laziness of the agents, forming an effort frontier, where both sides are committed to investing more resources only if the adversary's investment or efficiency rises. 
-    * Markets such as credit card fraud vs. fraud defence, low volume markets, cybersecurity attack vs defence, feature a lot of laziness. The general trend: Rational agents in adversarial playing fields satisfice their defence against expected capability of their adversary, instead of maximizing defence.
+* In lazy markets, equilibrium rests on agent laziness. Both sides form an effort frontier: each invests more only when the think the adversary does
+    * Credit-card fraud, low-volume markets, cybersecurity - all feature heavy laziness
+    * The general trend: Rational agents in adversarial playing fields satisfice their defence against expected capability of their adversary, instead of maximizing defence.
     * The attacker also tries to satisfice against just barely beating the defender's defences, instead of maximizing their offensive capability.
     * Agents who try to maximize defence end up overspending in an area of diminishing returns, and so they eventually lose.
 
 
-## When the sloth turns over / Implications of the Effort Frontier shifting
-* Lazy markets are interesting because market shocks that move the "effort frontier" can have predictable effects.
-    * See technological inventions:
-        * It used to be efficient to invest a lot of effort in a castle, since besieging was effortful and castles were otherwise basically impenetrable. Investing in walls and watchtowers was the gold standard of military fortifications. After explosives and artillery came in, some agents tried to solve the problem with better walls, and it didn't work very well. Castles became a liability, and mobility became the gold standard.
-    * And of course cybersecurity in recent years / plausibly with Mythos.
+## When the sloth turns over ~~Implications of the Effort Frontier shifting~~
+
+Once upon a time, a castle was the gold standard for area defence. (besieging was effortful and castles were otherwise basically impenetrable.) After explosives and artillery came in, some agents tried to solve the problem with better walls, and it didn't work. Castles became a liability, and mobility became the gold standard.
+
+Utilizing the LMH, we can model shocks to the effort frontier.
+
+    * Cybersecurity in recent years / plausibly with Mythos.
 
 * What happens after shocks?
     * Agents [adapt](https://wordsofwhatcouldbe.substack.com/p/always-account-for-adaptation).
 
     * When adaptation is needed, agents who are quick to move, who have the slack to adapt, will fare significantly better.
-        * => Counterintuitively: The lazier you are[^4], the better you will be able to respond to effort frontier shocks.
+        * Counterintuitively: the lazier you are, the better you respond to frontier shocks.
             * This is an instance of second-mover advantage: The lazy agents get to avoid the cost of investing in the deprecated paradigm, and reap some of the information benefits of observing what happened to the agents who invested in the old paradigm.
                 > lazy-about-defense agents enter the laziness frontier shock holding assets with higher cross-paradigm salvage value.
             * => And on the other hand: The lazier you are, the worse you will get hit by the shocks that the existing paradigm protects you against.
@@ -344,27 +348,50 @@ G-S[^1] already showed this for information: a perfectly efficient market can't 
     
     * Pattern: When the frontier moves, "build and forget" defences get hit the hardest, since they are slower to adjust than active defences. And, due to sunk cost behaviour, often the defender's first instinct is to reinforce the old defences.
 
+TODO: consider editing / cutting since we have the 2x2 now
+(new text, consider integrating better with above once editing)
 
-## Applying LMH to policy
-- Existential risk:
-    - Most real-world responses to existential risk are _lazy_.
-    - And this is often rational! It has historically been rational!
-        - It's just a huge problem if some problem actually realizes and we don't have time to adapt...
-        - So counterintuitively, the truly dangerous x-risks are markets that _punish_ laziness.
-            - But, if the information is unsure, if the field will adapt a lot, then it will again reward lazy agents, because they'll gain the second-mover advantage and avoid sunk costs.
+Let's talk about the science of adaptability.
 
-            - Claim: Agents will defend at the point where the threat becomes locally salient enough to overcome the heuristic of laziness, which has no particular relationship to the point at which defense is still possible.
-                - And again, the agents who are eager about this will get outcompeted, and not be the ones allocated to doing civilizational level choices.
-    
-- A nuclear weapons treaty that would have also banned nuclear reactors could have resulted in a safer by nuclear x-risk numbers world, but also a worse world, by many metrics.
-    - If and only if we do not end up running into a nuclear-x-risk that would have been prevented by something that is causationally downstream of the nuclear reactor ban.
-    - (Disclaimer: I know that it would have been politically impossible to push this through. But I'm arguing here why, even if possible, it would seem to me it would have been an irrational policy choice.)
-    - The general phenomena here: Lowering risks has diminishing returns - to act rationally you have to have some risk tolerance. Proposals that aim to get risk close to zero in the limit are just irrational.
-        - But what is the rational risk tolerance per year for plausibly the only sentient civilization in our cosmic neighborhood?
-            - I only know that it's 0 < x < 1.
+In evolution science there is a finding: Highly specialized organisms are locally optimal in stable environments, but get hit harder by environment shocks.
+    - So the laziness we defined is actually about two components: Because lazy agents _satisfice_ towards _local minima_, TODO whattttt
+        - TODO: we might need a 2x2: Global vs. local optimum, lazy vs. eager
+        - So I claim that agents that live in the "optimizing towards local optimum", "lazy" corner, win.
+            - They win against the global optima chasing agents because finding, or even seeing the global optima is difficult and includes a lot of waste work.
+            - And they win against the eager agents because the environment is chaotic. Eager agents ~overfit.
+### The laziness 2x2
 
-- AI Pause treaties
 
+![The lazy-eager local-global 2x2](2x2-lazy-eager-local-global.svg)
+
+
+lazy + local: saves on search, settles where they land
+    - Loses on short time horizons, due to not finding even the true local optima
+    - Wins over eager+local on longer horizons, when the environment shifts: Laziness saves resources.
+        - Also wins in environments where the local optima are illegible: Doesn't spend unnecessary time compairing them.
+
+lazy + global: saves on search, expects to land at the top
+    - Loses: The corner of this quadrant is actualyl impossible to reach.
+    - You can maybe approximate to some degree with other people's work and second mover advantage, but then you are already doing some searching.
+        - (Disclaimer, that could be for the whole 2x2: Of course real world agents don't live in the corners.)
+    - Wins: Wins the most _if the guess for what was the global optima_ gives advantage, and if an eager search would not have resulted in a better global optima to chase.
+
+eager + global: spends on search, hunts for the top
+    - Loses: Loses the most on short time horizons, due to spending resources on global returns.
+    - Wins: 
+        - In iterated games where the other parties do not see that the game is iterative. If the lazy heuristical time / locality discounting is irrational, in the real game.
+        - (Claude: environments where the search is one-shot, the answer is durable, and the cost of being wrong dominates the cost of searching.
+            - Foundational scientific questions, constitutional design, choosing a spouse
+
+eager + local: spends on search, commits to the first peak
+
+    Loses: On long time horizons. Is the most heavily committed to the first peak.
+    Wins: The most over short time horizons. The most exploitative strategy.
+
+I guess one thought that comes into mind: These are sort of different attitudes towards "explore vs. exploit". And it's intuitively obvious why "full explore" and "full exploit" are risky strategies and not optimal for most operating environments. (And then the two in-betweens are left as more intuitively optimal strategies.)
+
+--
+Claude's conclusion: rational agents satisfice their exploration budget against expected environmental volatility, and the four cells of the 2×2 are the four ways an agent can fail to do this — by under-spending (lazy-global), over-spending (eager-global), spending well but committing too hard (eager-local), or — the winning move — spending modestly and committing modestly (lazy-local).
 
 
 
@@ -389,4 +416,3 @@ Internet:
 
 
 [^1]: 1980 Grossman-Stiglitz: https://en.wikipedia.org/wiki/Grossman%E2%80%93Stiglitz_paradox
-[^4]: About investing in the old paradigm

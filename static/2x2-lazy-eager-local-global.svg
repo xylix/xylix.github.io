@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .axis { stroke: #222; stroke-width: 2; }
+    .cell { fill: none; stroke: #888; stroke-width: 1; }
+    .axis-label { font-size: 18px; font-weight: bold; fill: #222; }
+    .quad-label { font-size: 12px; fill: #333; }
+    .quad-title { font-size: 16px; font-weight: bold; fill: #111; }
+  </style>
+
+  <rect class="cell" x="120" y="120" width="230" height="230" fill="#eaf3ff"/>
+  <rect class="cell" x="350" y="120" width="230" height="230" fill="#fef6e4"/>
+  <rect class="cell" x="120" y="350" width="230" height="230" fill="#f3f0ff"/>
+  <rect class="cell" x="350" y="350" width="230" height="230" fill="#eafbf1"/>
+
+  <line class="axis" x1="120" y1="350" x2="580" y2="350"/>
+  <line class="axis" x1="350" y1="120" x2="350" y2="580"/>
+
+  <text class="axis-label" x="200" y="610" text-anchor="middle">Lazy</text>
+  <text class="axis-label" x="500" y="610" text-anchor="middle">Eager</text>
+  <text class="axis-label" x="350" y="640" text-anchor="middle">← evaluation strategy →</text>
+
+  <g transform="rotate(-90 60 235)">
+    <text class="axis-label" x="60" y="240" text-anchor="middle">Global</text>
+  </g>
+  <g transform="rotate(-90 60 465)">
+    <text class="axis-label" x="60" y="470" text-anchor="middle">Local</text>
+  </g>
+  <g transform="rotate(-90 30 350)">
+    <text class="axis-label" x="30" y="355" text-anchor="middle">← target optima →</text>
+  </g>
+
+  <!-- Lazy + Global (TL) -->
+  <text class="quad-title" x="235" y="150" text-anchor="middle">Lazy + Global</text>
+  <text class="quad-label" x="235" y="180" text-anchor="middle">
+    <tspan x="235" dy="0">saves on search,</tspan>
+    <tspan x="235" dy="16">hopes to land at the top.</tspan>
+    <tspan x="235" dy="20">Exploration budget too</tspan>
+    <tspan x="235" dy="16">small for target.</tspan>
+    <tspan x="235" dy="20" font-style="italic">Underfits.</tspan>
+  </text>
+
+  <!-- Eager + Global (TR) -->
+  <text class="quad-title" x="465" y="150" text-anchor="middle">Eager + Global</text>
+  <text class="quad-label" x="465" y="180" text-anchor="middle">
+    <tspan x="465" dy="0">spends on search,</tspan>
+    <tspan x="465" dy="16">hunts for the top.</tspan>
+    <tspan x="465" dy="20">Exploration budget</tspan>
+    <tspan x="465" dy="16">matched to target.</tspan>
+    <tspan x="465" dy="20" font-style="italic">Well-fit but costly.</tspan>
+  </text>
+
+  <!-- Lazy + Local (BL) -->
+  <text class="quad-title" x="235" y="380" text-anchor="middle">Lazy + Local</text>
+  <text class="quad-label" x="235" y="410" text-anchor="middle">
+    <tspan x="235" dy="0">saves on search,</tspan>
+    <tspan x="235" dy="16">settles where they land.</tspan>
+    <tspan x="235" dy="20">Exploration budget</tspan>
+    <tspan x="235" dy="16">matched to target.</tspan>
+    <tspan x="235" dy="20" font-style="italic">Well-fit.</tspan>
+  </text>
+
+  <!-- Eager + Local (BR) -->
+  <text class="quad-title" x="465" y="380" text-anchor="middle">Eager + Local</text>
+  <text class="quad-label" x="465" y="410" text-anchor="middle">
+    <tspan x="465" dy="0">spends on search,</tspan>
+    <tspan x="465" dy="16">commits to the first peak.</tspan>
+    <tspan x="465" dy="20">Exploration budget too large;</tspan>
+    <tspan x="465" dy="16">surplus spent on overcommitment.</tspan>
+    <tspan x="465" dy="20" font-style="italic">Overfits, and therefore fragile.</tspan>
+  </text>
+
+  <text x="350" y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Target optima × Evaluation strategy</text>
+</svg>
