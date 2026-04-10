@@ -4,12 +4,12 @@ tagline: Theoretical markets are efficient. Real markets are efficiently lazy.
 tags: []
 draft: true
 favourite: true
-version: v0.0.9
+version: v0.0.10
 ---
 
 # The Lazy Market, and the Effort frontier
 
-Claim: Real markets are not _irrationally lazy_. They are _lazily rational_.
+Hypothesis: Real markets are not _irrationally lazy_. They are _lazily rational_.
 
 ## The Efficient-Market hypothesis
 
@@ -23,7 +23,7 @@ The friction of real markets is well understood. The Lazy-Market Hypothesis is f
 
 Price labor, capital, risk, and cognition as real costs, and the Efficient-Market optimum stops being the target. Chasing the EMH optimum costs more than it returns.
 
-Claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. The descriptive observation "real markets don't reach EMH efficiency" is the normative observation that real agents are at their actual optimum - just not the EMH optimum. The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
+Claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. The descriptive observation "real markets don't reach EMH efficiency" is also describing that real agents are at their actual optimum - just not the EMH optimum. The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
 
 This is descriptive, not normative: it's a claim about which agents survive selection in friction-priced environments, not a claim about ideal rationality. Agents who miscalibrate their laziness function - in either direction - get outcompeted.[^3]
 
@@ -55,35 +55,26 @@ Effort frontier shocks create opportunities to create value by adaptation. Who b
 
 Adaptation requires [slack](https://www.lesswrong.com/posts/yLLkWMDbC9ZNKbjDG/slack). Unspent effort budget converts directly into adaptation capacity. The eager agents already committed their efforts. (Other out-of-scope adaptation qualities: [^2].)
 
-We focus on slack because the lazy-eager axis of economic agents is about committed vs. uncommitted resources, that is, _slack_.
-
 Hypothesis: Lazy-local agents, by definition, hold more slack than eager agents. This makes them advantaged in adapting to opportunities after frontier shock, but they pay a cost for suboptimality under the old conditions the eager agents committed to.
 
-Claim: Effort frontier shocks:
+Consequence: Effort frontier shocks:
 - disadvantage eager local agents
-- advantage lazy local agents.
+- advantage lazy local agents
 - eager global agents are insulated but immobile. Their commitments should weather frontier shocks, but they don't have the slack to extract value from the shocks.
-- lazy global agents rarely to see a frontier shift. But if they did, they would be at the best position: slack to extract value, commitments that are insular from the frontier shock.
+- lazy global agents rarely live to see a frontier shift. But if they did, they would be at the best position: slack to extract value, commitments that are insular from the frontier shock.
 
 
-Consequence: Claim: When the frontier moves, agents with high-commitment, low-monitoring investments get hit hardest - they're slower to detect the shift and slower to redirect once they do. Sunk-cost dynamics make this worse: the first instinct on noticing a shock is usually to double down on the existing commitment rather than abandon it. Castles got thicker walls before they got abandoned.
+Consequence: When the frontier moves, agents with high-commitment, low-monitoring investments get hit hardest - they're slower to detect the shift and slower to redirect once they do. Sunk-cost dynamics make this worse: the first instinct on noticing a shock is usually to double down on the existing commitment rather than abandon it. Castles got thicker walls before they got abandoned.
 - Example: Larger corporations and nations get hit by effort shocks worse than small actors, on average.
-- Example: Armies evolved from heavy central command to mission-command because the war frontier moves constantly, and high-monitoring central command wasn't technologically feasible. (Today, it's more feasible, but who knows where the next local optimum is.)
-
-## Laziness functions
-(TODO: new section - either populate, merge or cut.)
-
-Sometimes their environment has taught agents wrong laziness function, but a good descriptive model should model this. It may even be easier to shift the environment than the laziness function - see [Astral Codex Ten: Society is fixed, Biology is mutable](https://slatestarcodex.com/2018/04/24/society-is-fixed-biology-is-mutable/). 
-
-Consequence: Changing incentive landscapes may be more tractable than trying to request or force agents to calibrate differently against them.
+- Example: Armies evolved from heavy central command to mission-command because the war frontier moves constantly, and high-monitoring central command wasn't technologically feasible.
 
 ## Closing
 
-What did we learn today? Not much new.
+What did we learn today? Not much new. But a new frame out of familiar lenses could lead us somewhere.
 
-But we made a new frame out of multiple lenses.
+One weakly-held consequence worth holding onto: when agents are miscalibrated, it's could be easier to move the environment than to move the agents.[^5]
 
-Conclusion: Real markets are not _irrationally lazy_. They are _lazily rational_.
+Real markets are not _irrationally lazy_. They are _lazily rational_.
 
 ## Open questions:
 
@@ -101,6 +92,8 @@ Conclusion: Real markets are not _irrationally lazy_. They are _lazily rational_
     - Implications for foundational research funding.
     - How legibility of output correlates with local eagerness instead of global value
         - Do you actually get better foundational research if you measure proxies for the output value (citations, status, optimizing funding applications), or should you just give researchers budgets and let them do whatever?
+
+- How to affect agent laziness?
 
 - When do agents shift their positions in the 2x2 (possibly within their quadrant, but still relevantly)? Can a lazy local agent 'ascend' to a global lazy agent if they happen to get lucky and find a good global gold vein to extract from? Can an eager agent weather a shock and realize they need more slack?
 
@@ -124,7 +117,6 @@ Internet:
 - MacKenzie, Patrick: The optimal amount of fraud is non-zero https://www.bitsaboutmoney.com/archive/optimal-amount-of-fraud/
 
 
-[^1]: 1980 Grossman-Stiglitz: https://en.wikipedia.org/wiki/Grossman%E2%80%93Stiglitz_paradox
 [^2]: Adaptation qualities:
 > - Execution qualities
 >     - Speed
@@ -139,6 +131,7 @@ Internet:
 >         - Scout Mindset
 [^3]: Over long enough time horizons.
 [^4]: Why not choose your strategy based on the expected volatility? Volatility detection is itself effortful. The calibration of laziness is itself subject to LMH.
+[^5]: [Astral Codex Ten: Society is fixed, Biology is mutable](https://slatestarcodex.com/2018/04/24/society-is-fixed-biology-is-mutable/)
 
 ## Clippings / delete before publishing:
 - current [adaptation](https://wordsofwhatcouldbe.substack.com/p/always-account-for-adaptation) paragraph doesn't benefit from the link but .. maybe it could still fit? But I can also be in dialog with that post without linking to it.
