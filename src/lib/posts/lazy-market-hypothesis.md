@@ -4,12 +4,14 @@ tagline: Theoretical markets are efficient. Real markets are efficiently lazy.
 tags: []
 draft: true
 favourite: true
-version: v0.0.7
+version: v0.0.8
 ---
 
 # The Lazy Market, and the Effort frontier
 
-Disclaimer: the idea here isn't new, the intention is to sharpen lenses and frames. Combine known information to form a useful model to reason about the real world with.
+Claim: Real markets are not _irrationally lazy_. They are _lazily rational_.
+
+Disclaimer: the idea here isn't new. The goal is sharpening a lens by combining known ideas into a model useful for reasoning about real markets
 
 ## The Efficient-Market hypothesis
 
@@ -17,21 +19,22 @@ Disclaimer: the idea here isn't new, the intention is to sharpen lenses and fram
 
 EMH assumes costless information, costless cognition, and costless execution. It models a theoretically optimal market.
 
-Real agents don't live in frictionless markets, and this is well understood. But what exactly is this gap? Lazy-Market hypothesis models it.
+The friction of real markets is well understood. But how to model it? Predicting realistically frictional markets is Lazy-Market hypothesis' end goal.
 
 ## The Lazy-Market Hypothesis (LMH)
 
-Price labor, capital, risk, and cognition as real costs, and the Efficient-Market disappears. The rational agent stops chasing the EMH optimum - reaching it would cost more than it returns.
+Price labor, capital, risk, and cognition as real costs, and the Efficient-Market optimum stops being a target. The rational agent stops chasing the EMH optimum, since reaching it would cost more than it returns.
 
-Claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. The descriptive observation "real markets don't reach EMH efficiency" is the normative observation that real agents are at their actual optimum — just not the EMH optimum. The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
-TODO: Now we have built the strong version of the thesis, which I don't think is strictly true. The true version is something like - when you account for the past learning of the agent and the meta-cost of updating then the agents are actually being _rationally lazy_? But this requires an implementation of an agent, being more agent theory or ML theory than economics, at that point.
-    - Claude's idea: the new draft's strong-version footnote ("the rational agent is the lazy agent … TODO this requires agent theory") is doing real work. The old draft sidestepped this by staying descriptive ("locally rational"). I'd resolve it by saying explicitly that LMH is descriptive about which agents survive selection, not normative about ideal rationality — that dissolves the TODO without needing agent theory.
-    - Another Claude idea (might go in a later section):
-        > Volatility detection is itself effortful. This is descriptive — it's how you dissolve your strong-version TODO without invoking agent theory. The calibration of laziness is itself subject to LMH; that's a self-consistency note, not a new claim. Probably a paragraph in "Why LMH makes sense" or a footnote on the 2x2.
+Claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. The descriptive observation "real markets don't reach EMH efficiency" is the normative observation that real agents are at their actual optimum - just not the EMH optimum. The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
+    - Claude's v0.0.7 idea: This is descriptive, not normative: it's a claim about which agents survive selection in friction-priced environments, not a claim about ideal rationality. Agents who miscalibrate their laziness function — in either direction — get outcompeted.
+    - NOTE: Old Claude idea: Volatility detection is itself effortful. This is descriptive — it's how you dissolve your strong-version TODO without invoking agent theory. The calibration of laziness is itself subject to LMH; that's a self-consistency note, not a new claim. Probably a paragraph in "Why LMH makes sense" or a footnote on the 2x2.
 
-G-S[^1] already demonstrates this for information friction: a perfectly efficient market can't fund its own price-discovery substrate, so the real equilibrium has to sit somewhere short of the limit. LMH generalizes the move from information to general effort.
 
 ## Why rational agents are lazy
+
+Prior work on the subject: in 1980 G-S[^1] demonstrates a paradox for efficient markets: a perfectly efficient market can't fund its own price-discovery substrate, so the real equilibrium has to sit somewhere short of the limit. LMH generalizes the move from information to general effort.
+
+
 ### The laziness 2x2
 ![The lazy-eager local-global 2x2](2x2-lazy-eager-local-global.svg)
 NOTE: description of 2x2 for Claude Code - remove before publishing (or make into a proper accessibility alt text for the image)
@@ -42,19 +45,8 @@ NOTE: description of 2x2 for Claude Code - remove before publishing (or make int
 
 Claim: rational agents satisfice their exploration budget against expected environmental volatility, and the four cells of the 2×2 are the four ways an agent can fail or succeed at achieving this: by under-spending (lazy-global), over-spending (eager-global), spending well but committing too hard (eager-local), or - the winning move - spending modestly and committing modestly (lazy-local).
 
-### Why LMH makes sense
-NOTE: Consider cutting since we now added the 2x2 above.
-* Why is it rational?
-    * Once effort is priced in, the rational move is to satisfice toward local optima rather than chase the global optimum, due to diminishing local returns.
-    * Selection confirms this: Agents who ignore effort costs and chase global optima get outcompeted by agents who satisfice (well-chosen) local optima. Real-world markets are populated by approximately rational laziness thresholds, because the alternatives get outcompeted and lose.
-    * The theoretical satisficing rule is: stop spending effort when the marginal benefit of effort = marginal cost of effort
-
-* Effort-as-cost
-* Selection
-
-(Claude text):
-Claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. Selection confirms it - agents who ignore effort costs and chase the global optimum get outcompeted by agents who satisfice well-chosen local ones.
-
+Claim: over market history lazily local agents perform the best. 
+    Note: But the optimal strategy is, to some degree, a function of volatility: in turbulent environments eager-global should outperform lazily local strategies.
 
 ### Lazy markets
 
@@ -73,15 +65,11 @@ This describes an _effort frontier shock_: a change in the cost or capability la
 
 Effort frontier shocks create opportunities to create value by adaptation. Who benefits from this?
 
-The ways to extract value from adaptation requiring opportunities require resources. Specifically:
+Extracting value by adapting to a frontier shock requires resources. Specifically:
 * [slack](https://www.lesswrong.com/posts/yLLkWMDbC9ZNKbjDG/slack). Unspent effort budget converts directly into adaptation capacity. The eager agents already committed their efforts.
 * Important out-of-scope adaptation qualities[^2]
 
 We focus on slack because the lazy-eager axis of economic agents is about committed vs. uncommitted resources, that is, _slack_.
-
-Lazy-local agents, by the definition of lazy, hold more slack than eager agents. This makes them structurally advantaged post frontier shock, but they pay a cost for suboptimality under the conditions the commitment was calibrated for.
-    - eager-local is insured but can't capture upside
-    - lazy-local captures upside but takes the hit.
 
 Claim: When the frontier moves, agents with high-commitment, low-monitoring investments get hit hardest - they're slower to detect the shift and slower to redirect once they do. Sunk-cost dynamics make this worse: the first instinct on noticing a shock is usually to double down on the existing commitment rather than abandon it. Castles got thicker walls before they got abandoned.
     - Consequence: Larger corporations and nations get hit by effort shocks worse than small actors, on average.[^3]
@@ -92,6 +80,7 @@ Claim: Effort frontier shocks:
     - eager global agents are insulated but immobile. Their commitments should weather frontier shocks, but they don't have the slack to extract value from the shocks.
     - lazy global agents usually don't survive long enough to come across frontier shifts. but if they did, they would be at the best position: slack to extract value, commitments that are insular from the frontier shock.
 
+Lazy-local agents, by the definition of lazy, hold more slack than eager agents. This makes them advantaged in adapting to opportunities after frontier shock, but they pay a cost for suboptimality under the old conditions the eager agents committed to.
 
 ## Closing
 
@@ -100,17 +89,14 @@ Claim: Effort frontier shocks:
     - But we made a new frame out of multiple lenses.
 - Takeaways / food for thought:
     - Real markets are not _irrationally lazy_. They are _lazily rational_.
-        - Sometimes their environment has taught them the wrong laziness function, but it's a clearer model to also model that.
-            - It's easier to shift the environment than the laziness function - (TODO: reference to Scott Alexanders technology vs. culture / social change post)
-    - 
-- 
+        - Sometimes their environment has taught them the wrong laziness function, but a good model has to model this.
+            - It may even be easier to shift the environment than the laziness function - see [Astral Codex Ten: Society is fixed, Biology is mutable](https://slatestarcodex.com/2018/04/24/society-is-fixed-biology-is-mutable/)
 
 ## Open questions:
 - Current trends in effort frontiers: 
     - What the LLM era does to 
         - effort-floor institutions? (Zoning complaints, grant applications, text applications in general)
         - attacker-defender dynamics (Cybersecurity, physical security)
-
 
 - LMH applications to organizations, protection mechanisms (guarding  is an important one).
 - Applications to value drift (of individuals, of organizations)
@@ -123,23 +109,20 @@ Claim: Effort frontier shocks:
 
 - When do agents shift their positions in the 2x2 (possibly within their quadrant, but still relevantly)? Can a lazy local agent 'ascend' to a global lazy agent if they happen to get lucky and find a good global gold vein to extract from? Can an eager agent weather a shock and realize they need more slack?
 
-TODO: Claude's ideas (polish, edit, or leave as Claude ideas)
-- Correlated laziness = systemic fragility. Big omission. LMH is currently single-agent. But when everyone satisfices against the same threat model, you get monocultures: 2008 risk models, software supply chains, antibiotic regimes, agricultural cultivars. The market-level prediction of LMH is that lazy equilibria are locally stable and globally fragile in a way EMH+friction doesn't capture. This feels like the most novel thing the framework gives you.
+- Correlated laziness and systemic fragility: when many agents satisfice against the same threat model, the resulting monoculture is locally stable and globally fragile (2008 risk models, monocultures, antibiotic regimes). LMH may have something to say about market-level fragility that EMH-plus-friction doesn't. Future work.
 
-## Existing lit:
-
+## Existing literature:
 
 Economics:
-    - 1980 Grossman-Stiglitz: https://en.wikipedia.org/wiki/Grossman%E2%80%93Stiglitz_paradox,
-    > perfectly informationally efficient markets are an impossibility since, if prices perfectly reflected available information, there is no profit to gathering information, in which case there would be little reason to trade and markets would eventually collapse
-
-    - 2003, Sims: Implications of Rational Inattention https://www.sciencedirect.com/science/article/abs/pii/S0304393203000291
-
-    - 2025: Stanisław M. S. Halkiewicz: The Omniscient yet Lazy Investor https://arxiv.org/pdf/2510.24467
+- 1980 Grossman-Stiglitz: https://en.wikipedia.org/wiki/Grossman%E2%80%93Stiglitz_paradox,
+> perfectly informationally efficient markets are an impossibility since, if prices perfectly reflected available information, there is no profit to gathering information, in which case there would be little reason to trade and markets would eventually collapse
+- 2003, Sims: Implications of Rational Inattention https://www.sciencedirect.com/science/article/abs/pii/S0304393203000291
+- 2025: Stanisław M. S. Halkiewicz: The Omniscient yet Lazy Investor https://arxiv.org/pdf/2510.24467
+- (A lot more economics I've never read.)
 
 Internet:
-    - Yudkowsky, Eeliezer: Inadequate Equilibria: https://equilibriabook.com/
-    - MacKenzie, Patrick: The optimal amount of fraud is non-zero https://www.bitsaboutmoney.com/archive/optimal-amount-of-fraud/
+- Yudkowsky, Eeliezer: Inadequate Equilibria: https://equilibriabook.com/
+- MacKenzie, Patrick: The optimal amount of fraud is non-zero https://www.bitsaboutmoney.com/archive/optimal-amount-of-fraud/
 
 
 [^1]: 1980 Grossman-Stiglitz: https://en.wikipedia.org/wiki/Grossman%E2%80%93Stiglitz_paradox
