@@ -1,5 +1,6 @@
 import { public_posts, type Article } from '$lib/load_posts';
 import { load_tags, type TagArticle } from '$lib/load_tags';
+import { stripComments } from '$lib/remark-plugins';
 import { title, website } from '../constants';
 
 export const prerender = true;
@@ -40,7 +41,7 @@ const format = (posts: Article[], tags: TagArticle[]) => {
 			const url = `${website}${post.link}`;
 			const date = post.createdAt.toISOString().slice(0, 10);
 			const tagList = post.tags.join(', ');
-			const content = contentBySlug[post.slug] ?? '';
+			const content = stripComments(contentBySlug[post.slug] ?? '');
 			const tagline = post.tagline ? `> ${post.tagline}\n\n` : '';
 			return `## ${post.title}\n\n${url} | ${date} | tags: ${tagList}\n\n${tagline}${content}`;
 		})
