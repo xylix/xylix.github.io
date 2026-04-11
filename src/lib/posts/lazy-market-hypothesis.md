@@ -4,7 +4,7 @@ tagline: Theoretical markets are efficient. Real markets are efficiently lazy.
 tags: []
 draft: true
 favourite: true
-version: v0.0.10
+version: v0.0.11
 ---
 
 # The Lazy Market, and the Effort frontier
@@ -21,7 +21,7 @@ The friction of real markets is well understood. The Lazy-Market Hypothesis is f
 
 ## The Lazy-Market Hypothesis (LMH)
 
-Price labor, capital, risk, and cognition as real costs, and the Efficient-Market optimum stops being the target. Chasing the EMH optimum costs more than it returns.
+Price labor, capital, risk, and cognition as real costs, and the Efficient-Market optimum stops being the target. Chasing the EMH optimum would cost more than the expected return.
 
 Claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. The descriptive observation "real markets don't reach EMH efficiency" is also describing that real agents are at their actual optimum - just not the EMH optimum. The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
 
@@ -29,16 +29,17 @@ This is descriptive, not normative: it's a claim about which agents survive sele
 
 ## Why rational agents are lazy
 
-Grossman and Stiglitz (1980) showed that a perfectly efficient market can't fund its own price-discovery substrate: equilibrium has to sit short of the limit. LMH generalizes the move from information to effort.
+Grossman and Stiglitz (1980) showed that a perfectly efficient market can't fund its own price-discovery substrate: equilibrium has to sit short of the limit. LMH generalizes the move from information to effort.[^6]
 
 ### The laziness 2x2
 ![The lazy-eager local-global 2x2](/2x2-lazy-eager-local-global.svg)
+<!--
 NOTE: description of 2x2 for Claude Code - remove before publishing (or make into a proper accessibility alt text for the image)
 * lazy + local: saves on search, settles where they land. Exploration budget matched to target. Well-fit. 
 * lazy + global: saves on search, hopes to land at the top. Exploration budget too small for target. Underfit. 
 * eager + global: spends on search, hunts for the top. Exploration budget matched to target. Well-fit but costly. 
 * eager + local: spends on search, commits to the first peak. Exploration budget too large for target; surplus spent on overcommitment. Overfit, and therefore fragile.
-
+-->
 Rational agents satisfice their exploration budget against expected environmental volatility, and the four cells of the 2×2 describe categories of agent behaviour: under-spending (lazy-global), over-spending in non-volatile environments[^4] (eager-global), spending well but committing too hard (eager-local), and the historical winner: spending modestly and committing modestly (lazy-local).
 
 ### Lazy markets
@@ -47,13 +48,13 @@ In lazy markets, equilibrium rests on agent laziness. Both sides form an effort 
 
 ## When the effort frontier shifts
 
-Once upon a time, a castle was the gold standard for area defence. Besieging was effortful and castles were otherwise nigh impenetrable. After explosives and artillery came in, some agents tried to solve the problem with better walls, and it didn't work. Castles became a liability, and mobility became the gold standard.
+Once upon a time, a castle was the gold standard for area defence. Besieging was slow and costly and castles were otherwise nigh impenetrable. After explosives and artillery came in, some agents reacted with better walls, and it didn't work. Castles became a liability.
 
 This describes an _effort frontier shock_: a change in the cost or capability landscape that invalidates the prior satisficing equilibrium. Drawing from the LMH, we can model these shocks.
 
 Effort frontier shocks create opportunities to create value by adaptation. Who benefits from this?
 
-Adaptation requires [slack](https://www.lesswrong.com/posts/yLLkWMDbC9ZNKbjDG/slack). Unspent effort budget converts directly into adaptation capacity. The eager agents already committed their efforts. (Other out-of-scope adaptation qualities: [^2].)
+Adaptation requires [slack](https://www.lesswrong.com/posts/yLLkWMDbC9ZNKbjDG/slack). Unspent effort budget converts directly into adaptation capacity. The eager agents already committed their efforts. (Other out-of-scope adaptation qualities[^2])
 
 Hypothesis: Lazy-local agents, by definition, hold more slack than eager agents. This makes them advantaged in adapting to opportunities after frontier shock, but they pay a cost for suboptimality under the old conditions the eager agents committed to.
 
@@ -64,17 +65,17 @@ Consequence: Effort frontier shocks:
 - lazy global agents rarely live to see a frontier shift. But if they did, they would be at the best position: slack to extract value, commitments that are insular from the frontier shock.
 
 
-Consequence: When the frontier moves, agents with high-commitment, low-monitoring investments get hit hardest - they're slower to detect the shift and slower to redirect once they do. Sunk-cost dynamics make this worse: the first instinct on noticing a shock is usually to double down on the existing commitment rather than abandon it. Castles got thicker walls before they got abandoned.
-- Example: Larger corporations and nations get hit by effort shocks worse than small actors, on average.
+Elaboration: When the frontier moves, agents with high-commitment, low-monitoring investments get hit hardest - they're slower to detect the shift and slower to redirect once they do. Sunk-cost dynamics make this worse: the first instinct on noticing a shock is usually to double down on the existing commitment rather than abandon it. Castles got thicker walls before they got abandoned.
+- Example: Typically larger corporations and nations get hit by effort frontier shocks worse than small actors.
 - Example: Armies evolved from heavy central command to mission-command because the war frontier moves constantly, and high-monitoring central command wasn't technologically feasible.
 
 ## Closing
 
-What did we learn today? Not much new. But a new frame out of familiar lenses could lead us somewhere.
+What did we learn today? Not much new. But a new frame out of familiar lenses can lead us somewhere.
 
-One weakly-held consequence worth holding onto: when agents are miscalibrated, it's could be easier to move the environment than to move the agents.[^5]
+One theory: when agents are miscalibrated, it could be easier to move the environment than to move the agents.[^5]
 
-Real markets are not _irrationally lazy_. They are _lazily rational_.
+Real markets are not irrationally lazy. They are lazily rational.
 
 ## Open questions:
 
@@ -103,7 +104,7 @@ Real markets are not _irrationally lazy_. They are _lazily rational_.
     - effort frontier shifts (cost/capability landscape changes) versus value frontier shifts (what counts as valuable changes).
     - The post's 2x2 handles effort shifts cleanly but value shifts punish eager-global agents in a way the current model doesn't capture. There may also be stages of "globalness" of a value (surface / mid / deep), with deep-global values like existential safety being structurally invisible to LMH-rational agents whose time horizons don't reach that far. This is probably the strongest LMH frame on why x-risk gets undersupplied.
 
-## Existing literature:
+## Related literature:
 
 Economics:
 - 1980 Grossman-Stiglitz: https://en.wikipedia.org/wiki/Grossman%E2%80%93Stiglitz_paradox,
@@ -129,9 +130,8 @@ Internet:
 >     - Effective scanning
 >     - Weakly holding to previous paradigms
 >         - Scout Mindset
+
 [^3]: Over long enough time horizons.
 [^4]: Why not choose your strategy based on the expected volatility? Volatility detection is itself effortful. The calibration of laziness is itself subject to LMH.
 [^5]: [Astral Codex Ten: Society is fixed, Biology is mutable](https://slatestarcodex.com/2018/04/24/society-is-fixed-biology-is-mutable/)
-
-## Clippings / delete before publishing:
-- current [adaptation](https://wordsofwhatcouldbe.substack.com/p/always-account-for-adaptation) paragraph doesn't benefit from the link but .. maybe it could still fit? But I can also be in dialog with that post without linking to it.
+[^6]: TODO: Generalize "Grossman and Stiglitz (1980) showed that a perfectly efficient market can’t fund its own price-discovery substrate: equilibrium has to sit short of the limit. LMH generalizes the move from information to effort."
