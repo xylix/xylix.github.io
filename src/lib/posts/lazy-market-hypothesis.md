@@ -3,7 +3,7 @@ title: the Lazy Market Hypothesis
 tagline: Theoretical markets are efficient. Real markets are efficiently lazy.
 tags: ['cognitech', 'research']
 favourite: true
-version: v1.0.0
+version: v1.0.1
 createdAt: 2026-04-11T10:41:47+0300
 ---
 
@@ -11,9 +11,9 @@ createdAt: 2026-04-11T10:41:47+0300
 
 Hypothesis: Real markets are not _irrationally lazy_. They are _lazily rational_.
 
-## The Efficient-Market hypothesis
+## The Efficient-Market Hypothesis
 
-> Efficient-Market hypothesis (EMH): asset prices reflect all available information.
+> Efficient-Market Hypothesis (EMH): asset prices reflect all available information.
 
 EMH assumes costless information, costless cognition, and costless execution. It models a theoretically optimal market.
 
@@ -61,10 +61,10 @@ Adaptation requires [slack](https://www.lesswrong.com/posts/yLLkWMDbC9ZNKbjDG/sl
 Hypothesis: Lazy-local agents, by definition, hold more slack than eager agents. This makes them advantaged in adapting to opportunities after frontier shock, but they pay a cost for suboptimality under the old conditions the eager agents committed to.
 
 Consequence: Effort frontier shocks:
-- disadvantage eager local agents
-- advantage lazy local agents
-- eager global agents are insulated but immobile. Their commitments should weather frontier shocks, but they don't have the slack to extract value from the shocks.
-- lazy global agents rarely live to see a frontier shift. But if they did, they would be at the best position: slack to extract value, commitments that are insular from the frontier shock.
+- disadvantage eager-local agents
+- advantage lazy-local agents
+- eager-global agents are insulated but immobile. Their commitments should weather frontier shocks, but they don't have the slack to extract value from the shocks.
+- lazy-global agents rarely live to see a frontier shift. But if they did, they would be at the best position: slack to extract value, commitments that are insular from the frontier shock.
 
 
 Elaboration: When the frontier moves, agents with high-commitment, low-monitoring investments get hit hardest - they're slower to detect the shift and slower to redirect once they do. Sunk-cost dynamics make this worse: the first instinct on noticing a shock is usually to double down on the existing commitment rather than abandon it. Castles got thicker walls before they got abandoned.
@@ -112,7 +112,7 @@ Real markets are not irrationally lazy. They are lazily rational.
 
     - Laziness-function updates:
         - How to affect agent laziness?
-        - When do agents shift their positions in the 2x2 (possibly within their quadrant, but still relevantly)? Can a lazy local agent 'ascend' to a global lazy agent if they happen to get lucky and find a good global gold vein to extract from? Can an eager agent weather a shock and realize they need more slack?
+        - When do agents shift their positions in the 2x2 (possibly within their quadrant, but still relevantly)? Can a lazy-local agent 'ascend' to a lazy-global agent if they happen to get lucky and find a good global gold vein to extract from? Can an eager agent weather a shock and realize they need more slack?
             - Also see "Is lazy-global a selectable strategy?"
 
 
@@ -144,6 +144,9 @@ Real markets are not irrationally lazy. They are lazily rational.
 <details>
 <summary>Related literature</summary>
 
+Psychology:
+- Simon (1956) Rational Choice and the Structure of the Environment: satisficing / bounded rationality. LMH treats satisficing points as equilibrium properties of markets rather than a cognitive property of agents, aims to model these equilibria.
+
 Economics:
 - 1980 Grossman-Stiglitz: https://en.wikipedia.org/wiki/Grossman%E2%80%93Stiglitz_paradox,
 > perfectly informationally efficient markets are an impossibility since, if prices perfectly reflected available information, there is no profit to gathering information, in which case there would be little reason to trade and markets would eventually collapse
@@ -152,14 +155,14 @@ Economics:
 - (A lot more economics I've never read.)
 
 Internet:
-- Yudkowsky, Eeliezer: Inadequate Equilibria: https://equilibriabook.com/
+- Yudkowsky, Eliezer: Inadequate Equilibria: https://equilibriabook.com/
 - MacKenzie, Patrick: The optimal amount of fraud is non-zero https://www.bitsaboutmoney.com/archive/optimal-amount-of-fraud/
 
 </details>
 
 
 [^1]: Over long enough time horizons.
-[^2]: See "Generalizing Grossman-Stiglitz from information cost to effort cost." in Open Questions.
+[^2]: See "Formally generalizing Grossman-Stiglitz from information cost to effort cost." in Open Questions.
 [^3]: Why not choose your strategy based on the expected volatility? Volatility detection is itself effortful. The calibration of optimal laziness is itself subject to LMH.
 [^4]: Some adaptation qualities:
 > - Execution qualities
@@ -174,7 +177,6 @@ Internet:
 >     - Weakly holding to previous paradigms
 >         - Scout Mindset
 
-[^5]: [Astral Codex Ten: Society is fixed, Biology is mutable](https://slatestarcodex.com/2018/04/24/society-is-fixed-biology-is-mutable/)
+[^5]: [Astral Codex Ten: Society is fixed, Biology is Mutable](https://slatestarcodex.com/2018/04/24/society-is-fixed-biology-is-mutable/)
 [^6]: In complex, volatile environments, generalists with slack tend to win. Hyper-specialists (eager-local) dominate their narrow slot while conditions hold. Pure explorers (eager-global) rarely accumulate enough fitness to persist. The animals you've heard of are mostly lazy-locals: good-enough at local-enough tasks to exploit and survive, but carrying enough reserve capacity to ride out shocks rather than be caught rigid by them. (In the longer run they become generalists, because each shock that doesn't kill them incentivizes a new strategy.) (What about lazy-global?[^7]) 
 [^7]: Almost no successful agent starts at lazy-global. They start lazy-local (or eager-local), and then luck out. Cyanobacteria didn't select for their waste product to restructure the planet's atmosphere. They were just metabolizing. The "global" part is a retroactive reclassification by an observer who knows where the story goes.
-
