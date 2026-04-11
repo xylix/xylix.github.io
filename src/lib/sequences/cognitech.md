@@ -24,7 +24,8 @@ Terminology: Lenses, to see with. Frames, to build with. Stances, to find. See [
   * Why coordinate?
     * reverse-flow-of-history
 * Frames
-  * lazy-market-hypothesis
+  * Agents
+    * lazy-market-hypothesis
 * Stances
 
 

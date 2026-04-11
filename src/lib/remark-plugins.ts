@@ -102,7 +102,7 @@ export function remarkFootnotes() {
 				if (n.type === 'linkReference') {
 					const m = (n as AstNode).identifier?.match(/^\^([\w-]+)$/);
 					if (m)
-						return `<sup class="fn-ref"><a href="#fn-${m[1]}">${m[1]}</a></sup>`;
+						return `<sup class="fn-ref" id="fnref-${m[1]}"><a href="#fn-${m[1]}">${m[1]}</a></sup>`;
 				}
 				if ('children' in n) return serializeChildren((n as Parent).children as PhrasingContent[]);
 				return '';

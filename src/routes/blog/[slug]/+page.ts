@@ -1,3 +1,4 @@
+import { error } from '@sveltejs/kit';
 import { all_posts } from '$lib/load_posts';
 import { public_sequences, type SequenceNode } from '$lib/load_sequences';
 import type { EntryGenerator, PageLoad } from './$types';
@@ -18,7 +19,7 @@ function findBreadcrumb(tree: SequenceNode[], slug: string): string[] | null {
 export const load: PageLoad = async ({ params }) => {
 	const main_post = all_posts.find((p) => p.slug === params.slug);
 	if (!main_post) {
-		throw new Error(`No post found with slug "${params.slug}"`);
+		error(404, `No post found with slug "${params.slug}"`);
 	}
 
 	const sequenceBreadcrumbs: { sequenceSlug: string; sequenceName: string; path: string[] }[] = [];

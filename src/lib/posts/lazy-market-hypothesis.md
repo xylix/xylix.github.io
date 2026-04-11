@@ -1,10 +1,10 @@
 ---
 title: the Lazy Market Hypothesis
 tagline: Theoretical markets are efficient. Real markets are efficiently lazy.
-tags: []
-draft: true
+tags: ['cognitech', 'research']
 favourite: true
-version: v0.0.12
+version: v1.0.0
+createdAt: 2026-04-11T10:41:47+0300
 ---
 
 # The Lazy Market, and the Effort frontier
@@ -21,9 +21,11 @@ The friction of real markets is well understood. The Lazy-Market Hypothesis is f
 
 ## The Lazy-Market Hypothesis (LMH)
 
-Price labor, capital, risk, and cognition as real costs, and the Efficient-Market optimum stops being the target. Chasing the EMH optimum would cost more than the expected return.
+Once you price labor, capital, risk, and cognition as real costs, the Efficient-Market optimum stops being the target. Chasing the EMH optimum would cost more than the expected return.
 
-Claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. The descriptive observation "real markets don't reach EMH efficiency" is also describing that real agents are at their actual optimum - just not the EMH optimum. The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
+Claim: the rational agent is the lazy agent. Laziness isn't a deviation from rationality under friction; laziness is what rationality looks like once friction is in the model. The descriptive observation "real markets don't reach EMH efficiency" is also a description of real agents at their actual optimum - just not the EMH optimum. 
+
+The satisficing rule: stop spending effort when marginal benefit of effort equals marginal cost.
 
 This is descriptive, not normative: it's a claim about which agents survive selection in friction-priced environments, not a claim about ideal rationality. Agents who miscalibrate their laziness function - in either direction - get outcompeted.[^1]
 
@@ -71,9 +73,9 @@ Elaboration: When the frontier moves, agents with high-commitment, low-monitorin
 
 ## Closing
 
-What did we learn today? Not much new. But a new frame out of familiar lenses can lead us somewhere.
+When real agents who are winning and surviving look irrational, it often means we're not modelling their targets and cost functions in full. The interesting move isn't to scold the agents. It's to ask what the frontier looks like, and what would have to change for their satisficing point to land somewhere else.
 
-One theory: when agents are miscalibrated, it could be easier to move the environment than to move the agents.[^5]
+When agents are miscalibrated, it's often easier to move the environment than to move the agents.[^5]
 
 Real markets are not irrationally lazy. They are lazily rational.
 
@@ -90,11 +92,15 @@ Real markets are not irrationally lazy. They are lazily rational.
 
 
 - "Lazy economics":
+    - Generalizing Grossman-Stiglitz from information cost to effort cost.
+        - What survives, what breaks, and what new equilibria appear when the substrate being priced is the full stack (search, evaluation, execution, monitoring) rather than information acquisition alone? Sims' rational inattention covers part of this for attention specifically; the full generalization seems open.
+
     - Who pays for exploration?
         - Could generate interesting predictions on ecosystem composition
         - Implications for foundational research funding
         - How legibility of output correlates with local eagerness instead of global value
             - Do you actually get better foundational research if you measure proxies for the output value (citations, status, optimizing funding applications), or should you just give researchers budgets and let them do whatever?
+        - Rational risk tolerance
 
     - Implications of real agent's calibrated laziness functions:
         - Correlated laziness and systemic fragility: when many agents satisfice against the same threat model, the resulting monoculture is locally stable and globally fragile (2008 risk models, monocultures, antibiotic regimes). LMH may have something to say about market-level fragility that EMH-plus-friction doesn't. Future work.
@@ -153,7 +159,7 @@ Internet:
 
 
 [^1]: Over long enough time horizons.
-[^2]: TODO: Generalize "Grossman and Stiglitz (1980) showed that a perfectly efficient market can’t fund its own price-discovery substrate: equilibrium has to sit short of the limit. LMH generalizes the move from information to effort."
+[^2]: See "Generalizing Grossman-Stiglitz from information cost to effort cost." in Open Questions.
 [^3]: Why not choose your strategy based on the expected volatility? Volatility detection is itself effortful. The calibration of optimal laziness is itself subject to LMH.
 [^4]: Some adaptation qualities:
 > - Execution qualities
@@ -169,6 +175,6 @@ Internet:
 >         - Scout Mindset
 
 [^5]: [Astral Codex Ten: Society is fixed, Biology is mutable](https://slatestarcodex.com/2018/04/24/society-is-fixed-biology-is-mutable/)
-[^6]: In complex, volatile environments, generalists with slack tend to win. Hyper-specialists (eager-local) dominate their narrow slot while conditions hold. Pure explorers (eager-global) rarely accumulate enough fitness to persist. The animals you've heard of are mostly lazy-locals: good-enough at a wide-enough range, committed enough to a strategy to be efficient at it, but carrying enough reserve capacity to ride out shocks rather than be caught rigid by them. (What about lazy-global?[^7]) 
-[^7]: Almost no successful agent starts at lazy-global. They start lazy-local (or eager-local), and then luck out. Cyanobacteria didn't select for their waste product to restructure the planet's atmosphere. They were just metabolizing. The "global" part is a retroactive reclassification by an observer who knows how the story ended.
+[^6]: In complex, volatile environments, generalists with slack tend to win. Hyper-specialists (eager-local) dominate their narrow slot while conditions hold. Pure explorers (eager-global) rarely accumulate enough fitness to persist. The animals you've heard of are mostly lazy-locals: good-enough at local-enough tasks to exploit and survive, but carrying enough reserve capacity to ride out shocks rather than be caught rigid by them. (In the longer run they become generalists, because each shock that doesn't kill them incentivizes a new strategy.) (What about lazy-global?[^7]) 
+[^7]: Almost no successful agent starts at lazy-global. They start lazy-local (or eager-local), and then luck out. Cyanobacteria didn't select for their waste product to restructure the planet's atmosphere. They were just metabolizing. The "global" part is a retroactive reclassification by an observer who knows where the story goes.
 
