@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" font-family="Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="700" font-family="Helvetica, Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/>
   <style>
     .axis { stroke: #222; stroke-width: 2; }
     .cell { fill: none; stroke: #888; stroke-width: 1; }
@@ -36,7 +37,7 @@
     <tspan x="235" dy="16">hopes to land at the top.</tspan>
     <tspan x="235" dy="20">Exploration budget too</tspan>
     <tspan x="235" dy="16">small for target.</tspan>
-    <tspan x="235" dy="20" font-style="italic">Underfits.</tspan>
+    <tspan x="235" dy="20" font-style="italic">Underfit.</tspan>
   </text>
 
   <!-- Eager + Global (TR) -->
@@ -66,7 +67,7 @@
     <tspan x="465" dy="16">commits to the first peak.</tspan>
     <tspan x="465" dy="20">Exploration budget too large;</tspan>
     <tspan x="465" dy="16">surplus spent on overcommitment.</tspan>
-    <tspan x="465" dy="20" font-style="italic">Overfits, and therefore fragile.</tspan>
+    <tspan x="465" dy="20" font-style="italic">Overfit, and therefore fragile.</tspan>
   </text>
 
   <text x="350" y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Target optima × Evaluation strategy</text>

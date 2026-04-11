@@ -76,6 +76,23 @@ describe('remarkFootnotes', () => {
 		expect(html).toContain('<code>inline code</code>');
 	});
 
+	it('handles a footnote with blockquote continuation containing a list', async () => {
+		const body = `Text with a note.[^1]
+
+[^1]: Adaptation qualities:
+> - Item one
+>     - Sub-item
+> - Item two
+`;
+		const html = await renderHtml(body);
+		expect(html).toContain('<section class="footnotes">');
+		expect(html).toContain('Adaptation qualities:');
+		expect(html).toContain('<ul>');
+		expect(html).toContain('Item one');
+		expect(html).toContain('Sub-item');
+		expect(html).toContain('Item two');
+	});
+
 	it('does nothing when there are no footnotes', async () => {
 		const html = await renderHtml('Just a paragraph with a [regular link](https://example.com).\n');
 		expect(html).not.toContain('fn-ref');

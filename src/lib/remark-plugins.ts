@@ -99,10 +99,37 @@ export function remarkFootnotes() {
 				if (n.type === 'strong') return `<strong>${serializeChildren(n.children)}</strong>`;
 				if (n.type === 'link')
 					return `<a href="${n.url}">${serializeChildren(n.children as PhrasingContent[])}</a>`;
+				if (n.type === 'linkReference') {
+					const m = (n as AstNode).identifier?.match(/^\^([\w-]+)$/);
+					if (m)
+						return `<sup class="fn-ref"><a href="#fn-${m[1]}">${m[1]}</a></sup>`;
+				}
 				if ('children' in n) return serializeChildren((n as Parent).children as PhrasingContent[]);
 				return '';
 			})
 			.join('');
+	}
+
+	function serializeBlock(node: Node): string {
+		const n = node as Parent;
+		switch (node.type) {
+			case 'paragraph':
+				return serializeChildren(n.children as PhrasingContent[]);
+			case 'blockquote':
+				return n.children.map((c) => serializeBlock(c)).join('\n');
+			case 'list': {
+				const items = n.children.map((c) => serializeBlock(c)).join('\n');
+				return `<ul>\n${items}\n</ul>`;
+			}
+			case 'listItem': {
+				const parts = n.children.map((c) => serializeBlock(c));
+				return `<li>${parts.join('')}</li>`;
+			}
+			default:
+				if ('value' in node) return (node as AstNode).value ?? '';
+				if ('children' in node) return serializeChildren(n.children as PhrasingContent[]);
+				return '';
+		}
 	}
 
 	function processNode(node: Node, parent: Parent | null, idx: number): number | undefined {
@@ -176,8 +203,27 @@ export function remarkFootnotes() {
 			}
 
 			if (localDefs.length > 0 && j === ch.length) {
+				// Consume continuation blocks (blockquote, list) that follow the
+				// definition paragraph — these extend the last definition's content.
+				let continuationCount = 0;
+				while (i + 1 + continuationCount < root.children.length) {
+					const next = root.children[i + 1 + continuationCount];
+					if (next.type === 'blockquote' || next.type === 'list') {
+						continuationCount++;
+					} else {
+						break;
+					}
+				}
+				if (continuationCount > 0) {
+					const continuationHtml = root.children
+						.slice(i + 1, i + 1 + continuationCount)
+						.map((c) => serializeBlock(c))
+						.join('\n');
+					localDefs[localDefs.length - 1][1] += '\n' + continuationHtml;
+				}
+
 				for (const [id, html] of localDefs) defs.set(id, html);
-				root.children.splice(i, 1);
+				root.children.splice(i, 1 + continuationCount);
 			}
 		}
 
@@ -186,8 +232,9 @@ export function remarkFootnotes() {
 		// Replace [^id] references with superscript links
 		processNode(root, null, 0);
 
-		// Append footnotes section
+		// Append footnotes section (sorted by numeric id, then alphabetically)
 		const items = [...defs.entries()]
+			.sort(([a], [b]) => (/^\d+$/.test(a) && /^\d+$/.test(b) ? +a - +b : a.localeCompare(b)))
 			.map(
 				([id, html]) =>
 					`<li id="fn-${id}">${html} <a href="#fnref-${id}" class="fn-back">↩</a></li>`
