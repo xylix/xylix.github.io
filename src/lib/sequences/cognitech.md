@@ -23,6 +23,7 @@ Terminology: Lenses, to see with. Frames, to build with. Stances, to find. See [
     * forgiveness-not-permission
   * Why coordinate?
     * reverse-flow-of-history
+  * ea-from-slytherin
 * Frames
   * Agents
     * lazy-market-hypothesis
