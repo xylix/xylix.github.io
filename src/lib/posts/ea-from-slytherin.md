@@ -2,7 +2,6 @@
 title: Effective Altruism from Slytherin
 tagline: todo
 tags: ['effective-altruism', 'hogwarts-houses', 'cognitech']
-draft: true
 version: 1.0.0
 ---
 
