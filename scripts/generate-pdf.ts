@@ -8,9 +8,9 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 import { VFile } from 'vfile';
-import { mdastToTypst } from '../src/lib/mdast-to-typst.ts';
+import { mdastToTypst } from '../src/lib/pdf/mdast-to-typst.ts';
 import { remarkFlattenThreadBullets, stripComments } from '../src/lib/remark-plugins.ts';
-import { remarkFootnotesTypst } from '../src/lib/remark-footnotes-typst.ts';
+import { remarkFootnotesTypst } from '../src/lib/pdf/remark-footnotes-typst.ts';
 
 type PostMeta = {
 	title: string;
