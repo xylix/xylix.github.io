@@ -9,7 +9,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "biome lint . && eslint \"src/**/*.svelte\"",
 		"format": "biome format --write .",
-		"test": "vitest run"
+		"test": "vitest run",
+		"generate:pdf": "tsx scripts/generate-pdf.ts"
 	},
 	"pre-commit": [
 		"lint",
@@ -40,6 +41,7 @@
 		"pre-commit": "^1.2.2",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.2.6",
+		"remark-gfm": "^4.0.1",
 		"remark-parse": "^11.0.0",
 		"svelte": "^5.45.5",
 		"svelte-check": "^4.3.4",
