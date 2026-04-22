@@ -305,12 +305,13 @@ const mainColumnContent = [
 					'Studies include algorithms, computer architectures, functional programming, type theory, math and machine learning & AI.'
 				/* TODO: implement courses / opintosuoritusote data here */
 			},
+      /*
 			{
 				title: 'High school',
 				location: 'Valkeakoski',
 				subtitle: 'Päivölän opisto / Valkeakosken Tietotien lukio',
 				dates: '07/2015 - 06/2017'
-			}
+			}*/
 		]
 	}
 	/* FIXME: replace with my projects
