@@ -277,13 +277,18 @@ const mainColumnContent = [
 		label: 'Volunteering',
 		details: [
 			{
-				dates: '4/2022 - 05/2023',
-				title: 'Chair of the Board',
+				dates: '11/2021 -',
+				title: 'Board Member & Executive Director',
 				subtitle: 'Effective Altruism Finland',
 				location: 'Helsinki',
-				// technologies: "Robot Framework, Python, Typescript",
 				description:
-					'Applying for funding, decisionmaking, leading the board, managing and supporting our employees.'
+					'Applying for funding, decisionmaking, leading the board, managing and supporting employees.',
+				list: [
+					'Treasurer (11/2021 - 04/2022)',
+					'Chair of the Board (04/2022 - 05/2023)',
+					'Vice Chair (05/2023 - 11/2024)',
+					'Executive Director (08/2025 -)'
+				]
 			}
 		]
 	},
@@ -294,7 +299,7 @@ const mainColumnContent = [
 			{
 				title: 'Bachelor’s degree in Computer Science',
 				subtitle: 'University of Helsinki',
-				dates: '09/2017-01/2026',
+				dates: '09/2017-05/2026',
 				location: 'Helsinki',
 				description:
 					'Studies include algorithms, computer architectures, functional programming, type theory, math and machine learning & AI.'
