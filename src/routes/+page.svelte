@@ -16,11 +16,12 @@
 	<h1>Welcome</h1>
 
 	<p>
-		<a href="/about">Xylix's</a> home page. I think here aloud. Includes a not-so-active blog, miscellaneous
-		thoughts, etc.
+		<a href="/about">Xylix's</a> home page. I think here.
 	</p>
+        
+    <p>σπεῦδε βραδέως</p>
 
-	<p>"Fresh" off the presses:</p>
+	<p>Now:</p>
 	<CardGrid posts={newest} />
 
 	<p>Some of my favorites:</p>
