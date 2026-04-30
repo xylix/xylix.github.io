@@ -450,7 +450,7 @@ async function main() {
 	const repoRoot = process.cwd();
 	const postsDir = path.join(repoRoot, 'src/lib/posts');
 	const sequencesDir = path.join(repoRoot, 'src/lib/sequences');
-	const buildDir = path.join(repoRoot, 'build');
+	const buildDir = path.join(repoRoot, 'pdf-build');
 	const templatePath = path.join(repoRoot, 'templates/book.typ');
 	await mkdir(buildDir, { recursive: true });
 
