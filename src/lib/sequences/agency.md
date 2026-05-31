@@ -6,6 +6,9 @@ tagline: 'Learning to act in the real world'
 Goals: Confronting life's important skill issues headfirst. [Becoming more whole.](https://joecarlsmith.com/2023/02/17/seeing-more-whole/#5-4-seeing-the-general-of-the-army-you-ve-been-fighting-in)
 TODO: _The toolkit of a protagonist._
 Finding and admitting our potential.
+
+> The main thing in life is to know your own mind.
+
 > Our deepest fear is not that we are inadequate. Our deepest fear is that we are powerful beyond measure.
 
 * Motivation
