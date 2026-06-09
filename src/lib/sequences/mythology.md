@@ -23,7 +23,7 @@ TODO: > You don't build a lighthouse by sailing out
 > When untruths are the only way to truth, detour
 
 
-* Introduction
+<!-- * Introduction -->
 * Gathered
     * phoenix-call
 * Given

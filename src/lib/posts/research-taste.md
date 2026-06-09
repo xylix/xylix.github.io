@@ -30,13 +30,8 @@ What is [research taste](https://www.lesswrong.com/w/research-taste).
 
 Definition for “intuition” here: fast, low-deliberation judgment. Some such judgments are trained competences; others are cached biases or social/aesthetic reactions. Research taste is the subset that reliably tracks research fruitfulness.
 
-What's an intuition? I think they're skills that have been learned to the [unconscious competence](https://en.wikipedia.org/wiki/Four_stages_of_competence) level. (Skill in the wide meaning here; if you have received mentoring or head more experienced peoples input about the field, that also counts as part of the skill, in my book.)
-
-TODO: replace with 
-
-
 <summary>
-Minor intuition pump from chatGPT:
+Examples from chatGPT for some subtler outputs from 'research taste' (that also clarifies why it's called taste)
 </summary>
 <details>
 “this result smells fake”
@@ -69,23 +64,17 @@ There are two different decompositions here. Nanda’s list describes capacities
 So perhaps “research taste” is not one subskill beside these. It is the quality of judgment at these choice-points. A researcher’s intuition is the broader machinery; research taste is that machinery aimed at fruitfulness.
 
 
+## How and why is it difficult?
 
-How will we test this?
+## How what asdf (change the heading)
+
+Since taste is partially developed through mentorship, and the abstract sciences are an old field, let's look at some older wisdom on the topic.
 
 
-### Failure modes
-
-## Existing work
-
-- 
 
 
 
 # Clippings, remove or integrate before publishing
-## Hamming's takes
-
-https://www.cs.virginia.edu/~robins/YouAndYourResearch.html
-> Let me start not logically, but psychologically. I find that the major objection is that people think great science is done by luck. It's all a matter of luck. Well, consider Einstein. Note how many different things he did that were good. Was it all luck? Wasn't it a little too repetitive? Consider Shannon. He didn't do just information theory. Several years before, he did some other good things and some which are still locked up in the security of cryptography. He did many good things.
 
 ## Theory: You need good aim
 

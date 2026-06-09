@@ -1,6 +1,6 @@
 ---
 title: Effective Altruism from Slytherin
-tagline: EA, as seen through the Slytherin lens
+tagline: EA, seen through the Slytherin lens
 tags: ['effective-altruism', 'hogwarts-houses', 'cognitech']
 version: 1.0.0
 ---

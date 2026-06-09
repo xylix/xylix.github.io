@@ -7,7 +7,7 @@ draft: true
 
 Epistemic status: I am not claiming to be [_unusually honest_](https://www.lesswrong.com/posts/xdwbX9pFEr7Pomaxv/meta-honesty-firming-up-honesty-around-its-edge-cases#3__The_privilege_of_truthtelling_) or _literally honest_. in this post. I expect the average reader will converge closer to the truth by reading this post than by not reading it.[^1] I also believe that you will get more out of this post if you apply _constant vigilance_.
     
-Disclaimer: I am neither a liar, magician, or a priest. But I am a storyteller.
+Disclaimer: I am neither a liar, magician, nor a priest. I tell stories. You read them. What's the difference?
 
 
 ---
@@ -18,6 +18,8 @@ https://www.lesswrong.com/posts/xdwbX9pFEr7Pomaxv/meta-honesty-firming-up-honest
 > I once heard somebody claim that rationalists ought to practice lying, so that they could separate their internal honesty from any fears of needing to say what they believed. That is, if they became good at lying, they'd feel freer to consider geocentrism without worrying what the Church would think about it. I do not in fact think this would be good for the soul, or for a cooperative spirit between people. This is the sort of proposed solution of which I say, "That is a terrible solution and there has to be a better way."
 
 I think rationalists should practice _lie detection_.
+
+TODO: Costly signals, trust
 
 
 ### Doublespeak
@@ -41,6 +43,7 @@ Let me quote [Scott's](https://www.astralcodexten.com/p/book-review-sadly-porn) 
 I will present a shallower model that cuts the psychoanalysis and simplifies the status game: _humans want to believe nice things_.
 
 NOTE: What's a nice thing? What's the difference between "humans want to believe nice things" and "humans want to believe things that will get them nice things"?
+TODO: Eiks mulla ollut tälle jo parannus, missä?
 
 And because humans have this feature, lie detection has two applications that are quite transitive: Detection of internal lies, and detection of external lies.[^2]
 
@@ -64,10 +67,10 @@ People are more bothered when they don't know what they should think about an is
 
 We can test this!
 
-Ponder the following examples for some 10 seconds each before moving forward
+Thought experiment: Imagine yourself writing a comment arguing the point of view that feels intuitive to you about the following examples, one at a time. What does it feel like?
 TODO: spoiler tag
 TODO: find examples
-1. Parfit's hitchhiker is not equivalent to Newcomb's
+1. Is moral patienthood of LLMs already a relevant ethical concern? Why, or why not?
 2. 
 
 
@@ -82,6 +85,8 @@ TODO: pull from above sections for general theory
 
 What's the difference between a priest, a faith healer, and a magician?
 
+TODO: Consider 
+
 ### Magic
 
 Pulling from an [interview with Penn and Teller](https://www.vanityfair.com/culture/2015/09/penn-and-teller-fool-us-revealing-tricks):
@@ -94,7 +99,6 @@ Pulling from an [interview with Penn and Teller](https://www.vanityfair.com/cult
 
 Elsewhere, Penn has also said:
 > There are no beautiful secrets in magic, only ugly secrets
-
 
 ### The Art of ~~lies~~ War
 

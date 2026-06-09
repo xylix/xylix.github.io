@@ -11,18 +11,25 @@ Finding and admitting our potential.
 
 > Our deepest fear is not that we are inadequate. Our deepest fear is that we are powerful beyond measure.
 
+<!-- * the Action space -->
+<!--   * Degrees of freedom -->
+<!--     * internal-freedom -->
+
 * Motivation
    * why-effective-altruism
-   * becoming-an-adult
-   * (why not earlier)
+   * becoming-adult
+   <!-- * (why not earlier) -->
    * listen-to-gryffindor
+   <!-- * the-good-mad-science -->
 
-* Inefficiency / do not
-  * Stop larping conscientousness / lawfulness <!-- TODO: Draw from the relevant vision sequence here. -->
-  * Stop calculating utilons. (And thinking that in the optimal world you would calculate all the utilons.) <!-- TODO: include my "fund manager judgment" galaxy brain meme and explain it. -->
-* Action / Do
-  * Do fun stuff, lol (No, seriously. Go out, smile, meet your friends. Arrange a party. <!--TODO: Sprinkle some https://putanumonit.com/2020/01/13/go-f-someone/ energy on top. Or some Pinkie Smile Smile Smile energy.)-->
-  * Do important stuff.
+<!-- * Inefficiency / do not -->
+<!-- TODO sequence item: Stop larping conscientiousness / lawfulness. Draw from the relevant vision sequence here. -->
+<!-- TODO sequence item: Stop calculating utilons. Include the fund-manager judgment meme. -->
+<!-- * Action / Do -->
+<!-- TODO sequence item: Do fun stuff. Sprinkle Putanumonit / Pinkie Pie energy on top. -->
+<!-- TODO sequence item: Do important stuff. -->
 
-* Forbidden tools
-  * useful-vices-and-dubious-virtues
+* Tools
+  <!-- * speed -->
+  * Forbidden
+    * useful-vices-and-dubious-virtues

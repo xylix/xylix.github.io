@@ -4,6 +4,7 @@ tags: ['personal', 'agency']
 draft: true
 ---
 
+TODO: title could be changed to "the seven holy sins" or something like that?
 # Prelude
 
 Karnofsky talks about [_useful vices for wicked problems_](https://www.cold-takes.com/useful-vices-for-wicked-problems/). Laziness, impatience, hubris and self-preservation.

@@ -17,17 +17,21 @@ Terminology: Lenses, to see with. Frames, to build with. Stances, to find. See [
 
 * lens-frame-stance
 * Lenses 
+  <!-- * Problems with optimization -->
+  <!--   * deep-goodhart -->
   * Problems with central coordination
     * re-every-layer-of-review
-    * why-top-down-keeps-failing / predictability-as-rigidity
+    <!-- * why-top-down-keeps-failing / predictability-as-rigidity -->
     * forgiveness-not-permission
   * Why coordinate?
     * reverse-flow-of-history
-  * ea-from-slytherin
+  * cunning
+    * ea-from-slytherin
+    * lies-and-magic
 * Frames
   * Agents
     * lazy-market-hypothesis
-* Stances
+<!-- * Stances -->
 
 
 [^1]: Source: https://en.wiktionary.org/wiki/cognitive

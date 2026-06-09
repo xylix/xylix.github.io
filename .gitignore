@@ -10,3 +10,7 @@ node_modules
 .output
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+TECHNICAL_CLAUDE.md
+compile-drafts.sh
+drafts-compiled.md
+static/donald-against-moral-realism.jpg

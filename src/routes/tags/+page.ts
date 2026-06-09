@@ -7,9 +7,9 @@ export const load: PageLoad = async () => {
 	const posts = all_posts;
 	const tagsInPosts = posts.map((post) => post.tags).flat();
 
-	const tagNames = tags.map((tag) => tag.name);
+	const tagSlugs = tags.map((tag) => tag.slug);
 	tagsInPosts.forEach((postTag) => {
-		if (!tagNames.includes(postTag)) {
+		if (!tagSlugs.includes(postTag)) {
 			console.warn(`=== Tag "${postTag}" does not have a corresponding tag page ===`);
 			// throw new Error(`Tag ${postTag} does not have a corresponding tag page`);
 		}

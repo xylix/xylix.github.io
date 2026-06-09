@@ -6,6 +6,10 @@ draft: true
 ---
 
 TODO: Split into separate posts, one specifically about Yang and LOTGH, and one about having principles that disallow certain bad outcomes.
+TODO: Chaotic theory: How to have principles as a chaotic agent? The principles need to be instantiations of.. what you truly value over long time horizons.
+
+TODO: Add more ideas from https://claude.ai/chat/78ed662b-eb07-42df-ba2a-361679f5f987 
+TODO: 2: https://claude.ai/chat/16d477fe-c0af-4735-a95a-2cec426cddeb
 
 Includes content and character spoilers for the show Legend of the Galactic Heroes. I think it is well worth watching, even with its immense length, but I do not think these spoilers will significantly affect the watch experience. It is a brilliant histori-scifi-political space opera, that features ever relevant themes. As I will discuss in this post.
 
@@ -22,8 +26,6 @@ And for years I did wonder, is he truly correct? Is it not undeniably true that 
 But no. They have not.
 
 ## Constructive vs. Destructive tools
-
-
 
 
 ## Be truly principled - like Yang Wenli
