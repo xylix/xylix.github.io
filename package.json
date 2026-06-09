@@ -10,6 +10,7 @@
 		"lint": "biome lint . && eslint \"src/**/*.svelte\"",
 		"format": "biome format --write .",
 		"test": "vitest run",
+		"compile:drafts": "node --import tsx scripts/compile-drafts.ts",
 		"generate:pdf": "node --import tsx scripts/generate-pdf.ts"
 	},
 	"pre-commit": [
