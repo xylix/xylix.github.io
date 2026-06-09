@@ -16,6 +16,9 @@
 		<li>email: xylix at iki.fi</li>
 	</ul>
 	<p>
+		For confidential communications, go to <a href="/secrets">/secrets</a> for my public GPG key.
+	</p>
+	<p>
 		You can give feedback on anything (my writing, my ideas, my website, or anything else) using
 		<a
 			href="https://docs.google.com/forms/d/e/1FAIpQLSc8SOuHzjflkEg-raTlaYP5SJ25Aw0614jQOfu9yHKNi2m0eA/viewform?usp=sharing&ouid=109863632324495875836"
