@@ -299,7 +299,7 @@ const mainColumnContent = [
 			{
 				title: 'Bachelor’s degree in Computer Science',
 				subtitle: 'University of Helsinki',
-				dates: '09/2017-05/2026',
+				dates: '2017-2026',
 				location: 'Helsinki',
 				description:
 					'Studies include algorithms, computer architectures, functional programming, type theory, math and machine learning & AI.'
