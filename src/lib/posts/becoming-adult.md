@@ -6,7 +6,12 @@ tags: ['confusing', 'personal']
 draft: true
 ---
 
-TODO: Add to the correct sequence and tag to it
+Draft note: This is meant to become an agency-sequence post about opening my mouth: moving from dutiful, legible usefulness toward acting and speaking from the parts of me that are actually alive.
+
+TODO before publishing:
+- Tighten the transition from the personal opening into the general agency claim.
+- Decide how much HPMOR / phoenix-call symbolism belongs in the main text versus footnotes.
+- Check that the final version is about agency and honesty, not only memoir.
 
 Let's be personal first. Why am I writing this today?
 

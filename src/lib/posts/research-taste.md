@@ -6,6 +6,14 @@ draft: true
 ---
 
 
+Draft note: This post is trying to make "research taste" less mystical: treat it as judgment at concrete choice-points in the research loop, then propose ways a novice can deliberately train those judgments.
+
+TODO before publishing:
+- Replace the placeholder outline with a clean thesis and section order.
+- Decide whether this is one post about research taste or part of the Toolkit of a Researcher sequence.
+- Add one worked example where a research direction gets improved by better taste.
+- Separate cited claims from my own speculation and mark the latter clearly.
+
 ## Outline
 
 - Problem: It's hard to get a pointer on
@@ -169,4 +177,3 @@ I feel like this is again something where startups and research vaguely aligns.
 If you're working solo this is quite crucial for motivation. But it's also important for keeping aligned with your own goals.
 
 I recommend keeping your goal in mind every day you're working. This doesn't mean that you have to have a long goalsetting session every day. But maybe spend at minimum a couple minutes on thinking what you're currently aiming at, why, and why the step you're working on today will contribute to that.
-

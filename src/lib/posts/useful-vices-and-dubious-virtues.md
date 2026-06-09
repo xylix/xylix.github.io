@@ -5,6 +5,15 @@ draft: true
 ---
 
 TODO: title could be changed to "the seven holy sins" or something like that?
+
+Draft note: The intended shape is probably not "vices are good, actually." It is closer to: some traits that look morally or socially suspicious are load-bearing when facing wicked problems, but they need scope, steering, and self-preservation.
+
+TODO before publishing:
+- Make the thesis explicit before the source tour.
+- Separate Karnofsky's useful-vices frame from Soares's dubious-virtues frame.
+- Add concrete personal examples only where they clarify the mechanism.
+- Include failure modes: when desperation, recklessness, defiance, laziness, impatience, hubris, or self-preservation become merely bad.
+
 # Prelude
 
 Karnofsky talks about [_useful vices for wicked problems_](https://www.cold-takes.com/useful-vices-for-wicked-problems/). Laziness, impatience, hubris and self-preservation.

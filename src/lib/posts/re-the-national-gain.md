@@ -5,6 +5,14 @@ tags: []
 draft: true
 ---
 
+Draft note: This currently oscillates between quote collection, historical note, and hype-post. The likely final point is: Chydenius is surprisingly modern, unusually concise, and worth reading as an early Nordic liberal / proto-invisible-hand thinker.
+
+TODO before publishing:
+- Decide whether this is a review, a highlights post, or source material for a later essay.
+- Replace Wikipedia hype with a few claims checked against primary or reliable secondary sources.
+- Keep only the Chydenius quotes that support the final thesis.
+- Add enough context for readers who do not know Finnish or Swedish political history.
+
 Material available at [^4]
 
 ## What, why?

@@ -6,6 +6,14 @@ draft: true
 
 Disclaimer: Mostly AI-written.
 
+Draft note: The point is not to present these parables as polished advice yet. The useful question is whether the form can make research taste, counterexamples, toy models, and empirical anchors feel concrete instead of abstract.
+
+TODO before publishing:
+- Decide whether this belongs as a standalone mythology/research post or as a companion piece to Research Taste.
+- Cut or rewrite cases that are merely clever rather than instructive.
+- Add a short author's note on what was AI-generated, what was selected, and what I endorse.
+- Verify that the Codeless Code inspiration and license note are sufficient.
+
 ## Inspirations and sources
 Inspired by *The Codeless Code* by Qi, CC BY-NC 3.0. Not official, not a close adaptation; just the same parable engine pointed at research.
 
