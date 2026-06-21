@@ -23,13 +23,16 @@ TODO: > You don't build a lighthouse by sailing out
 > When untruths are the only way to truth, detour
 
 
-<!-- * Introduction -->
+* Introduction
 * Gathered
     * phoenix-call
 * Given
     * a-psalm-from-the-book-of-lies
     * without-moon
     * sunrise-construct
+* dĭálogoi
+    * i-want-to-do-science
+    * so-you-want-to-save-the-world
 
 
 [^1]: [mythology](https://en.wiktionary.org/wiki/mythology)
