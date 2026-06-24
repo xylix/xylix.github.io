@@ -7,94 +7,81 @@ tags: ['ai-written', 'research']
 
 _Disclaimer_: AI-written status summary of an ongoing research project. Source repository: [xylix/multidimensional-goodhart](https://github.com/xylix/multidimensional-goodhart).
 
-A curiosity-piquing TLDR of where this stands — the positive results, the
-negative ones, and the uncomfortable finding about the findings. Not an
-abstract; links go to the files with the real details.
+The initial motivation for the paper was trying to write a blog post on 'recursive goodhart', the intuition that because Goodhart affects your meta-level goal setting as well, there will always be Goodhart-shaped drift in whatever approach you use. When writing that paper, multiple empirical questions about Goodhart arose, most importantly the question "does adding / removing metrics make Goodhart better or worse". The answer appears to be conditional, and most of the work went into finding what it is conditional on.
 
-## The reframe that did the work
+## Two channels, not one
 
-Most of the progress came from refusing to treat "the proxy diverged" as one
-phenomenon. There are two channels that look identical in aggregate data but
-need completely different math:
+One move did most of the work: splitting "the proxy diverged" into two channels
+that look identical in the data and obey different math:
 
-- **Selection** — the proxy picks differently from a *fixed* pool of behavior.
-  Governed by baseline response curves and reweighting bounds.
-- **Intervention** — agents *change behavior at fixed type*. Governed by action
-  geometry, costs, aggregation, and a hidden harm/value model.
+- **Selection** — the proxy picks differently from a fixed pool. Baseline
+  response curves and reweighting bounds.
+- **Intervention** — agents change behavior at fixed type. Action geometry,
+  costs, aggregation, hidden harm.
 
-You cannot tell which one you're looking at from marginal score movement alone.
-That non-identifiability is itself a result, not a gap.
+You can't tell which one you're seeing from score movement alone. That
+non-identifiability is a result, not a gap.
 
-## What survived (positive results)
+The conditional answer, in one line: more metrics help or hurt depending on how
+you aggregate them, the exchange rates between dimensions, who enters the pool,
+and what you actually value — flip any of those and the sign flips.
 
-A set of small, *scoped* theorems — each with explicit hypotheses and an
-explicit "this does not license…" clause. Full statements in
-[`research/core-math.md`](https://github.com/xylix/multidimensional-goodhart/blob/main/research/core-math.md):
+## What survived
 
-- **T1/T2 — selection bounds.** Hidden drift along any coordinate is bounded by
-  `δ·s` (selection intensity × baseline std). The constant is *sharp* (attained,
-  Cauchy–Schwarz equality), and the finite-χ² hypothesis is *necessary* — a
-  finite-variance coordinate can drift to infinity once χ² blows up.
-- **T3/T4 — when intervention activates.** A Stackelberg gaming wedge
-  (`Δ = √(2κV)`) and a convex score-deficit budget (`m(d) ≤ V` via Fenchel
-  duality) say *when* gaming is worth it.
-- **T5 — the exchange-rate diagnostic.** In the additive quadratic toy,
-  fixed-deficit harm is conserved across measured-set changes **iff** hidden
+Small, scoped theorems, each with explicit hypotheses and an explicit "does not
+license…" clause. Statements in
+[`research/core-math.md`](https://github.com/xylix/multidimensional-goodhart/blob/d0ff78a58f3971a31a147311338926f2c4e83537/research/core-math.md):
+
+- **T1/T2** bound hidden drift on any coordinate by `δ·s` — selection intensity
+  times baseline std. The constant is sharp, and the finite-χ² hypothesis is
+  load-bearing: drop it and a finite-variance coordinate can drift to infinity.
+- **T3/T4** say when intervention is worth it: a Stackelberg wedge
+  (`Δ = √(2κV)`) and a convex score-deficit budget (`m(d) ≤ V`).
+- **T5** says fixed-deficit harm survives a change of measured set iff hidden
   harm is proportional to proxy weight (`h_j = c·w_j`) on the channel pool.
-- **T6 — adaptive hardening.** Gaming is feasible iff capacity `S_t(M) ≥ d²/2V`;
-  hardening converges in finite time under stated conditions.
+- **T6** says gaming is feasible iff capacity `S_t(M) ≥ d²/2V`, and hardening
+  converges in finite time.
 
-Plus a **response-modeling contract**: the primitives (type space, response
-kernel, costs, aggregation, value/harm functional) you must *declare* before any
-of the above applies. The framework is as much "here is what you must commit to"
-as "here is the bound."
+The other deliverable is the contract: the primitives — type space, response
+kernel, costs, aggregation, value/harm — you have to declare before any theorem
+applies. Half the point is naming what you must commit to.
 
-## What got killed (negative results)
+## What got killed
 
-The first ~43 iterations mostly destroyed slogans. From
-[`research/closed_questions.md`](https://github.com/xylix/multidimensional-goodhart/blob/main/research/closed_questions.md):
+The first 43 iterations served to disprove common-sensical intuitive claims
+about how the geometry might behave
+([`research/closed_questions.md`](https://github.com/xylix/multidimensional-goodhart/blob/d0ff78a58f3971a31a147311338926f2c4e83537/research/closed_questions.md)):
 
-- Dimension **count** alone does not determine harm.
-- **Covariance** is not a general finite-pressure primitive.
-- "More metrics helps" / "more metrics hurts" have **no sign** without
+- Dimension count alone doesn't determine harm.
+- Covariance isn't a general finite-pressure primitive.
+- "More metrics helps" and "more metrics hurts" both have no sign without
   aggregation, exchange rates, population entry, and value weights.
-- Additive conservation is **not** generic (only under `h_j = c·w_j`).
-- Absolute continuity is **not** the causal intervention boundary.
-- Generic "minimum-complexity attractor" Goodhart is **not** a theorem.
+- Additive conservation isn't generic — only under `h_j = c·w_j`.
+- Absolute continuity isn't the causal intervention boundary.
+- A generic "minimum-complexity attractor" isn't a theorem.
 
-## The uncomfortable finding about the findings
+## A catch
 
-A recent literature pass turned the knife inward: the "survived" theorems are
-likely **classical results wearing Goodhart clothes** — T5's condition is
-contract-theory *congruity* (Feltham–Xie / Baker), the selection bounds rhyme
-with Chapman–Robbins / χ²-DRO, the convex budget is Fenchel. Each parallel lives
-in the theorem's *native field*, not the Goodhart literature. So the honest
-contribution is **elementary cross-field synthesis + the contract + one
-genuinely new reading (subset-invariance)** — not novel math. Stated proudly,
-that's stronger than the motte-and-bailey it replaces. Tracked in
-[`plans/next-steps.md`](https://github.com/xylix/multidimensional-goodhart/blob/main/plans/next-steps.md).
+A later literature pass found that the surviving theorems are probably classical
+results from other fields. T5's condition is contract-theory congruity
+(Feltham–Xie, Baker); the selection bounds track Chapman–Robbins and χ²-DRO; the
+convex budget is Fenchel. Each match lives in the theorem's home field, not the
+Goodhart literature. So the contribution is cross-field synthesis plus the
+contract plus one new reading (subset-invariance), not new math.
+([`plans/next-steps.md`](https://github.com/xylix/multidimensional-goodhart/blob/d0ff78a58f3971a31a147311338926f2c4e83537/plans/next-steps.md)).
 
-A spin-off observation became its own paper: the AI-safety Goodhart canon cites
-**essentially none** of the economics / accounting / management-science prior
-art that already contains the same math (audited across 7 anchor papers). That's
-[`literature-reference-gap-paper/`](https://github.com/xylix/multidimensional-goodhart/tree/main/literature-reference-gap-paper).
+One side observation is growing into its own paper seed: the AI-safety Goodhart canon cites
+almost none of the economics, accounting, and management-science work that
+already proved the same things (checked across 7 anchor papers). That's
+[`literature-reference-gap-paper/`](https://github.com/xylix/multidimensional-goodhart/tree/d0ff78a58f3971a31a147311338926f2c4e83537/literature-reference-gap-paper).
 
-## What's open
+## Still open
 
-- **Identification.** Recovering κ, h, weights, stakes *before* interpreting
-  score movement — the whole framework leans on declared primitives nobody has
-  shown how to estimate. See
-  [`research/open_questions.md`](https://github.com/xylix/multidimensional-goodhart/blob/main/research/open_questions.md).
-- **Severity past activation.** The theorems say *whether* gaming activates, not
-  whether activated gaming degrades gracefully or **collapses below baseline**.
-  A second track conjectures the discriminating primitive is the *tail index of
-  hidden value vs. the optimization channel* — not the magnitude of pressure.
-  See [`divergence-thresholds/`](https://github.com/xylix/multidimensional-goodhart/tree/main/divergence-thresholds).
-
-## TL;DR of the TL;DR
-
-The broad laws are false; the true statements are small, conditional, and mostly
-borrowed from older fields that the AI-safety literature forgot to cite. The
-value is in the bookkeeping: separating the two channels, naming the primitives
-you must declare, and being honest about which results are new. The long-form
-treatment is the eight-part [book draft](https://github.com/xylix/multidimensional-goodhart/tree/main/book).
+- **Identification.** The framework runs on declared primitives — κ, h, weights,
+  stakes — and this project hasn't yet found a way to estimate them before you
+  read the score movement ([`research/open_questions.md`](https://github.com/xylix/multidimensional-goodhart/blob/d0ff78a58f3971a31a147311338926f2c4e83537/research/open_questions.md)).
+- **Severity.** The theorems say whether gaming activates, not whether it
+  degrades gracefully or collapses below baseline. A second track bets the
+  deciding factor is a tail comparison — hidden value against the optimization
+  channel — rather than the amount of pressure
+  ([`divergence-thresholds/`](https://github.com/xylix/multidimensional-goodhart/tree/d0ff78a58f3971a31a147311338926f2c4e83537/divergence-thresholds)).
