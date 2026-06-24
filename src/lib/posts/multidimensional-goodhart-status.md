@@ -1,9 +1,26 @@
 ---
 title: Multidimensional Goodhart (project status)
-tagline: Where the multidimensional-Goodhart research stands — positive results, negative results, and the uncomfortable finding about the findings.
+tagline: "Current status of multidimensional goodhart - a heavily LLM tooled math research project I'm taking on"
 createdAt: 2026-06-24T12:00:00+0300
-tags: ['ai-written', 'research']
+tags: ['research']
 ---
+
+## The project
+
+I started working on multidimensional-goodhart during the AFFINE agent foundations fellowship in May 2026. I figured the AI safety + Goodhart literature was missing something with reducing goal and proxy to a scalar. I also figured it would be an opportunity to try out mainly llm-driven math research, which had been getting [interesting press](https://openai.com/index/model-disproves-discrete-geometry-conjecture/) around that time.
+
+I threw some posts by Terence Tao and some other mathematicians who had been doing recent work on LLM-aided math research into Claude, asked it to come up with an AGENTS.md file for guiding llms towards reasonable math research, and it came out with a somewhat rigid iteration based workflow design, where the agent executing the research would do steps of research, and 'adversarial review' every three iterations or so.
+
+The method did get the project started, but I'm not sure the first 40 or so iterations, executed within the first two weeks, were very efficient. LLMs are better at producing rigorous-seeming rather than really rigorous math, and I find math cumbersome to review manually, compared to program code.
+
+After that I took a bit more of a hands-on approach, reviewing the work more manually, giving the llms explicit directions of what to look at. This has been somewhat fruitful.
+
+As of today (24.06.2026), I've learned from the project a bunch about the selection vs. intervention channel difference (mentioned below), that some of my initial gut feelings about multidimensional Goodhart did not stand up to math levels of rigor, and also that a bunch of the theorems that the LLMs wrote up as 'new' ones were actually existing theorems from economics and management science. Which is not surprising, it's been a while since Goodhart's law was coined, and actually finding out these references has been a decently interesting outcome from the project. (Some of this lit is mentioned under 'A catch' below, and I'm also separately planning to write up a post or paper about this literature and how it applies to the AI-safety relevant shard of Goodhart.)
+
+Below is an AI-written TLDR of the current project state (subject to change), and the literal research artifacts can be seen over on github from the link below.
+
+
+## Status
 
 _Disclaimer_: AI-written status summary of an ongoing research project. Source repository: [xylix/multidimensional-goodhart](https://github.com/xylix/multidimensional-goodhart).
 
