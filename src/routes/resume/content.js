@@ -287,7 +287,7 @@ const mainColumnContent = [
 					'Treasurer (11/2021 - 04/2022)',
 					'Chair of the Board (04/2022 - 05/2023)',
 					'Vice Chair (05/2023 - 11/2024)',
-					'Executive Director (08/2025 -)'
+					'Executive Director (08/2025 - 04/2026)'
 				]
 			}
 		]
