@@ -15,160 +15,212 @@ The method did get the project started, but I'm not sure the first 40 or so iter
 
 After that I took a bit more of a hands-on approach, reviewing the work more manually, giving the llms explicit directions of what to look at. This has been somewhat fruitful.
 
-As of today (24.06.2026), I've learned from the project a bunch about the selection vs. intervention channel difference (mentioned below), that some of my initial gut feelings about multidimensional Goodhart did not stand up to math levels of rigor, and also that a bunch of the theorems that the LLMs wrote up as 'new' ones were actually existing theorems from economics and management science. Which is not surprising, it's been a while since Goodhart's law was coined, and actually finding out these references has been a decently interesting outcome from the project. (Some of this lit is mentioned under 'A catch' below, and I'm also separately planning to write up a post or paper about this literature and how it applies to the AI-safety relevant shard of Goodhart.)
+Since then, the project has changed substantially. The broad dimensional and recursive intuitions did not survive mathematical scrutiny, and systematic prior-art work found classical homes for most of the theorem kernels. The current outputs are a response-modeling framework, a set of scoped results, and a mapped reference gap between AI-safety Goodhart work and adjacent economics and statistics literature.
 
-Below is an AI-written TLDR of the current project state (subject to change), and the literal research artifacts can be seen over on github from the link below.
+Below is an AI-written status summary of the ongoing project. The literal research artifacts are in the [multidimensional-goodhart repository](https://github.com/xylix/multidimensional-goodhart).
 
+## Current status
 
-## Status
+- **Work in progress.** The main artifact is a 39-page research notebook rather
+  than a finished paper. It has not received recorded expert peer review, and
+  the final human read of the refactored manuscript is still deferred.
+- **Mathematical core stable but scoped.** Six result families are recorded as
+  T1–T6. Four kernels—the T1 finite-population selection envelope, T3 gaming
+  wedge, T5 exchange-rate results, and static T6 hardening boundary—have Lean
+  proofs. Other claims remain prose-audited, simulated, or deferred.
+- **Prior-art work complete for the current theorem set.** Most mathematical
+  kernels were identified as classical results from statistics, convex
+  analysis, contract theory, or neighboring fields. The manuscript now presents
+  itself as synthesis rather than novel mathematics.
+- **Citation audit closed.** A coded 117-paper audit is complete. A shorter
+  public-facing post based on it remains unwritten and reserved for human
+  authorship.
+- **Empirical validation missing.** No real scorecard has yet been taken from
+  predeclared primitives through a prediction and an outcome audit. This is the
+  main uncertainty about the framework's practical value.
 
-_Disclaimer_: AI-written status summary of an ongoing research project.
-Originally written 2026-06-24; revised 2026-07-07 after the literature-review
-program finished its discovery phase. The two substantive changes: the
-prior-art matches under "A catch" are now verified by reading the sources
-rather than suspected from memory, and the citation-gap claim is stated
-narrower — the first version's "cites almost none" was overbroad. Source
-repository:
-[xylix/multidimensional-goodhart](https://github.com/xylix/multidimensional-goodhart).
+## Epistemic status
 
-The project's original motivation was a blog post on 'recursive goodhart' —
-the intuition that because Goodhart affects your meta-level goal setting as
-well, there will always be Goodhart-shaped drift in whatever approach you use.
-Writing it raised empirical questions, most importantly "does adding /
-removing metrics make Goodhart better or worse". The answer appears to be
-conditional, and most of the work went into finding what it is conditional on.
+### Believed robust
 
-## Two channels, not one
+- **Dimension count alone has no sign.** More metrics can help, hurt, or
+  redistribute harm under different aggregation rules, exchange rates,
+  response costs, and entry patterns.
+- **Selection and intervention require different models.** Selecting different
+  members of a fixed pool is a reweighting problem; changing the behavior of a
+  fixed member requires an action, cost, search, or response model. Aggregate
+  score movement does not generally identify which occurred.
+- **The scoped formulas hold under their stated assumptions.** The strongest
+  include a sharp finite-chi-squared selection bound, a quadratic gaming
+  threshold, an exact exchange-rate condition, and a deterministic hardening
+  capacity boundary. Most of their mathematical content is classical.
+- **The broad motivating claims failed.** Neither unconditional dimensional
+  scaling nor a generic minimum-complexity attractor survived counterexamples.
 
-One move did most of the work: splitting "the proxy diverged" into two channels
-that look identical in the data and obey different math:
+### Formalism-dependent
 
-- **Selection** — the proxy picks differently from a fixed pool. Baseline
-  response curves and reweighting bounds.
-- **Intervention** — agents change behavior at fixed type. Action geometry,
-  costs, aggregation, hidden harm.
+- **The response-modeling contract may be useful.** It forces an analyst to
+  declare the type/action representation, response channel, aggregation, costs,
+  stakes, hidden value or harm, evidence standard, and falsifier before
+  importing a theorem. Its value depends on whether those primitives can be
+  defended before outcomes are interpreted.
+- **Channel-level harm is identifiable in a toy model under a rank condition.**
+  The project has not shown that real systems provide the required harm-side
+  data or policy variation.
+- **Executable certificates and refusals work in toy examples.** A best-of-*n*
+  selection model and a gridworld demonstrate the design, not real training
+  pipeline performance.
 
-You can't tell which one you're seeing from score movement alone. That
-non-identifiability is a result, not a gap.
+### Speculative or parked
 
-The conditional answer, in one line: more metrics help or hurt depending on how
-you aggregate them, the exchange rates between dimensions, who enters the pool,
-and what you actually value — flip any of those and the sign flips.
+- **Recursive Goodhart.** The idea that repeated proxy repair pushes failure
+  toward a predictable residual shape remains a prompt, not a result. Any
+  revival needs a complexity measure and response mechanism fixed before the
+  outcome is seen.
+- **Post-activation severity.** The current results mostly say when gaming
+  activates, not whether degradation remains bounded or becomes catastrophic.
+- **Multi-stage composition.** There is no general calculus for systems that
+  mix selection, intervention, repair, and real improvement across stages.
 
-## What survived
+## Core findings
 
-Small, scoped theorems, each with explicit hypotheses and an explicit "does not
-license…" clause. Statements in
-[`research/core-math.md`](https://github.com/xylix/multidimensional-goodhart/blob/f1e7f1206d4c05730f546b92a003b2ee9f3bf4a7/research/core-math.md):
+### Two response channels
 
-- **T1/T2** bound hidden drift on any coordinate by `δ·s` — selection intensity
-  times baseline std. The constant is sharp, and the finite-χ² hypothesis is
-  load-bearing: drop it and a finite-variance coordinate can drift to infinity.
-- **T3/T4** say when intervention is worth it: a Stackelberg wedge
-  (`Δ = √(2κV)`) and a convex score-deficit budget (`m(d) ≤ V`).
-- **T5** says fixed-deficit harm survives a change of measured set iff hidden
-  harm is proportional to proxy weight (`h_j = c·w_j`) on the channel pool.
-- **T6** says gaming is feasible iff capacity `S_t(M) ≥ d²/2V`, and hardening
-  converges in finite time.
+The project's load-bearing distinction is between:
 
-"Survived" means survived scrutiny as true statements — not as new ones; the
-next section is about where each already lives. The other deliverable is the
-contract: the primitives — type space, response kernel, costs, aggregation,
-value/harm — you have to declare before any theorem applies. Half the point is
-naming what you must commit to.
+- **Selection:** pressure changes who is selected or represented while fixed
+  types behave as before.
+- **Intervention:** pressure changes what a fixed type does.
 
-## What got killed
+These channels can generate the same observed score path. The distinction is
+therefore something an application must defend using repeated-unit data,
+policy exposure, action traces, or structural evidence—not something the score
+reveals by itself.
 
-The first 43 iterations served to disprove common-sensical intuitive claims
-about how the geometry might behave
-([`research/closed_questions.md`](https://github.com/xylix/multidimensional-goodhart/blob/f1e7f1206d4c05730f546b92a003b2ee9f3bf4a7/research/closed_questions.md)):
+### The exchange-rate result
 
-- Dimension count alone doesn't determine harm.
-- Covariance isn't a general finite-pressure primitive.
-- "More metrics helps" and "more metrics hurts" both have no sign without
-  aggregation, exchange rates, population entry, and value weights.
-- Additive conservation isn't generic — only under `h_j = c·w_j`.
-- Absolute continuity isn't the causal intervention boundary.
-- A generic "minimum-complexity attractor" isn't a theorem.
+In an additive fixed-deficit model with separable quadratic response costs,
+hidden harm is unchanged across every nonempty choice of measured channels
+exactly when each channel's hidden-harm weight is proportional to its score
+weight: `h_j = c * w_j`.
 
-## A catch — now verified
+This is the project's most memorable conditional answer to the original
+question. If harm per score point differs across channels, changing the
+measured set can change harm. If the rates are proportional, changing the set
+reroutes the modeled action while leaving fixed-deficit per-agent harm
+unchanged. The condition is model-specific and does not imply population-harm
+conservation or a general policy rule.
 
-The June version of this post said the surviving theorems were "probably
-classical results from other fields." The literature program has since
-confirmed it against the sources (a few paywalled proposition numbers are
-still pending, but the substance is checked): T5's condition is
-contract-theory congruity (Feltham–Xie 1994; Baker 2002's `1−cosθ`
-distortion); the T1/T2 selection bounds are the Hammersley–Chapman–Robbins
-bound and its χ²-DRO reweighting siblings — three independent homes, which
-overturned an earlier internal note here claiming no χ² analogue existed; the
-T4 convex budget is Fenchel–Rockafellar duality. Each match lives in the
-theorem's home field, not the Goodhart literature. So the contribution is
-cross-field synthesis plus the contract plus one new reading
-(subset-invariance), not new math. (Verification ledger:
-[`plans/phase0-handoff.md`](https://github.com/xylix/multidimensional-goodhart/blob/f1e7f1206d4c05730f546b92a003b2ee9f3bf4a7/plans/phase0-handoff.md).)
+The same algebra is known in contract theory as *congruity*, where alignment
+between measure sensitivity and value is desirable. Reading the hidden vector
+as harm inverts the interpretation: proportionality describes harm that cannot
+be escaped merely by choosing a different measured subset.
 
-## The citation gap, stated carefully
+### What was ruled out
 
-The June version also said the AI-safety Goodhart canon "cites almost none" of
-the economics, accounting, and management-science work that already proved the
-same things, checked across 7 anchor papers. That was overbroad. The claim has
-since been through a full discovery phase — a ~95-paper AI corpus, a 25-paper
-coded citation audit (600+ references), a forward-citation census over the
-priority prior-art items, and 12 adversarial LLM search passes trying to break
-it. What survived is narrower and, I think, harder to dismiss:
+- Hidden harm does not scale with the number of unmeasured dimensions without
+  a coupling and a declared value metric.
+- Baseline covariance does not predict finite-pressure drift in general; it is
+  only a local or model-specific quantity.
+- “More metrics helps,” “more metrics hurts,” and generic conservation all fail
+  without additional assumptions.
+- Private gaming cost is not social harm. A cost or affordability calculation
+  needs a separate hidden-value functional before it supports welfare language.
+- Deterministic hardening results do not transfer to noisy observation,
+  changing scorecards, endogenous stakes, or optimal policy.
 
-- **Contract theory has entered alignment — through specific doors.** The
-  Berkeley CHAI line (CIRL, the off-switch game) cites Holmström–Milgrom and
-  Baker, but on the control / incomplete-contracting object, not Goodhart. And
-  two 2026 papers — Wang & Huang (arXiv:2603.28063) and Haupt et al.
-  (arXiv:2605.30916) — now formally bridge multitask contract theory to
-  Goodhart-framed benchmark distortion. Any "first to connect contract theory
-  to formal Goodhart" pitch is dead; they hold it.
-- **The core is still unreached.** Neither bridge paper — nor anything the
-  census or the adversarial passes found — cites the performance-measurement
-  core as prior Goodhart theory: the congruity / cosine-distortion geometry
-  (Feltham–Xie; Baker 2002 as math rather than anecdote), sufficient-statistic
-  aggregation (Banker–Datar), second-best welfare results (Lipsey–Lancaster),
-  or the estimation tier behind the selection bounds (Chapman–Robbins,
-  χ²-DRO). Across the census, zero alignment papers cite any of the priority
-  prior-art items *and connect them to Goodhart*. The cleanest single case:
-  Laidlaw 2024 builds χ²-divergence Goodhart bounds and cites none of the χ²
-  estimation lineage.
-- **The nearest prior synthesis flags the gap itself.** BBS 2023 ("Dead rats,
-  dopamine, performance metrics, and peacock tails") spans economics, AI, and
-  biology — but it is explicitly qualitative, and its authors state outright
-  that a formal unified model of proxy failure doesn't exist and that it's
-  unclear what one would look like.
+## Relation to prior work
 
-So the finding is localized, quantified, and comes with a named exception
-floor, rather than "they cite nothing." The artifacts are in
-[`literature-reference-gap-paper/`](https://github.com/xylix/multidimensional-goodhart/tree/f1e7f1206d4c05730f546b92a003b2ee9f3bf4a7/literature-reference-gap-paper)
-and
-[`research/threads/lit_review/cross-field-discovery/`](https://github.com/xylix/multidimensional-goodhart/tree/f1e7f1206d4c05730f546b92a003b2ee9f3bf4a7/research/threads/lit_review/cross-field-discovery).
-Whether the tightened contribution — the quantified audit, the cross-field
-dictionary, the specific uncited identities — is worth a standalone paper is
-the open project decision, not an open research question.
+The prior-art program changed the project's self-assessment. The selection
+bound is Hammersley–Chapman–Robbins and chi-squared distributionally robust
+optimization; the intervention budget is textbook convex duality; the
+exchange-rate condition is contract-theory congruity; the quadratic wedge is a
+costly-threshold-crossing result; and the static hardening boundary specializes
+the convex budget.
 
-## New since June: an empirical prototype
+The project's plausible additions are therefore the cross-field dictionary,
+the selection/intervention placement, the Goodhart-specific declaration
+contract, and a few modest readings: subset invariance, the value-to-harm
+inversion, and the use of classical selection bounds as explicit Goodhart
+licenses. The subset-invariance result is a short corollary, not a new deep
+theorem.
 
-The newest track is
-[`empirical_goodhart/`](https://github.com/xylix/multidimensional-goodhart/tree/main/empirical_goodhart):
-a prototype static analyzer that takes a declared contract (the primitives
-above, machine-readable) and emits **certificates** — quantitative claims
-licensed by a named result, with their conditions attached — and **refusals**
-— conclusions the declaration does not license, naming the missing field.
-Refusals are first-class outputs, not errors. It's validated so far on a
-best-of-n selection toy and a gridworld sensor-hacking toy, and — applying the
-lesson above in advance this time — its regime verdicts are deliberately
-adopted from prior art (Majka & El-Mhamdi 2025) rather than presented as new.
+A separate citation audit found a localized reference gap. In its frozen
+115-paper minable denominator, the 60-paper reward-hacking and RLHF core cited
+no performance-measurement contract theory. Public-finance, second-best, and
+corrective-taxation tiers were also 0/115 in current versions, and the
+estimation lineage was never cited as prior theory of a Goodhart bound. This
+does **not** mean that AI safety ignores economics or that nobody bridged the
+fields: BBS 2023 connects the concepts, and Wang–Huang and Haupt et al. import
+parts of contract theory in 2026.
 
-## Still open
+## Open questions and kill criteria
 
-- **Identification.** The framework runs on declared primitives — κ, h, weights,
-  stakes — and this project hasn't yet found a way to estimate them before you
-  read the score movement ([`research/open_questions.md`](https://github.com/xylix/multidimensional-goodhart/blob/f1e7f1206d4c05730f546b92a003b2ee9f3bf4a7/research/open_questions.md)).
-- **Severity.** The theorems say whether gaming activates, not whether it
-  degrades gracefully or collapses below baseline. A second track bets the
-  deciding factor is a tail comparison — hidden value against the optimization
-  channel — rather than the amount of pressure
-  ([`divergence-thresholds/`](https://github.com/xylix/multidimensional-goodhart/tree/f1e7f1206d4c05730f546b92a003b2ee9f3bf4a7/divergence-thresholds)).
+1. **Does the contract predict anything useful?**
+   - Progress would be a real scorecard audit with primitives and failure
+     conditions fixed before outcomes, where the licensed model predicts
+     response direction or shape.
+   - The project would be substantially weakened if predeclared contract fields
+     add no predictive or diagnostic value over a simpler score-only baseline.
+2. **Can the primitives be identified?**
+   - Progress would be harm-on-action data or policy variation that satisfies
+     the toy rank condition without post-hoc channel definitions.
+   - The project would be substantially weakened if costs, channels, stakes,
+     and hidden harm cannot be defended before score movement in the domains
+     where the framework is meant to help.
+3. **What determines severity after gaming activates?**
+   - Progress would be a scoped threshold separating bounded from catastrophic
+     degradation under declared tail and dependence structure.
+   - This track should be killed or reframed if it adds no result beyond
+     existing dependence-aware tail theory or cannot transfer beyond scalar
+     selection.
+4. **Can response channels compose?**
+   - Progress would be a calculation that remains valid when selection,
+     intervention, repair, and improvement occur in sequence.
+   - The framework would remain local to isolated stages if stable primitives
+     disappear under composition.
+5. **Can recursive Goodhart be revived?**
+   - Progress would require a predeclared complexity measure and response
+     mechanism that produce a falsifiable residual-shape prediction.
+   - The conjecture should remain parked if the apparent attractor changes with
+     representation or is labeled only after the failure is observed.
+
+The first question is the main gate. More formal refinement cannot substitute
+for an end-to-end test on real inputs.
+
+## How the work was produced and checked
+
+Most research labor—including derivations, counterexample searches, literature
+discovery, code, and prose—was performed by LLM agents. Xylix chose directions,
+approved scope changes, set review gates, and retained final judgment.
+
+The verification process included explicit non-license clauses, adversarial
+counterexamples, fresh-context manuscript reviews, deterministic simulations,
+primary-source citation checks, a two-method citation audit, and partial Lean
+formalization. These safeguards caught meaningful problems: prior-art work
+deflated the initial novelty story, and a later formal review found an
+attainment error in T4 after several earlier reviews had missed it.
+
+That history is evidence that the safeguards were useful in this project, not
+that they make LLM-generated research reliable by default. Lean proves scoped
+statements, not their empirical assumptions; simulations check toy models, not
+the world; and no recorded expert review or end-to-end empirical validation has
+yet closed those gaps.
+
+## Entry points
+
+- **For the quickest technical overview:**
+  [technical abstract](https://github.com/xylix/multidimensional-goodhart/blob/main/book/multidimensional-goodhart-abstract.pdf)
+- **For the full argument and visible research process:**
+  [research notebook](https://github.com/xylix/multidimensional-goodhart/blob/main/book/multidimensional-goodhart.pdf)
+- **For a candid account of achievements and non-achievements:**
+  [project summary](https://github.com/xylix/multidimensional-goodhart/blob/main/PROJECT-SUMMARY.md)
+- **For exact hypotheses and non-transfer clauses:**
+  [core mathematics](https://github.com/xylix/multidimensional-goodhart/blob/main/research/core-math.md)
+- **For the literature and citation-gap result:**
+  [citation-audit summary](https://github.com/xylix/multidimensional-goodhart/blob/main/literature-reference-gap-paper/citation-audit/SUMMARY.md)
+- **For formal proofs and executable prototypes:**
+  [Lean overview](https://github.com/xylix/multidimensional-goodhart/blob/main/lean/README.md) and
+  [empirical prototype](https://github.com/xylix/multidimensional-goodhart/blob/main/empirical_goodhart/README.md)
+- **For current research decisions and open work:**
+  [next steps](https://github.com/xylix/multidimensional-goodhart/blob/main/plans/next-steps.md)
