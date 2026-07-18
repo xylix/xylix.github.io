@@ -19,11 +19,10 @@ Since then, the project has changed substantially. The broad dimensional and rec
 
 Below is an AI-written status summary of the ongoing project. The literal research artifacts are in the [multidimensional-goodhart repository](https://github.com/xylix/multidimensional-goodhart).
 
+
 ## Current status
 
-- **Work in progress.** The main artifact is a 39-page research notebook rather
-  than a finished paper. It has not received recorded expert peer review, and
-  the final human read of the refactored manuscript is still deferred.
+- **Work in progress.** The main artifact is a 39-page LLM-generated "research notebook".
 - **Mathematical core stable but scoped.** Six result families are recorded as
   T1–T6. Four kernels—the T1 finite-population selection envelope, T3 gaming
   wedge, T5 exchange-rate results, and static T6 hardening boundary—have Lean
